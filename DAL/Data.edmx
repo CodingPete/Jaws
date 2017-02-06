@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Data.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DataStoreContainer">
+    <EntitySet Name="MarktSet" EntityType="Data.Store.MarktSet" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="PersonalSet" EntityType="Data.Store.PersonalSet" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="ArbeitsvertragSet" EntityType="Data.Store.ArbeitsvertragSet" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="SchichtSet" EntityType="Data.Store.SchichtSet" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="LieferantSet" EntityType="Data.Store.LieferantSet" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="ArtikelSet" EntityType="Data.Store.ArtikelSet" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="PrognoseSet" EntityType="Data.Store.PrognoseSet" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="WarengruppeSet" EntityType="Data.Store.WarengruppeSet" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="BelegSet" EntityType="Data.Store.BelegSet" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="LieferartSet" EntityType="Data.Store.LieferartSet" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="RolleSet" EntityType="Data.Store.RolleSet" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="PersonalRolle" EntityType="Data.Store.PersonalRolle" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="BelegArtikel" EntityType="Data.Store.BelegArtikel" store:Type="Tables" Schema="Jaws-DB" />
+    <AssociationSet Name="PersonalArbeitsvertrag" Association="Data.Store.PersonalArbeitsvertrag">
+      <End Role="Personal" EntitySet="PersonalSet" />
+      <End Role="Arbeitsvertrag" EntitySet="ArbeitsvertragSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonalRolle_Personal" Association="Data.Store.FK_PersonalRolle_Personal">
+      <End Role="Personal" EntitySet="PersonalSet" />
+      <End Role="PersonalRolle" EntitySet="PersonalRolle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonalRolle_Rolle" Association="Data.Store.FK_PersonalRolle_Rolle">
+      <End Role="Rolle" EntitySet="RolleSet" />
+      <End Role="PersonalRolle" EntitySet="PersonalRolle" />
+    </AssociationSet>
+    <AssociationSet Name="PersonalSchicht" Association="Data.Store.PersonalSchicht">
+      <End Role="Personal" EntitySet="PersonalSet" />
+      <End Role="Schicht" EntitySet="SchichtSet" />
+    </AssociationSet>
+    <AssociationSet Name="LieferantArtikel" Association="Data.Store.LieferantArtikel">
+      <End Role="Lieferant" EntitySet="LieferantSet" />
+      <End Role="Artikel" EntitySet="ArtikelSet" />
+    </AssociationSet>
+    <AssociationSet Name="ArtikelWarengruppe" Association="Data.Store.ArtikelWarengruppe">
+      <End Role="Artikel" EntitySet="ArtikelSet" />
+      <End Role="Warengruppe" EntitySet="WarengruppeSet" />
+    </AssociationSet>
+    <AssociationSet Name="BelegLieferart" Association="Data.Store.BelegLieferart">
+      <End Role="Beleg" EntitySet="BelegSet" />
+      <End Role="Lieferart" EntitySet="LieferartSet" />
+    </AssociationSet>
+    <AssociationSet Name="PrognoseArtikel" Association="Data.Store.PrognoseArtikel">
+      <End Role="Prognose" EntitySet="PrognoseSet" />
+      <End Role="Artikel" EntitySet="ArtikelSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BelegArtikel_Beleg" Association="Data.Store.FK_BelegArtikel_Beleg">
+      <End Role="Beleg" EntitySet="BelegSet" />
+      <End Role="BelegArtikel" EntitySet="BelegArtikel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BelegArtikel_Artikel" Association="Data.Store.FK_BelegArtikel_Artikel">
+      <End Role="Artikel" EntitySet="ArtikelSet" />
+      <End Role="BelegArtikel" EntitySet="BelegArtikel" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="MarktSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Wert" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonalSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Vorname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Straße" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Hausnummer" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Postleitzahl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ort" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IBAN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BIC" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Steuerklasse" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mobil" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ArbeitsvertragId" Type="int" Nullable="false" />
+    <Property Name="ArbeitsvertragId1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArbeitsvertragSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Wochenstunden" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Stundenlohn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PersonalId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SchichtSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Startzeit_soll" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Endzeit_soll" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Startzeit_ist" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Endzeit_ist" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pause" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PersonalId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LieferantSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Hausnummer" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Postleitzahl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ort" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mobil" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IBAN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BIC" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArtikelSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GTIN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Bestand" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nettoverkaufspreis" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LieferantId" Type="int" Nullable="false" />
+    <Property Name="WarengruppeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrognoseSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Datum" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Abverkauf_soll" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Abverkauf_ist" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ArtikelId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WarengruppeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Steuersatz" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BelegSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LieferartId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LieferartSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolleSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonalRolle">
+    <Key>
+      <PropertyRef Name="Personal_Id" />
+      <PropertyRef Name="Rolle_Id" />
+    </Key>
+    <Property Name="Personal_Id" Type="int" Nullable="false" />
+    <Property Name="Rolle_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BelegArtikel">
+    <Key>
+      <PropertyRef Name="Beleg_Id" />
+      <PropertyRef Name="Artikel_Id" />
+    </Key>
+    <Property Name="Beleg_Id" Type="int" Nullable="false" />
+    <Property Name="Artikel_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="PersonalArbeitsvertrag">
+    <End Role="Personal" Type="Data.Store.PersonalSet" Multiplicity="*" />
+    <End Role="Arbeitsvertrag" Type="Data.Store.ArbeitsvertragSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Arbeitsvertrag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Personal">
+        <PropertyRef Name="ArbeitsvertragId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonalSchicht">
+    <End Role="Personal" Type="Data.Store.PersonalSet" Multiplicity="1" />
+    <End Role="Schicht" Type="Data.Store.SchichtSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Schicht">
+        <PropertyRef Name="PersonalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LieferantArtikel">
+    <End Role="Lieferant" Type="Data.Store.LieferantSet" Multiplicity="1" />
+    <End Role="Artikel" Type="Data.Store.ArtikelSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lieferant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Artikel">
+        <PropertyRef Name="LieferantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArtikelWarengruppe">
+    <End Role="Artikel" Type="Data.Store.ArtikelSet" Multiplicity="*" />
+    <End Role="Warengruppe" Type="Data.Store.WarengruppeSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Warengruppe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Artikel">
+        <PropertyRef Name="WarengruppeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BelegLieferart">
+    <End Role="Beleg" Type="Data.Store.BelegSet" Multiplicity="*" />
+    <End Role="Lieferart" Type="Data.Store.LieferartSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Lieferart">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Beleg">
+        <PropertyRef Name="LieferartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PrognoseArtikel">
+    <End Role="Prognose" Type="Data.Store.PrognoseSet" Multiplicity="*" />
+    <End Role="Artikel" Type="Data.Store.ArtikelSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Artikel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prognose">
+        <PropertyRef Name="ArtikelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonalRolle_Personal">
+    <End Role="Personal" Type="Data.Store.PersonalSet" Multiplicity="1" />
+    <End Role="PersonalRolle" Type="Data.Store.PersonalRolle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonalRolle">
+        <PropertyRef Name="Personal_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonalRolle_Rolle">
+    <End Role="PersonalRolle" Type="Data.Store.PersonalRolle" Multiplicity="*" />
+    <End Role="Rolle" Type="Data.Store.RolleSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Rolle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonalRolle">
+        <PropertyRef Name="Rolle_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BelegArtikel_Beleg">
+    <End Role="Beleg" Type="Data.Store.BelegSet" Multiplicity="1" />
+    <End Role="BelegArtikel" Type="Data.Store.BelegArtikel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Beleg">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BelegArtikel">
+        <PropertyRef Name="Beleg_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BelegArtikel_Artikel">
+    <End Role="BelegArtikel" Type="Data.Store.BelegArtikel" Multiplicity="*" />
+    <End Role="Artikel" Type="Data.Store.ArtikelSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Artikel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BelegArtikel">
+        <PropertyRef Name="Artikel_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Data" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DataContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MarktSet" EntityType="Data.Markt" />
+          <EntitySet Name="PersonalSet" EntityType="Data.Personal" />
+          <EntitySet Name="ArbeitsvertragSet" EntityType="Data.Arbeitsvertrag" />
+          <EntitySet Name="SchichtSet" EntityType="Data.Schicht" />
+          <EntitySet Name="LieferantSet" EntityType="Data.Lieferant" />
+          <EntitySet Name="ArtikelSet" EntityType="Data.Artikel" />
+          <EntitySet Name="PrognoseSet" EntityType="Data.Prognose" />
+          <EntitySet Name="WarengruppeSet" EntityType="Data.Warengruppe" />
+          <EntitySet Name="BelegSet" EntityType="Data.Beleg" />
+          <EntitySet Name="LieferartSet" EntityType="Data.Lieferart" />
+          <EntitySet Name="RolleSet" EntityType="Data.Rolle" />
+          <AssociationSet Name="PersonalArbeitsvertrag" Association="Data.PersonalArbeitsvertrag">
+            <End Role="Personal" EntitySet="PersonalSet" />
+            <End Role="Arbeitsvertrag" EntitySet="ArbeitsvertragSet" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalRolle" Association="Data.PersonalRolle">
+            <End Role="Personal" EntitySet="PersonalSet" />
+            <End Role="Rolle" EntitySet="RolleSet" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalSchicht" Association="Data.PersonalSchicht">
+            <End Role="Personal" EntitySet="PersonalSet" />
+            <End Role="Schicht" EntitySet="SchichtSet" />
+          </AssociationSet>
+          <AssociationSet Name="LieferantArtikel" Association="Data.LieferantArtikel">
+            <End Role="Lieferant" EntitySet="LieferantSet" />
+            <End Role="Artikel" EntitySet="ArtikelSet" />
+          </AssociationSet>
+          <AssociationSet Name="ArtikelWarengruppe" Association="Data.ArtikelWarengruppe">
+            <End Role="Artikel" EntitySet="ArtikelSet" />
+            <End Role="Warengruppe" EntitySet="WarengruppeSet" />
+          </AssociationSet>
+          <AssociationSet Name="BelegLieferart" Association="Data.BelegLieferart">
+            <End Role="Beleg" EntitySet="BelegSet" />
+            <End Role="Lieferart" EntitySet="LieferartSet" />
+          </AssociationSet>
+          <AssociationSet Name="PrognoseArtikel" Association="Data.PrognoseArtikel">
+            <End Role="Prognose" EntitySet="PrognoseSet" />
+            <End Role="Artikel" EntitySet="ArtikelSet" />
+          </AssociationSet>
+          <AssociationSet Name="BelegArtikel" Association="Data.BelegArtikel">
+            <End Role="Beleg" EntitySet="BelegSet" />
+            <End Role="Artikel" EntitySet="ArtikelSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Markt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Wert" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Vorname" Type="String" Nullable="false" />
+          <Property Name="Straße" Type="String" Nullable="false" />
+          <Property Name="Hausnummer" Type="String" Nullable="false" />
+          <Property Name="Postleitzahl" Type="String" Nullable="false" />
+          <Property Name="Ort" Type="String" Nullable="false" />
+          <Property Name="IBAN" Type="String" Nullable="false" />
+          <Property Name="BIC" Type="String" Nullable="false" />
+          <Property Name="Steuerklasse" Type="String" Nullable="false" />
+          <Property Name="Telefon" Type="String" Nullable="false" />
+          <Property Name="Mobil" Type="String" Nullable="false" />
+          <Property Name="ArbeitsvertragId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Arbeitsvertrag" Relationship="Data.PersonalArbeitsvertrag" FromRole="Personal" ToRole="Arbeitsvertrag" />
+          <Property Name="ArbeitsvertragId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rolle" Relationship="Data.PersonalRolle" FromRole="Personal" ToRole="Rolle" />
+          <NavigationProperty Name="Schicht" Relationship="Data.PersonalSchicht" FromRole="Personal" ToRole="Schicht" />
+        </EntityType>
+        <EntityType Name="Arbeitsvertrag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Wochenstunden" Type="String" Nullable="false" />
+          <Property Name="Stundenlohn" Type="String" Nullable="false" />
+          <Property Name="PersonalId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Personal" Relationship="Data.PersonalArbeitsvertrag" FromRole="Arbeitsvertrag" ToRole="Personal" />
+        </EntityType>
+        <EntityType Name="Schicht">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Startzeit_soll" Type="String" Nullable="false" />
+          <Property Name="Endzeit_soll" Type="String" Nullable="false" />
+          <Property Name="Startzeit_ist" Type="String" Nullable="false" />
+          <Property Name="Endzeit_ist" Type="String" Nullable="false" />
+          <Property Name="Pause" Type="String" Nullable="false" />
+          <NavigationProperty Name="Personal" Relationship="Data.PersonalSchicht" FromRole="Schicht" ToRole="Personal" />
+          <Property Name="PersonalId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lieferant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Hausnummer" Type="String" Nullable="false" />
+          <Property Name="Postleitzahl" Type="String" Nullable="false" />
+          <Property Name="Ort" Type="String" Nullable="false" />
+          <Property Name="Telefon" Type="String" Nullable="false" />
+          <Property Name="Mobil" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="IBAN" Type="String" Nullable="false" />
+          <Property Name="BIC" Type="String" Nullable="false" />
+          <NavigationProperty Name="Artikel" Relationship="Data.LieferantArtikel" FromRole="Lieferant" ToRole="Artikel" />
+        </EntityType>
+        <EntityType Name="Artikel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="GTIN" Type="String" Nullable="false" />
+          <Property Name="Bestand" Type="String" Nullable="false" />
+          <Property Name="Nettoverkaufspreis" Type="String" Nullable="false" />
+          <NavigationProperty Name="Lieferant" Relationship="Data.LieferantArtikel" FromRole="Artikel" ToRole="Lieferant" />
+          <Property Name="LieferantId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Warengruppe" Relationship="Data.ArtikelWarengruppe" FromRole="Artikel" ToRole="Warengruppe" />
+          <Property Name="WarengruppeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Prognose" Relationship="Data.PrognoseArtikel" FromRole="Artikel" ToRole="Prognose" />
+          <NavigationProperty Name="Beleg" Relationship="Data.BelegArtikel" FromRole="Artikel" ToRole="Beleg" />
+        </EntityType>
+        <EntityType Name="Prognose">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Datum" Type="String" Nullable="false" />
+          <Property Name="Abverkauf_soll" Type="String" Nullable="false" />
+          <Property Name="Abverkauf_ist" Type="String" Nullable="false" />
+          <NavigationProperty Name="Artikel" Relationship="Data.PrognoseArtikel" FromRole="Prognose" ToRole="Artikel" />
+          <Property Name="ArtikelId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Warengruppe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Steuersatz" Type="String" Nullable="false" />
+          <NavigationProperty Name="Artikel" Relationship="Data.ArtikelWarengruppe" FromRole="Warengruppe" ToRole="Artikel" />
+        </EntityType>
+        <EntityType Name="Beleg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Lieferart" Relationship="Data.BelegLieferart" FromRole="Beleg" ToRole="Lieferart" />
+          <Property Name="LieferartId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Artikel" Relationship="Data.BelegArtikel" FromRole="Beleg" ToRole="Artikel" />
+        </EntityType>
+        <EntityType Name="Lieferart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Beleg" Relationship="Data.BelegLieferart" FromRole="Lieferart" ToRole="Beleg" />
+        </EntityType>
+        <EntityType Name="Rolle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Personal" Relationship="Data.PersonalRolle" FromRole="Rolle" ToRole="Personal" />
+        </EntityType>
+        <Association Name="PersonalArbeitsvertrag">
+          <End Type="Data.Personal" Role="Personal" Multiplicity="*" />
+          <End Type="Data.Arbeitsvertrag" Role="Arbeitsvertrag" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Arbeitsvertrag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personal">
+              <PropertyRef Name="ArbeitsvertragId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonalRolle">
+          <End Type="Data.Personal" Role="Personal" Multiplicity="*" />
+          <End Type="Data.Rolle" Role="Rolle" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonalSchicht">
+          <End Type="Data.Personal" Role="Personal" Multiplicity="1" />
+          <End Type="Data.Schicht" Role="Schicht" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Schicht">
+              <PropertyRef Name="PersonalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LieferantArtikel">
+          <End Type="Data.Lieferant" Role="Lieferant" Multiplicity="1" />
+          <End Type="Data.Artikel" Role="Artikel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lieferant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Artikel">
+              <PropertyRef Name="LieferantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ArtikelWarengruppe">
+          <End Type="Data.Artikel" Role="Artikel" Multiplicity="*" />
+          <End Type="Data.Warengruppe" Role="Warengruppe" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Warengruppe">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Artikel">
+              <PropertyRef Name="WarengruppeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BelegLieferart">
+          <End Type="Data.Beleg" Role="Beleg" Multiplicity="*" />
+          <End Type="Data.Lieferart" Role="Lieferart" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Lieferart">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Beleg">
+              <PropertyRef Name="LieferartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PrognoseArtikel">
+          <End Type="Data.Prognose" Role="Prognose" Multiplicity="*" />
+          <End Type="Data.Artikel" Role="Artikel" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Artikel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prognose">
+              <PropertyRef Name="ArtikelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BelegArtikel">
+          <End Type="Data.Beleg" Role="Beleg" Multiplicity="*" />
+          <End Type="Data.Artikel" Role="Artikel" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataStoreContainer" CdmEntityContainer="DataContainer">
+    <EntitySetMapping Name="MarktSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.Markt)">
+        <MappingFragment StoreEntitySet="MarktSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Wert" ColumnName="Wert" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonalSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.Personal)">
+        <MappingFragment StoreEntitySet="PersonalSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+          <ScalarProperty Name="Straße" ColumnName="Straße" />
+          <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
+          <ScalarProperty Name="Postleitzahl" ColumnName="Postleitzahl" />
+          <ScalarProperty Name="Ort" ColumnName="Ort" />
+          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+          <ScalarProperty Name="BIC" ColumnName="BIC" />
+          <ScalarProperty Name="Steuerklasse" ColumnName="Steuerklasse" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Mobil" ColumnName="Mobil" />
+          <ScalarProperty Name="ArbeitsvertragId" ColumnName="ArbeitsvertragId" />
+          <ScalarProperty Name="ArbeitsvertragId1" ColumnName="ArbeitsvertragId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArbeitsvertragSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.Arbeitsvertrag)">
+        <MappingFragment StoreEntitySet="ArbeitsvertragSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Wochenstunden" ColumnName="Wochenstunden" />
+          <ScalarProperty Name="Stundenlohn" ColumnName="Stundenlohn" />
+          <ScalarProperty Name="PersonalId" ColumnName="PersonalId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SchichtSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.Schicht)">
+        <MappingFragment StoreEntitySet="SchichtSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Startzeit_soll" ColumnName="Startzeit_soll" />
+          <ScalarProperty Name="Endzeit_soll" ColumnName="Endzeit_soll" />
+          <ScalarProperty Name="Startzeit_ist" ColumnName="Startzeit_ist" />
+          <ScalarProperty Name="Endzeit_ist" ColumnName="Endzeit_ist" />
+          <ScalarProperty Name="Pause" ColumnName="Pause" />
+          <ScalarProperty Name="PersonalId" ColumnName="PersonalId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LieferantSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.Lieferant)">
+        <MappingFragment StoreEntitySet="LieferantSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
+          <ScalarProperty Name="Postleitzahl" ColumnName="Postleitzahl" />
+          <ScalarProperty Name="Ort" ColumnName="Ort" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Mobil" ColumnName="Mobil" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+          <ScalarProperty Name="BIC" ColumnName="BIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArtikelSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.Artikel)">
+        <MappingFragment StoreEntitySet="ArtikelSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GTIN" ColumnName="GTIN" />
+          <ScalarProperty Name="Bestand" ColumnName="Bestand" />
+          <ScalarProperty Name="Nettoverkaufspreis" ColumnName="Nettoverkaufspreis" />
+          <ScalarProperty Name="LieferantId" ColumnName="LieferantId" />
+          <ScalarProperty Name="WarengruppeId" ColumnName="WarengruppeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrognoseSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.Prognose)">
+        <MappingFragment StoreEntitySet="PrognoseSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="Abverkauf_soll" ColumnName="Abverkauf_soll" />
+          <ScalarProperty Name="Abverkauf_ist" ColumnName="Abverkauf_ist" />
+          <ScalarProperty Name="ArtikelId" ColumnName="ArtikelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WarengruppeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.Warengruppe)">
+        <MappingFragment StoreEntitySet="WarengruppeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Steuersatz" ColumnName="Steuersatz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BelegSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.Beleg)">
+        <MappingFragment StoreEntitySet="BelegSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LieferartId" ColumnName="LieferartId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LieferartSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.Lieferart)">
+        <MappingFragment StoreEntitySet="LieferartSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolleSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.Rolle)">
+        <MappingFragment StoreEntitySet="RolleSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PersonalRolle" TypeName="Data.PersonalRolle" StoreEntitySet="PersonalRolle">
+      <EndProperty Name="Personal">
+        <ScalarProperty Name="Id" ColumnName="Personal_Id" />
+      </EndProperty>
+      <EndProperty Name="Rolle">
+        <ScalarProperty Name="Id" ColumnName="Rolle_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BelegArtikel" TypeName="Data.BelegArtikel" StoreEntitySet="BelegArtikel">
+      <EndProperty Name="Beleg">
+        <ScalarProperty Name="Id" ColumnName="Beleg_Id" />
+      </EndProperty>
+      <EndProperty Name="Artikel">
+        <ScalarProperty Name="Id" ColumnName="Artikel_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="Jaws-DB" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

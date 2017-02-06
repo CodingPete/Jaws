@@ -9,13 +9,13 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1CA7FA4E-CFA7-49B4-A4EC-585734874C20}</ProjectGuid>
+    <ProjectGuid>{E79CAAAE-E79D-4C97-8735-C0A9D263CE09}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Dashboard</RootNamespace>
     <AssemblyName>Dashboard</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -25,7 +25,6 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,16 +59,16 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -111,7 +110,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -130,21 +128,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ArbeitsvertragController.cs" />
+    <Compile Include="Controllers\ArtikelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Data_Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Data_Model.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Controllers\LieferantController.cs" />
+    <Compile Include="Controllers\PersonalController.cs" />
+    <Compile Include="Controllers\WarengruppeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -154,17 +147,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Data_Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Data_Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Data_Model.edmx.diagram">
-      <DependentUpon>Data_Model.edmx</DependentUpon>
-    </Content>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -191,6 +173,31 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Personal\Create.cshtml" />
+    <Content Include="Views\Personal\Delete.cshtml" />
+    <Content Include="Views\Personal\Details.cshtml" />
+    <Content Include="Views\Personal\Edit.cshtml" />
+    <Content Include="Views\Personal\Index.cshtml" />
+    <Content Include="Views\Arbeitsvertrag\Create.cshtml" />
+    <Content Include="Views\Arbeitsvertrag\Delete.cshtml" />
+    <Content Include="Views\Arbeitsvertrag\Details.cshtml" />
+    <Content Include="Views\Arbeitsvertrag\Edit.cshtml" />
+    <Content Include="Views\Arbeitsvertrag\Index.cshtml" />
+    <Content Include="Views\Lieferant\Create.cshtml" />
+    <Content Include="Views\Lieferant\Delete.cshtml" />
+    <Content Include="Views\Lieferant\Details.cshtml" />
+    <Content Include="Views\Lieferant\Edit.cshtml" />
+    <Content Include="Views\Lieferant\Index.cshtml" />
+    <Content Include="Views\Artikel\Create.cshtml" />
+    <Content Include="Views\Artikel\Delete.cshtml" />
+    <Content Include="Views\Artikel\Details.cshtml" />
+    <Content Include="Views\Artikel\Edit.cshtml" />
+    <Content Include="Views\Artikel\Index.cshtml" />
+    <Content Include="Views\Warengruppe\Create.cshtml" />
+    <Content Include="Views\Warengruppe\Delete.cshtml" />
+    <Content Include="Views\Warengruppe\Details.cshtml" />
+    <Content Include="Views\Warengruppe\Edit.cshtml" />
+    <Content Include="Views\Warengruppe\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -204,6 +211,12 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{d0aed700-c12c-4a69-b48a-86b056e8d2de}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -221,7 +234,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50098</DevelopmentServerPort>
+          <DevelopmentServerPort>53824</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:49954/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
