@@ -12,8 +12,7 @@ namespace Jaws_Service_Library
     [ServiceContract]
     public interface IService1
     {
-        [OperationContract]
-        string GetData(int value);
+        
 
         //Personal
 
@@ -28,6 +27,9 @@ namespace Jaws_Service_Library
 
         [OperationContract]
         List<Personal> getPersonalList();
+
+
+        
 
         //Arbeitsvertrag
 
@@ -63,7 +65,7 @@ namespace Jaws_Service_Library
         //Recht
 
         [OperationContract]
-        List<Recht> getRechtbyId(int id);
+        Recht getRechtbyId(int id);
 
         [OperationContract]
         void setRecht(Recht recht);
@@ -71,13 +73,27 @@ namespace Jaws_Service_Library
         [OperationContract]
         void updateRecht(Recht recht);
 
+
+        //RolleRecht
+
         [OperationContract]
-        List<Recht> getRechtbyRolleId(int id);
+        void setRolleRecht(Rolle rolle, Recht recht);
+
+        [OperationContract]
+        void updateRolleRecht(RolleRecht rollerecht);
+
+        [OperationContract]
+        List<Rolle> getRollefromRechtId(int id);
+
+        [OperationContract]
+        List<Recht> getRechtfromRolleId(int id);
+
+
 
         //Schicht
 
         [OperationContract]
-        List<Schicht> getSchichtbyId(int id);
+        Schicht getSchichtbyId(int id);
 
         [OperationContract]
         void setSchicht(Schicht schicht);
@@ -87,6 +103,9 @@ namespace Jaws_Service_Library
 
         [OperationContract]
         List<Schicht> getSchichtbyPersonalId(int id);
+
+        [OperationContract]
+        List<Schicht> getSchichtBetween(DateTime von, DateTime bis);
 
         //Lieferant
 
@@ -102,8 +121,6 @@ namespace Jaws_Service_Library
         [OperationContract]
         List<Lieferant> getLieferantList();
 
-        [OperationContract]
-        Lieferant getLieferantbyArtikelId(int id);
 
         //Artikel
 
@@ -125,8 +142,34 @@ namespace Jaws_Service_Library
         [OperationContract]
         List<Artikel> getArtikelbyWarengruppeId(int id);
 
+        //Beleg
+
         [OperationContract]
-        List<Artikel> getArtikelbyBelegId(int id);
+        Beleg getBelegbyId(int id);
+
+        [OperationContract]
+        void setBeleg(Beleg beleg);
+
+        [OperationContract]
+        void updateBeleg(Beleg beleg);
+
+        [OperationContract]
+        List<Beleg> getBelegList();
+
+        //ArtikelBeleg
+
+        [OperationContract]
+        void setArtikelBeleg(Artikel artikel, Beleg beleg);
+
+        [OperationContract]
+        void updateArtikelBeleg(ArtikelBeleg artikelbeleg);
+
+        [OperationContract]
+        List<Artikel> getArtikelfromBelegId(int id);
+
+        [OperationContract]
+        List<Beleg> getBelegfromArtikelId(int id);
+
 
         //Warengruppe
 
@@ -165,22 +208,6 @@ namespace Jaws_Service_Library
         [OperationContract]
         List<Prognose> getPrognosebyDate(DateTime date);
 
-        //Beleg
-
-        [OperationContract]
-        Beleg getBelegbyId(int id);
-
-        [OperationContract]
-        void setBeleg(Beleg beleg);
-
-        [OperationContract]
-        void updateBeleg(Beleg beleg);
-
-        [OperationContract]
-        List<Beleg> getBelegList();
-
-        [OperationContract]
-        List<Beleg> getBelegbyArtikelId(int id);
 
         //Lieferart
 
