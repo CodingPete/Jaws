@@ -5,42 +5,207 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Meine ASP.NET-Anwendung</title>
-    @Styles.Render("~/Content/css")
+
+        <!-- build:css({.tmp,app}) styles/app.min.css -->
+        @Styles.Render("~/Content/vendor/bootstrap/dist/css/bootstrap.css")
+        @Styles.Render("~/Content/vendor/pace/themes/blue/pace-theme-minimal.css")
+        @Styles.Render("~/Content/vendor/font-awesome/css/font-awesome.css")
+        @Styles.Render("~/Content/vendor/animate.css/animate.css")
+        @Styles.Render("~/Content/styles/app.css")
+        @Styles.Render("~/Content/styles/app.skins.css")
+        <!-- endbuild -->
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Anwendungsname", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+<div class="app horizontal">
+      <!-- content panel -->
+      <div class="main-panel">
+<!-- top header -->
+        <nav class="header navbar">
+          <div class="header-inner">
+            <div class="navbar-item navbar-spacer-right brand hidden-lg-up">
+              <!-- toggle offscreen menu -->
+              <a href="javascript:;" data-toggle="sidebar" class="toggle-offscreen">
+                <i class="material-icons">menu</i>
+              </a>
+              <!-- /toggle offscreen menu -->
+              <!-- logo -->
+              <a class="brand-logo hidden-xs-down">
+                <img src="images/logo_white.png" alt="logo"/>
+              </a>
+              <!-- /logo -->
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Lieferanten", "Index", "Lieferant")</li>
-                    <li>@Html.ActionLink("Warengruppen", "Index", "Warengruppe")</li>
-                    <li>@Html.ActionLink("Artikel", "Index", "Artikel")</li>
-                    <li>@Html.ActionLink("Startseite", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Info", "About", "Home")</li>
-                    <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
-                </ul>
+            <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">
+              <span>Horizontal</span>
+            </a>
+            <div class="navbar-search navbar-item">
+              <form class="search-form">
+                <i class="material-icons">search</i>
+                <input class="form-control" type="text" placeholder="Search" />
+              </form>
             </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Meine ASP.NET-Anwendung</p>
-        </footer>
-    </div>
+            <div class="navbar-item nav navbar-nav">
+              <div class="nav-item nav-link dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                  <span>English</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="javascript:;">English</a>
+                  <a class="dropdown-item" href="javascript:;">Russian</a>
+                </div>
+              </div>
+              <div class="nav-item nav-link dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="material-icons">notifications</i>
+                  <span class="tag tag-danger">4</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right notifications">
+                  <div class="dropdown-item">
+                    <div class="notifications-wrapper">
+                      <ul class="notifications-list">
+                        <li>
+                          <a href="javascript:;">
+                            <div class="notification-icon">
+                              <div class="circle-icon bg-success text-white">
+                                <i class="material-icons">arrow_upward</i>
+                              </div>
+                            </div>
+                            <div class="notification-message">
+                              <b>Sean</b>
+                              launched a new application
+                              <span class="time">2 seconds ago</span>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:;">
+                            <div class="notification-icon">
+                              <div class="circle-icon bg-danger text-white">
+                                <i class="material-icons">check</i>
+                              </div>
+                            </div>
+                            <div class="notification-message">
+                              <b>Removed calendar</b>
+                              from app list
+                              <span class="time">4 hours ago</span>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:;">
+                            <span class="notification-icon">
+                              <span class="circle-icon bg-info text-white">J</span>
+                            </span>
+                            <div class="notification-message">
+                              <b>Jack Hunt</b>
+                              has
+                              <b>joined</b>
+                              mailing list
+                              <span class="time">9 days ago</span>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:;">
+                            <span class="notification-icon">
+                              <span class="circle-icon bg-primary text-white">C</span>
+                            </span>
+                            <div class="notification-message">
+                              <b>Conan Johns</b>
+                              created a new list
+                              <span class="time">9 days ago</span>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="notification-footer">Notifications</div>
+                  </div>
+                </div>
+              </div>
+              <a href="javascript:;" class="nav-item nav-link nav-link-icon" data-toggle="modal" data-target=".chat-panel" data-backdrop="false">
+                <i class="material-icons">chat_bubble</i>
+              </a>
+            </div>
+          </div>
+        </nav>
+        <!-- /top header -->
+         <!-- menu header -->
+                <nav class="header-secondary navbar  bg-faded shadow">
+                  <div class="navbar-collapse">
+                    <a class="navbar-heading hidden-md-down" href="javascript:;">
+                      <span>Dashboard</span>
+                    </a>
+                    <ul class="nav navbar-nav pull-xs-right">
+                    <li class="nav-item">@Html.ActionLink("Lieferanten", "Index", "Lieferant")</li>
+                                        <li class="nav-item">@Html.ActionLink("Warengruppen", "Index", "Warengruppe")</li>
+                                        <li class="nav-item">@Html.ActionLink("Artikel", "Index", "Artikel")</li>
+                                        <li class="nav-item">@Html.ActionLink("Startseite", "Index", "Home")</li>
+                                        <li class="nav-item">@Html.ActionLink("Info", "About", "Home")</li>
+                                        <li class="nav-item">@Html.ActionLink("Kontakt", "Contact", "Home")</li>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+                    </ul>
+                  </div>
+                </nav>
+                <!-- /menu header -->
+                <!-- main area -->
+                        <div class="main-content">
+                          <div class="content-view">
+                          @RenderBody()
+                          </div>
+                          <!-- bottom footer -->
+                                    <div class="content-footer">
+                                      <nav class="footer-right">
+                                        <ul class="nav">
+                                          <li>
+                                            <a href="javascript:;">Feedback</a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                      <nav class="footer-left">
+                                        <ul class="nav">
+                                          <li>
+                                            <a href="javascript:;">
+                                              <span>Copyright</span>
+                                              &copy; 2016 Your App
+                                            </a>
+                                          </li>
+                                          <li class="hidden-md-down">
+                                            <a href="javascript:;">Privacy</a>
+                                          </li>
+                                          <li class="hidden-md-down">
+                                            <a href="javascript:;">Terms</a>
+                                          </li>
+                                          <li class="hidden-md-down">
+                                            <a href="javascript:;">help</a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+                                    <!-- /bottom footer -->
+                          </div>
+                                  <!-- /main area -->
+              </div>
+             <!-- /content panel -->
+           </div>
+
+    <script type="text/javascript">
+          window.paceOptions = {
+            document: true,
+            eventLag: true,
+            restartOnPushState: true,
+            restartOnRequestAfter: true,
+            ajax: {
+              trackMethods: [ 'POST','GET']
+            }
+          };
+    </script>
+
+        @Scripts.Render("~/Content/vendor/jquery/dist/jquery.js")
+        @Scripts.Render("~/Content/vendor/tether/dist/js/tether.js")
+        @Scripts.Render("~/Content/vendor/bootstrap/dist/js/bootstrap.js")
+
+        <!-- initialize page scripts -->
+        @Scripts.Render("~/Content/scripts/dashboard/dashboard.js")
 </body>
 </html>
