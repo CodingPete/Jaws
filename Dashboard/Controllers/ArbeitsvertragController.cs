@@ -46,7 +46,7 @@ namespace Dashboard.Controllers
         // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Wochenstunden,Stundenlohn,PersonalId")] Arbeitsvertrag arbeitsvertrag)
+        public ActionResult Create([Bind(Include = "Id,Wochenstunden,Stundenlohn")] Arbeitsvertrag arbeitsvertrag)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Dashboard.Controllers
         // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Wochenstunden,Stundenlohn,PersonalId")] Arbeitsvertrag arbeitsvertrag)
+        public ActionResult Edit([Bind(Include = "Id,Wochenstunden,Stundenlohn")] Arbeitsvertrag arbeitsvertrag)
         {
             if (ModelState.IsValid)
             {

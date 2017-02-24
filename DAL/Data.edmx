@@ -19,10 +19,6 @@
     <EntitySet Name="RolleSet" EntityType="Data.Store.RolleSet" store:Type="Tables" Schema="Jaws-DB" />
     <EntitySet Name="PersonalRolle" EntityType="Data.Store.PersonalRolle" store:Type="Tables" Schema="Jaws-DB" />
     <EntitySet Name="BelegArtikel" EntityType="Data.Store.BelegArtikel" store:Type="Tables" Schema="Jaws-DB" />
-    <AssociationSet Name="PersonalArbeitsvertrag" Association="Data.Store.PersonalArbeitsvertrag">
-      <End Role="Personal" EntitySet="PersonalSet" />
-      <End Role="Arbeitsvertrag" EntitySet="ArbeitsvertragSet" />
-    </AssociationSet>
     <AssociationSet Name="FK_PersonalRolle_Personal" Association="Data.Store.FK_PersonalRolle_Personal">
       <End Role="Personal" EntitySet="PersonalSet" />
       <End Role="PersonalRolle" EntitySet="PersonalRolle" />
@@ -59,6 +55,10 @@
       <End Role="Artikel" EntitySet="ArtikelSet" />
       <End Role="BelegArtikel" EntitySet="BelegArtikel" />
     </AssociationSet>
+    <AssociationSet Name="PersonalArbeitsvertrag" Association="Data.Store.PersonalArbeitsvertrag">
+      <End Role="Personal" EntitySet="PersonalSet" />
+      <End Role="Arbeitsvertrag" EntitySet="ArbeitsvertragSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="MarktSet">
     <Key>
@@ -85,7 +85,6 @@
     <Property Name="Telefon" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Mobil" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ArbeitsvertragId" Type="int" Nullable="false" />
-    <Property Name="ArbeitsvertragId1" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ArbeitsvertragSet">
     <Key>
@@ -94,7 +93,6 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Wochenstunden" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Stundenlohn" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="PersonalId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="SchichtSet">
     <Key>
@@ -190,18 +188,6 @@
     <Property Name="Beleg_Id" Type="int" Nullable="false" />
     <Property Name="Artikel_Id" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="PersonalArbeitsvertrag">
-    <End Role="Personal" Type="Data.Store.PersonalSet" Multiplicity="*" />
-    <End Role="Arbeitsvertrag" Type="Data.Store.ArbeitsvertragSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Arbeitsvertrag">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Personal">
-        <PropertyRef Name="ArbeitsvertragId1" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="PersonalSchicht">
     <End Role="Personal" Type="Data.Store.PersonalSet" Multiplicity="1" />
     <End Role="Schicht" Type="Data.Store.SchichtSet" Multiplicity="*" />
@@ -259,6 +245,18 @@
       </Principal>
       <Dependent Role="Prognose">
         <PropertyRef Name="ArtikelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonalArbeitsvertrag">
+    <End Role="Personal" Type="Data.Store.PersonalSet" Multiplicity="*" />
+    <End Role="Arbeitsvertrag" Type="Data.Store.ArbeitsvertragSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Arbeitsvertrag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Personal">
+        <PropertyRef Name="ArbeitsvertragId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -326,10 +324,6 @@
           <EntitySet Name="BelegSet" EntityType="Data.Beleg" />
           <EntitySet Name="LieferartSet" EntityType="Data.Lieferart" />
           <EntitySet Name="RolleSet" EntityType="Data.Rolle" />
-          <AssociationSet Name="PersonalArbeitsvertrag" Association="Data.PersonalArbeitsvertrag">
-            <End Role="Personal" EntitySet="PersonalSet" />
-            <End Role="Arbeitsvertrag" EntitySet="ArbeitsvertragSet" />
-          </AssociationSet>
           <AssociationSet Name="PersonalRolle" Association="Data.PersonalRolle">
             <End Role="Personal" EntitySet="PersonalSet" />
             <End Role="Rolle" EntitySet="RolleSet" />
@@ -358,6 +352,10 @@
             <End Role="Beleg" EntitySet="BelegSet" />
             <End Role="Artikel" EntitySet="ArtikelSet" />
           </AssociationSet>
+          <AssociationSet Name="PersonalArbeitsvertrag" Association="Data.PersonalArbeitsvertrag">
+            <End Role="Personal" EntitySet="PersonalSet" />
+            <End Role="Arbeitsvertrag" EntitySet="ArbeitsvertragSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Markt">
           <Key>
@@ -383,11 +381,10 @@
           <Property Name="Steuerklasse" Type="String" Nullable="false" />
           <Property Name="Telefon" Type="String" Nullable="false" />
           <Property Name="Mobil" Type="String" Nullable="false" />
-          <Property Name="ArbeitsvertragId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Arbeitsvertrag" Relationship="Data.PersonalArbeitsvertrag" FromRole="Personal" ToRole="Arbeitsvertrag" />
-          <Property Name="ArbeitsvertragId1" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Rolle" Relationship="Data.PersonalRolle" FromRole="Personal" ToRole="Rolle" />
           <NavigationProperty Name="Schicht" Relationship="Data.PersonalSchicht" FromRole="Personal" ToRole="Schicht" />
+          <NavigationProperty Name="Arbeitsvertrag" Relationship="Data.PersonalArbeitsvertrag" FromRole="Personal" ToRole="Arbeitsvertrag" />
+          <Property Name="ArbeitsvertragId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Arbeitsvertrag">
           <Key>
@@ -396,7 +393,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Wochenstunden" Type="String" Nullable="false" />
           <Property Name="Stundenlohn" Type="String" Nullable="false" />
-          <Property Name="PersonalId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Personal" Relationship="Data.PersonalArbeitsvertrag" FromRole="Arbeitsvertrag" ToRole="Personal" />
         </EntityType>
         <EntityType Name="Schicht">
@@ -489,18 +485,6 @@
           <Property Name="Name" Type="String" Nullable="false" />
           <NavigationProperty Name="Personal" Relationship="Data.PersonalRolle" FromRole="Rolle" ToRole="Personal" />
         </EntityType>
-        <Association Name="PersonalArbeitsvertrag">
-          <End Type="Data.Personal" Role="Personal" Multiplicity="*" />
-          <End Type="Data.Arbeitsvertrag" Role="Arbeitsvertrag" Multiplicity="1" />
-          <ReferentialConstraint>
-            <Principal Role="Arbeitsvertrag">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Personal">
-              <PropertyRef Name="ArbeitsvertragId1" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="PersonalRolle">
           <End Type="Data.Personal" Role="Personal" Multiplicity="*" />
           <End Type="Data.Rolle" Role="Rolle" Multiplicity="*" />
@@ -569,6 +553,18 @@
           <End Type="Data.Beleg" Role="Beleg" Multiplicity="*" />
           <End Type="Data.Artikel" Role="Artikel" Multiplicity="*" />
         </Association>
+        <Association Name="PersonalArbeitsvertrag">
+          <End Type="Data.Personal" Role="Personal" Multiplicity="*" />
+          <End Type="Data.Arbeitsvertrag" Role="Arbeitsvertrag" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Arbeitsvertrag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personal">
+              <PropertyRef Name="ArbeitsvertragId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -600,7 +596,6 @@
           <ScalarProperty Name="Telefon" ColumnName="Telefon" />
           <ScalarProperty Name="Mobil" ColumnName="Mobil" />
           <ScalarProperty Name="ArbeitsvertragId" ColumnName="ArbeitsvertragId" />
-          <ScalarProperty Name="ArbeitsvertragId1" ColumnName="ArbeitsvertragId1" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -610,7 +605,6 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Wochenstunden" ColumnName="Wochenstunden" />
           <ScalarProperty Name="Stundenlohn" ColumnName="Stundenlohn" />
-          <ScalarProperty Name="PersonalId" ColumnName="PersonalId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

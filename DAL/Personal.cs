@@ -34,12 +34,11 @@ namespace DAL
         public string Telefon { get; set; }
         public string Mobil { get; set; }
         public int ArbeitsvertragId { get; set; }
-        public int ArbeitsvertragId1 { get; set; }
     
-        public virtual Arbeitsvertrag Arbeitsvertrag { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rolle> Rolle { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Schicht> Schicht { get; set; }
+        public virtual Arbeitsvertrag Arbeitsvertrag { get; set; }
     }
 }

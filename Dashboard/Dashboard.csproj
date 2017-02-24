@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E79CAAAE-E79D-4C97-8735-C0A9D263CE09}</ProjectGuid>
+    <ProjectGuid>{1B887387-F7ED-4700-B3D3-16120FDE884E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -129,11 +129,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArbeitsvertragController.cs" />
-    <Compile Include="Controllers\ArtikelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LieferantController.cs" />
     <Compile Include="Controllers\PersonalController.cs" />
-    <Compile Include="Controllers\WarengruppeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,21 +180,6 @@
     <Content Include="Views\Arbeitsvertrag\Details.cshtml" />
     <Content Include="Views\Arbeitsvertrag\Edit.cshtml" />
     <Content Include="Views\Arbeitsvertrag\Index.cshtml" />
-    <Content Include="Views\Lieferant\Create.cshtml" />
-    <Content Include="Views\Lieferant\Delete.cshtml" />
-    <Content Include="Views\Lieferant\Details.cshtml" />
-    <Content Include="Views\Lieferant\Edit.cshtml" />
-    <Content Include="Views\Lieferant\Index.cshtml" />
-    <Content Include="Views\Artikel\Create.cshtml" />
-    <Content Include="Views\Artikel\Delete.cshtml" />
-    <Content Include="Views\Artikel\Details.cshtml" />
-    <Content Include="Views\Artikel\Edit.cshtml" />
-    <Content Include="Views\Artikel\Index.cshtml" />
-    <Content Include="Views\Warengruppe\Create.cshtml" />
-    <Content Include="Views\Warengruppe\Delete.cshtml" />
-    <Content Include="Views\Warengruppe\Details.cshtml" />
-    <Content Include="Views\Warengruppe\Edit.cshtml" />
-    <Content Include="Views\Warengruppe\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -234,7 +216,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53824</DevelopmentServerPort>
+          <DevelopmentServerPort>60367</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:49954/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

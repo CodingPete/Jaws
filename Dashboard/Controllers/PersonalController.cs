@@ -39,7 +39,7 @@ namespace Dashboard.Controllers
         // GET: Personal/Create
         public ActionResult Create()
         {
-            ViewBag.ArbeitsvertragId1 = new SelectList(db.ArbeitsvertragSet, "Id", "Wochenstunden");
+            ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Wochenstunden");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace Dashboard.Controllers
         // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Vorname,Straße,Hausnummer,Postleitzahl,Ort,IBAN,BIC,Steuerklasse,Telefon,Mobil,ArbeitsvertragId,ArbeitsvertragId1")] Personal personal)
+        public ActionResult Create([Bind(Include = "Id,Name,Vorname,Straße,Hausnummer,Postleitzahl,Ort,IBAN,BIC,Steuerklasse,Telefon,Mobil,ArbeitsvertragId")] Personal personal)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace Dashboard.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ArbeitsvertragId1 = new SelectList(db.ArbeitsvertragSet, "Id", "Wochenstunden", personal.ArbeitsvertragId1);
+            ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Wochenstunden", personal.ArbeitsvertragId);
             return View(personal);
         }
 
@@ -73,7 +73,7 @@ namespace Dashboard.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ArbeitsvertragId1 = new SelectList(db.ArbeitsvertragSet, "Id", "Wochenstunden", personal.ArbeitsvertragId1);
+            ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Wochenstunden", personal.ArbeitsvertragId);
             return View(personal);
         }
 
@@ -82,7 +82,7 @@ namespace Dashboard.Controllers
         // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Vorname,Straße,Hausnummer,Postleitzahl,Ort,IBAN,BIC,Steuerklasse,Telefon,Mobil,ArbeitsvertragId,ArbeitsvertragId1")] Personal personal)
+        public ActionResult Edit([Bind(Include = "Id,Name,Vorname,Straße,Hausnummer,Postleitzahl,Ort,IBAN,BIC,Steuerklasse,Telefon,Mobil,ArbeitsvertragId")] Personal personal)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace Dashboard.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ArbeitsvertragId1 = new SelectList(db.ArbeitsvertragSet, "Id", "Wochenstunden", personal.ArbeitsvertragId1);
+            ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Wochenstunden", personal.ArbeitsvertragId);
             return View(personal);
         }
 

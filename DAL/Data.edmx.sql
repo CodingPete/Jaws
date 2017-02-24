@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/06/2017 19:45:22
+-- Date Created: 02/06/2017 21:29:29
 -- Generated from EDMX file: C:\Users\peter\Desktop\VVS\Jaws\DAL\Data.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [Datenbank];
+USE [Datenbank2];
 GO
 IF SCHEMA_ID(N'Jaws-DB') IS NULL EXECUTE(N'CREATE SCHEMA [Jaws-DB]');
 GO
@@ -17,6 +17,33 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[Jaws-DB].[FK_PersonalRolle_Personal]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[PersonalRolle] DROP CONSTRAINT [FK_PersonalRolle_Personal];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[FK_PersonalRolle_Rolle]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[PersonalRolle] DROP CONSTRAINT [FK_PersonalRolle_Rolle];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[FK_PersonalSchicht]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[SchichtSet] DROP CONSTRAINT [FK_PersonalSchicht];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[FK_LieferantArtikel]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[ArtikelSet] DROP CONSTRAINT [FK_LieferantArtikel];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[FK_ArtikelWarengruppe]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[ArtikelSet] DROP CONSTRAINT [FK_ArtikelWarengruppe];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[FK_BelegLieferart]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[BelegSet] DROP CONSTRAINT [FK_BelegLieferart];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[FK_PrognoseArtikel]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[PrognoseSet] DROP CONSTRAINT [FK_PrognoseArtikel];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[FK_BelegArtikel_Beleg]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[BelegArtikel] DROP CONSTRAINT [FK_BelegArtikel_Beleg];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[FK_BelegArtikel_Artikel]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[BelegArtikel] DROP CONSTRAINT [FK_BelegArtikel_Artikel];
+GO
 IF OBJECT_ID(N'[Jaws-DB].[FK_PersonalArbeitsvertrag]', 'F') IS NOT NULL
     ALTER TABLE [Jaws-DB].[PersonalSet] DROP CONSTRAINT [FK_PersonalArbeitsvertrag];
 GO
@@ -58,6 +85,12 @@ GO
 IF OBJECT_ID(N'[Jaws-DB].[RolleSet]', 'U') IS NOT NULL
     DROP TABLE [Jaws-DB].[RolleSet];
 GO
+IF OBJECT_ID(N'[Jaws-DB].[PersonalRolle]', 'U') IS NOT NULL
+    DROP TABLE [Jaws-DB].[PersonalRolle];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[BelegArtikel]', 'U') IS NOT NULL
+    DROP TABLE [Jaws-DB].[BelegArtikel];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -85,8 +118,7 @@ CREATE TABLE [Jaws-DB].[PersonalSet] (
     [Steuerklasse] nvarchar(max)  NOT NULL,
     [Telefon] nvarchar(max)  NOT NULL,
     [Mobil] nvarchar(max)  NOT NULL,
-    [ArbeitsvertragId] int  NOT NULL,
-    [ArbeitsvertragId1] int  NOT NULL
+    [ArbeitsvertragId] int  NOT NULL
 );
 GO
 
@@ -94,8 +126,7 @@ GO
 CREATE TABLE [Jaws-DB].[ArbeitsvertragSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Wochenstunden] nvarchar(max)  NOT NULL,
-    [Stundenlohn] nvarchar(max)  NOT NULL,
-    [PersonalId] int  NOT NULL
+    [Stundenlohn] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -277,21 +308,6 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [ArbeitsvertragId1] in table 'PersonalSet'
-ALTER TABLE [Jaws-DB].[PersonalSet]
-ADD CONSTRAINT [FK_PersonalArbeitsvertrag]
-    FOREIGN KEY ([ArbeitsvertragId1])
-    REFERENCES [Jaws-DB].[ArbeitsvertragSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_PersonalArbeitsvertrag'
-CREATE INDEX [IX_FK_PersonalArbeitsvertrag]
-ON [Jaws-DB].[PersonalSet]
-    ([ArbeitsvertragId1]);
-GO
-
 -- Creating foreign key on [Personal_Id] in table 'PersonalRolle'
 ALTER TABLE [Jaws-DB].[PersonalRolle]
 ADD CONSTRAINT [FK_PersonalRolle_Personal]
@@ -413,6 +429,21 @@ GO
 CREATE INDEX [IX_FK_BelegArtikel_Artikel]
 ON [Jaws-DB].[BelegArtikel]
     ([Artikel_Id]);
+GO
+
+-- Creating foreign key on [ArbeitsvertragId] in table 'PersonalSet'
+ALTER TABLE [Jaws-DB].[PersonalSet]
+ADD CONSTRAINT [FK_PersonalArbeitsvertrag]
+    FOREIGN KEY ([ArbeitsvertragId])
+    REFERENCES [Jaws-DB].[ArbeitsvertragSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PersonalArbeitsvertrag'
+CREATE INDEX [IX_FK_PersonalArbeitsvertrag]
+ON [Jaws-DB].[PersonalSet]
+    ([ArbeitsvertragId]);
 GO
 
 -- --------------------------------------------------
