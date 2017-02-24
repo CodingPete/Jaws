@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Meine ASP.NET-Anwendung</title>
 
+    @Styles.Render("~/Content/template/vendor/bower-jvectormap/jquery-jvectormap-1.2.2.css")
+
         <!-- build:css({.tmp,app}) styles/app.min.css -->
         @Styles.Render("~/Content/template/vendor/bootstrap/dist/css/bootstrap.css")
         @Styles.Render("~/Content/template/vendor/pace/themes/blue/pace-theme-minimal.css")
         @Styles.Render("~/Content/template/vendor/font-awesome/css/font-awesome.css")
         @Styles.Render("~/Content/template/vendor/animate.css/animate.css")
-        @Styles.Render("~/Content/template/styles/app.css")
+        @Styles.Render("~/Content/template/styles/app.css", new { id = "load_styles_before" })
         @Styles.Render("~/Content/template/styles/app.skins.css")
         <!-- endbuild -->
     @Scripts.Render("~/bundles/modernizr")
@@ -201,12 +203,31 @@
           };
     </script>
 
+        <!-- build:js({.tmp,app}) scripts/app.min.js -->
         @Scripts.Render("~/Content/template/vendor/jquery/dist/jquery.js")
+        @Scripts.Render("~/Content/template/vendor/pace/pace.js")
         @Scripts.Render("~/Content/template/vendor/tether/dist/js/tether.js")
         @Scripts.Render("~/Content/template/vendor/bootstrap/dist/js/bootstrap.js")
+        @Scripts.Render("~/Content/template/vendor/fastclick/lib/fastclick.js")
+        @Scripts.Render("~/Content/template/scripts/constants.js")
+        @Scripts.Render("~/Content/template/scripts/main.js")
+        <!-- endbuild -->
+
+        <!-- page scripts -->
+        @Scripts.Render("~/Content/template/vendor/flot/jquery.flot.js")
+        @Scripts.Render("~/Content/template/vendor/flot/jquery.flot.resize.js")
+        @Scripts.Render("~/Content/template/vendor/flot/jquery.flot.stack.js")
+        @Scripts.Render("~/Content/template/vendor/flot-spline/js/jquery.flot.spline.js")
+        @Scripts.Render("~/Content/template/vendor/bower-jvectormap/jquery-jvectormap-1.2.2.min.js")
+        @Scripts.Render("~/Content/template/data/maps/jquery-jvectormap-us-aea.js")
+        @Scripts.Render("~/Content/template/vendor/jquery.easy-pie-chart/dist/jquery.easypiechart.js")
+        @Scripts.Render("~/Content/template/vendor/noty/js/noty/packaged/jquery.noty.packaged.min.js")
+        @Scripts.Render("~/Content/template/scripts/helpers/noty-defaults.js")
+        <!-- end page scripts -->
 
         <!-- initialize page scripts -->
         @Scripts.Render("~/Content/template/scripts/dashboard/dashboard.js")
-                @RenderSection("scripts", required: false)
+
+        @RenderSection("scripts", required: false)
 </body>
 </html>
