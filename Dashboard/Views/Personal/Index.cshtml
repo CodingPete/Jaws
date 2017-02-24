@@ -24,6 +24,9 @@
             @Html.DisplayNameFor(model => model.Hausnummer)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Zusatz)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Postleitzahl)
         </th>
         <th>
@@ -45,7 +48,7 @@
             @Html.DisplayNameFor(model => model.Mobil)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Arbeitsvertrag.Wochenstunden)
+            @Html.DisplayNameFor(model => model.Arbeitsvertrag.Id)
         </th>
         <th></th>
     </tr>
@@ -63,6 +66,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Hausnummer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zusatz)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Postleitzahl)
@@ -86,7 +92,7 @@
             @Html.DisplayFor(modelItem => item.Mobil)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Arbeitsvertrag.Wochenstunden)
+            @Html.DisplayFor(modelItem => item.Arbeitsvertrag.Id)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

@@ -23,9 +23,11 @@ namespace DAL
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public string GTIN { get; set; }
-        public string Bestand { get; set; }
-        public string Nettoverkaufspreis { get; set; }
+        public int GTIN { get; set; }
+        public double Bestand { get; set; }
+        public Einheit Einheit { get; set; }
+        public double Nettoeinkaufspreis { get; set; }
+        public double Nettoverkaufspreis { get; set; }
         public int LieferantId { get; set; }
         public int WarengruppeId { get; set; }
     

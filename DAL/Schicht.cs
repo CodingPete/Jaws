@@ -15,11 +15,11 @@ namespace DAL
     public partial class Schicht
     {
         public int Id { get; set; }
-        public string Startzeit_soll { get; set; }
-        public string Endzeit_soll { get; set; }
-        public string Startzeit_ist { get; set; }
-        public string Endzeit_ist { get; set; }
-        public string Pause { get; set; }
+        public System.DateTime Startzeit_soll { get; set; }
+        public System.DateTime Endzeit_soll { get; set; }
+        public System.DateTime Startzeit_ist { get; set; }
+        public System.DateTime Endzeit_ist { get; set; }
+        public int Pause { get; set; }
         public int PersonalId { get; set; }
     
         public virtual Personal Personal { get; set; }

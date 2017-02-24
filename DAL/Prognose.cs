@@ -15,9 +15,9 @@ namespace DAL
     public partial class Prognose
     {
         public int Id { get; set; }
-        public string Datum { get; set; }
-        public string Abverkauf_soll { get; set; }
-        public string Abverkauf_ist { get; set; }
+        public System.DateTime Datum { get; set; }
+        public double Abverkauf_soll { get; set; }
+        public double Abverkauf_ist { get; set; }
         public int ArtikelId { get; set; }
     
         public virtual Artikel Artikel { get; set; }

@@ -76,6 +76,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Data.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Einheit.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="Lieferant.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
@@ -92,6 +95,9 @@
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recht.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="Rolle.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>

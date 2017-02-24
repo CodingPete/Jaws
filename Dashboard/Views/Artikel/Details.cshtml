@@ -1,0 +1,82 @@
+﻿@model DAL.Artikel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Artikel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GTIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GTIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bestand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bestand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Einheit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Einheit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nettoeinkaufspreis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nettoeinkaufspreis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nettoverkaufspreis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nettoverkaufspreis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lieferant.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lieferant.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Warengruppe.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Warengruppe.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -18,6 +18,7 @@ namespace DAL
         public Rolle()
         {
             this.Personal = new HashSet<Personal>();
+            this.Recht = new HashSet<Recht>();
         }
     
         public int Id { get; set; }
@@ -25,5 +26,7 @@ namespace DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Personal> Personal { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Recht> Recht { get; set; }
     }
 }

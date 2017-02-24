@@ -21,8 +21,8 @@ namespace DAL
         }
     
         public int Id { get; set; }
-        public string Wochenstunden { get; set; }
-        public string Stundenlohn { get; set; }
+        public int Wochenstunden { get; set; }
+        public double Stundenlohn { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Personal> Personal { get; set; }

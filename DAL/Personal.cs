@@ -25,12 +25,13 @@ namespace DAL
         public string Name { get; set; }
         public string Vorname { get; set; }
         public string Straße { get; set; }
-        public string Hausnummer { get; set; }
-        public string Postleitzahl { get; set; }
+        public int Hausnummer { get; set; }
+        public string Zusatz { get; set; }
+        public int Postleitzahl { get; set; }
         public string Ort { get; set; }
         public string IBAN { get; set; }
         public string BIC { get; set; }
-        public string Steuerklasse { get; set; }
+        public int Steuerklasse { get; set; }
         public string Telefon { get; set; }
         public string Mobil { get; set; }
         public int ArbeitsvertragId { get; set; }

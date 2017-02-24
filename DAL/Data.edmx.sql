@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/06/2017 21:29:29
+-- Date Created: 02/24/2017 20:49:35
 -- Generated from EDMX file: C:\Users\peter\Desktop\VVS\Jaws\DAL\Data.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [Datenbank2];
+USE [JAWS];
 GO
 IF SCHEMA_ID(N'Jaws-DB') IS NULL EXECUTE(N'CREATE SCHEMA [Jaws-DB]');
 GO
@@ -46,6 +46,12 @@ IF OBJECT_ID(N'[Jaws-DB].[FK_BelegArtikel_Artikel]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[Jaws-DB].[FK_PersonalArbeitsvertrag]', 'F') IS NOT NULL
     ALTER TABLE [Jaws-DB].[PersonalSet] DROP CONSTRAINT [FK_PersonalArbeitsvertrag];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[FK_RolleRecht_Rolle]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[RolleRecht] DROP CONSTRAINT [FK_RolleRecht_Rolle];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[FK_RolleRecht_Recht]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[RolleRecht] DROP CONSTRAINT [FK_RolleRecht_Recht];
 GO
 
 -- --------------------------------------------------
@@ -85,11 +91,17 @@ GO
 IF OBJECT_ID(N'[Jaws-DB].[RolleSet]', 'U') IS NOT NULL
     DROP TABLE [Jaws-DB].[RolleSet];
 GO
+IF OBJECT_ID(N'[Jaws-DB].[RechtSet]', 'U') IS NOT NULL
+    DROP TABLE [Jaws-DB].[RechtSet];
+GO
 IF OBJECT_ID(N'[Jaws-DB].[PersonalRolle]', 'U') IS NOT NULL
     DROP TABLE [Jaws-DB].[PersonalRolle];
 GO
 IF OBJECT_ID(N'[Jaws-DB].[BelegArtikel]', 'U') IS NOT NULL
     DROP TABLE [Jaws-DB].[BelegArtikel];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[RolleRecht]', 'U') IS NOT NULL
+    DROP TABLE [Jaws-DB].[RolleRecht];
 GO
 
 -- --------------------------------------------------
@@ -110,12 +122,13 @@ CREATE TABLE [Jaws-DB].[PersonalSet] (
     [Name] nvarchar(max)  NOT NULL,
     [Vorname] nvarchar(max)  NOT NULL,
     [Straße] nvarchar(max)  NOT NULL,
-    [Hausnummer] nvarchar(max)  NOT NULL,
-    [Postleitzahl] nvarchar(max)  NOT NULL,
+    [Hausnummer] int  NOT NULL,
+    [Zusatz] nvarchar(max)  NULL,
+    [Postleitzahl] int  NOT NULL,
     [Ort] nvarchar(max)  NOT NULL,
     [IBAN] nvarchar(max)  NOT NULL,
     [BIC] nvarchar(max)  NOT NULL,
-    [Steuerklasse] nvarchar(max)  NOT NULL,
+    [Steuerklasse] int  NOT NULL,
     [Telefon] nvarchar(max)  NOT NULL,
     [Mobil] nvarchar(max)  NOT NULL,
     [ArbeitsvertragId] int  NOT NULL
@@ -125,19 +138,19 @@ GO
 -- Creating table 'ArbeitsvertragSet'
 CREATE TABLE [Jaws-DB].[ArbeitsvertragSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Wochenstunden] nvarchar(max)  NOT NULL,
-    [Stundenlohn] nvarchar(max)  NOT NULL
+    [Wochenstunden] int  NOT NULL,
+    [Stundenlohn] float  NOT NULL
 );
 GO
 
 -- Creating table 'SchichtSet'
 CREATE TABLE [Jaws-DB].[SchichtSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Startzeit_soll] nvarchar(max)  NOT NULL,
-    [Endzeit_soll] nvarchar(max)  NOT NULL,
-    [Startzeit_ist] nvarchar(max)  NOT NULL,
-    [Endzeit_ist] nvarchar(max)  NOT NULL,
-    [Pause] nvarchar(max)  NOT NULL,
+    [Startzeit_soll] datetime  NOT NULL,
+    [Endzeit_soll] datetime  NOT NULL,
+    [Startzeit_ist] datetime  NOT NULL,
+    [Endzeit_ist] datetime  NOT NULL,
+    [Pause] int  NOT NULL,
     [PersonalId] int  NOT NULL
 );
 GO
@@ -146,8 +159,10 @@ GO
 CREATE TABLE [Jaws-DB].[LieferantSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
-    [Hausnummer] nvarchar(max)  NOT NULL,
-    [Postleitzahl] nvarchar(max)  NOT NULL,
+    [Straße] nvarchar(max)  NOT NULL,
+    [Hausnummer] int  NOT NULL,
+    [Zusatz] nvarchar(max)  NULL,
+    [Postleitzahl] int  NOT NULL,
     [Ort] nvarchar(max)  NOT NULL,
     [Telefon] nvarchar(max)  NOT NULL,
     [Mobil] nvarchar(max)  NOT NULL,
@@ -161,9 +176,11 @@ GO
 CREATE TABLE [Jaws-DB].[ArtikelSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
-    [GTIN] nvarchar(max)  NOT NULL,
-    [Bestand] nvarchar(max)  NOT NULL,
-    [Nettoverkaufspreis] nvarchar(max)  NOT NULL,
+    [GTIN] int  NOT NULL,
+    [Bestand] float  NOT NULL,
+    [Einheit] int  NOT NULL,
+    [Nettoeinkaufspreis] float  NOT NULL,
+    [Nettoverkaufspreis] float  NOT NULL,
     [LieferantId] int  NOT NULL,
     [WarengruppeId] int  NOT NULL
 );
@@ -172,9 +189,9 @@ GO
 -- Creating table 'PrognoseSet'
 CREATE TABLE [Jaws-DB].[PrognoseSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Datum] nvarchar(max)  NOT NULL,
-    [Abverkauf_soll] nvarchar(max)  NOT NULL,
-    [Abverkauf_ist] nvarchar(max)  NOT NULL,
+    [Datum] datetime  NOT NULL,
+    [Abverkauf_soll] float  NOT NULL,
+    [Abverkauf_ist] float  NOT NULL,
     [ArtikelId] int  NOT NULL
 );
 GO
@@ -183,7 +200,7 @@ GO
 CREATE TABLE [Jaws-DB].[WarengruppeSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
-    [Steuersatz] nvarchar(max)  NOT NULL
+    [Steuersatz] int  NOT NULL
 );
 GO
 
@@ -208,6 +225,13 @@ CREATE TABLE [Jaws-DB].[RolleSet] (
 );
 GO
 
+-- Creating table 'RechtSet'
+CREATE TABLE [Jaws-DB].[RechtSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL
+);
+GO
+
 -- Creating table 'PersonalRolle'
 CREATE TABLE [Jaws-DB].[PersonalRolle] (
     [Personal_Id] int  NOT NULL,
@@ -219,6 +243,13 @@ GO
 CREATE TABLE [Jaws-DB].[BelegArtikel] (
     [Beleg_Id] int  NOT NULL,
     [Artikel_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'RolleRecht'
+CREATE TABLE [Jaws-DB].[RolleRecht] (
+    [Rolle_Id] int  NOT NULL,
+    [Recht_Id] int  NOT NULL
 );
 GO
 
@@ -292,6 +323,12 @@ ADD CONSTRAINT [PK_RolleSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
+-- Creating primary key on [Id] in table 'RechtSet'
+ALTER TABLE [Jaws-DB].[RechtSet]
+ADD CONSTRAINT [PK_RechtSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
 -- Creating primary key on [Personal_Id], [Rolle_Id] in table 'PersonalRolle'
 ALTER TABLE [Jaws-DB].[PersonalRolle]
 ADD CONSTRAINT [PK_PersonalRolle]
@@ -302,6 +339,12 @@ GO
 ALTER TABLE [Jaws-DB].[BelegArtikel]
 ADD CONSTRAINT [PK_BelegArtikel]
     PRIMARY KEY CLUSTERED ([Beleg_Id], [Artikel_Id] ASC);
+GO
+
+-- Creating primary key on [Rolle_Id], [Recht_Id] in table 'RolleRecht'
+ALTER TABLE [Jaws-DB].[RolleRecht]
+ADD CONSTRAINT [PK_RolleRecht]
+    PRIMARY KEY CLUSTERED ([Rolle_Id], [Recht_Id] ASC);
 GO
 
 -- --------------------------------------------------
@@ -444,6 +487,30 @@ GO
 CREATE INDEX [IX_FK_PersonalArbeitsvertrag]
 ON [Jaws-DB].[PersonalSet]
     ([ArbeitsvertragId]);
+GO
+
+-- Creating foreign key on [Rolle_Id] in table 'RolleRecht'
+ALTER TABLE [Jaws-DB].[RolleRecht]
+ADD CONSTRAINT [FK_RolleRecht_Rolle]
+    FOREIGN KEY ([Rolle_Id])
+    REFERENCES [Jaws-DB].[RolleSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [Recht_Id] in table 'RolleRecht'
+ALTER TABLE [Jaws-DB].[RolleRecht]
+ADD CONSTRAINT [FK_RolleRecht_Recht]
+    FOREIGN KEY ([Recht_Id])
+    REFERENCES [Jaws-DB].[RechtSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolleRecht_Recht'
+CREATE INDEX [IX_FK_RolleRecht_Recht]
+ON [Jaws-DB].[RolleRecht]
+    ([Recht_Id]);
 GO
 
 -- --------------------------------------------------

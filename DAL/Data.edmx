@@ -17,8 +17,10 @@
     <EntitySet Name="BelegSet" EntityType="Data.Store.BelegSet" store:Type="Tables" Schema="Jaws-DB" />
     <EntitySet Name="LieferartSet" EntityType="Data.Store.LieferartSet" store:Type="Tables" Schema="Jaws-DB" />
     <EntitySet Name="RolleSet" EntityType="Data.Store.RolleSet" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="RechtSet" EntityType="Data.Store.RechtSet" store:Type="Tables" Schema="Jaws-DB" />
     <EntitySet Name="PersonalRolle" EntityType="Data.Store.PersonalRolle" store:Type="Tables" Schema="Jaws-DB" />
     <EntitySet Name="BelegArtikel" EntityType="Data.Store.BelegArtikel" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="RolleRecht" EntityType="Data.Store.RolleRecht" store:Type="Tables" Schema="Jaws-DB" />
     <AssociationSet Name="FK_PersonalRolle_Personal" Association="Data.Store.FK_PersonalRolle_Personal">
       <End Role="Personal" EntitySet="PersonalSet" />
       <End Role="PersonalRolle" EntitySet="PersonalRolle" />
@@ -59,6 +61,14 @@
       <End Role="Personal" EntitySet="PersonalSet" />
       <End Role="Arbeitsvertrag" EntitySet="ArbeitsvertragSet" />
     </AssociationSet>
+    <AssociationSet Name="FK_RolleRecht_Rolle" Association="Data.Store.FK_RolleRecht_Rolle">
+      <End Role="Rolle" EntitySet="RolleSet" />
+      <End Role="RolleRecht" EntitySet="RolleRecht" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolleRecht_Recht" Association="Data.Store.FK_RolleRecht_Recht">
+      <End Role="Recht" EntitySet="RechtSet" />
+      <End Role="RolleRecht" EntitySet="RolleRecht" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="MarktSet">
     <Key>
@@ -76,12 +86,13 @@
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Vorname" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Straße" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Hausnummer" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Postleitzahl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Hausnummer" Type="int" Nullable="false" />
+    <Property Name="Zusatz" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Postleitzahl" Type="int" Nullable="false" />
     <Property Name="Ort" Type="nvarchar(max)" Nullable="false" />
     <Property Name="IBAN" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BIC" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Steuerklasse" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Steuerklasse" Type="int" Nullable="false" />
     <Property Name="Telefon" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Mobil" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ArbeitsvertragId" Type="int" Nullable="false" />
@@ -91,19 +102,19 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Wochenstunden" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Stundenlohn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Wochenstunden" Type="int" Nullable="false" />
+    <Property Name="Stundenlohn" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="SchichtSet">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Startzeit_soll" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Endzeit_soll" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Startzeit_ist" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Endzeit_ist" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Pause" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Startzeit_soll" Type="datetime" Nullable="false" />
+    <Property Name="Endzeit_soll" Type="datetime" Nullable="false" />
+    <Property Name="Startzeit_ist" Type="datetime" Nullable="false" />
+    <Property Name="Endzeit_ist" Type="datetime" Nullable="false" />
+    <Property Name="Pause" Type="int" Nullable="false" />
     <Property Name="PersonalId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="LieferantSet">
@@ -112,8 +123,10 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Hausnummer" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Postleitzahl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Straße" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Hausnummer" Type="int" Nullable="false" />
+    <Property Name="Zusatz" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Postleitzahl" Type="int" Nullable="false" />
     <Property Name="Ort" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Telefon" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Mobil" Type="nvarchar(max)" Nullable="false" />
@@ -127,9 +140,11 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="GTIN" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Bestand" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Nettoverkaufspreis" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GTIN" Type="int" Nullable="false" />
+    <Property Name="Bestand" Type="float" Nullable="false" />
+    <Property Name="Einheit" Type="int" Nullable="false" />
+    <Property Name="Nettoeinkaufspreis" Type="float" Nullable="false" />
+    <Property Name="Nettoverkaufspreis" Type="float" Nullable="false" />
     <Property Name="LieferantId" Type="int" Nullable="false" />
     <Property Name="WarengruppeId" Type="int" Nullable="false" />
   </EntityType>
@@ -138,9 +153,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Datum" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Abverkauf_soll" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Abverkauf_ist" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Datum" Type="datetime" Nullable="false" />
+    <Property Name="Abverkauf_soll" Type="float" Nullable="false" />
+    <Property Name="Abverkauf_ist" Type="float" Nullable="false" />
     <Property Name="ArtikelId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="WarengruppeSet">
@@ -149,7 +164,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Steuersatz" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Steuersatz" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="BelegSet">
     <Key>
@@ -172,6 +187,13 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="RechtSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="PersonalRolle">
     <Key>
       <PropertyRef Name="Personal_Id" />
@@ -187,6 +209,14 @@
     </Key>
     <Property Name="Beleg_Id" Type="int" Nullable="false" />
     <Property Name="Artikel_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolleRecht">
+    <Key>
+      <PropertyRef Name="Rolle_Id" />
+      <PropertyRef Name="Recht_Id" />
+    </Key>
+    <Property Name="Rolle_Id" Type="int" Nullable="false" />
+    <Property Name="Recht_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="PersonalSchicht">
     <End Role="Personal" Type="Data.Store.PersonalSet" Multiplicity="1" />
@@ -308,6 +338,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_RolleRecht_Rolle">
+    <End Role="Rolle" Type="Data.Store.RolleSet" Multiplicity="1" />
+    <End Role="RolleRecht" Type="Data.Store.RolleRecht" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rolle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolleRecht">
+        <PropertyRef Name="Rolle_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolleRecht_Recht">
+    <End Role="RolleRecht" Type="Data.Store.RolleRecht" Multiplicity="*" />
+    <End Role="Recht" Type="Data.Store.RechtSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Recht">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolleRecht">
+        <PropertyRef Name="Recht_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -356,6 +410,11 @@
             <End Role="Personal" EntitySet="PersonalSet" />
             <End Role="Arbeitsvertrag" EntitySet="ArbeitsvertragSet" />
           </AssociationSet>
+          <EntitySet Name="RechtSet" EntityType="Data.Recht" />
+          <AssociationSet Name="RolleRecht" Association="Data.RolleRecht">
+            <End Role="Rolle" EntitySet="RolleSet" />
+            <End Role="Recht" EntitySet="RechtSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Markt">
           <Key>
@@ -373,12 +432,13 @@
           <Property Name="Name" Type="String" Nullable="false" />
           <Property Name="Vorname" Type="String" Nullable="false" />
           <Property Name="Straße" Type="String" Nullable="false" />
-          <Property Name="Hausnummer" Type="String" Nullable="false" />
-          <Property Name="Postleitzahl" Type="String" Nullable="false" />
+          <Property Name="Hausnummer" Type="Int32" Nullable="false" />
+          <Property Name="Zusatz" Type="String" Nullable="true" />
+          <Property Name="Postleitzahl" Type="Int32" Nullable="false" />
           <Property Name="Ort" Type="String" Nullable="false" />
           <Property Name="IBAN" Type="String" Nullable="false" />
           <Property Name="BIC" Type="String" Nullable="false" />
-          <Property Name="Steuerklasse" Type="String" Nullable="false" />
+          <Property Name="Steuerklasse" Type="Int32" Nullable="false" />
           <Property Name="Telefon" Type="String" Nullable="false" />
           <Property Name="Mobil" Type="String" Nullable="false" />
           <NavigationProperty Name="Rolle" Relationship="Data.PersonalRolle" FromRole="Personal" ToRole="Rolle" />
@@ -391,8 +451,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Wochenstunden" Type="String" Nullable="false" />
-          <Property Name="Stundenlohn" Type="String" Nullable="false" />
+          <Property Name="Wochenstunden" Type="Int32" Nullable="false" />
+          <Property Name="Stundenlohn" Type="Double" Nullable="false" />
           <NavigationProperty Name="Personal" Relationship="Data.PersonalArbeitsvertrag" FromRole="Arbeitsvertrag" ToRole="Personal" />
         </EntityType>
         <EntityType Name="Schicht">
@@ -400,11 +460,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Startzeit_soll" Type="String" Nullable="false" />
-          <Property Name="Endzeit_soll" Type="String" Nullable="false" />
-          <Property Name="Startzeit_ist" Type="String" Nullable="false" />
-          <Property Name="Endzeit_ist" Type="String" Nullable="false" />
-          <Property Name="Pause" Type="String" Nullable="false" />
+          <Property Name="Startzeit_soll" Type="DateTime" Nullable="false" />
+          <Property Name="Endzeit_soll" Type="DateTime" Nullable="false" />
+          <Property Name="Startzeit_ist" Type="DateTime" Nullable="false" />
+          <Property Name="Endzeit_ist" Type="DateTime" Nullable="false" />
+          <Property Name="Pause" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Personal" Relationship="Data.PersonalSchicht" FromRole="Schicht" ToRole="Personal" />
           <Property Name="PersonalId" Type="Int32" Nullable="false" />
         </EntityType>
@@ -414,8 +474,10 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
-          <Property Name="Hausnummer" Type="String" Nullable="false" />
-          <Property Name="Postleitzahl" Type="String" Nullable="false" />
+          <Property Name="Straße" Type="String" Nullable="false" />
+          <Property Name="Hausnummer" Type="Int32" Nullable="false" />
+          <Property Name="Zusatz" Type="String" Nullable="true" />
+          <Property Name="Postleitzahl" Type="Int32" Nullable="false" />
           <Property Name="Ort" Type="String" Nullable="false" />
           <Property Name="Telefon" Type="String" Nullable="false" />
           <Property Name="Mobil" Type="String" Nullable="false" />
@@ -430,9 +492,11 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
-          <Property Name="GTIN" Type="String" Nullable="false" />
-          <Property Name="Bestand" Type="String" Nullable="false" />
-          <Property Name="Nettoverkaufspreis" Type="String" Nullable="false" />
+          <Property Name="GTIN" Type="Int32" Nullable="false" />
+          <Property Name="Bestand" Type="Double" Nullable="false" />
+          <Property Name="Einheit" Type="Data.Einheit" Nullable="false" />
+          <Property Name="Nettoeinkaufspreis" Type="Double" Nullable="false" />
+          <Property Name="Nettoverkaufspreis" Type="Double" Nullable="false" />
           <NavigationProperty Name="Lieferant" Relationship="Data.LieferantArtikel" FromRole="Artikel" ToRole="Lieferant" />
           <Property Name="LieferantId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Warengruppe" Relationship="Data.ArtikelWarengruppe" FromRole="Artikel" ToRole="Warengruppe" />
@@ -445,9 +509,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Datum" Type="String" Nullable="false" />
-          <Property Name="Abverkauf_soll" Type="String" Nullable="false" />
-          <Property Name="Abverkauf_ist" Type="String" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" />
+          <Property Name="Abverkauf_soll" Type="Double" Nullable="false" />
+          <Property Name="Abverkauf_ist" Type="Double" Nullable="false" />
           <NavigationProperty Name="Artikel" Relationship="Data.PrognoseArtikel" FromRole="Prognose" ToRole="Artikel" />
           <Property Name="ArtikelId" Type="Int32" Nullable="false" />
         </EntityType>
@@ -457,7 +521,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
-          <Property Name="Steuersatz" Type="String" Nullable="false" />
+          <Property Name="Steuersatz" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Artikel" Relationship="Data.ArtikelWarengruppe" FromRole="Warengruppe" ToRole="Artikel" />
         </EntityType>
         <EntityType Name="Beleg">
@@ -484,6 +548,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
           <NavigationProperty Name="Personal" Relationship="Data.PersonalRolle" FromRole="Rolle" ToRole="Personal" />
+          <NavigationProperty Name="Recht" Relationship="Data.RolleRecht" FromRole="Rolle" ToRole="Recht" />
         </EntityType>
         <Association Name="PersonalRolle">
           <End Type="Data.Personal" Role="Personal" Multiplicity="*" />
@@ -565,6 +630,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EnumType Name="Einheit">
+          <Member Name="Gramm" />
+          <Member Name="Kilogramm" />
+          <Member Name="Stück" />
+        </EnumType>
+        <EntityType Name="Recht">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Rolle" Relationship="Data.RolleRecht" FromRole="Recht" ToRole="Rolle" />
+        </EntityType>
+        <Association Name="RolleRecht">
+          <End Type="Data.Rolle" Role="Rolle" Multiplicity="*" />
+          <End Type="Data.Recht" Role="Recht" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -588,6 +670,7 @@
           <ScalarProperty Name="Vorname" ColumnName="Vorname" />
           <ScalarProperty Name="Straße" ColumnName="Straße" />
           <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
+          <ScalarProperty Name="Zusatz" ColumnName="Zusatz" />
           <ScalarProperty Name="Postleitzahl" ColumnName="Postleitzahl" />
           <ScalarProperty Name="Ort" ColumnName="Ort" />
           <ScalarProperty Name="IBAN" ColumnName="IBAN" />
@@ -626,7 +709,9 @@
         <MappingFragment StoreEntitySet="LieferantSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Straße" ColumnName="Straße" />
           <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
+          <ScalarProperty Name="Zusatz" ColumnName="Zusatz" />
           <ScalarProperty Name="Postleitzahl" ColumnName="Postleitzahl" />
           <ScalarProperty Name="Ort" ColumnName="Ort" />
           <ScalarProperty Name="Telefon" ColumnName="Telefon" />
@@ -644,6 +729,8 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="GTIN" ColumnName="GTIN" />
           <ScalarProperty Name="Bestand" ColumnName="Bestand" />
+          <ScalarProperty Name="Einheit" ColumnName="Einheit" />
+          <ScalarProperty Name="Nettoeinkaufspreis" ColumnName="Nettoeinkaufspreis" />
           <ScalarProperty Name="Nettoverkaufspreis" ColumnName="Nettoverkaufspreis" />
           <ScalarProperty Name="LieferantId" ColumnName="LieferantId" />
           <ScalarProperty Name="WarengruppeId" ColumnName="WarengruppeId" />
@@ -694,6 +781,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="RechtSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.Recht)">
+        <MappingFragment StoreEntitySet="RechtSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="PersonalRolle" TypeName="Data.PersonalRolle" StoreEntitySet="PersonalRolle">
       <EndProperty Name="Personal">
         <ScalarProperty Name="Id" ColumnName="Personal_Id" />
@@ -708,6 +803,14 @@
       </EndProperty>
       <EndProperty Name="Artikel">
         <ScalarProperty Name="Id" ColumnName="Artikel_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RolleRecht" TypeName="Data.RolleRecht" StoreEntitySet="RolleRecht">
+      <EndProperty Name="Rolle">
+        <ScalarProperty Name="Id" ColumnName="Rolle_Id" />
+      </EndProperty>
+      <EndProperty Name="Recht">
+        <ScalarProperty Name="Id" ColumnName="Recht_Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

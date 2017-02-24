@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e5c0d5694b2848238d84a1e579d3721d" Name="Diagram1" ZoomLevel="80" >
+      <Diagram DiagramId="e5c0d5694b2848238d84a1e579d3721d" Name="Diagram1" ZoomLevel="120" >
         <EntityTypeShape EntityType="Data.Markt" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="Data.Personal" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="Data.Arbeitsvertrag" Width="1.5" PointX="4.75" PointY="0.75" />
@@ -15,7 +15,7 @@
         <EntityTypeShape EntityType="Data.Warengruppe" Width="1.5" PointX="4.875" PointY="7.125" />
         <EntityTypeShape EntityType="Data.Beleg" Width="1.5" PointX="7.25" PointY="8.5" />
         <EntityTypeShape EntityType="Data.Lieferart" Width="1.5" PointX="9.625" PointY="8.5" />
-        <EntityTypeShape EntityType="Data.Rolle" Width="1.5" PointX="8.75" PointY="2.5" />
+        <EntityTypeShape EntityType="Data.Rolle" Width="1.5" PointX="6.875" PointY="2.5" />
         <AssociationConnector Association="Data.PersonalRolle" />
         <AssociationConnector Association="Data.PersonalSchicht" />
         <AssociationConnector Association="Data.LieferantArtikel" />
@@ -24,6 +24,8 @@
         <AssociationConnector Association="Data.PrognoseArtikel" />
         <AssociationConnector Association="Data.BelegArtikel" />
         <AssociationConnector Association="Data.PersonalArbeitsvertrag" />
+        <EntityTypeShape EntityType="Data.Recht" Width="1.5" PointX="9" PointY="2.5" />
+        <AssociationConnector Association="Data.RolleRecht" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

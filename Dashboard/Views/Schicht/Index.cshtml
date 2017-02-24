@@ -1,0 +1,63 @@
+﻿@model IEnumerable<DAL.Schicht>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Startzeit_soll)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endzeit_soll)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Startzeit_ist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endzeit_ist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pause)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Personal.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Startzeit_soll)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endzeit_soll)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Startzeit_ist)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endzeit_ist)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pause)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Personal.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

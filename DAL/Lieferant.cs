@@ -22,8 +22,10 @@ namespace DAL
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Hausnummer { get; set; }
-        public string Postleitzahl { get; set; }
+        public string Straße { get; set; }
+        public int Hausnummer { get; set; }
+        public string Zusatz { get; set; }
+        public int Postleitzahl { get; set; }
         public string Ort { get; set; }
         public string Telefon { get; set; }
         public string Mobil { get; set; }

@@ -1,0 +1,66 @@
+﻿@model DAL.Schicht
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Schicht</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Startzeit_soll)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Startzeit_soll)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endzeit_soll)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endzeit_soll)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Startzeit_ist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Startzeit_ist)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endzeit_ist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endzeit_ist)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pause)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pause)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Personal.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personal.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
