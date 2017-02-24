@@ -28,19 +28,6 @@ namespace Jaws_Service_Library
             throw new NotImplementedException();
         }
 
-        public Artikel getArtikel(int value)
-        {
-            
-            Artikel artikel = db.ArtikelSet.Find(value);
-            return artikel;
-            throw new NotImplementedException();
-        }
-
-        public List<Artikel> getArtikelbyBelegId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public Artikel getArtikelbyId(int id)
         {
             throw new NotImplementedException();
@@ -56,12 +43,12 @@ namespace Jaws_Service_Library
             throw new NotImplementedException();
         }
 
-        public List<Artikel> getArtikelList()
+        public List<Artikel> getArtikelfromBelegId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Beleg> getBelegbyArtikelId(int id)
+        public List<Artikel> getArtikelList()
         {
             throw new NotImplementedException();
         }
@@ -71,17 +58,12 @@ namespace Jaws_Service_Library
             throw new NotImplementedException();
         }
 
+        public List<Beleg> getBelegfromArtikelId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Beleg> getBelegList()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetData(int value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Lieferant getLieferantbyArtikelId(int id)
         {
             throw new NotImplementedException();
         }
@@ -111,6 +93,11 @@ namespace Jaws_Service_Library
             throw new NotImplementedException();
         }
 
+        public List<Personal> getPersonalbyRolleId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Personal> getPersonalList()
         {
             throw new NotImplementedException();
@@ -136,12 +123,12 @@ namespace Jaws_Service_Library
             throw new NotImplementedException();
         }
 
-        public List<Recht> getRechtbyId(int id)
+        public Recht getRechtbyId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Recht> getRechtbyRolleId(int id)
+        public List<Recht> getRechtfromRolleId(int id)
         {
             throw new NotImplementedException();
         }
@@ -151,7 +138,7 @@ namespace Jaws_Service_Library
             throw new NotImplementedException();
         }
 
-        public List<Rolle> getRollebyPersonalId(int id)
+        public List<Rolle> getRollefromRechtId(int id)
         {
             throw new NotImplementedException();
         }
@@ -161,7 +148,12 @@ namespace Jaws_Service_Library
             throw new NotImplementedException();
         }
 
-        public List<Schicht> getSchichtbyId(int id)
+        public List<Schicht> getSchichtBetween(DateTime von, DateTime bis)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Schicht getSchichtbyId(int id)
         {
             throw new NotImplementedException();
         }
@@ -192,6 +184,11 @@ namespace Jaws_Service_Library
         }
 
         public void setArtikel(Artikel artikel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void setArtikelBeleg(Artikel artikel, Beleg beleg)
         {
             throw new NotImplementedException();
         }
@@ -231,6 +228,11 @@ namespace Jaws_Service_Library
             throw new NotImplementedException();
         }
 
+        public void setRolleRecht(Rolle rolle, Recht recht)
+        {
+            throw new NotImplementedException();
+        }
+
         public void setSchicht(Schicht schicht)
         {
             throw new NotImplementedException();
@@ -247,6 +249,11 @@ namespace Jaws_Service_Library
         }
 
         public void updateArtikel(Artikel artikel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void updateArtikelBeleg(ArtikelBeleg artikelbeleg)
         {
             throw new NotImplementedException();
         }
@@ -282,6 +289,11 @@ namespace Jaws_Service_Library
         }
 
         public void updateRolle(Rolle rolle)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void updateRolleRecht(RolleRecht rollerecht)
         {
             throw new NotImplementedException();
         }
