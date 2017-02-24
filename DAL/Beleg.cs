@@ -17,7 +17,7 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Beleg()
         {
-            this.Artikel = new HashSet<Artikel>();
+            this.ArtikelBeleg = new HashSet<ArtikelBeleg>();
         }
     
         public int Id { get; set; }
@@ -25,6 +25,6 @@ namespace DAL
     
         public virtual Lieferart Lieferart { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Artikel> Artikel { get; set; }
+        public virtual ICollection<ArtikelBeleg> ArtikelBeleg { get; set; }
     }
 }

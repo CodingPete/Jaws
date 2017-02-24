@@ -18,7 +18,7 @@ namespace DAL
         public Artikel()
         {
             this.Prognose = new HashSet<Prognose>();
-            this.Beleg = new HashSet<Beleg>();
+            this.ArtikelBeleg = new HashSet<ArtikelBeleg>();
         }
     
         public int Id { get; set; }
@@ -36,6 +36,6 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Prognose> Prognose { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Beleg> Beleg { get; set; }
+        public virtual ICollection<ArtikelBeleg> ArtikelBeleg { get; set; }
     }
 }

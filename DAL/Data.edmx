@@ -18,17 +18,8 @@
     <EntitySet Name="LieferartSet" EntityType="Data.Store.LieferartSet" store:Type="Tables" Schema="Jaws-DB" />
     <EntitySet Name="RolleSet" EntityType="Data.Store.RolleSet" store:Type="Tables" Schema="Jaws-DB" />
     <EntitySet Name="RechtSet" EntityType="Data.Store.RechtSet" store:Type="Tables" Schema="Jaws-DB" />
-    <EntitySet Name="PersonalRolle" EntityType="Data.Store.PersonalRolle" store:Type="Tables" Schema="Jaws-DB" />
-    <EntitySet Name="BelegArtikel" EntityType="Data.Store.BelegArtikel" store:Type="Tables" Schema="Jaws-DB" />
-    <EntitySet Name="RolleRecht" EntityType="Data.Store.RolleRecht" store:Type="Tables" Schema="Jaws-DB" />
-    <AssociationSet Name="FK_PersonalRolle_Personal" Association="Data.Store.FK_PersonalRolle_Personal">
-      <End Role="Personal" EntitySet="PersonalSet" />
-      <End Role="PersonalRolle" EntitySet="PersonalRolle" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PersonalRolle_Rolle" Association="Data.Store.FK_PersonalRolle_Rolle">
-      <End Role="Rolle" EntitySet="RolleSet" />
-      <End Role="PersonalRolle" EntitySet="PersonalRolle" />
-    </AssociationSet>
+    <EntitySet Name="ArtikelBelegSet" EntityType="Data.Store.ArtikelBelegSet" store:Type="Tables" Schema="Jaws-DB" />
+    <EntitySet Name="RolleRechtSet" EntityType="Data.Store.RolleRechtSet" store:Type="Tables" Schema="Jaws-DB" />
     <AssociationSet Name="PersonalSchicht" Association="Data.Store.PersonalSchicht">
       <End Role="Personal" EntitySet="PersonalSet" />
       <End Role="Schicht" EntitySet="SchichtSet" />
@@ -49,25 +40,29 @@
       <End Role="Prognose" EntitySet="PrognoseSet" />
       <End Role="Artikel" EntitySet="ArtikelSet" />
     </AssociationSet>
-    <AssociationSet Name="FK_BelegArtikel_Beleg" Association="Data.Store.FK_BelegArtikel_Beleg">
-      <End Role="Beleg" EntitySet="BelegSet" />
-      <End Role="BelegArtikel" EntitySet="BelegArtikel" />
-    </AssociationSet>
-    <AssociationSet Name="FK_BelegArtikel_Artikel" Association="Data.Store.FK_BelegArtikel_Artikel">
-      <End Role="Artikel" EntitySet="ArtikelSet" />
-      <End Role="BelegArtikel" EntitySet="BelegArtikel" />
-    </AssociationSet>
     <AssociationSet Name="PersonalArbeitsvertrag" Association="Data.Store.PersonalArbeitsvertrag">
       <End Role="Personal" EntitySet="PersonalSet" />
       <End Role="Arbeitsvertrag" EntitySet="ArbeitsvertragSet" />
     </AssociationSet>
-    <AssociationSet Name="FK_RolleRecht_Rolle" Association="Data.Store.FK_RolleRecht_Rolle">
-      <End Role="Rolle" EntitySet="RolleSet" />
-      <End Role="RolleRecht" EntitySet="RolleRecht" />
+    <AssociationSet Name="ArtikelArtikelBeleg" Association="Data.Store.ArtikelArtikelBeleg">
+      <End Role="Artikel" EntitySet="ArtikelSet" />
+      <End Role="ArtikelBeleg" EntitySet="ArtikelBelegSet" />
     </AssociationSet>
-    <AssociationSet Name="FK_RolleRecht_Recht" Association="Data.Store.FK_RolleRecht_Recht">
+    <AssociationSet Name="BelegArtikelBeleg" Association="Data.Store.BelegArtikelBeleg">
+      <End Role="Beleg" EntitySet="BelegSet" />
+      <End Role="ArtikelBeleg" EntitySet="ArtikelBelegSet" />
+    </AssociationSet>
+    <AssociationSet Name="RolleRolleRecht" Association="Data.Store.RolleRolleRecht">
+      <End Role="Rolle" EntitySet="RolleSet" />
+      <End Role="RolleRecht" EntitySet="RolleRechtSet" />
+    </AssociationSet>
+    <AssociationSet Name="RechtRolleRecht" Association="Data.Store.RechtRolleRecht">
       <End Role="Recht" EntitySet="RechtSet" />
-      <End Role="RolleRecht" EntitySet="RolleRecht" />
+      <End Role="RolleRecht" EntitySet="RolleRechtSet" />
+    </AssociationSet>
+    <AssociationSet Name="RollePersonal" Association="Data.Store.RollePersonal">
+      <End Role="Rolle" EntitySet="RolleSet" />
+      <End Role="Personal" EntitySet="PersonalSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="MarktSet">
@@ -96,6 +91,7 @@
     <Property Name="Telefon" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Mobil" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ArbeitsvertragId" Type="int" Nullable="false" />
+    <Property Name="RolleId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ArbeitsvertragSet">
     <Key>
@@ -194,29 +190,21 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="PersonalRolle">
+  <EntityType Name="ArtikelBelegSet">
     <Key>
-      <PropertyRef Name="Personal_Id" />
-      <PropertyRef Name="Rolle_Id" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Personal_Id" Type="int" Nullable="false" />
-    <Property Name="Rolle_Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArtikelId" Type="int" Nullable="false" />
+    <Property Name="BelegId" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="BelegArtikel">
+  <EntityType Name="RolleRechtSet">
     <Key>
-      <PropertyRef Name="Beleg_Id" />
-      <PropertyRef Name="Artikel_Id" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Beleg_Id" Type="int" Nullable="false" />
-    <Property Name="Artikel_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="RolleRecht">
-    <Key>
-      <PropertyRef Name="Rolle_Id" />
-      <PropertyRef Name="Recht_Id" />
-    </Key>
-    <Property Name="Rolle_Id" Type="int" Nullable="false" />
-    <Property Name="Recht_Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RolleId" Type="int" Nullable="false" />
+    <Property Name="RechtId" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="PersonalSchicht">
     <End Role="Personal" Type="Data.Store.PersonalSet" Multiplicity="1" />
@@ -290,75 +278,63 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_PersonalRolle_Personal">
-    <End Role="Personal" Type="Data.Store.PersonalSet" Multiplicity="1" />
-    <End Role="PersonalRolle" Type="Data.Store.PersonalRolle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Personal">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PersonalRolle">
-        <PropertyRef Name="Personal_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PersonalRolle_Rolle">
-    <End Role="PersonalRolle" Type="Data.Store.PersonalRolle" Multiplicity="*" />
-    <End Role="Rolle" Type="Data.Store.RolleSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Rolle">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PersonalRolle">
-        <PropertyRef Name="Rolle_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_BelegArtikel_Beleg">
-    <End Role="Beleg" Type="Data.Store.BelegSet" Multiplicity="1" />
-    <End Role="BelegArtikel" Type="Data.Store.BelegArtikel" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Beleg">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="BelegArtikel">
-        <PropertyRef Name="Beleg_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_BelegArtikel_Artikel">
-    <End Role="BelegArtikel" Type="Data.Store.BelegArtikel" Multiplicity="*" />
+  <Association Name="ArtikelArtikelBeleg">
     <End Role="Artikel" Type="Data.Store.ArtikelSet" Multiplicity="1" />
+    <End Role="ArtikelBeleg" Type="Data.Store.ArtikelBelegSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Artikel">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="BelegArtikel">
-        <PropertyRef Name="Artikel_Id" />
+      <Dependent Role="ArtikelBeleg">
+        <PropertyRef Name="ArtikelId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_RolleRecht_Rolle">
+  <Association Name="BelegArtikelBeleg">
+    <End Role="Beleg" Type="Data.Store.BelegSet" Multiplicity="1" />
+    <End Role="ArtikelBeleg" Type="Data.Store.ArtikelBelegSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Beleg">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArtikelBeleg">
+        <PropertyRef Name="BelegId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RolleRolleRecht">
     <End Role="Rolle" Type="Data.Store.RolleSet" Multiplicity="1" />
-    <End Role="RolleRecht" Type="Data.Store.RolleRecht" Multiplicity="*" />
+    <End Role="RolleRecht" Type="Data.Store.RolleRechtSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Rolle">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="RolleRecht">
-        <PropertyRef Name="Rolle_Id" />
+        <PropertyRef Name="RolleId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_RolleRecht_Recht">
-    <End Role="RolleRecht" Type="Data.Store.RolleRecht" Multiplicity="*" />
+  <Association Name="RechtRolleRecht">
     <End Role="Recht" Type="Data.Store.RechtSet" Multiplicity="1" />
+    <End Role="RolleRecht" Type="Data.Store.RolleRechtSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Recht">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="RolleRecht">
-        <PropertyRef Name="Recht_Id" />
+        <PropertyRef Name="RechtId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RollePersonal">
+    <End Role="Rolle" Type="Data.Store.RolleSet" Multiplicity="1" />
+    <End Role="Personal" Type="Data.Store.PersonalSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rolle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Personal">
+        <PropertyRef Name="RolleId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -378,10 +354,6 @@
           <EntitySet Name="BelegSet" EntityType="Data.Beleg" />
           <EntitySet Name="LieferartSet" EntityType="Data.Lieferart" />
           <EntitySet Name="RolleSet" EntityType="Data.Rolle" />
-          <AssociationSet Name="PersonalRolle" Association="Data.PersonalRolle">
-            <End Role="Personal" EntitySet="PersonalSet" />
-            <End Role="Rolle" EntitySet="RolleSet" />
-          </AssociationSet>
           <AssociationSet Name="PersonalSchicht" Association="Data.PersonalSchicht">
             <End Role="Personal" EntitySet="PersonalSet" />
             <End Role="Schicht" EntitySet="SchichtSet" />
@@ -402,18 +374,32 @@
             <End Role="Prognose" EntitySet="PrognoseSet" />
             <End Role="Artikel" EntitySet="ArtikelSet" />
           </AssociationSet>
-          <AssociationSet Name="BelegArtikel" Association="Data.BelegArtikel">
-            <End Role="Beleg" EntitySet="BelegSet" />
-            <End Role="Artikel" EntitySet="ArtikelSet" />
-          </AssociationSet>
           <AssociationSet Name="PersonalArbeitsvertrag" Association="Data.PersonalArbeitsvertrag">
             <End Role="Personal" EntitySet="PersonalSet" />
             <End Role="Arbeitsvertrag" EntitySet="ArbeitsvertragSet" />
           </AssociationSet>
           <EntitySet Name="RechtSet" EntityType="Data.Recht" />
-          <AssociationSet Name="RolleRecht" Association="Data.RolleRecht">
+          <EntitySet Name="ArtikelBelegSet" EntityType="Data.ArtikelBeleg" />
+          <AssociationSet Name="ArtikelArtikelBeleg" Association="Data.ArtikelArtikelBeleg">
+            <End Role="Artikel" EntitySet="ArtikelSet" />
+            <End Role="ArtikelBeleg" EntitySet="ArtikelBelegSet" />
+          </AssociationSet>
+          <AssociationSet Name="BelegArtikelBeleg" Association="Data.BelegArtikelBeleg">
+            <End Role="Beleg" EntitySet="BelegSet" />
+            <End Role="ArtikelBeleg" EntitySet="ArtikelBelegSet" />
+          </AssociationSet>
+          <EntitySet Name="RolleRechtSet" EntityType="Data.RolleRecht" />
+          <AssociationSet Name="RolleRolleRecht" Association="Data.RolleRolleRecht">
             <End Role="Rolle" EntitySet="RolleSet" />
+            <End Role="RolleRecht" EntitySet="RolleRechtSet" />
+          </AssociationSet>
+          <AssociationSet Name="RechtRolleRecht" Association="Data.RechtRolleRecht">
             <End Role="Recht" EntitySet="RechtSet" />
+            <End Role="RolleRecht" EntitySet="RolleRechtSet" />
+          </AssociationSet>
+          <AssociationSet Name="RollePersonal" Association="Data.RollePersonal">
+            <End Role="Rolle" EntitySet="RolleSet" />
+            <End Role="Personal" EntitySet="PersonalSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Markt">
@@ -441,10 +427,11 @@
           <Property Name="Steuerklasse" Type="Int32" Nullable="false" />
           <Property Name="Telefon" Type="String" Nullable="false" />
           <Property Name="Mobil" Type="String" Nullable="false" />
-          <NavigationProperty Name="Rolle" Relationship="Data.PersonalRolle" FromRole="Personal" ToRole="Rolle" />
           <NavigationProperty Name="Schicht" Relationship="Data.PersonalSchicht" FromRole="Personal" ToRole="Schicht" />
           <NavigationProperty Name="Arbeitsvertrag" Relationship="Data.PersonalArbeitsvertrag" FromRole="Personal" ToRole="Arbeitsvertrag" />
           <Property Name="ArbeitsvertragId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rolle" Relationship="Data.RollePersonal" FromRole="Personal" ToRole="Rolle" />
+          <Property Name="RolleId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Arbeitsvertrag">
           <Key>
@@ -502,7 +489,7 @@
           <NavigationProperty Name="Warengruppe" Relationship="Data.ArtikelWarengruppe" FromRole="Artikel" ToRole="Warengruppe" />
           <Property Name="WarengruppeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Prognose" Relationship="Data.PrognoseArtikel" FromRole="Artikel" ToRole="Prognose" />
-          <NavigationProperty Name="Beleg" Relationship="Data.BelegArtikel" FromRole="Artikel" ToRole="Beleg" />
+          <NavigationProperty Name="ArtikelBeleg" Relationship="Data.ArtikelArtikelBeleg" FromRole="Artikel" ToRole="ArtikelBeleg" />
         </EntityType>
         <EntityType Name="Prognose">
           <Key>
@@ -531,7 +518,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Lieferart" Relationship="Data.BelegLieferart" FromRole="Beleg" ToRole="Lieferart" />
           <Property Name="LieferartId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Artikel" Relationship="Data.BelegArtikel" FromRole="Beleg" ToRole="Artikel" />
+          <NavigationProperty Name="ArtikelBeleg" Relationship="Data.BelegArtikelBeleg" FromRole="Beleg" ToRole="ArtikelBeleg" />
         </EntityType>
         <EntityType Name="Lieferart">
           <Key>
@@ -547,13 +534,9 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
-          <NavigationProperty Name="Personal" Relationship="Data.PersonalRolle" FromRole="Rolle" ToRole="Personal" />
-          <NavigationProperty Name="Recht" Relationship="Data.RolleRecht" FromRole="Rolle" ToRole="Recht" />
+          <NavigationProperty Name="RolleRecht" Relationship="Data.RolleRolleRecht" FromRole="Rolle" ToRole="RolleRecht" />
+          <NavigationProperty Name="Personal" Relationship="Data.RollePersonal" FromRole="Rolle" ToRole="Personal" />
         </EntityType>
-        <Association Name="PersonalRolle">
-          <End Type="Data.Personal" Role="Personal" Multiplicity="*" />
-          <End Type="Data.Rolle" Role="Rolle" Multiplicity="*" />
-        </Association>
         <Association Name="PersonalSchicht">
           <End Type="Data.Personal" Role="Personal" Multiplicity="1" />
           <End Type="Data.Schicht" Role="Schicht" Multiplicity="*" />
@@ -614,10 +597,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="BelegArtikel">
-          <End Type="Data.Beleg" Role="Beleg" Multiplicity="*" />
-          <End Type="Data.Artikel" Role="Artikel" Multiplicity="*" />
-        </Association>
         <Association Name="PersonalArbeitsvertrag">
           <End Type="Data.Personal" Role="Personal" Multiplicity="*" />
           <End Type="Data.Arbeitsvertrag" Role="Arbeitsvertrag" Multiplicity="1" />
@@ -641,11 +620,87 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
-          <NavigationProperty Name="Rolle" Relationship="Data.RolleRecht" FromRole="Recht" ToRole="Rolle" />
+          <NavigationProperty Name="RolleRecht" Relationship="Data.RechtRolleRecht" FromRole="Recht" ToRole="RolleRecht" />
         </EntityType>
-        <Association Name="RolleRecht">
-          <End Type="Data.Rolle" Role="Rolle" Multiplicity="*" />
-          <End Type="Data.Recht" Role="Recht" Multiplicity="*" />
+        <EntityType Name="ArtikelBeleg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Artikel" Relationship="Data.ArtikelArtikelBeleg" FromRole="ArtikelBeleg" ToRole="Artikel" />
+          <Property Name="ArtikelId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Beleg" Relationship="Data.BelegArtikelBeleg" FromRole="ArtikelBeleg" ToRole="Beleg" />
+          <Property Name="BelegId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ArtikelArtikelBeleg">
+          <End Type="Data.Artikel" Role="Artikel" Multiplicity="1" />
+          <End Type="Data.ArtikelBeleg" Role="ArtikelBeleg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArtikelBeleg">
+              <PropertyRef Name="ArtikelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BelegArtikelBeleg">
+          <End Type="Data.Beleg" Role="Beleg" Multiplicity="1" />
+          <End Type="Data.ArtikelBeleg" Role="ArtikelBeleg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Beleg">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArtikelBeleg">
+              <PropertyRef Name="BelegId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RolleRecht">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Rolle" Relationship="Data.RolleRolleRecht" FromRole="RolleRecht" ToRole="Rolle" />
+          <Property Name="RolleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Recht" Relationship="Data.RechtRolleRecht" FromRole="RolleRecht" ToRole="Recht" />
+          <Property Name="RechtId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="RolleRolleRecht">
+          <End Type="Data.Rolle" Role="Rolle" Multiplicity="1" />
+          <End Type="Data.RolleRecht" Role="RolleRecht" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rolle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolleRecht">
+              <PropertyRef Name="RolleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RechtRolleRecht">
+          <End Type="Data.Recht" Role="Recht" Multiplicity="1" />
+          <End Type="Data.RolleRecht" Role="RolleRecht" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recht">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolleRecht">
+              <PropertyRef Name="RechtId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RollePersonal">
+          <End Type="Data.Rolle" Role="Rolle" Multiplicity="1" />
+          <End Type="Data.Personal" Role="Personal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rolle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personal">
+              <PropertyRef Name="RolleId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -679,6 +734,7 @@
           <ScalarProperty Name="Telefon" ColumnName="Telefon" />
           <ScalarProperty Name="Mobil" ColumnName="Mobil" />
           <ScalarProperty Name="ArbeitsvertragId" ColumnName="ArbeitsvertragId" />
+          <ScalarProperty Name="RolleId" ColumnName="RolleId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -789,30 +845,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="PersonalRolle" TypeName="Data.PersonalRolle" StoreEntitySet="PersonalRolle">
-      <EndProperty Name="Personal">
-        <ScalarProperty Name="Id" ColumnName="Personal_Id" />
-      </EndProperty>
-      <EndProperty Name="Rolle">
-        <ScalarProperty Name="Id" ColumnName="Rolle_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="BelegArtikel" TypeName="Data.BelegArtikel" StoreEntitySet="BelegArtikel">
-      <EndProperty Name="Beleg">
-        <ScalarProperty Name="Id" ColumnName="Beleg_Id" />
-      </EndProperty>
-      <EndProperty Name="Artikel">
-        <ScalarProperty Name="Id" ColumnName="Artikel_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="RolleRecht" TypeName="Data.RolleRecht" StoreEntitySet="RolleRecht">
-      <EndProperty Name="Rolle">
-        <ScalarProperty Name="Id" ColumnName="Rolle_Id" />
-      </EndProperty>
-      <EndProperty Name="Recht">
-        <ScalarProperty Name="Id" ColumnName="Recht_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
+    <EntitySetMapping Name="ArtikelBelegSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.ArtikelBeleg)">
+        <MappingFragment StoreEntitySet="ArtikelBelegSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ArtikelId" ColumnName="ArtikelId" />
+          <ScalarProperty Name="BelegId" ColumnName="BelegId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolleRechtSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Data.RolleRecht)">
+        <MappingFragment StoreEntitySet="RolleRechtSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RolleId" ColumnName="RolleId" />
+          <ScalarProperty Name="RechtId" ColumnName="RechtId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

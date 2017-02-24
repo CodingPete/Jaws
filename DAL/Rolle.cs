@@ -17,16 +17,16 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Rolle()
         {
+            this.RolleRecht = new HashSet<RolleRecht>();
             this.Personal = new HashSet<Personal>();
-            this.Recht = new HashSet<Recht>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Personal> Personal { get; set; }
+        public virtual ICollection<RolleRecht> RolleRecht { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Recht> Recht { get; set; }
+        public virtual ICollection<Personal> Personal { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace Dashboard.Controllers
         // GET: Personal
         public ActionResult Index()
         {
-            var personalSet = db.PersonalSet.Include(p => p.Arbeitsvertrag);
+            var personalSet = db.PersonalSet.Include(p => p.Arbeitsvertrag).Include(p => p.Rolle);
             return View(personalSet.ToList());
         }
 
@@ -40,6 +40,7 @@ namespace Dashboard.Controllers
         public ActionResult Create()
         {
             ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Id");
+            ViewBag.RolleId = new SelectList(db.RolleSet, "Id", "Name");
             return View();
         }
 
@@ -48,7 +49,7 @@ namespace Dashboard.Controllers
         // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Vorname,Straße,Hausnummer,Zusatz,Postleitzahl,Ort,IBAN,BIC,Steuerklasse,Telefon,Mobil,ArbeitsvertragId")] Personal personal)
+        public ActionResult Create([Bind(Include = "Id,Name,Vorname,Straße,Hausnummer,Zusatz,Postleitzahl,Ort,IBAN,BIC,Steuerklasse,Telefon,Mobil,ArbeitsvertragId,RolleId")] Personal personal)
         {
             if (ModelState.IsValid)
             {
@@ -58,6 +59,7 @@ namespace Dashboard.Controllers
             }
 
             ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Id", personal.ArbeitsvertragId);
+            ViewBag.RolleId = new SelectList(db.RolleSet, "Id", "Name", personal.RolleId);
             return View(personal);
         }
 
@@ -74,6 +76,7 @@ namespace Dashboard.Controllers
                 return HttpNotFound();
             }
             ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Id", personal.ArbeitsvertragId);
+            ViewBag.RolleId = new SelectList(db.RolleSet, "Id", "Name", personal.RolleId);
             return View(personal);
         }
 
@@ -82,7 +85,7 @@ namespace Dashboard.Controllers
         // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Vorname,Straße,Hausnummer,Zusatz,Postleitzahl,Ort,IBAN,BIC,Steuerklasse,Telefon,Mobil,ArbeitsvertragId")] Personal personal)
+        public ActionResult Edit([Bind(Include = "Id,Name,Vorname,Straße,Hausnummer,Zusatz,Postleitzahl,Ort,IBAN,BIC,Steuerklasse,Telefon,Mobil,ArbeitsvertragId,RolleId")] Personal personal)
         {
             if (ModelState.IsValid)
             {
@@ -91,6 +94,7 @@ namespace Dashboard.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Id", personal.ArbeitsvertragId);
+            ViewBag.RolleId = new SelectList(db.RolleSet, "Id", "Name", personal.RolleId);
             return View(personal);
         }
 
