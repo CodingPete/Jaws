@@ -7,12 +7,12 @@
     <title>@ViewBag.Title - Meine ASP.NET-Anwendung</title>
 
         <!-- build:css({.tmp,app}) styles/app.min.css -->
-        @Styles.Render("~/Content/vendor/bootstrap/dist/css/bootstrap.css")
-        @Styles.Render("~/Content/vendor/pace/themes/blue/pace-theme-minimal.css")
-        @Styles.Render("~/Content/vendor/font-awesome/css/font-awesome.css")
-        @Styles.Render("~/Content/vendor/animate.css/animate.css")
-        @Styles.Render("~/Content/styles/app.css")
-        @Styles.Render("~/Content/styles/app.skins.css")
+        @Styles.Render("~/Content/template/vendor/bootstrap/dist/css/bootstrap.css")
+        @Styles.Render("~/Content/template/vendor/pace/themes/blue/pace-theme-minimal.css")
+        @Styles.Render("~/Content/template/vendor/font-awesome/css/font-awesome.css")
+        @Styles.Render("~/Content/template/vendor/animate.css/animate.css")
+        @Styles.Render("~/Content/template/styles/app.css")
+        @Styles.Render("~/Content/template/styles/app.skins.css")
         <!-- endbuild -->
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -201,12 +201,12 @@
           };
     </script>
 
-        @Scripts.Render("~/Content/vendor/jquery/dist/jquery.js")
-        @Scripts.Render("~/Content/vendor/tether/dist/js/tether.js")
-        @Scripts.Render("~/Content/vendor/bootstrap/dist/js/bootstrap.js")
+        @Scripts.Render("~/Content/template/vendor/jquery/dist/jquery.js")
+        @Scripts.Render("~/Content/template/vendor/tether/dist/js/tether.js")
+        @Scripts.Render("~/Content/template/vendor/bootstrap/dist/js/bootstrap.js")
 
         <!-- initialize page scripts -->
-        @Scripts.Render("~/Content/scripts/dashboard/dashboard.js")
+        @Scripts.Render("~/Content/template/scripts/dashboard/dashboard.js")
                 @RenderSection("scripts", required: false)
 </body>
 </html>
