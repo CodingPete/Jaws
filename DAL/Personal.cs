@@ -17,7 +17,6 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Personal()
         {
-            this.Rolle = new HashSet<Rolle>();
             this.Schicht = new HashSet<Schicht>();
         }
     
@@ -35,11 +34,11 @@ namespace DAL
         public string Telefon { get; set; }
         public string Mobil { get; set; }
         public int ArbeitsvertragId { get; set; }
+        public int RolleId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rolle> Rolle { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Schicht> Schicht { get; set; }
         public virtual Arbeitsvertrag Arbeitsvertrag { get; set; }
+        public virtual Rolle Rolle { get; set; }
     }
 }

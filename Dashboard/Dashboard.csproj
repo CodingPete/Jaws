@@ -60,6 +60,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -129,6 +130,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArbeitsvertragController.cs" />
+    <Compile Include="Controllers\ArtikelBelegController.cs" />
     <Compile Include="Controllers\ArtikelController.cs" />
     <Compile Include="Controllers\BelegController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -139,6 +141,7 @@
     <Compile Include="Controllers\PrognoseController.cs" />
     <Compile Include="Controllers\RechtController.cs" />
     <Compile Include="Controllers\RolleController.cs" />
+    <Compile Include="Controllers\RolleRechtController.cs" />
     <Compile Include="Controllers\SchichtController.cs" />
     <Compile Include="Controllers\WarengruppeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -240,6 +243,21 @@
     <Content Include="Views\Lieferart\Details.cshtml" />
     <Content Include="Views\Lieferart\Edit.cshtml" />
     <Content Include="Views\Lieferart\Index.cshtml" />
+    <Content Include="Views\PersonalRolle\Create.cshtml" />
+    <Content Include="Views\PersonalRolle\Delete.cshtml" />
+    <Content Include="Views\PersonalRolle\Details.cshtml" />
+    <Content Include="Views\PersonalRolle\Edit.cshtml" />
+    <Content Include="Views\PersonalRolle\Index.cshtml" />
+    <Content Include="Views\RolleRecht\Create.cshtml" />
+    <Content Include="Views\RolleRecht\Delete.cshtml" />
+    <Content Include="Views\RolleRecht\Details.cshtml" />
+    <Content Include="Views\RolleRecht\Edit.cshtml" />
+    <Content Include="Views\RolleRecht\Index.cshtml" />
+    <Content Include="Views\ArtikelBeleg\Create.cshtml" />
+    <Content Include="Views\ArtikelBeleg\Delete.cshtml" />
+    <Content Include="Views\ArtikelBeleg\Details.cshtml" />
+    <Content Include="Views\ArtikelBeleg\Edit.cshtml" />
+    <Content Include="Views\ArtikelBeleg\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -258,6 +276,10 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{d0aed700-c12c-4a69-b48a-86b056e8d2de}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jaws_Service_Library\Jaws_Service_Library.csproj">
+      <Project>{c8866848-7eb9-4d98-96ee-a168d126e5e1}</Project>
+      <Name>Jaws_Service_Library</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

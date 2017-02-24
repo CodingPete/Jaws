@@ -37,5 +37,7 @@ namespace DAL
         public virtual DbSet<Lieferart> LieferartSet { get; set; }
         public virtual DbSet<Rolle> RolleSet { get; set; }
         public virtual DbSet<Recht> RechtSet { get; set; }
+        public virtual DbSet<ArtikelBeleg> ArtikelBelegSet { get; set; }
+        public virtual DbSet<RolleRecht> RolleRechtSet { get; set; }
     }
 }

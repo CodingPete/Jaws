@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/24/2017 20:49:35
+-- Date Created: 02/25/2017 00:28:27
 -- Generated from EDMX file: C:\Users\peter\Desktop\VVS\Jaws\DAL\Data.edmx
 -- --------------------------------------------------
 
@@ -17,12 +17,6 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[Jaws-DB].[FK_PersonalRolle_Personal]', 'F') IS NOT NULL
-    ALTER TABLE [Jaws-DB].[PersonalRolle] DROP CONSTRAINT [FK_PersonalRolle_Personal];
-GO
-IF OBJECT_ID(N'[Jaws-DB].[FK_PersonalRolle_Rolle]', 'F') IS NOT NULL
-    ALTER TABLE [Jaws-DB].[PersonalRolle] DROP CONSTRAINT [FK_PersonalRolle_Rolle];
-GO
 IF OBJECT_ID(N'[Jaws-DB].[FK_PersonalSchicht]', 'F') IS NOT NULL
     ALTER TABLE [Jaws-DB].[SchichtSet] DROP CONSTRAINT [FK_PersonalSchicht];
 GO
@@ -38,20 +32,23 @@ GO
 IF OBJECT_ID(N'[Jaws-DB].[FK_PrognoseArtikel]', 'F') IS NOT NULL
     ALTER TABLE [Jaws-DB].[PrognoseSet] DROP CONSTRAINT [FK_PrognoseArtikel];
 GO
-IF OBJECT_ID(N'[Jaws-DB].[FK_BelegArtikel_Beleg]', 'F') IS NOT NULL
-    ALTER TABLE [Jaws-DB].[BelegArtikel] DROP CONSTRAINT [FK_BelegArtikel_Beleg];
-GO
-IF OBJECT_ID(N'[Jaws-DB].[FK_BelegArtikel_Artikel]', 'F') IS NOT NULL
-    ALTER TABLE [Jaws-DB].[BelegArtikel] DROP CONSTRAINT [FK_BelegArtikel_Artikel];
-GO
 IF OBJECT_ID(N'[Jaws-DB].[FK_PersonalArbeitsvertrag]', 'F') IS NOT NULL
     ALTER TABLE [Jaws-DB].[PersonalSet] DROP CONSTRAINT [FK_PersonalArbeitsvertrag];
 GO
-IF OBJECT_ID(N'[Jaws-DB].[FK_RolleRecht_Rolle]', 'F') IS NOT NULL
-    ALTER TABLE [Jaws-DB].[RolleRecht] DROP CONSTRAINT [FK_RolleRecht_Rolle];
+IF OBJECT_ID(N'[Jaws-DB].[FK_ArtikelArtikelBeleg]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[ArtikelBelegSet] DROP CONSTRAINT [FK_ArtikelArtikelBeleg];
 GO
-IF OBJECT_ID(N'[Jaws-DB].[FK_RolleRecht_Recht]', 'F') IS NOT NULL
-    ALTER TABLE [Jaws-DB].[RolleRecht] DROP CONSTRAINT [FK_RolleRecht_Recht];
+IF OBJECT_ID(N'[Jaws-DB].[FK_BelegArtikelBeleg]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[ArtikelBelegSet] DROP CONSTRAINT [FK_BelegArtikelBeleg];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[FK_RolleRolleRecht]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[RolleRechtSet] DROP CONSTRAINT [FK_RolleRolleRecht];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[FK_RechtRolleRecht]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[RolleRechtSet] DROP CONSTRAINT [FK_RechtRolleRecht];
+GO
+IF OBJECT_ID(N'[Jaws-DB].[FK_RollePersonal]', 'F') IS NOT NULL
+    ALTER TABLE [Jaws-DB].[PersonalSet] DROP CONSTRAINT [FK_RollePersonal];
 GO
 
 -- --------------------------------------------------
@@ -94,14 +91,11 @@ GO
 IF OBJECT_ID(N'[Jaws-DB].[RechtSet]', 'U') IS NOT NULL
     DROP TABLE [Jaws-DB].[RechtSet];
 GO
-IF OBJECT_ID(N'[Jaws-DB].[PersonalRolle]', 'U') IS NOT NULL
-    DROP TABLE [Jaws-DB].[PersonalRolle];
+IF OBJECT_ID(N'[Jaws-DB].[ArtikelBelegSet]', 'U') IS NOT NULL
+    DROP TABLE [Jaws-DB].[ArtikelBelegSet];
 GO
-IF OBJECT_ID(N'[Jaws-DB].[BelegArtikel]', 'U') IS NOT NULL
-    DROP TABLE [Jaws-DB].[BelegArtikel];
-GO
-IF OBJECT_ID(N'[Jaws-DB].[RolleRecht]', 'U') IS NOT NULL
-    DROP TABLE [Jaws-DB].[RolleRecht];
+IF OBJECT_ID(N'[Jaws-DB].[RolleRechtSet]', 'U') IS NOT NULL
+    DROP TABLE [Jaws-DB].[RolleRechtSet];
 GO
 
 -- --------------------------------------------------
@@ -131,7 +125,8 @@ CREATE TABLE [Jaws-DB].[PersonalSet] (
     [Steuerklasse] int  NOT NULL,
     [Telefon] nvarchar(max)  NOT NULL,
     [Mobil] nvarchar(max)  NOT NULL,
-    [ArbeitsvertragId] int  NOT NULL
+    [ArbeitsvertragId] int  NOT NULL,
+    [RolleId] int  NOT NULL
 );
 GO
 
@@ -232,24 +227,19 @@ CREATE TABLE [Jaws-DB].[RechtSet] (
 );
 GO
 
--- Creating table 'PersonalRolle'
-CREATE TABLE [Jaws-DB].[PersonalRolle] (
-    [Personal_Id] int  NOT NULL,
-    [Rolle_Id] int  NOT NULL
+-- Creating table 'ArtikelBelegSet'
+CREATE TABLE [Jaws-DB].[ArtikelBelegSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [ArtikelId] int  NOT NULL,
+    [BelegId] int  NOT NULL
 );
 GO
 
--- Creating table 'BelegArtikel'
-CREATE TABLE [Jaws-DB].[BelegArtikel] (
-    [Beleg_Id] int  NOT NULL,
-    [Artikel_Id] int  NOT NULL
-);
-GO
-
--- Creating table 'RolleRecht'
-CREATE TABLE [Jaws-DB].[RolleRecht] (
-    [Rolle_Id] int  NOT NULL,
-    [Recht_Id] int  NOT NULL
+-- Creating table 'RolleRechtSet'
+CREATE TABLE [Jaws-DB].[RolleRechtSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [RolleId] int  NOT NULL,
+    [RechtId] int  NOT NULL
 );
 GO
 
@@ -329,51 +319,21 @@ ADD CONSTRAINT [PK_RechtSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Personal_Id], [Rolle_Id] in table 'PersonalRolle'
-ALTER TABLE [Jaws-DB].[PersonalRolle]
-ADD CONSTRAINT [PK_PersonalRolle]
-    PRIMARY KEY CLUSTERED ([Personal_Id], [Rolle_Id] ASC);
+-- Creating primary key on [Id] in table 'ArtikelBelegSet'
+ALTER TABLE [Jaws-DB].[ArtikelBelegSet]
+ADD CONSTRAINT [PK_ArtikelBelegSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Beleg_Id], [Artikel_Id] in table 'BelegArtikel'
-ALTER TABLE [Jaws-DB].[BelegArtikel]
-ADD CONSTRAINT [PK_BelegArtikel]
-    PRIMARY KEY CLUSTERED ([Beleg_Id], [Artikel_Id] ASC);
-GO
-
--- Creating primary key on [Rolle_Id], [Recht_Id] in table 'RolleRecht'
-ALTER TABLE [Jaws-DB].[RolleRecht]
-ADD CONSTRAINT [PK_RolleRecht]
-    PRIMARY KEY CLUSTERED ([Rolle_Id], [Recht_Id] ASC);
+-- Creating primary key on [Id] in table 'RolleRechtSet'
+ALTER TABLE [Jaws-DB].[RolleRechtSet]
+ADD CONSTRAINT [PK_RolleRechtSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
-
--- Creating foreign key on [Personal_Id] in table 'PersonalRolle'
-ALTER TABLE [Jaws-DB].[PersonalRolle]
-ADD CONSTRAINT [FK_PersonalRolle_Personal]
-    FOREIGN KEY ([Personal_Id])
-    REFERENCES [Jaws-DB].[PersonalSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating foreign key on [Rolle_Id] in table 'PersonalRolle'
-ALTER TABLE [Jaws-DB].[PersonalRolle]
-ADD CONSTRAINT [FK_PersonalRolle_Rolle]
-    FOREIGN KEY ([Rolle_Id])
-    REFERENCES [Jaws-DB].[RolleSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_PersonalRolle_Rolle'
-CREATE INDEX [IX_FK_PersonalRolle_Rolle]
-ON [Jaws-DB].[PersonalRolle]
-    ([Rolle_Id]);
-GO
 
 -- Creating foreign key on [PersonalId] in table 'SchichtSet'
 ALTER TABLE [Jaws-DB].[SchichtSet]
@@ -450,30 +410,6 @@ ON [Jaws-DB].[PrognoseSet]
     ([ArtikelId]);
 GO
 
--- Creating foreign key on [Beleg_Id] in table 'BelegArtikel'
-ALTER TABLE [Jaws-DB].[BelegArtikel]
-ADD CONSTRAINT [FK_BelegArtikel_Beleg]
-    FOREIGN KEY ([Beleg_Id])
-    REFERENCES [Jaws-DB].[BelegSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating foreign key on [Artikel_Id] in table 'BelegArtikel'
-ALTER TABLE [Jaws-DB].[BelegArtikel]
-ADD CONSTRAINT [FK_BelegArtikel_Artikel]
-    FOREIGN KEY ([Artikel_Id])
-    REFERENCES [Jaws-DB].[ArtikelSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_BelegArtikel_Artikel'
-CREATE INDEX [IX_FK_BelegArtikel_Artikel]
-ON [Jaws-DB].[BelegArtikel]
-    ([Artikel_Id]);
-GO
-
 -- Creating foreign key on [ArbeitsvertragId] in table 'PersonalSet'
 ALTER TABLE [Jaws-DB].[PersonalSet]
 ADD CONSTRAINT [FK_PersonalArbeitsvertrag]
@@ -489,28 +425,79 @@ ON [Jaws-DB].[PersonalSet]
     ([ArbeitsvertragId]);
 GO
 
--- Creating foreign key on [Rolle_Id] in table 'RolleRecht'
-ALTER TABLE [Jaws-DB].[RolleRecht]
-ADD CONSTRAINT [FK_RolleRecht_Rolle]
-    FOREIGN KEY ([Rolle_Id])
+-- Creating foreign key on [ArtikelId] in table 'ArtikelBelegSet'
+ALTER TABLE [Jaws-DB].[ArtikelBelegSet]
+ADD CONSTRAINT [FK_ArtikelArtikelBeleg]
+    FOREIGN KEY ([ArtikelId])
+    REFERENCES [Jaws-DB].[ArtikelSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ArtikelArtikelBeleg'
+CREATE INDEX [IX_FK_ArtikelArtikelBeleg]
+ON [Jaws-DB].[ArtikelBelegSet]
+    ([ArtikelId]);
+GO
+
+-- Creating foreign key on [BelegId] in table 'ArtikelBelegSet'
+ALTER TABLE [Jaws-DB].[ArtikelBelegSet]
+ADD CONSTRAINT [FK_BelegArtikelBeleg]
+    FOREIGN KEY ([BelegId])
+    REFERENCES [Jaws-DB].[BelegSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_BelegArtikelBeleg'
+CREATE INDEX [IX_FK_BelegArtikelBeleg]
+ON [Jaws-DB].[ArtikelBelegSet]
+    ([BelegId]);
+GO
+
+-- Creating foreign key on [RolleId] in table 'RolleRechtSet'
+ALTER TABLE [Jaws-DB].[RolleRechtSet]
+ADD CONSTRAINT [FK_RolleRolleRecht]
+    FOREIGN KEY ([RolleId])
     REFERENCES [Jaws-DB].[RolleSet]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating foreign key on [Recht_Id] in table 'RolleRecht'
-ALTER TABLE [Jaws-DB].[RolleRecht]
-ADD CONSTRAINT [FK_RolleRecht_Recht]
-    FOREIGN KEY ([Recht_Id])
+-- Creating non-clustered index for FOREIGN KEY 'FK_RolleRolleRecht'
+CREATE INDEX [IX_FK_RolleRolleRecht]
+ON [Jaws-DB].[RolleRechtSet]
+    ([RolleId]);
+GO
+
+-- Creating foreign key on [RechtId] in table 'RolleRechtSet'
+ALTER TABLE [Jaws-DB].[RolleRechtSet]
+ADD CONSTRAINT [FK_RechtRolleRecht]
+    FOREIGN KEY ([RechtId])
     REFERENCES [Jaws-DB].[RechtSet]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_RolleRecht_Recht'
-CREATE INDEX [IX_FK_RolleRecht_Recht]
-ON [Jaws-DB].[RolleRecht]
-    ([Recht_Id]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_RechtRolleRecht'
+CREATE INDEX [IX_FK_RechtRolleRecht]
+ON [Jaws-DB].[RolleRechtSet]
+    ([RechtId]);
+GO
+
+-- Creating foreign key on [RolleId] in table 'PersonalSet'
+ALTER TABLE [Jaws-DB].[PersonalSet]
+ADD CONSTRAINT [FK_RollePersonal]
+    FOREIGN KEY ([RolleId])
+    REFERENCES [Jaws-DB].[RolleSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RollePersonal'
+CREATE INDEX [IX_FK_RollePersonal]
+ON [Jaws-DB].[PersonalSet]
+    ([RolleId]);
 GO
 
 -- --------------------------------------------------

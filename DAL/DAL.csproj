@@ -57,6 +57,9 @@
     <Compile Include="Artikel.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="ArtikelBeleg.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="Beleg.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
@@ -101,6 +104,9 @@
     <Compile Include="Rolle.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="RolleRecht.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="Schicht.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
@@ -109,11 +115,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <EntityDeploy Include="Data.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Data.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.config" />
     <None Include="Data.edmx.diagram">
       <DependentUpon>Data.edmx</DependentUpon>
     </None>
