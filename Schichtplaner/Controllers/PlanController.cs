@@ -14,6 +14,7 @@ namespace Schichtplaner.Controllers
         {
             // Verbindungsaufbau zum Jaws_Server
             client = new Jaws_Service.Service1Client();
+
             // Prüfen ob Benutzer erlaubt
             // Wenn ja darf er passieren
             // Ansonsten Login View anzeigen.
