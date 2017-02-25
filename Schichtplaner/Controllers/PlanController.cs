@@ -23,14 +23,15 @@ namespace Schichtplaner.Controllers
             // Hole alle Angestellten
             var personalliste = client.getPersonalList();
 
-            // Hole alle Schichten der aktuellen Woche
-            //var schichtliste = client.getSchichtBetween(DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday), DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Sunday));
-            
-
             foreach(Jaws_Service.Personal person in personalliste)
             {
                 // Für jede Person, die Schichten dieser Woche holen
-                client.getSchichtbyPersonalId
+                DateTime dieseWocheMontag = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
+                DateTime dieseWocheSonntag = dieseWocheMontag.AddDays(6);
+
+                var schichtenDieseWoche = client.getSchichtByPersonalIdAndBetween(person.Id, dieseWocheMontag, dieseWocheSonntag);
+                
+
             }
 
             // Übergeben der Schichten an View

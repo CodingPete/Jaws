@@ -157,6 +157,12 @@
   <wsdl:message name="IService1_getSchichtBetween_OutputMessage">
     <wsdl:part name="parameters" element="tns:getSchichtBetweenResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getSchichtByPersonalIdAndBetween_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSchichtByPersonalIdAndBetween" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getSchichtByPersonalIdAndBetween_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSchichtByPersonalIdAndBetweenResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_getLieferantbyId_InputMessage">
     <wsdl:part name="parameters" element="tns:getLieferantbyId" />
   </wsdl:message>
@@ -455,6 +461,10 @@
     <wsdl:operation name="getSchichtBetween">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getSchichtBetween" message="tns:IService1_getSchichtBetween_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getSchichtBetweenResponse" message="tns:IService1_getSchichtBetween_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSchichtByPersonalIdAndBetween">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween" message="tns:IService1_getSchichtByPersonalIdAndBetween_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetweenResponse" message="tns:IService1_getSchichtByPersonalIdAndBetween_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getLieferantbyId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getLieferantbyId" message="tns:IService1_getLieferantbyId_InputMessage" />
@@ -809,6 +819,15 @@
     </wsdl:operation>
     <wsdl:operation name="getSchichtBetween">
       <soap:operation soapAction="http://tempuri.org/IService1/getSchichtBetween" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSchichtByPersonalIdAndBetween">
+      <soap:operation soapAction="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
