@@ -60,6 +60,22 @@ namespace Jaws_Service_Library
             return db.ArtikelSet.ToList();
         }
 
+        public int getArtikelCountByArtikelIdAndLieferartIdAndBetween(int artikel_id, int lieferart_id, DateTime von, DateTime bis)
+        {
+           var artikel_ids = (from a in db.ArtikelBelegSet
+                               join b in db.BelegSet
+                               on a.BelegId equals b.Id
+                               where (b.LieferartId == 1)
+                               where (b.Datum >= von.Date)
+                               where (b.Datum <= bis.Date)
+                               select a.ArtikelId
+                               );
+
+            int artikel_zahl = artikel_ids.Count();
+                
+            return artikel_zahl;
+        }
+
         public Beleg getBelegbyId(int id)
         {
             return db.BelegSet.Find(id);
@@ -93,6 +109,10 @@ namespace Jaws_Service_Library
         public Lieferart getLieferartbyId(int id)
         {
            return db.LieferartSet.Find(id);
+        }
+        public Lieferart getLieferartByName(String name)
+        {
+            return db.LieferartSet.Where((l) => l.Name == name).First();
         }
 
         public List<Lieferart> getLieferartList()
@@ -256,6 +276,10 @@ namespace Jaws_Service_Library
 
         public void setPrognose(Prognose prognose)
         {
+            Artikel artikel = getArtikelbyId(prognose.ArtikelId);
+            prognose.Artikel = artikel;
+            prognose.Artikel.Prognose.Add(prognose);
+            updateArtikel(prognose.Artikel);
             db.PrognoseSet.Add(prognose);
             db.SaveChanges();
         }

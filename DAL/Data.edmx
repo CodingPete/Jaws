@@ -168,6 +168,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="LieferartId" Type="int" Nullable="false" />
+    <Property Name="Datum" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="LieferartSet">
     <Key>
@@ -519,6 +520,7 @@
           <NavigationProperty Name="Lieferart" Relationship="Data.BelegLieferart" FromRole="Beleg" ToRole="Lieferart" />
           <Property Name="LieferartId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ArtikelBeleg" Relationship="Data.BelegArtikelBeleg" FromRole="Beleg" ToRole="ArtikelBeleg" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" />
         </EntityType>
         <EntityType Name="Lieferart">
           <Key>
@@ -818,6 +820,7 @@
         <MappingFragment StoreEntitySet="BelegSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="LieferartId" ColumnName="LieferartId" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

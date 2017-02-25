@@ -247,6 +247,12 @@
   <wsdl:message name="IService1_getBelegList_OutputMessage">
     <wsdl:part name="parameters" element="tns:getBelegListResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getArtikelCountByArtikelIdAndLieferartIdAndBetween_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelCountByArtikelIdAndLieferartIdAndBetween" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelCountByArtikelIdAndLieferartIdAndBetween_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelCountByArtikelIdAndLieferartIdAndBetweenResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_setArtikelBeleg_InputMessage">
     <wsdl:part name="parameters" element="tns:setArtikelBeleg" />
   </wsdl:message>
@@ -342,6 +348,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_getLieferartbyId_OutputMessage">
     <wsdl:part name="parameters" element="tns:getLieferartbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getLieferartByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getLieferartByName" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getLieferartByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getLieferartByNameResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_setLieferart_InputMessage">
     <wsdl:part name="parameters" element="tns:setLieferart" />
@@ -522,6 +534,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getBelegList" message="tns:IService1_getBelegList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getBelegListResponse" message="tns:IService1_getBelegList_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getArtikelCountByArtikelIdAndLieferartIdAndBetween">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetween" message="tns:IService1_getArtikelCountByArtikelIdAndLieferartIdAndBetween_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetweenResponse" message="tns:IService1_getArtikelCountByArtikelIdAndLieferartIdAndBetween_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="setArtikelBeleg">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/setArtikelBeleg" message="tns:IService1_setArtikelBeleg_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/setArtikelBelegResponse" message="tns:IService1_setArtikelBeleg_OutputMessage" />
@@ -585,6 +601,10 @@
     <wsdl:operation name="getLieferartbyId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getLieferartbyId" message="tns:IService1_getLieferartbyId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getLieferartbyIdResponse" message="tns:IService1_getLieferartbyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLieferartByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getLieferartByName" message="tns:IService1_getLieferartByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getLieferartByNameResponse" message="tns:IService1_getLieferartByName_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="setLieferart">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/setLieferart" message="tns:IService1_setLieferart_InputMessage" />
@@ -961,6 +981,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getArtikelCountByArtikelIdAndLieferartIdAndBetween">
+      <soap:operation soapAction="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetween" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="setArtikelBeleg">
       <soap:operation soapAction="http://tempuri.org/IService1/setArtikelBeleg" style="document" />
       <wsdl:input>
@@ -1098,6 +1127,15 @@
     </wsdl:operation>
     <wsdl:operation name="getLieferartbyId">
       <soap:operation soapAction="http://tempuri.org/IService1/getLieferartbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLieferartByName">
+      <soap:operation soapAction="http://tempuri.org/IService1/getLieferartByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

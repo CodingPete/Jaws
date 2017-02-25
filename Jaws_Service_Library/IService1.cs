@@ -12,7 +12,7 @@ namespace Jaws_Service_Library
     [ServiceContract]
     public interface IService1
     {
-        
+
         //Personal
 
         [OperationContract]
@@ -61,7 +61,7 @@ namespace Jaws_Service_Library
         [OperationContract]
         List<Rolle> getRolleList();
 
-       
+
         //Recht
 
         [OperationContract]
@@ -159,6 +159,9 @@ namespace Jaws_Service_Library
         [OperationContract]
         List<Beleg> getBelegList();
 
+        [OperationContract]
+        int getArtikelCountByArtikelIdAndLieferartIdAndBetween(int artikel_id, int lieferart_id, DateTime von, DateTime bis);
+
         //ArtikelBeleg
 
         [OperationContract]
@@ -216,6 +219,9 @@ namespace Jaws_Service_Library
 
         [OperationContract]
         Lieferart getLieferartbyId(int id);
+
+        [OperationContract]
+        Lieferart getLieferartByName(String name);
 
         [OperationContract]
         void setLieferart(Lieferart lieferart);

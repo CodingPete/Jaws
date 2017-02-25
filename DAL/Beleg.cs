@@ -22,6 +22,7 @@ namespace DAL
     
         public int Id { get; set; }
         public int LieferartId { get; set; }
+        public System.DateTime Datum { get; set; }
     
         public virtual Lieferart Lieferart { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

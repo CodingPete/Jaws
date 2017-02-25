@@ -1687,6 +1687,9 @@ namespace Prognosenberechnung.ServiceReference1 {
         private Prognosenberechnung.ServiceReference1.ArtikelBeleg[] ArtikelBelegField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DatumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1714,6 +1717,19 @@ namespace Prognosenberechnung.ServiceReference1 {
                 if ((object.ReferenceEquals(this.ArtikelBelegField, value) != true)) {
                     this.ArtikelBelegField = value;
                     this.RaisePropertyChanged("ArtikelBeleg");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Datum {
+            get {
+                return this.DatumField;
+            }
+            set {
+                if ((this.DatumField.Equals(value) != true)) {
+                    this.DatumField = value;
+                    this.RaisePropertyChanged("Datum");
                 }
             }
         }
@@ -2088,6 +2104,14 @@ namespace Prognosenberechnung.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegList", ReplyAction="http://tempuri.org/IService1/getBelegListResponse")]
         System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Beleg[]> getBelegListAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetween", ReplyAction="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetweenRe" +
+            "sponse")]
+        int getArtikelCountByArtikelIdAndLieferartIdAndBetween(int artikel_id, int lieferart_id, System.DateTime von, System.DateTime bis);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetween", ReplyAction="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetweenRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<int> getArtikelCountByArtikelIdAndLieferartIdAndBetweenAsync(int artikel_id, int lieferart_id, System.DateTime von, System.DateTime bis);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArtikelBeleg", ReplyAction="http://tempuri.org/IService1/setArtikelBelegResponse")]
         void setArtikelBeleg(Prognosenberechnung.ServiceReference1.Artikel artikel, Prognosenberechnung.ServiceReference1.Beleg beleg);
         
@@ -2183,6 +2207,12 @@ namespace Prognosenberechnung.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartbyId", ReplyAction="http://tempuri.org/IService1/getLieferartbyIdResponse")]
         System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Lieferart> getLieferartbyIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartByName", ReplyAction="http://tempuri.org/IService1/getLieferartByNameResponse")]
+        Prognosenberechnung.ServiceReference1.Lieferart getLieferartByName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartByName", ReplyAction="http://tempuri.org/IService1/getLieferartByNameResponse")]
+        System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Lieferart> getLieferartByNameAsync(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setLieferart", ReplyAction="http://tempuri.org/IService1/setLieferartResponse")]
         void setLieferart(Prognosenberechnung.ServiceReference1.Lieferart lieferart);
@@ -2550,6 +2580,14 @@ namespace Prognosenberechnung.ServiceReference1 {
             return base.Channel.getBelegListAsync();
         }
         
+        public int getArtikelCountByArtikelIdAndLieferartIdAndBetween(int artikel_id, int lieferart_id, System.DateTime von, System.DateTime bis) {
+            return base.Channel.getArtikelCountByArtikelIdAndLieferartIdAndBetween(artikel_id, lieferart_id, von, bis);
+        }
+        
+        public System.Threading.Tasks.Task<int> getArtikelCountByArtikelIdAndLieferartIdAndBetweenAsync(int artikel_id, int lieferart_id, System.DateTime von, System.DateTime bis) {
+            return base.Channel.getArtikelCountByArtikelIdAndLieferartIdAndBetweenAsync(artikel_id, lieferart_id, von, bis);
+        }
+        
         public void setArtikelBeleg(Prognosenberechnung.ServiceReference1.Artikel artikel, Prognosenberechnung.ServiceReference1.Beleg beleg) {
             base.Channel.setArtikelBeleg(artikel, beleg);
         }
@@ -2676,6 +2714,14 @@ namespace Prognosenberechnung.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Lieferart> getLieferartbyIdAsync(int id) {
             return base.Channel.getLieferartbyIdAsync(id);
+        }
+        
+        public Prognosenberechnung.ServiceReference1.Lieferart getLieferartByName(string name) {
+            return base.Channel.getLieferartByName(name);
+        }
+        
+        public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Lieferart> getLieferartByNameAsync(string name) {
+            return base.Channel.getLieferartByNameAsync(name);
         }
         
         public void setLieferart(Prognosenberechnung.ServiceReference1.Lieferart lieferart) {

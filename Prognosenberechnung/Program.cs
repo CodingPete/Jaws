@@ -22,16 +22,39 @@ namespace Prognosenberechnung
 
         private static void callback(object state)
         {
+            // Hole die Abverkaufslieferart aus der Datenbank
+            Lieferart lieferart = client.getLieferartByName("Abverkauf");
+
             // Alle Artikel holen
             var artikels = client.getArtikelList();
 
             // ...für jeden Artikel
             foreach(Artikel artikel in artikels)
             {
-                // ... hole die Abverkaufsbelege der letzen 6 Wochen
-                DateTime heute = new DateTime();
-                DateTime damals = heute.AddDays(-(6 * 7));
+                // ... hole die Abverkaufsbelege dieses Wochentages der letzen 6 Wochen
+                int summe = 0;
+
+                // Morgen in einer Woche. Davon 6 Wochen zurück
+                DateTime Verkaufstag = DateTime.Now.AddDays(1 + -(7*6));
                 
+
+                for (int i = 0; i < 7; i++ )
+                {
+                    Verkaufstag = Verkaufstag.AddDays(7);
+                    summe += client.getArtikelCountByArtikelIdAndLieferartIdAndBetween(artikel.Id, lieferart.Id, Verkaufstag, Verkaufstag);
+                }
+
+                Double prognose_value = 1 / 6 * summe;
+
+                Prognose prognose = new Prognose();
+                prognose.ArtikelId = artikel.Id;
+                prognose.Abverkauf_soll = prognose_value;
+                prognose.Abverkauf_ist = 0;
+                prognose.Datum = Verkaufstag.Date;
+
+                client.setPrognose(prognose);
+
+                Console.WriteLine("Prognose geschrieben");
 
             }
         }
