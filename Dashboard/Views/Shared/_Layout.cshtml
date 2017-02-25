@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Meine ASP.NET-Anwendung</title>
 
-    @Styles.Render("~/Content/template/vendor/bower-jvectormap/jquery-jvectormap-1.2.2.css")
+    @Styles.Render(Url.Content("~/Content/template/vendor/bower-jvectormap/jquery-jvectormap-1.2.2.css"))
 
     <!-- build:css({.tmp,app}) styles/app.min.css -->
-    @Styles.Render("~/Content/template/vendor/bootstrap/dist/css/bootstrap.css")
-    @Styles.Render("~/Content/template/vendor/pace/themes/blue/pace-theme-minimal.css")
-    @Styles.Render("~/Content/template/vendor/font-awesome/css/font-awesome.css")
-    @Styles.Render("~/Content/template/vendor/animate.css/animate.css")
-    @Styles.Render("~/Content/template/styles/app.css")
-    @Styles.Render("~/Content/template/styles/app.skins.css")
+    @Styles.Render(Url.Content("~/Content/template/vendor/bootstrap/dist/css/bootstrap.css"))
+    @Styles.Render(Url.Content("~/Content/template/vendor/pace/themes/blue/pace-theme-minimal.css"))
+    @Styles.Render(Url.Content("~/Content/template/vendor/font-awesome/css/font-awesome.css"))
+    @Styles.Render(Url.Content("~/Content/template/vendor/animate.css/animate.css"))
+    @Styles.Render(Url.Content("~/Content/template/styles/app.css"))
+    @Styles.Render(Url.Content("~/Content/template/styles/app.skins.css"))
     <!-- endbuild -->
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -39,7 +39,7 @@
             <div class="nav-profile dropdown">
                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                     <div class="user-image">
-                        <img src="~/Content/template/images/avatar.jpg" class="avatar img-circle" alt="user" title="user" />
+                        <img src="/Content/template/images/avatar.jpg" class="avatar img-circle" alt="user" title="user" />
                     </div>
                     <div class="user-info expanding-hidden">
                         Betty Simmons
