@@ -3,31 +3,103 @@
 @{
     ViewBag.Title = "Index";
 }
-<div class="row">
 
-        <div class="col-sm-1 col-md-2 col-lg-2">
-            <a href="@Url.Action("Create")">
-                <div class="card card-block">
-                    <h5 class="m-b-0 v-align-middle text-overflow">
-                        <i class="material-icons text-success">add_circle</i>
-                    </h5>
-                </div>
-            </a>
-</div>
-
-
-    @foreach (var item in Model)
-    {
-            <div class="col-sm-6 col-md-4 col-lg-2">
-                <a href="@Url.Action("Details", new { id=item.Id })">
-                    <div class="card card-block">
-                        <h5 class="m-b-0 v-align-middle text-overflow">
-                            <span>@Html.DisplayFor(modelItem => item.Name)</span>
-                        </h5>
-                    </div>
-                </a>
-</div>
-
-
-    }
-</div>
+    <div class="card">
+        <div class="card-header no-bg b-a-0">
+            Lieferanten
+        </div>
+        <div class="card-block">
+            <p>
+                <a href="@Url.Action("Create")" class="btn btn-success"><i class="material-icons text-default">add_circle</i></a>
+            </p>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                #
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Straße)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Hausnummer)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Zusatz)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Postleitzahl)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Ort)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Telefon)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Mobil)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IBAN)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.BIC)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+@foreach (var item in Model)
+{
+    
+        <tr onmouseover="javascript: $(this).css('cursor', 'pointer');" onclick="javascript:window.location = '@Url.Action("Edit", new { id=item.Id })';">
+                <th scope="row">
+                    @Html.DisplayFor(modelItem => item.Id)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Straße)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hausnummer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zusatz)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Postleitzahl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ort)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mobil)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IBAN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BIC)
+                </td>
+</tr>
+        
+        }
+</tbody>
+                </table>
+            </div>
+        </div>
+    </div>
