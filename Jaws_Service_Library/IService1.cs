@@ -50,7 +50,7 @@ namespace Jaws_Service_Library
         //Rolle
 
         [OperationContract]
-        List<Rolle> getRollebyId(int id);
+        Rolle getRollebyId(int id);
 
         [OperationContract]
         void setRolle(Rolle role);
