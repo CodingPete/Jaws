@@ -111,16 +111,15 @@
 
             <div class="form-group row">
                 <div class="col-xs-10">
-                    <input type="submit" value="Save" class="btn btn-primary m-r" />
+                    <input type="submit" value="Speichern" class="btn btn-primary m-r" />
+                    <a href="@Url.Action("Index")">
+                        <button type="button" class="btn btn-default">Zurück</button>
+                    </a>
                 </div>
             </div>
         </div>
         </div>
         }
-
-        <div>
-            @Html.ActionLink("Back to List", "Index")
-        </div>
 
         @section Scripts {
             @Scripts.Render("~/bundles/jqueryval")
