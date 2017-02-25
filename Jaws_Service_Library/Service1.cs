@@ -185,6 +185,11 @@ namespace Jaws_Service_Library
             return db.SchichtSet.Where((s) => s.PersonalId == id).ToList();
         }
 
+        public List<Schicht> getSchichtByPersonalIdAndBetween(int id, DateTime von, DateTime bis)
+        {
+            return db.SchichtSet.Where((s) => s.PersonalId == id && s.Startzeit_soll >= new SqlDateTime(von).Value && s.Startzeit_soll <= new SqlDateTime(bis).Value).ToList();
+        }
+
         public Warengruppe getWarengruppebyId(int id)
         {
             return db.WarengruppeSet.Find(id);

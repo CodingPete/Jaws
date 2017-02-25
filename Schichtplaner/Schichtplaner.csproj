@@ -154,7 +154,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <None Include="Service References\Jaws_Service\item.disco" />
     <None Include="Service References\Jaws_Service\configuration91.svcinfo" />
     <None Include="Service References\Jaws_Service\configuration.svcinfo" />
     <None Include="Service References\Jaws_Service\Reference.svcmap">
@@ -175,13 +174,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <None Include="Service References\Jaws_Service\item.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Jaws_Service\item1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Jaws_Service\item2.xsd">
+    <None Include="Service References\Jaws_Service\DAL.xsd">
       <SubType>Designer</SubType>
     </None>
     <Content Include="Service References\Jaws_Service\Schichtplaner.Jaws_Service.Arbeitsvertrag.datasource">
@@ -217,12 +210,18 @@
     <Content Include="Service References\Jaws_Service\Schichtplaner.Jaws_Service.Warengruppe.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\Jaws_Service\Service1.wsdl" />
+    <None Include="Service References\Jaws_Service\service.wsdl" />
+    <None Include="Service References\Jaws_Service\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Jaws_Service\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Plan\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Plan\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

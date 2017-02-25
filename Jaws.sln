@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jaws_Service_Library", "Jaws_Service_Library\Jaws_Service_Library.csproj", "{C8866848-7EB9-4D98-96EE-A168D126E5E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schichtplaner", "Schichtplaner\Schichtplaner.csproj", "{457E6056-2E7C-4931-9D4D-1B23F9F676C6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C8866848-7EB9-4D98-96EE-A168D126E5E1} = {C8866848-7EB9-4D98-96EE-A168D126E5E1}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jaws_Service_Host", "Jaws_Service_Host\Jaws_Service_Host.csproj", "{3B895EDF-2779-4C1E-AA21-B0F8B11BEBB1}"
 EndProject
