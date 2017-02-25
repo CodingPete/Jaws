@@ -297,62 +297,98 @@ namespace Jaws_Service_Library
 
         public void updateArtikel(Artikel artikel)
         {
-            
+            db.ArtikelSet.Attach(artikel);
+            var entry = db.Entry(artikel);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void updateArtikelBeleg(ArtikelBeleg artikelbeleg)
         {
-            throw new NotImplementedException();
+            db.ArtikelBelegSet.Attach(artikelbeleg);
+            var entry = db.Entry(artikelbeleg);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void updateBeleg(Beleg beleg)
         {
-            throw new NotImplementedException();
+            db.BelegSet.Attach(beleg);
+            var entry = db.Entry(beleg);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void updateLieferant(Lieferant lieferant)
         {
-            throw new NotImplementedException();
+            db.LieferantSet.Attach(lieferant);
+            var entry = db.Entry(lieferant);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void updateLieferart(Lieferart lieferart)
         {
-            throw new NotImplementedException();
+            db.LieferartSet.Attach(lieferart);
+            var entry = db.Entry(lieferart);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void updatePersonal(Personal personal)
         {
-            throw new NotImplementedException();
+            db.PersonalSet.Attach(personal);
+            var entry = db.Entry(personal);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void updatePrognose(Prognose prognose)
         {
-            throw new NotImplementedException();
+            db.PrognoseSet.Attach(prognose);
+            var entry = db.Entry(prognose);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void updateRecht(Recht recht)
         {
-            throw new NotImplementedException();
+            db.RechtSet.Attach(recht);
+            var entry = db.Entry(recht);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void updateRolle(Rolle rolle)
         {
-            throw new NotImplementedException();
+            db.RolleSet.Attach(rolle);
+            var entry = db.Entry(rolle);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void updateRolleRecht(RolleRecht rollerecht)
         {
-            throw new NotImplementedException();
+            db.RolleRechtSet.Attach(rollerecht);
+            var entry = db.Entry(rollerecht);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void updateSchicht(Schicht schicht)
         {
-            throw new NotImplementedException();
+            db.SchichtSet.Attach(schicht);
+            var entry = db.Entry(schicht);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void updateWarengruppe(Warengruppe warengruppe)
         {
-            throw new NotImplementedException();
+            db.WarengruppeSet.Attach(warengruppe);
+            var entry = db.Entry(warengruppe);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
     }
