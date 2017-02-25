@@ -17,6 +17,7 @@ namespace DAL
         public int Id { get; set; }
         public int ArtikelId { get; set; }
         public int BelegId { get; set; }
+        public double Menge { get; set; }
     
         public virtual Artikel Artikel { get; set; }
         public virtual Beleg Beleg { get; set; }

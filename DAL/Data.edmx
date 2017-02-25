@@ -198,6 +198,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ArtikelId" Type="int" Nullable="false" />
     <Property Name="BelegId" Type="int" Nullable="false" />
+    <Property Name="Menge" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="RolleRechtSet">
     <Key>
@@ -633,6 +634,7 @@
           <Property Name="ArtikelId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Beleg" Relationship="Data.BelegArtikelBeleg" FromRole="ArtikelBeleg" ToRole="Beleg" />
           <Property Name="BelegId" Type="Int32" Nullable="false" />
+          <Property Name="Menge" Type="Double" Nullable="false" />
         </EntityType>
         <Association Name="ArtikelArtikelBeleg">
           <End Type="Data.Artikel" Role="Artikel" Multiplicity="1" />
@@ -854,6 +856,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="ArtikelId" ColumnName="ArtikelId" />
           <ScalarProperty Name="BelegId" ColumnName="BelegId" />
+          <ScalarProperty Name="Menge" ColumnName="Menge" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

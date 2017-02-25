@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/25/2017 14:38:47
+-- Date Created: 02/25/2017 19:42:21
 -- Generated from EDMX file: C:\Users\peter\Desktop\VWW\Jaws\DAL\Data.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [JAWS];
+USE [Jaws];
 GO
 IF SCHEMA_ID(N'Jaws-DB') IS NULL EXECUTE(N'CREATE SCHEMA [Jaws-DB]');
 GO
@@ -232,7 +232,8 @@ GO
 CREATE TABLE [Jaws-DB].[ArtikelBelegSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [ArtikelId] int  NOT NULL,
-    [BelegId] int  NOT NULL
+    [BelegId] int  NOT NULL,
+    [Menge] float  NOT NULL
 );
 GO
 
