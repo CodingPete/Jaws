@@ -48,9 +48,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Jaws_Service_Library\Jaws_Service_Library.csproj">
       <Project>{c8866848-7eb9-4d98-96ee-a168d126e5e1}</Project>
       <Name>Jaws_Service_Library</Name>

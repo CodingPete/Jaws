@@ -119,7 +119,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Data.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.config" />
     <None Include="Data.edmx.diagram">
       <DependentUpon>Data.edmx</DependentUpon>
     </None>
