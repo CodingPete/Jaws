@@ -1,0 +1,1141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DAL" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_getPersonalbyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPersonalbyId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPersonalbyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPersonalbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setPersonal_InputMessage">
+    <wsdl:part name="parameters" element="tns:setPersonal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setPersonal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setPersonalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updatePersonal_InputMessage">
+    <wsdl:part name="parameters" element="tns:updatePersonal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updatePersonal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updatePersonalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPersonalList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPersonalList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPersonalList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPersonalListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPersonalbyRolleId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPersonalbyRolleId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPersonalbyRolleId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPersonalbyRolleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArbeitsvertragbyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArbeitsvertragbyId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArbeitsvertragbyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArbeitsvertragbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setArbeitsvertrag_InputMessage">
+    <wsdl:part name="parameters" element="tns:setArbeitsvertrag" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setArbeitsvertrag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setArbeitsvertragResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateArbeitsvertrag_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateArbeitsvertrag" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateArbeitsvertrag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateArbeitsvertragResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArbeitsvertragList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArbeitsvertragList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArbeitsvertragList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArbeitsvertragListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRollebyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRollebyId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRollebyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRollebyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setRolle_InputMessage">
+    <wsdl:part name="parameters" element="tns:setRolle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setRolle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setRolleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateRolle_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateRolle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateRolle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateRolleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRolleList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRolleList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRolleList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRolleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRechtbyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRechtbyId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRechtbyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRechtbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setRecht_InputMessage">
+    <wsdl:part name="parameters" element="tns:setRecht" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setRecht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setRechtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateRecht_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateRecht" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateRecht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateRechtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setRolleRecht_InputMessage">
+    <wsdl:part name="parameters" element="tns:setRolleRecht" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setRolleRecht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setRolleRechtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateRolleRecht_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateRolleRecht" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateRolleRecht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateRolleRechtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRollefromRechtId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRollefromRechtId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRollefromRechtId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRollefromRechtIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRechtfromRolleId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRechtfromRolleId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRechtfromRolleId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRechtfromRolleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getSchichtbyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSchichtbyId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getSchichtbyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSchichtbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setSchicht_InputMessage">
+    <wsdl:part name="parameters" element="tns:setSchicht" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setSchicht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setSchichtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateSchicht_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateSchicht" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateSchicht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateSchichtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getSchichtbyPersonalId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSchichtbyPersonalId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getSchichtbyPersonalId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSchichtbyPersonalIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getSchichtBetween_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSchichtBetween" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getSchichtBetween_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSchichtBetweenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getSchichtByPersonalIdAndBetween_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSchichtByPersonalIdAndBetween" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getSchichtByPersonalIdAndBetween_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSchichtByPersonalIdAndBetweenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getLieferantbyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getLieferantbyId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getLieferantbyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getLieferantbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setLieferant_InputMessage">
+    <wsdl:part name="parameters" element="tns:setLieferant" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setLieferant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setLieferantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateLieferant_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateLieferant" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateLieferant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateLieferantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getLieferantList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getLieferantList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getLieferantList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getLieferantListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelbyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelbyId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelbyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setArtikel_InputMessage">
+    <wsdl:part name="parameters" element="tns:setArtikel" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setArtikel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setArtikelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateArtikel_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateArtikel" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateArtikel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateArtikelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelbyLieferantId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelbyLieferantId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelbyLieferantId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelbyLieferantIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelbyWarengruppeId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelbyWarengruppeId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelbyWarengruppeId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelbyWarengruppeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getBelegbyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBelegbyId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getBelegbyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBelegbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setBeleg_InputMessage">
+    <wsdl:part name="parameters" element="tns:setBeleg" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setBeleg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setBelegResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateBeleg_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateBeleg" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateBeleg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateBelegResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getBelegList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBelegList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getBelegList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBelegListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setArtikelBeleg_InputMessage">
+    <wsdl:part name="parameters" element="tns:setArtikelBeleg" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setArtikelBeleg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setArtikelBelegResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateArtikelBeleg_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateArtikelBeleg" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateArtikelBeleg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateArtikelBelegResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelfromBelegId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelfromBelegId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelfromBelegId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelfromBelegIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getBelegfromArtikelId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBelegfromArtikelId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getBelegfromArtikelId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBelegfromArtikelIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getWarengruppebyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getWarengruppebyId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getWarengruppebyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getWarengruppebyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setWarengruppe_InputMessage">
+    <wsdl:part name="parameters" element="tns:setWarengruppe" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setWarengruppe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setWarengruppeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateWarengruppe_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateWarengruppe" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateWarengruppe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateWarengruppeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getWarengruppeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getWarengruppeList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getWarengruppeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getWarengruppeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getWarengruppebyName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getWarengruppebyName" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getWarengruppebyName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getWarengruppebyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPrognosebyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognosebyId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPrognosebyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognosebyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setPrognose_InputMessage">
+    <wsdl:part name="parameters" element="tns:setPrognose" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setPrognose_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setPrognoseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updatePrognose_InputMessage">
+    <wsdl:part name="parameters" element="tns:updatePrognose" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updatePrognose_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updatePrognoseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPrognoseList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognoseList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPrognoseList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognoseListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPrognosebyArtikelId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognosebyArtikelId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPrognosebyArtikelId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognosebyArtikelIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPrognosebyDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognosebyDate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPrognosebyDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognosebyDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getLieferartbyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getLieferartbyId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getLieferartbyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getLieferartbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setLieferart_InputMessage">
+    <wsdl:part name="parameters" element="tns:setLieferart" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setLieferart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setLieferartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateLieferart_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateLieferart" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateLieferart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateLieferartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getLieferartList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getLieferartList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getLieferartList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getLieferartListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="getPersonalbyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPersonalbyId" message="tns:IService1_getPersonalbyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPersonalbyIdResponse" message="tns:IService1_getPersonalbyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setPersonal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setPersonal" message="tns:IService1_setPersonal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setPersonalResponse" message="tns:IService1_setPersonal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePersonal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updatePersonal" message="tns:IService1_updatePersonal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updatePersonalResponse" message="tns:IService1_updatePersonal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPersonalList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPersonalList" message="tns:IService1_getPersonalList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPersonalListResponse" message="tns:IService1_getPersonalList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPersonalbyRolleId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPersonalbyRolleId" message="tns:IService1_getPersonalbyRolleId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPersonalbyRolleIdResponse" message="tns:IService1_getPersonalbyRolleId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getArbeitsvertragbyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragbyId" message="tns:IService1_getArbeitsvertragbyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragbyIdResponse" message="tns:IService1_getArbeitsvertragbyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setArbeitsvertrag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setArbeitsvertrag" message="tns:IService1_setArbeitsvertrag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setArbeitsvertragResponse" message="tns:IService1_setArbeitsvertrag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateArbeitsvertrag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateArbeitsvertrag" message="tns:IService1_updateArbeitsvertrag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateArbeitsvertragResponse" message="tns:IService1_updateArbeitsvertrag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getArbeitsvertragList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragList" message="tns:IService1_getArbeitsvertragList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragListResponse" message="tns:IService1_getArbeitsvertragList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRollebyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRollebyId" message="tns:IService1_getRollebyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRollebyIdResponse" message="tns:IService1_getRollebyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setRolle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setRolle" message="tns:IService1_setRolle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setRolleResponse" message="tns:IService1_setRolle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRolle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateRolle" message="tns:IService1_updateRolle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateRolleResponse" message="tns:IService1_updateRolle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRolleList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRolleList" message="tns:IService1_getRolleList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRolleListResponse" message="tns:IService1_getRolleList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRechtbyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRechtbyId" message="tns:IService1_getRechtbyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRechtbyIdResponse" message="tns:IService1_getRechtbyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setRecht">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setRecht" message="tns:IService1_setRecht_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setRechtResponse" message="tns:IService1_setRecht_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRecht">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateRecht" message="tns:IService1_updateRecht_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateRechtResponse" message="tns:IService1_updateRecht_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setRolleRecht">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setRolleRecht" message="tns:IService1_setRolleRecht_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setRolleRechtResponse" message="tns:IService1_setRolleRecht_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRolleRecht">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateRolleRecht" message="tns:IService1_updateRolleRecht_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateRolleRechtResponse" message="tns:IService1_updateRolleRecht_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRollefromRechtId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRollefromRechtId" message="tns:IService1_getRollefromRechtId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRollefromRechtIdResponse" message="tns:IService1_getRollefromRechtId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRechtfromRolleId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRechtfromRolleId" message="tns:IService1_getRechtfromRolleId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRechtfromRolleIdResponse" message="tns:IService1_getRechtfromRolleId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSchichtbyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getSchichtbyId" message="tns:IService1_getSchichtbyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getSchichtbyIdResponse" message="tns:IService1_getSchichtbyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setSchicht">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setSchicht" message="tns:IService1_setSchicht_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setSchichtResponse" message="tns:IService1_setSchicht_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateSchicht">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateSchicht" message="tns:IService1_updateSchicht_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateSchichtResponse" message="tns:IService1_updateSchicht_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSchichtbyPersonalId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getSchichtbyPersonalId" message="tns:IService1_getSchichtbyPersonalId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getSchichtbyPersonalIdResponse" message="tns:IService1_getSchichtbyPersonalId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSchichtBetween">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getSchichtBetween" message="tns:IService1_getSchichtBetween_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getSchichtBetweenResponse" message="tns:IService1_getSchichtBetween_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSchichtByPersonalIdAndBetween">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween" message="tns:IService1_getSchichtByPersonalIdAndBetween_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetweenResponse" message="tns:IService1_getSchichtByPersonalIdAndBetween_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLieferantbyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getLieferantbyId" message="tns:IService1_getLieferantbyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getLieferantbyIdResponse" message="tns:IService1_getLieferantbyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setLieferant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setLieferant" message="tns:IService1_setLieferant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setLieferantResponse" message="tns:IService1_setLieferant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateLieferant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateLieferant" message="tns:IService1_updateLieferant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateLieferantResponse" message="tns:IService1_updateLieferant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLieferantList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getLieferantList" message="tns:IService1_getLieferantList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getLieferantListResponse" message="tns:IService1_getLieferantList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtikelbyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArtikelbyId" message="tns:IService1_getArtikelbyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArtikelbyIdResponse" message="tns:IService1_getArtikelbyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setArtikel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setArtikel" message="tns:IService1_setArtikel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setArtikelResponse" message="tns:IService1_setArtikel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateArtikel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateArtikel" message="tns:IService1_updateArtikel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateArtikelResponse" message="tns:IService1_updateArtikel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtikelList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArtikelList" message="tns:IService1_getArtikelList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArtikelListResponse" message="tns:IService1_getArtikelList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtikelbyLieferantId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArtikelbyLieferantId" message="tns:IService1_getArtikelbyLieferantId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArtikelbyLieferantIdResponse" message="tns:IService1_getArtikelbyLieferantId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtikelbyWarengruppeId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArtikelbyWarengruppeId" message="tns:IService1_getArtikelbyWarengruppeId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArtikelbyWarengruppeIdResponse" message="tns:IService1_getArtikelbyWarengruppeId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBelegbyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getBelegbyId" message="tns:IService1_getBelegbyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getBelegbyIdResponse" message="tns:IService1_getBelegbyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setBeleg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setBeleg" message="tns:IService1_setBeleg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setBelegResponse" message="tns:IService1_setBeleg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBeleg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateBeleg" message="tns:IService1_updateBeleg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateBelegResponse" message="tns:IService1_updateBeleg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBelegList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getBelegList" message="tns:IService1_getBelegList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getBelegListResponse" message="tns:IService1_getBelegList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setArtikelBeleg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setArtikelBeleg" message="tns:IService1_setArtikelBeleg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setArtikelBelegResponse" message="tns:IService1_setArtikelBeleg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateArtikelBeleg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateArtikelBeleg" message="tns:IService1_updateArtikelBeleg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateArtikelBelegResponse" message="tns:IService1_updateArtikelBeleg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtikelfromBelegId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArtikelfromBelegId" message="tns:IService1_getArtikelfromBelegId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArtikelfromBelegIdResponse" message="tns:IService1_getArtikelfromBelegId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBelegfromArtikelId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getBelegfromArtikelId" message="tns:IService1_getBelegfromArtikelId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getBelegfromArtikelIdResponse" message="tns:IService1_getBelegfromArtikelId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getWarengruppebyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getWarengruppebyId" message="tns:IService1_getWarengruppebyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getWarengruppebyIdResponse" message="tns:IService1_getWarengruppebyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setWarengruppe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setWarengruppe" message="tns:IService1_setWarengruppe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setWarengruppeResponse" message="tns:IService1_setWarengruppe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateWarengruppe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateWarengruppe" message="tns:IService1_updateWarengruppe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateWarengruppeResponse" message="tns:IService1_updateWarengruppe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getWarengruppeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getWarengruppeList" message="tns:IService1_getWarengruppeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getWarengruppeListResponse" message="tns:IService1_getWarengruppeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getWarengruppebyName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getWarengruppebyName" message="tns:IService1_getWarengruppebyName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getWarengruppebyNameResponse" message="tns:IService1_getWarengruppebyName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrognosebyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPrognosebyId" message="tns:IService1_getPrognosebyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPrognosebyIdResponse" message="tns:IService1_getPrognosebyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setPrognose">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setPrognose" message="tns:IService1_setPrognose_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setPrognoseResponse" message="tns:IService1_setPrognose_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePrognose">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updatePrognose" message="tns:IService1_updatePrognose_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updatePrognoseResponse" message="tns:IService1_updatePrognose_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrognoseList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPrognoseList" message="tns:IService1_getPrognoseList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPrognoseListResponse" message="tns:IService1_getPrognoseList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrognosebyArtikelId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPrognosebyArtikelId" message="tns:IService1_getPrognosebyArtikelId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPrognosebyArtikelIdResponse" message="tns:IService1_getPrognosebyArtikelId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrognosebyDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPrognosebyDate" message="tns:IService1_getPrognosebyDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPrognosebyDateResponse" message="tns:IService1_getPrognosebyDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLieferartbyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getLieferartbyId" message="tns:IService1_getLieferartbyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getLieferartbyIdResponse" message="tns:IService1_getLieferartbyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setLieferart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setLieferart" message="tns:IService1_setLieferart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setLieferartResponse" message="tns:IService1_setLieferart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateLieferart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateLieferart" message="tns:IService1_updateLieferart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateLieferartResponse" message="tns:IService1_updateLieferart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLieferartList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getLieferartList" message="tns:IService1_getLieferartList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getLieferartListResponse" message="tns:IService1_getLieferartList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getPersonalbyId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPersonalbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPersonal">
+      <soap:operation soapAction="http://tempuri.org/IService1/setPersonal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePersonal">
+      <soap:operation soapAction="http://tempuri.org/IService1/updatePersonal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonalList">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPersonalList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonalbyRolleId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPersonalbyRolleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArbeitsvertragbyId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getArbeitsvertragbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setArbeitsvertrag">
+      <soap:operation soapAction="http://tempuri.org/IService1/setArbeitsvertrag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateArbeitsvertrag">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateArbeitsvertrag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArbeitsvertragList">
+      <soap:operation soapAction="http://tempuri.org/IService1/getArbeitsvertragList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRollebyId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRollebyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRolle">
+      <soap:operation soapAction="http://tempuri.org/IService1/setRolle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRolle">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateRolle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRolleList">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRolleList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRechtbyId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRechtbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRecht">
+      <soap:operation soapAction="http://tempuri.org/IService1/setRecht" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRecht">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateRecht" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRolleRecht">
+      <soap:operation soapAction="http://tempuri.org/IService1/setRolleRecht" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRolleRecht">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateRolleRecht" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRollefromRechtId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRollefromRechtId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRechtfromRolleId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRechtfromRolleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSchichtbyId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getSchichtbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSchicht">
+      <soap:operation soapAction="http://tempuri.org/IService1/setSchicht" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSchicht">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateSchicht" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSchichtbyPersonalId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getSchichtbyPersonalId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSchichtBetween">
+      <soap:operation soapAction="http://tempuri.org/IService1/getSchichtBetween" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSchichtByPersonalIdAndBetween">
+      <soap:operation soapAction="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLieferantbyId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getLieferantbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLieferant">
+      <soap:operation soapAction="http://tempuri.org/IService1/setLieferant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateLieferant">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateLieferant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLieferantList">
+      <soap:operation soapAction="http://tempuri.org/IService1/getLieferantList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtikelbyId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getArtikelbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setArtikel">
+      <soap:operation soapAction="http://tempuri.org/IService1/setArtikel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateArtikel">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateArtikel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtikelList">
+      <soap:operation soapAction="http://tempuri.org/IService1/getArtikelList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtikelbyLieferantId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getArtikelbyLieferantId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtikelbyWarengruppeId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getArtikelbyWarengruppeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBelegbyId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getBelegbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setBeleg">
+      <soap:operation soapAction="http://tempuri.org/IService1/setBeleg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBeleg">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateBeleg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBelegList">
+      <soap:operation soapAction="http://tempuri.org/IService1/getBelegList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setArtikelBeleg">
+      <soap:operation soapAction="http://tempuri.org/IService1/setArtikelBeleg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateArtikelBeleg">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateArtikelBeleg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtikelfromBelegId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getArtikelfromBelegId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBelegfromArtikelId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getBelegfromArtikelId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWarengruppebyId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getWarengruppebyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setWarengruppe">
+      <soap:operation soapAction="http://tempuri.org/IService1/setWarengruppe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWarengruppe">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateWarengruppe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWarengruppeList">
+      <soap:operation soapAction="http://tempuri.org/IService1/getWarengruppeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWarengruppebyName">
+      <soap:operation soapAction="http://tempuri.org/IService1/getWarengruppebyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrognosebyId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPrognosebyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPrognose">
+      <soap:operation soapAction="http://tempuri.org/IService1/setPrognose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePrognose">
+      <soap:operation soapAction="http://tempuri.org/IService1/updatePrognose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrognoseList">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPrognoseList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrognosebyArtikelId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPrognosebyArtikelId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrognosebyDate">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPrognosebyDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLieferartbyId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getLieferartbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLieferart">
+      <soap:operation soapAction="http://tempuri.org/IService1/setLieferart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateLieferart">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateLieferart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLieferartList">
+      <soap:operation soapAction="http://tempuri.org/IService1/getLieferartList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/Jaws_Service_Library/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
