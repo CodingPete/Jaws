@@ -13,7 +13,6 @@ namespace Jaws_Service_Library
     public interface IService1
     {
         
-
         //Personal
 
         [OperationContract]
@@ -28,8 +27,11 @@ namespace Jaws_Service_Library
         [OperationContract]
         List<Personal> getPersonalList();
 
+        [OperationContract]
+        List<Personal> getPersonalbyRolleId(int id);
 
-        
+
+
 
         //Arbeitsvertrag
 
@@ -59,9 +61,7 @@ namespace Jaws_Service_Library
         [OperationContract]
         List<Rolle> getRolleList();
 
-        [OperationContract]
-        List<Rolle> getRollebyPersonalId(int id);
-
+       
         //Recht
 
         [OperationContract]
