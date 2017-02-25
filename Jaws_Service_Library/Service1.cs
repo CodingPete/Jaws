@@ -20,92 +20,98 @@ namespace Jaws_Service_Library
 
         public Arbeitsvertrag getArbeitsvertragbyId(int id)
         {
-            throw new NotImplementedException();
+            return db.ArbeitsvertragSet.Find(id);
         }
 
         public List<Arbeitsvertrag> getArbeitsvertragList()
         {
-            throw new NotImplementedException();
+            return db.ArbeitsvertragSet.ToList();
         }
 
         public Artikel getArtikelbyId(int id)
         {
-            throw new NotImplementedException();
+            return db.ArtikelSet.Find(id);
         }
 
         public List<Artikel> getArtikelbyLieferantId(int id)
         {
-            throw new NotImplementedException();
+            return db.ArtikelSet.Where((a) => a.LieferantId == id).ToList();
         }
 
         public List<Artikel> getArtikelbyWarengruppeId(int id)
         {
-            throw new NotImplementedException();
+            return db.ArtikelSet.Where((a) => a.WarengruppeId == id).ToList();
         }
 
         public List<Artikel> getArtikelfromBelegId(int id)
         {
-            throw new NotImplementedException();
+            var buff = db.ArtikelBelegSet.Where((ab) => ab.BelegId == id).ToList();
+            List<Artikel> alist = new List<Artikel>();
+            buff.ForEach(x => alist.Add(db.ArtikelSet.Find(x.ArtikelId)));
+            return alist;
         }
 
         public List<Artikel> getArtikelList()
         {
-            throw new NotImplementedException();
+            return db.ArtikelSet.ToList();
         }
 
         public Beleg getBelegbyId(int id)
         {
-            throw new NotImplementedException();
+            return db.BelegSet.Find(id);
         }
 
         public List<Beleg> getBelegfromArtikelId(int id)
         {
-            throw new NotImplementedException();
+            var buff = db.ArtikelBelegSet.Where((ab) => ab.ArtikelId == id).ToList();
+            List<Beleg> alist = new List<Beleg>();
+            buff.ForEach(x => alist.Add(db.BelegSet.Find(x.ArtikelId)));
+            return alist;
         }
 
         public List<Beleg> getBelegList()
         {
-            throw new NotImplementedException();
+            return db.BelegSet.ToList();
         }
 
         public Lieferant getLieferantbyId(int id)
         {
-            throw new NotImplementedException();
+            return db.LieferantSet.Find(id);
         }
 
         public List<Lieferant> getLieferantList()
         {
-            throw new NotImplementedException();
+            return db.LieferantSet.ToList();
         }
 
         public Lieferart getLieferartbyId(int id)
         {
-            throw new NotImplementedException();
+           return db.LieferartSet.Find(id);
         }
 
         public List<Lieferart> getLieferartList()
         {
-            throw new NotImplementedException();
+            return db.LieferartSet.ToList();
         }
 
         public Personal getPersonalbyId(int id)
         {
-            throw new NotImplementedException();
+            return db.PersonalSet.Find(id);
         }
 
         public List<Personal> getPersonalbyRolleId(int id)
         {
-            throw new NotImplementedException();
+            return db.PersonalSet.Where((p) => p.RolleId == id).ToList();
         }
 
         public List<Personal> getPersonalList()
         {
-            throw new NotImplementedException();
+            return db.PersonalSet.ToList();
         }
 
         public Prognose getPrognosebyArtikelId(int id)
         {
-            throw new NotImplementedException();
+            return (DAL.Prognose)db.PrognoseSet.Where((p) => p.ArtikelId == id);
         }
 
         public List<Prognose> getPrognosebyDate(DateTime date)
