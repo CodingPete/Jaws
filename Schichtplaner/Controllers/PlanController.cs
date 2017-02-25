@@ -20,6 +20,8 @@ namespace Schichtplaner.Controllers
         // GET: Plan
         public ActionResult Index()
         {
+            List<Object> schichtenListe = new List<Object>();
+
             // Hole alle Angestellten
             var personalliste = client.getPersonalList();
 
@@ -27,12 +29,24 @@ namespace Schichtplaner.Controllers
             {
                 // Für jede Person, die Schichten dieser Woche holen
                 DateTime dieseWocheMontag = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
-                DateTime dieseWocheSonntag = dieseWocheMontag.AddDays(6);
 
-                var schichtenDieseWoche = client.getSchichtByPersonalIdAndBetween(person.Id, dieseWocheMontag, dieseWocheSonntag);
+                // Für jeden Wochentag eine Schicht oder 0 holen
+                for(int i = 0; i < 7; i++)
+                {
+                    var schichten = client.getSchichtByPersonalIdAndBetween(person.Id, dieseWocheMontag, dieseWocheMontag.AddDays(i));
+
+                    // Ablage der Schichten in Array
+                    if (schichten.Count() == 0)
+                    {
+
+                    }
+
+                }
                 
-
+                   
             }
+
+            ViewBag.schichtenListe = schichtenListe;
 
             // Übergeben der Schichten an View
             return View();

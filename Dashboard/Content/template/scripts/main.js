@@ -79,13 +79,7 @@
     });
 
     /******** Search form ********/
-    $('.search-form .form-control').focusout(function () {
-        $('.header-inner').removeClass('search-focus');
-        searchState = false;
-    }).focusin(function () {
-        $('.header-inner').addClass('search-focus');
-        searchState = true;
-    });
+    
 
     /******** Sidebar toggle menu ********/
     $('[data-toggle=sidebar]').on('click', function (e) {
