@@ -3,91 +3,32 @@
 @{
     ViewBag.Title = "Index";
 }
+<div class="row">
+<a href="@Url.Action("Create")">
+              <div class="col-sm-6 col-md-4 col-lg-2">
+                              <div class="card card-inverse card-success">
+                                <div class="card-block">
+                                  <p class="card-text">
+Lieferant erstellen                                  </p>
+                                </div>
+                              </div>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Straße)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hausnummer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Zusatz)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Postleitzahl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ort)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Telefon)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Mobil)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IBAN)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BIC)
-        </th>
-        <th></th>
-    </tr>
+              </div>
+              </a>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Straße)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hausnummer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Zusatz)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Postleitzahl)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ort)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Telefon)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mobil)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IBAN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BIC)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+<div class="col-sm-6 col-md-4 col-lg-2">
+                                            <div class="card card-block">
+                                                                          <h5 class="m-b-0 v-align-middle text-overflow">
+                                                                            <span class="small pull-xs-right">
+                                                                              <i class="material-icons text-success" style="width: 16px;">arrow_drop_up</i>
+                                                                              <span style="line-height: 24px;">+76%</span>
+                                                                            </span>
+                                                                            <span>@Html.DisplayFor(modelItem => item.Name)</span>
+                                                                          </h5>
+                                                                        </div>
 
-</table>
+                            </div>
+
+            </div>
+}
