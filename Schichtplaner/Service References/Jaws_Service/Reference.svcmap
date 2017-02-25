@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6d8a56de-b2fc-45a5-b02c-b569d6c05a10" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cca9e684-5dd3-40bd-a5ca-492cd067cf08" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:1337" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/Jaws_Service_Library/Service1/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="f9020e13-49e6-4479-9996-03aa8b0b33e4" SourceId="1" SourceUrl="http://localhost:1337/?xsd=xsd2" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="2f05f189-d1a8-417c-930d-0db9fdfa9a42" SourceId="1" SourceUrl="http://localhost:1337/?xsd=xsd0" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="bcdaddea-0ffc-432c-8673-d6dfb24473fc" SourceId="1" SourceUrl="http://localhost:1337/?disco" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="1b4a0bd5-bdf0-44ca-b056-f05e0aac20e0" SourceId="1" SourceUrl="http://localhost:1337/?xsd=xsd1" />
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="3685e652-6a02-45f1-9296-59642d7a570d" SourceId="1" SourceUrl="http://localhost:1337/?wsdl" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="47b080bf-3beb-434d-82c2-14ef486e4441" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Jaws_Service_Library/Service1/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="559026da-d849-4101-9b23-1075d415ba36" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Jaws_Service_Library/Service1/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="4e138085-5821-45d1-a02a-f04894ac320e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Jaws_Service_Library/Service1/mex" />
+    <MetadataFile FileName="DAL.xsd" MetadataType="Schema" ID="eca7aec6-fd64-440a-bac4-0242173f79b8" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Jaws_Service_Library/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

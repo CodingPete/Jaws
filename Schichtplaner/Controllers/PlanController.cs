@@ -14,26 +14,20 @@ namespace Schichtplaner.Controllers
         {
             // Verbindungsaufbau zum Jaws_Server
             client = new Jaws_Service.Service1Client();
-
-            // Prüfen ob Benutzer erlaubt
-            // Wenn ja darf er passieren
-            // Ansonsten Login View anzeigen.
+            
         }
 
         // GET: Plan
         public ActionResult Index()
         {
             // Hole alle Angestellten
-            var personalliste = client.getPersonalList();
+            ViewBag.personalliste = client.getPersonalList();
 
             // Hole alle Schichten der aktuellen Woche
-            //var schichtliste = List<Jaws_Service.Schicht>//client.getSchichtBetween(new DateTime(), new DateTime());
-
-            // Übergeben der Personalliste an ViewBag
-            ViewBag.personalliste = personalliste;
-
+            var schichtliste = client.getSchichtBetween(DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday), DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Sunday));
+            
             // Übergeben der Schichten an View
-            return View();
+            return View(schichtliste);
         }
 
         // GET: Plan/Details/5
