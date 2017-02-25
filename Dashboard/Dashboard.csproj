@@ -251,6 +251,13 @@
     <Content Include="Views\ArtikelBeleg\Details.cshtml" />
     <Content Include="Views\ArtikelBeleg\Edit.cshtml" />
     <Content Include="Views\ArtikelBeleg\Index.cshtml" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
