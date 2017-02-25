@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using DAL;
+using System.Data.SqlTypes;
+using System.Reflection;
 
 namespace Jaws_Service_Library
 {
@@ -116,42 +118,48 @@ namespace Jaws_Service_Library
 
         public List<Prognose> getPrognosebyDate(DateTime date)
         {
-            throw new NotImplementedException();
+            return db.PrognoseSet.Where((p) => p.Datum == new SqlDateTime(date).Value).ToList();
         }
 
         public Prognose getPrognosebyId(int id)
         {
-            throw new NotImplementedException();
+            return db.PrognoseSet.Find(id);
         }
 
         public List<Prognose> getPrognoseList()
         {
-            throw new NotImplementedException();
+            return db.PrognoseSet.ToList();
         }
 
         public Recht getRechtbyId(int id)
         {
-            throw new NotImplementedException();
+            return db.RechtSet.Find(id);
         }
 
         public List<Recht> getRechtfromRolleId(int id)
         {
-            throw new NotImplementedException();
+            var buff = db.RolleRechtSet.Where((ab) => ab.RolleId == id).ToList();
+            List<Recht> alist = new List<Recht>();
+            buff.ForEach(x => alist.Add(db.RechtSet.Find(x.RechtId)));
+            return alist;
         }
 
-        public List<Rolle> getRollebyId(int id)
+        public Rolle getRollebyId(int id)
         {
-            throw new NotImplementedException();
+            return db.RolleSet.Find(id);
         }
 
         public List<Rolle> getRollefromRechtId(int id)
         {
-            throw new NotImplementedException();
+            var buff = db.RolleRechtSet.Where((ab) => ab.RechtId == id).ToList();
+            List<Rolle> alist = new List<Rolle>();
+            buff.ForEach(x => alist.Add(db.RolleSet.Find(x.RolleId)));
+            return alist;
         }
 
         public List<Rolle> getRolleList()
         {
-            throw new NotImplementedException();
+            return db.RolleSet.ToList();
         }
 
         public List<Schicht> getSchichtBetween(DateTime von, DateTime bis)
@@ -161,102 +169,135 @@ namespace Jaws_Service_Library
 
         public Schicht getSchichtbyId(int id)
         {
-            throw new NotImplementedException();
+            return db.SchichtSet.Find(id);
         }
 
         public List<Schicht> getSchichtbyPersonalId(int id)
         {
-            throw new NotImplementedException();
+            return db.SchichtSet.Where((s) => s.PersonalId == id).ToList();
         }
 
         public Warengruppe getWarengruppebyId(int id)
         {
-            throw new NotImplementedException();
+            return db.WarengruppeSet.Find(id);
         }
 
         public Warengruppe getWarengruppebyName(string name)
         {
-            throw new NotImplementedException();
+            return (DAL.Warengruppe)db.WarengruppeSet.Where((w) => w.Name.Equals(name));
         }
 
         public List<Warengruppe> getWarengruppeList()
         {
-            throw new NotImplementedException();
+            return db.WarengruppeSet.ToList();
         }
 
         public void setArbeitsvertrag(Arbeitsvertrag vertrag)
         {
-            throw new NotImplementedException();
+            db.ArbeitsvertragSet.Add(vertrag);
+            db.SaveChanges();
+
         }
 
         public void setArtikel(Artikel artikel)
         {
-            throw new NotImplementedException();
+            db.ArtikelSet.Add(artikel);
+            db.SaveChanges();
+
         }
 
         public void setArtikelBeleg(Artikel artikel, Beleg beleg)
         {
-            throw new NotImplementedException();
+            db.ArtikelBelegSet.Add(new ArtikelBeleg() { ArtikelId = artikel.Id, BelegId = beleg.Id });
+            db.SaveChanges();
+
         }
 
         public void setBeleg(Beleg beleg)
         {
-            throw new NotImplementedException();
+            db.BelegSet.Add(beleg);
+            db.SaveChanges();
+
         }
 
         public void setLieferant(Lieferant lieferant)
         {
-            throw new NotImplementedException();
+            db.LieferantSet.Add(lieferant);
+            db.SaveChanges();
+
         }
 
         public void setLieferart(Lieferart lieferart)
         {
-            throw new NotImplementedException();
+            db.LieferartSet.Add(lieferart);
+            db.SaveChanges();
+
         }
 
         public void setPersonal(Personal person)
         {
-            throw new NotImplementedException();
+            db.PersonalSet.Add(person);
+            db.SaveChanges();
+
         }
 
         public void setPrognose(Prognose prognose)
         {
-            throw new NotImplementedException();
+            db.PrognoseSet.Add(prognose);
+            db.SaveChanges();
         }
 
         public void setRecht(Recht recht)
         {
-            throw new NotImplementedException();
+            db.RechtSet.Add(recht);
+            db.SaveChanges();
+
         }
 
         public void setRolle(Rolle role)
         {
-            throw new NotImplementedException();
+            db.RolleSet.Add(role);
+            db.SaveChanges();
+
         }
 
         public void setRolleRecht(Rolle rolle, Recht recht)
         {
-            throw new NotImplementedException();
+            db.RolleRechtSet.Add(new RolleRecht() { RolleId = rolle.Id, RechtId = recht.Id });
+            db.SaveChanges();
+
         }
 
         public void setSchicht(Schicht schicht)
         {
-            throw new NotImplementedException();
+            db.SchichtSet.Add(schicht);
+            db.SaveChanges();
+
         }
 
         public void setWarengruppe(Warengruppe gruppe)
         {
-            throw new NotImplementedException();
+            db.WarengruppeSet.Add(gruppe);
+            db.SaveChanges();
+
         }
 
         public void updateArbeitsvertrag(Arbeitsvertrag arbeitsvertrag)
         {
-            throw new NotImplementedException();
+            db.ArbeitsvertragSet.Attach(arbeitsvertrag);
+            var entry = db.Entry(arbeitsvertrag);
+            entry.State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+            /*db.Users.Attach(updatedUser);
+            var entry = db.Entry(updatedUser);
+            entry.Property(e => e.Email).IsModified = true;
+            // other changed properties
+            db.SaveChanges();*/
         }
 
         public void updateArtikel(Artikel artikel)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void updateArtikelBeleg(ArtikelBeleg artikelbeleg)
@@ -313,5 +354,6 @@ namespace Jaws_Service_Library
         {
             throw new NotImplementedException();
         }
+
     }
 }
