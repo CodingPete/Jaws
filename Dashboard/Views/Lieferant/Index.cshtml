@@ -4,33 +4,30 @@
     ViewBag.Title = "Index";
 }
 <div class="row">
-<a href="@Url.Action("Create")">
-              <div class="col-sm-6 col-md-4 col-lg-2">
-                              <div class="card card-inverse card-success">
-                                <div class="card-block">
-                                  <p class="card-text">
-Lieferant erstellen                                  </p>
-<i class="material-icons text-success">add_circle</i>
-                                </div>
-                              </div>
 
-              </div>
-              </a>
-
-@foreach (var item in Model) {
-<a href="@Url.Action("Details", new { id=item.Id })">
-<div class="col-sm-6 col-md-4 col-lg-2">
-                                            <div class="card card-block">
-                                                                          <h5 class="m-b-0 v-align-middle text-overflow">
-                                                                            <span class="small pull-xs-right">
-                                                                              <i class="material-icons text-success" style="width: 16px;">arrow_drop_up</i>
-                                                                              <span style="line-height: 24px;">+76%</span>
-                                                                            </span>
-                                                                            <span>@Html.DisplayFor(modelItem => item.Name)</span>
-                                                                          </h5>
-                                                                        </div>
-
-                            </div>
-
+        <div class="col-sm-1 col-md-2 col-lg-2">
+            <a href="@Url.Action("Create")">
+                <div class="card card-block">
+                    <h5 class="m-b-0 v-align-middle text-overflow">
+                        <i class="material-icons text-success">add_circle</i>
+                    </h5>
+                </div>
             </a>
-}
+</div>
+
+
+    @foreach (var item in Model)
+    {
+            <div class="col-sm-6 col-md-4 col-lg-2">
+                <a href="@Url.Action("Details", new { id=item.Id })">
+                    <div class="card card-block">
+                        <h5 class="m-b-0 v-align-middle text-overflow">
+                            <span>@Html.DisplayFor(modelItem => item.Name)</span>
+                        </h5>
+                    </div>
+                </a>
+</div>
+
+
+    }
+</div>
