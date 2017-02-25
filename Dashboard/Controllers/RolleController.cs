@@ -38,6 +38,7 @@ namespace Dashboard.Controllers
         // GET: Rolle/Create
         public ActionResult Create()
         {
+            ViewBag.Rechte=db.RechtSet.ToList();
             return View();
         }
 
@@ -48,11 +49,31 @@ namespace Dashboard.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name")] Rolle rolle)
         {
+            
             if (ModelState.IsValid)
             {
                 db.RolleSet.Add(rolle);
                 db.SaveChanges();
+
+
+                var Rechte = db.RechtSet.ToList();
+
+                var test = Request.Form;
+
+                Rechte.ForEach(item =>
+                {
+                    if (test[item.Name] != null)
+                    {
+                        RolleRecht nRolleRecht = new RolleRecht();
+                        nRolleRecht.RechtId = item.Id;
+                        nRolleRecht.RolleId = rolle.Id;
+                        db.RolleRechtSet.Add(nRolleRecht);
+
+                    }
+                });
+                db.SaveChanges();
                 return RedirectToAction("Index");
+
             }
 
             return View(rolle);
@@ -70,6 +91,13 @@ namespace Dashboard.Controllers
             {
                 return HttpNotFound();
             }
+            var userRights = (from a in db.RechtSet
+                       join c in db.RolleRechtSet on a.Id equals c.RechtId
+                       where c.RolleId == id
+                       select a).ToList();
+
+            ViewBag.UserRechte = userRights;
+            ViewBag.Rechte = db.RechtSet.ToList();
             return View(rolle);
         }
 
@@ -83,6 +111,36 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(rolle).State = EntityState.Modified;
+                db.SaveChanges();
+
+                var Rechte = db.RechtSet.ToList();
+
+                var test = Request.Form;
+
+                var userRights = (from a in db.RechtSet
+                                  join c in db.RolleRechtSet on a.Id equals c.RechtId
+                                  where c.RolleId == rolle.Id
+                                  select a).ToList();
+
+
+                Rechte.ForEach(item =>
+                {
+                    if (test[item.Name] == null && userRights.Contains(item))
+                    { //Wurden einem User Rechte entzogen?
+                        var temp = db.RolleRechtSet.Where((x) => x.RechtId == item.Id && x.RolleId==rolle.Id).ToArray()[0];
+                        db.RolleRechtSet.Remove(temp);
+                    }else
+                    {
+                        if (test[item.Name] != null && !userRights.Contains(item))
+                        {
+                            RolleRecht nRolleRecht = new RolleRecht();
+                            nRolleRecht.RechtId = item.Id;
+                            nRolleRecht.RolleId = rolle.Id;
+                            db.RolleRechtSet.Add(nRolleRecht);
+                        }
+                       
+                    }
+                });
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
