@@ -1998,6 +1998,12 @@ namespace Schichtplaner.Jaws_Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtBetween", ReplyAction="http://tempuri.org/IService1/getSchichtBetweenResponse")]
         System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Schicht[]> getSchichtBetweenAsync(System.DateTime von, System.DateTime bis);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween", ReplyAction="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetweenResponse")]
+        Schichtplaner.Jaws_Service.Schicht[] getSchichtByPersonalIdAndBetween(int id, System.DateTime von, System.DateTime bis);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween", ReplyAction="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetweenResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferantbyId", ReplyAction="http://tempuri.org/IService1/getLieferantbyIdResponse")]
         Schichtplaner.Jaws_Service.Lieferant getLieferantbyId(int id);
         
@@ -2422,6 +2428,14 @@ namespace Schichtplaner.Jaws_Service {
         
         public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Schicht[]> getSchichtBetweenAsync(System.DateTime von, System.DateTime bis) {
             return base.Channel.getSchichtBetweenAsync(von, bis);
+        }
+        
+        public Schichtplaner.Jaws_Service.Schicht[] getSchichtByPersonalIdAndBetween(int id, System.DateTime von, System.DateTime bis) {
+            return base.Channel.getSchichtByPersonalIdAndBetween(id, von, bis);
+        }
+        
+        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis) {
+            return base.Channel.getSchichtByPersonalIdAndBetweenAsync(id, von, bis);
         }
         
         public Schichtplaner.Jaws_Service.Lieferant getLieferantbyId(int id) {

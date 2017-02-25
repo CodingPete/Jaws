@@ -107,6 +107,9 @@ namespace Jaws_Service_Library
         [OperationContract]
         List<Schicht> getSchichtBetween(DateTime von, DateTime bis);
 
+        [OperationContract]
+        List<Schicht> getSchichtByPersonalIdAndBetween(int id, DateTime von, DateTime bis);
+
         //Lieferant
 
         [OperationContract]

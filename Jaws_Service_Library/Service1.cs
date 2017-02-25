@@ -47,10 +47,12 @@ namespace Jaws_Service_Library
 
         public List<Artikel> getArtikelfromBelegId(int id)
         {
-            var buff = db.ArtikelBelegSet.Where((ab) => ab.BelegId == id).ToList();
-            List<Artikel> alist = new List<Artikel>();
-            buff.ForEach(x => alist.Add(db.ArtikelSet.Find(x.ArtikelId)));
-            return alist;
+            var buff = (from a in db.ArtikelSet
+                        join c in db.ArtikelBelegSet on a.Id equals c.ArtikelId
+                        where c.BelegId == id
+                        select a).ToList();
+
+            return buff;
         }
 
         public List<Artikel> getArtikelList()
@@ -65,10 +67,12 @@ namespace Jaws_Service_Library
 
         public List<Beleg> getBelegfromArtikelId(int id)
         {
-            var buff = db.ArtikelBelegSet.Where((ab) => ab.ArtikelId == id).ToList();
-            List<Beleg> alist = new List<Beleg>();
-            buff.ForEach(x => alist.Add(db.BelegSet.Find(x.ArtikelId)));
-            return alist;
+            var buff = (from a in db.BelegSet
+                        join c in db.ArtikelBelegSet on a.Id equals c.BelegId
+                        where c.ArtikelId == id
+                        select a).ToList();
+
+            return buff;
         }
 
         public List<Beleg> getBelegList()
@@ -138,10 +142,12 @@ namespace Jaws_Service_Library
 
         public List<Recht> getRechtfromRolleId(int id)
         {
-            var buff = db.RolleRechtSet.Where((ab) => ab.RolleId == id).ToList();
-            List<Recht> alist = new List<Recht>();
-            buff.ForEach(x => alist.Add(db.RechtSet.Find(x.RechtId)));
-            return alist;
+            var buff = (from a in db.RechtSet
+                        join c in db.RolleRechtSet on a.Id equals c.RechtId
+                        where c.RolleId == id
+                        select a).ToList();
+            
+            return buff;
         }
 
         public Rolle getRollebyId(int id)
@@ -151,10 +157,12 @@ namespace Jaws_Service_Library
 
         public List<Rolle> getRollefromRechtId(int id)
         {
-            var buff = db.RolleRechtSet.Where((ab) => ab.RechtId == id).ToList();
-            List<Rolle> alist = new List<Rolle>();
-            buff.ForEach(x => alist.Add(db.RolleSet.Find(x.RolleId)));
-            return alist;
+            var buff = (from a in db.RolleSet
+                        join c in db.RolleRechtSet on a.Id equals c.RolleId
+                        where c.RechtId == id
+                        select a).ToList();
+
+            return buff;
         }
 
         public List<Rolle> getRolleList()
@@ -175,6 +183,11 @@ namespace Jaws_Service_Library
         public List<Schicht> getSchichtbyPersonalId(int id)
         {
             return db.SchichtSet.Where((s) => s.PersonalId == id).ToList();
+        }
+
+        public List<Schicht> getSchichtByPersonalIdAndBetween(int id, DateTime von, DateTime bis)
+        {
+            return db.SchichtSet.Where((s) => s.PersonalId == id && s.Startzeit_soll >= von.Date && s.Startzeit_soll <= bis.Date).ToList();
         }
 
         public Warengruppe getWarengruppebyId(int id)
