@@ -24,5 +24,22 @@ namespace Kasse
         {
             InitializeComponent();
         }
+
+        private void button_num_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            String text = button.Content.ToString();
+
+            TextBox textbox = textBox;
+
+            textBox.Text = textBox.Text + text;
+        }
+
+        private void button_Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            TextBox text = textBox;
+            textBox.Text = "";
+        }
     }
+    
 }
