@@ -35,6 +35,8 @@ namespace DAL
         public string Mobil { get; set; }
         public int ArbeitsvertragId { get; set; }
         public int RolleId { get; set; }
+        public string email { get; set; }
+        public string passwort { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Schicht> Schicht { get; set; }

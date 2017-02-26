@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/25/2017 19:42:21
+-- Date Created: 02/26/2017 21:07:27
 -- Generated from EDMX file: C:\Users\peter\Desktop\VWW\Jaws\DAL\Data.edmx
 -- --------------------------------------------------
 
@@ -126,7 +126,9 @@ CREATE TABLE [Jaws-DB].[PersonalSet] (
     [Telefon] nvarchar(max)  NOT NULL,
     [Mobil] nvarchar(max)  NOT NULL,
     [ArbeitsvertragId] int  NOT NULL,
-    [RolleId] int  NOT NULL
+    [RolleId] int  NOT NULL,
+    [email] nvarchar(max)  NOT NULL,
+    [passwort] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -154,16 +156,16 @@ GO
 CREATE TABLE [Jaws-DB].[LieferantSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
-    [Straße] nvarchar(max)  NOT NULL,
-    [Hausnummer] int  NOT NULL,
+    [Straße] nvarchar(max)  NULL,
+    [Hausnummer] int  NULL,
     [Zusatz] nvarchar(max)  NULL,
-    [Postleitzahl] int  NOT NULL,
-    [Ort] nvarchar(max)  NOT NULL,
-    [Telefon] nvarchar(max)  NOT NULL,
-    [Mobil] nvarchar(max)  NOT NULL,
-    [Email] nvarchar(max)  NOT NULL,
-    [IBAN] nvarchar(max)  NOT NULL,
-    [BIC] nvarchar(max)  NOT NULL
+    [Postleitzahl] int  NULL,
+    [Ort] nvarchar(max)  NULL,
+    [Telefon] nvarchar(max)  NULL,
+    [Mobil] nvarchar(max)  NULL,
+    [Email] nvarchar(max)  NULL,
+    [IBAN] nvarchar(max)  NULL,
+    [BIC] nvarchar(max)  NULL
 );
 GO
 
@@ -171,7 +173,7 @@ GO
 CREATE TABLE [Jaws-DB].[ArtikelSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
-    [GTIN] int  NOT NULL,
+    [GTIN] nvarchar(max)  NOT NULL,
     [Bestand] float  NOT NULL,
     [Einheit] int  NOT NULL,
     [Nettoeinkaufspreis] float  NOT NULL,

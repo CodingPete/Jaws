@@ -9,2116 +9,257 @@
 //------------------------------------------------------------------------------
 
 namespace Kasse.ServiceReference1 {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Personal", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    [System.SerializableAttribute()]
-    public partial class Personal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Arbeitsvertrag ArbeitsvertragField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ArbeitsvertragIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BICField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int HausnummerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IBANField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MobilField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OrtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PostleitzahlField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Rolle RolleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RolleIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Schicht[] SchichtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SteuerklasseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StraßeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TelefonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string VornameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ZusatzField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Arbeitsvertrag Arbeitsvertrag {
-            get {
-                return this.ArbeitsvertragField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ArbeitsvertragField, value) != true)) {
-                    this.ArbeitsvertragField = value;
-                    this.RaisePropertyChanged("Arbeitsvertrag");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ArbeitsvertragId {
-            get {
-                return this.ArbeitsvertragIdField;
-            }
-            set {
-                if ((this.ArbeitsvertragIdField.Equals(value) != true)) {
-                    this.ArbeitsvertragIdField = value;
-                    this.RaisePropertyChanged("ArbeitsvertragId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BIC {
-            get {
-                return this.BICField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BICField, value) != true)) {
-                    this.BICField = value;
-                    this.RaisePropertyChanged("BIC");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Hausnummer {
-            get {
-                return this.HausnummerField;
-            }
-            set {
-                if ((this.HausnummerField.Equals(value) != true)) {
-                    this.HausnummerField = value;
-                    this.RaisePropertyChanged("Hausnummer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string IBAN {
-            get {
-                return this.IBANField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IBANField, value) != true)) {
-                    this.IBANField = value;
-                    this.RaisePropertyChanged("IBAN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Mobil {
-            get {
-                return this.MobilField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MobilField, value) != true)) {
-                    this.MobilField = value;
-                    this.RaisePropertyChanged("Mobil");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Ort {
-            get {
-                return this.OrtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OrtField, value) != true)) {
-                    this.OrtField = value;
-                    this.RaisePropertyChanged("Ort");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Postleitzahl {
-            get {
-                return this.PostleitzahlField;
-            }
-            set {
-                if ((this.PostleitzahlField.Equals(value) != true)) {
-                    this.PostleitzahlField = value;
-                    this.RaisePropertyChanged("Postleitzahl");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Rolle Rolle {
-            get {
-                return this.RolleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RolleField, value) != true)) {
-                    this.RolleField = value;
-                    this.RaisePropertyChanged("Rolle");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RolleId {
-            get {
-                return this.RolleIdField;
-            }
-            set {
-                if ((this.RolleIdField.Equals(value) != true)) {
-                    this.RolleIdField = value;
-                    this.RaisePropertyChanged("RolleId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Schicht[] Schicht {
-            get {
-                return this.SchichtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SchichtField, value) != true)) {
-                    this.SchichtField = value;
-                    this.RaisePropertyChanged("Schicht");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Steuerklasse {
-            get {
-                return this.SteuerklasseField;
-            }
-            set {
-                if ((this.SteuerklasseField.Equals(value) != true)) {
-                    this.SteuerklasseField = value;
-                    this.RaisePropertyChanged("Steuerklasse");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Straße {
-            get {
-                return this.StraßeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StraßeField, value) != true)) {
-                    this.StraßeField = value;
-                    this.RaisePropertyChanged("Straße");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Telefon {
-            get {
-                return this.TelefonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TelefonField, value) != true)) {
-                    this.TelefonField = value;
-                    this.RaisePropertyChanged("Telefon");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Vorname {
-            get {
-                return this.VornameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.VornameField, value) != true)) {
-                    this.VornameField = value;
-                    this.RaisePropertyChanged("Vorname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Zusatz {
-            get {
-                return this.ZusatzField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ZusatzField, value) != true)) {
-                    this.ZusatzField = value;
-                    this.RaisePropertyChanged("Zusatz");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Arbeitsvertrag", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    [System.SerializableAttribute()]
-    public partial class Arbeitsvertrag : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Personal[] PersonalField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double StundenlohnField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WochenstundenField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Personal[] Personal {
-            get {
-                return this.PersonalField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PersonalField, value) != true)) {
-                    this.PersonalField = value;
-                    this.RaisePropertyChanged("Personal");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Stundenlohn {
-            get {
-                return this.StundenlohnField;
-            }
-            set {
-                if ((this.StundenlohnField.Equals(value) != true)) {
-                    this.StundenlohnField = value;
-                    this.RaisePropertyChanged("Stundenlohn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Wochenstunden {
-            get {
-                return this.WochenstundenField;
-            }
-            set {
-                if ((this.WochenstundenField.Equals(value) != true)) {
-                    this.WochenstundenField = value;
-                    this.RaisePropertyChanged("Wochenstunden");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Rolle", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    [System.SerializableAttribute()]
-    public partial class Rolle : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Personal[] PersonalField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.RolleRecht[] RolleRechtField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Personal[] Personal {
-            get {
-                return this.PersonalField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PersonalField, value) != true)) {
-                    this.PersonalField = value;
-                    this.RaisePropertyChanged("Personal");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.RolleRecht[] RolleRecht {
-            get {
-                return this.RolleRechtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RolleRechtField, value) != true)) {
-                    this.RolleRechtField = value;
-                    this.RaisePropertyChanged("RolleRecht");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Schicht", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    [System.SerializableAttribute()]
-    public partial class Schicht : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime Endzeit_istField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime Endzeit_sollField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PauseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Personal PersonalField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PersonalIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime Startzeit_istField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime Startzeit_sollField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Endzeit_ist {
-            get {
-                return this.Endzeit_istField;
-            }
-            set {
-                if ((this.Endzeit_istField.Equals(value) != true)) {
-                    this.Endzeit_istField = value;
-                    this.RaisePropertyChanged("Endzeit_ist");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Endzeit_soll {
-            get {
-                return this.Endzeit_sollField;
-            }
-            set {
-                if ((this.Endzeit_sollField.Equals(value) != true)) {
-                    this.Endzeit_sollField = value;
-                    this.RaisePropertyChanged("Endzeit_soll");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Pause {
-            get {
-                return this.PauseField;
-            }
-            set {
-                if ((this.PauseField.Equals(value) != true)) {
-                    this.PauseField = value;
-                    this.RaisePropertyChanged("Pause");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Personal Personal {
-            get {
-                return this.PersonalField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PersonalField, value) != true)) {
-                    this.PersonalField = value;
-                    this.RaisePropertyChanged("Personal");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PersonalId {
-            get {
-                return this.PersonalIdField;
-            }
-            set {
-                if ((this.PersonalIdField.Equals(value) != true)) {
-                    this.PersonalIdField = value;
-                    this.RaisePropertyChanged("PersonalId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Startzeit_ist {
-            get {
-                return this.Startzeit_istField;
-            }
-            set {
-                if ((this.Startzeit_istField.Equals(value) != true)) {
-                    this.Startzeit_istField = value;
-                    this.RaisePropertyChanged("Startzeit_ist");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Startzeit_soll {
-            get {
-                return this.Startzeit_sollField;
-            }
-            set {
-                if ((this.Startzeit_sollField.Equals(value) != true)) {
-                    this.Startzeit_sollField = value;
-                    this.RaisePropertyChanged("Startzeit_soll");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RolleRecht", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    [System.SerializableAttribute()]
-    public partial class RolleRecht : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Recht RechtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RechtIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Rolle RolleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RolleIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Recht Recht {
-            get {
-                return this.RechtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RechtField, value) != true)) {
-                    this.RechtField = value;
-                    this.RaisePropertyChanged("Recht");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RechtId {
-            get {
-                return this.RechtIdField;
-            }
-            set {
-                if ((this.RechtIdField.Equals(value) != true)) {
-                    this.RechtIdField = value;
-                    this.RaisePropertyChanged("RechtId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Rolle Rolle {
-            get {
-                return this.RolleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RolleField, value) != true)) {
-                    this.RolleField = value;
-                    this.RaisePropertyChanged("Rolle");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RolleId {
-            get {
-                return this.RolleIdField;
-            }
-            set {
-                if ((this.RolleIdField.Equals(value) != true)) {
-                    this.RolleIdField = value;
-                    this.RaisePropertyChanged("RolleId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Recht", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    [System.SerializableAttribute()]
-    public partial class Recht : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.RolleRecht[] RolleRechtField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.RolleRecht[] RolleRecht {
-            get {
-                return this.RolleRechtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RolleRechtField, value) != true)) {
-                    this.RolleRechtField = value;
-                    this.RaisePropertyChanged("RolleRecht");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Lieferant", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    [System.SerializableAttribute()]
-    public partial class Lieferant : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Artikel[] ArtikelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BICField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int HausnummerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IBANField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MobilField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OrtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PostleitzahlField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StraßeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TelefonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ZusatzField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Artikel[] Artikel {
-            get {
-                return this.ArtikelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ArtikelField, value) != true)) {
-                    this.ArtikelField = value;
-                    this.RaisePropertyChanged("Artikel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BIC {
-            get {
-                return this.BICField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BICField, value) != true)) {
-                    this.BICField = value;
-                    this.RaisePropertyChanged("BIC");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Hausnummer {
-            get {
-                return this.HausnummerField;
-            }
-            set {
-                if ((this.HausnummerField.Equals(value) != true)) {
-                    this.HausnummerField = value;
-                    this.RaisePropertyChanged("Hausnummer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string IBAN {
-            get {
-                return this.IBANField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IBANField, value) != true)) {
-                    this.IBANField = value;
-                    this.RaisePropertyChanged("IBAN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Mobil {
-            get {
-                return this.MobilField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MobilField, value) != true)) {
-                    this.MobilField = value;
-                    this.RaisePropertyChanged("Mobil");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Ort {
-            get {
-                return this.OrtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OrtField, value) != true)) {
-                    this.OrtField = value;
-                    this.RaisePropertyChanged("Ort");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Postleitzahl {
-            get {
-                return this.PostleitzahlField;
-            }
-            set {
-                if ((this.PostleitzahlField.Equals(value) != true)) {
-                    this.PostleitzahlField = value;
-                    this.RaisePropertyChanged("Postleitzahl");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Straße {
-            get {
-                return this.StraßeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StraßeField, value) != true)) {
-                    this.StraßeField = value;
-                    this.RaisePropertyChanged("Straße");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Telefon {
-            get {
-                return this.TelefonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TelefonField, value) != true)) {
-                    this.TelefonField = value;
-                    this.RaisePropertyChanged("Telefon");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Zusatz {
-            get {
-                return this.ZusatzField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ZusatzField, value) != true)) {
-                    this.ZusatzField = value;
-                    this.RaisePropertyChanged("Zusatz");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Artikel", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    [System.SerializableAttribute()]
-    public partial class Artikel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.ArtikelBeleg[] ArtikelBelegField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double BestandField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Einheit EinheitField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GTINField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Lieferant LieferantField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int LieferantIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double NettoeinkaufspreisField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double NettoverkaufspreisField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Prognose[] PrognoseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Warengruppe WarengruppeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WarengruppeIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.ArtikelBeleg[] ArtikelBeleg {
-            get {
-                return this.ArtikelBelegField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ArtikelBelegField, value) != true)) {
-                    this.ArtikelBelegField = value;
-                    this.RaisePropertyChanged("ArtikelBeleg");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Bestand {
-            get {
-                return this.BestandField;
-            }
-            set {
-                if ((this.BestandField.Equals(value) != true)) {
-                    this.BestandField = value;
-                    this.RaisePropertyChanged("Bestand");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Einheit Einheit {
-            get {
-                return this.EinheitField;
-            }
-            set {
-                if ((this.EinheitField.Equals(value) != true)) {
-                    this.EinheitField = value;
-                    this.RaisePropertyChanged("Einheit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int GTIN {
-            get {
-                return this.GTINField;
-            }
-            set {
-                if ((this.GTINField.Equals(value) != true)) {
-                    this.GTINField = value;
-                    this.RaisePropertyChanged("GTIN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Lieferant Lieferant {
-            get {
-                return this.LieferantField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LieferantField, value) != true)) {
-                    this.LieferantField = value;
-                    this.RaisePropertyChanged("Lieferant");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int LieferantId {
-            get {
-                return this.LieferantIdField;
-            }
-            set {
-                if ((this.LieferantIdField.Equals(value) != true)) {
-                    this.LieferantIdField = value;
-                    this.RaisePropertyChanged("LieferantId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Nettoeinkaufspreis {
-            get {
-                return this.NettoeinkaufspreisField;
-            }
-            set {
-                if ((this.NettoeinkaufspreisField.Equals(value) != true)) {
-                    this.NettoeinkaufspreisField = value;
-                    this.RaisePropertyChanged("Nettoeinkaufspreis");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Nettoverkaufspreis {
-            get {
-                return this.NettoverkaufspreisField;
-            }
-            set {
-                if ((this.NettoverkaufspreisField.Equals(value) != true)) {
-                    this.NettoverkaufspreisField = value;
-                    this.RaisePropertyChanged("Nettoverkaufspreis");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Prognose[] Prognose {
-            get {
-                return this.PrognoseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PrognoseField, value) != true)) {
-                    this.PrognoseField = value;
-                    this.RaisePropertyChanged("Prognose");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Warengruppe Warengruppe {
-            get {
-                return this.WarengruppeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WarengruppeField, value) != true)) {
-                    this.WarengruppeField = value;
-                    this.RaisePropertyChanged("Warengruppe");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WarengruppeId {
-            get {
-                return this.WarengruppeIdField;
-            }
-            set {
-                if ((this.WarengruppeIdField.Equals(value) != true)) {
-                    this.WarengruppeIdField = value;
-                    this.RaisePropertyChanged("WarengruppeId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Warengruppe", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    [System.SerializableAttribute()]
-    public partial class Warengruppe : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Artikel[] ArtikelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SteuersatzField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Artikel[] Artikel {
-            get {
-                return this.ArtikelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ArtikelField, value) != true)) {
-                    this.ArtikelField = value;
-                    this.RaisePropertyChanged("Artikel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Steuersatz {
-            get {
-                return this.SteuersatzField;
-            }
-            set {
-                if ((this.SteuersatzField.Equals(value) != true)) {
-                    this.SteuersatzField = value;
-                    this.RaisePropertyChanged("Steuersatz");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ArtikelBeleg", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    [System.SerializableAttribute()]
-    public partial class ArtikelBeleg : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Artikel ArtikelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ArtikelIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Beleg BelegField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int BelegIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double MengeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Artikel Artikel {
-            get {
-                return this.ArtikelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ArtikelField, value) != true)) {
-                    this.ArtikelField = value;
-                    this.RaisePropertyChanged("Artikel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ArtikelId {
-            get {
-                return this.ArtikelIdField;
-            }
-            set {
-                if ((this.ArtikelIdField.Equals(value) != true)) {
-                    this.ArtikelIdField = value;
-                    this.RaisePropertyChanged("ArtikelId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Beleg Beleg {
-            get {
-                return this.BelegField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BelegField, value) != true)) {
-                    this.BelegField = value;
-                    this.RaisePropertyChanged("Beleg");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int BelegId {
-            get {
-                return this.BelegIdField;
-            }
-            set {
-                if ((this.BelegIdField.Equals(value) != true)) {
-                    this.BelegIdField = value;
-                    this.RaisePropertyChanged("BelegId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Menge {
-            get {
-                return this.MengeField;
-            }
-            set {
-                if ((this.MengeField.Equals(value) != true)) {
-                    this.MengeField = value;
-                    this.RaisePropertyChanged("Menge");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Einheit", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    public enum Einheit : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Gramm = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Kilogramm = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Stück = 2,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Prognose", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    [System.SerializableAttribute()]
-    public partial class Prognose : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double Abverkauf_istField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double Abverkauf_sollField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Artikel ArtikelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ArtikelIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DatumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Abverkauf_ist {
-            get {
-                return this.Abverkauf_istField;
-            }
-            set {
-                if ((this.Abverkauf_istField.Equals(value) != true)) {
-                    this.Abverkauf_istField = value;
-                    this.RaisePropertyChanged("Abverkauf_ist");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Abverkauf_soll {
-            get {
-                return this.Abverkauf_sollField;
-            }
-            set {
-                if ((this.Abverkauf_sollField.Equals(value) != true)) {
-                    this.Abverkauf_sollField = value;
-                    this.RaisePropertyChanged("Abverkauf_soll");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Artikel Artikel {
-            get {
-                return this.ArtikelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ArtikelField, value) != true)) {
-                    this.ArtikelField = value;
-                    this.RaisePropertyChanged("Artikel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ArtikelId {
-            get {
-                return this.ArtikelIdField;
-            }
-            set {
-                if ((this.ArtikelIdField.Equals(value) != true)) {
-                    this.ArtikelIdField = value;
-                    this.RaisePropertyChanged("ArtikelId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Datum {
-            get {
-                return this.DatumField;
-            }
-            set {
-                if ((this.DatumField.Equals(value) != true)) {
-                    this.DatumField = value;
-                    this.RaisePropertyChanged("Datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Beleg", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    [System.SerializableAttribute()]
-    public partial class Beleg : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.ArtikelBeleg[] ArtikelBelegField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DatumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Lieferart LieferartField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int LieferartIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.ArtikelBeleg[] ArtikelBeleg {
-            get {
-                return this.ArtikelBelegField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ArtikelBelegField, value) != true)) {
-                    this.ArtikelBelegField = value;
-                    this.RaisePropertyChanged("ArtikelBeleg");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Datum {
-            get {
-                return this.DatumField;
-            }
-            set {
-                if ((this.DatumField.Equals(value) != true)) {
-                    this.DatumField = value;
-                    this.RaisePropertyChanged("Datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Lieferart Lieferart {
-            get {
-                return this.LieferartField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LieferartField, value) != true)) {
-                    this.LieferartField = value;
-                    this.RaisePropertyChanged("Lieferart");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int LieferartId {
-            get {
-                return this.LieferartIdField;
-            }
-            set {
-                if ((this.LieferartIdField.Equals(value) != true)) {
-                    this.LieferartIdField = value;
-                    this.RaisePropertyChanged("LieferartId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Lieferart", Namespace="http://schemas.datacontract.org/2004/07/DAL")]
-    [System.SerializableAttribute()]
-    public partial class Lieferart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Kasse.ServiceReference1.Beleg[] BelegField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Kasse.ServiceReference1.Beleg[] Beleg {
-            get {
-                return this.BelegField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BelegField, value) != true)) {
-                    this.BelegField = value;
-                    this.RaisePropertyChanged("Beleg");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyId", ReplyAction="http://tempuri.org/IService1/getPersonalbyIdResponse")]
-        Kasse.ServiceReference1.Personal getPersonalbyId(int id);
+        DAL.Personal getPersonalbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyId", ReplyAction="http://tempuri.org/IService1/getPersonalbyIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Personal> getPersonalbyIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Personal> getPersonalbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPersonal", ReplyAction="http://tempuri.org/IService1/setPersonalResponse")]
-        void setPersonal(Kasse.ServiceReference1.Personal person);
+        void setPersonal(DAL.Personal person);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPersonal", ReplyAction="http://tempuri.org/IService1/setPersonalResponse")]
-        System.Threading.Tasks.Task setPersonalAsync(Kasse.ServiceReference1.Personal person);
+        System.Threading.Tasks.Task setPersonalAsync(DAL.Personal person);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePersonal", ReplyAction="http://tempuri.org/IService1/updatePersonalResponse")]
-        void updatePersonal(Kasse.ServiceReference1.Personal personal);
+        void updatePersonal(DAL.Personal personal);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePersonal", ReplyAction="http://tempuri.org/IService1/updatePersonalResponse")]
-        System.Threading.Tasks.Task updatePersonalAsync(Kasse.ServiceReference1.Personal personal);
+        System.Threading.Tasks.Task updatePersonalAsync(DAL.Personal personal);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalList", ReplyAction="http://tempuri.org/IService1/getPersonalListResponse")]
-        Kasse.ServiceReference1.Personal[] getPersonalList();
+        DAL.Personal[] getPersonalList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalList", ReplyAction="http://tempuri.org/IService1/getPersonalListResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Personal[]> getPersonalListAsync();
+        System.Threading.Tasks.Task<DAL.Personal[]> getPersonalListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyRolleId", ReplyAction="http://tempuri.org/IService1/getPersonalbyRolleIdResponse")]
-        Kasse.ServiceReference1.Personal[] getPersonalbyRolleId(int id);
+        DAL.Personal[] getPersonalbyRolleId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyRolleId", ReplyAction="http://tempuri.org/IService1/getPersonalbyRolleIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Personal[]> getPersonalbyRolleIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Personal[]> getPersonalbyRolleIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragbyId", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragbyIdResponse")]
-        Kasse.ServiceReference1.Arbeitsvertrag getArbeitsvertragbyId(int id);
+        DAL.Arbeitsvertrag getArbeitsvertragbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragbyId", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragbyIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Arbeitsvertrag> getArbeitsvertragbyIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Arbeitsvertrag> getArbeitsvertragbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArbeitsvertrag", ReplyAction="http://tempuri.org/IService1/setArbeitsvertragResponse")]
-        void setArbeitsvertrag(Kasse.ServiceReference1.Arbeitsvertrag vertrag);
+        void setArbeitsvertrag(DAL.Arbeitsvertrag vertrag);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArbeitsvertrag", ReplyAction="http://tempuri.org/IService1/setArbeitsvertragResponse")]
-        System.Threading.Tasks.Task setArbeitsvertragAsync(Kasse.ServiceReference1.Arbeitsvertrag vertrag);
+        System.Threading.Tasks.Task setArbeitsvertragAsync(DAL.Arbeitsvertrag vertrag);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArbeitsvertrag", ReplyAction="http://tempuri.org/IService1/updateArbeitsvertragResponse")]
-        void updateArbeitsvertrag(Kasse.ServiceReference1.Arbeitsvertrag arbeitsvertrag);
+        void updateArbeitsvertrag(DAL.Arbeitsvertrag arbeitsvertrag);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArbeitsvertrag", ReplyAction="http://tempuri.org/IService1/updateArbeitsvertragResponse")]
-        System.Threading.Tasks.Task updateArbeitsvertragAsync(Kasse.ServiceReference1.Arbeitsvertrag arbeitsvertrag);
+        System.Threading.Tasks.Task updateArbeitsvertragAsync(DAL.Arbeitsvertrag arbeitsvertrag);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragList", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragListResponse")]
-        Kasse.ServiceReference1.Arbeitsvertrag[] getArbeitsvertragList();
+        DAL.Arbeitsvertrag[] getArbeitsvertragList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragList", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragListResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Arbeitsvertrag[]> getArbeitsvertragListAsync();
+        System.Threading.Tasks.Task<DAL.Arbeitsvertrag[]> getArbeitsvertragListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollebyId", ReplyAction="http://tempuri.org/IService1/getRollebyIdResponse")]
-        Kasse.ServiceReference1.Rolle getRollebyId(int id);
+        DAL.Rolle getRollebyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollebyId", ReplyAction="http://tempuri.org/IService1/getRollebyIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Rolle> getRollebyIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Rolle> getRollebyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRolle", ReplyAction="http://tempuri.org/IService1/setRolleResponse")]
-        void setRolle(Kasse.ServiceReference1.Rolle role);
+        void setRolle(DAL.Rolle role);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRolle", ReplyAction="http://tempuri.org/IService1/setRolleResponse")]
-        System.Threading.Tasks.Task setRolleAsync(Kasse.ServiceReference1.Rolle role);
+        System.Threading.Tasks.Task setRolleAsync(DAL.Rolle role);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRolle", ReplyAction="http://tempuri.org/IService1/updateRolleResponse")]
-        void updateRolle(Kasse.ServiceReference1.Rolle rolle);
+        void updateRolle(DAL.Rolle rolle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRolle", ReplyAction="http://tempuri.org/IService1/updateRolleResponse")]
-        System.Threading.Tasks.Task updateRolleAsync(Kasse.ServiceReference1.Rolle rolle);
+        System.Threading.Tasks.Task updateRolleAsync(DAL.Rolle rolle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRolleList", ReplyAction="http://tempuri.org/IService1/getRolleListResponse")]
-        Kasse.ServiceReference1.Rolle[] getRolleList();
+        DAL.Rolle[] getRolleList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRolleList", ReplyAction="http://tempuri.org/IService1/getRolleListResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Rolle[]> getRolleListAsync();
+        System.Threading.Tasks.Task<DAL.Rolle[]> getRolleListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyId", ReplyAction="http://tempuri.org/IService1/getRechtbyIdResponse")]
-        Kasse.ServiceReference1.Recht getRechtbyId(int id);
+        DAL.Recht getRechtbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyId", ReplyAction="http://tempuri.org/IService1/getRechtbyIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Recht> getRechtbyIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Recht> getRechtbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRecht", ReplyAction="http://tempuri.org/IService1/setRechtResponse")]
-        void setRecht(Kasse.ServiceReference1.Recht recht);
+        void setRecht(DAL.Recht recht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRecht", ReplyAction="http://tempuri.org/IService1/setRechtResponse")]
-        System.Threading.Tasks.Task setRechtAsync(Kasse.ServiceReference1.Recht recht);
+        System.Threading.Tasks.Task setRechtAsync(DAL.Recht recht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRecht", ReplyAction="http://tempuri.org/IService1/updateRechtResponse")]
-        void updateRecht(Kasse.ServiceReference1.Recht recht);
+        void updateRecht(DAL.Recht recht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRecht", ReplyAction="http://tempuri.org/IService1/updateRechtResponse")]
-        System.Threading.Tasks.Task updateRechtAsync(Kasse.ServiceReference1.Recht recht);
+        System.Threading.Tasks.Task updateRechtAsync(DAL.Recht recht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRolleRecht", ReplyAction="http://tempuri.org/IService1/setRolleRechtResponse")]
-        void setRolleRecht(Kasse.ServiceReference1.Rolle rolle, Kasse.ServiceReference1.Recht recht);
+        void setRolleRecht(DAL.Rolle rolle, DAL.Recht recht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRolleRecht", ReplyAction="http://tempuri.org/IService1/setRolleRechtResponse")]
-        System.Threading.Tasks.Task setRolleRechtAsync(Kasse.ServiceReference1.Rolle rolle, Kasse.ServiceReference1.Recht recht);
+        System.Threading.Tasks.Task setRolleRechtAsync(DAL.Rolle rolle, DAL.Recht recht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRolleRecht", ReplyAction="http://tempuri.org/IService1/updateRolleRechtResponse")]
-        void updateRolleRecht(Kasse.ServiceReference1.RolleRecht rollerecht);
+        void updateRolleRecht(DAL.RolleRecht rollerecht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRolleRecht", ReplyAction="http://tempuri.org/IService1/updateRolleRechtResponse")]
-        System.Threading.Tasks.Task updateRolleRechtAsync(Kasse.ServiceReference1.RolleRecht rollerecht);
+        System.Threading.Tasks.Task updateRolleRechtAsync(DAL.RolleRecht rollerecht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollefromRechtId", ReplyAction="http://tempuri.org/IService1/getRollefromRechtIdResponse")]
-        Kasse.ServiceReference1.Rolle[] getRollefromRechtId(int id);
+        DAL.Rolle[] getRollefromRechtId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollefromRechtId", ReplyAction="http://tempuri.org/IService1/getRollefromRechtIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Rolle[]> getRollefromRechtIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Rolle[]> getRollefromRechtIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtfromRolleId", ReplyAction="http://tempuri.org/IService1/getRechtfromRolleIdResponse")]
-        Kasse.ServiceReference1.Recht[] getRechtfromRolleId(int id);
+        DAL.Recht[] getRechtfromRolleId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtfromRolleId", ReplyAction="http://tempuri.org/IService1/getRechtfromRolleIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Recht[]> getRechtfromRolleIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Recht[]> getRechtfromRolleIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtbyId", ReplyAction="http://tempuri.org/IService1/getSchichtbyIdResponse")]
-        Kasse.ServiceReference1.Schicht getSchichtbyId(int id);
+        DAL.Schicht getSchichtbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtbyId", ReplyAction="http://tempuri.org/IService1/getSchichtbyIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Schicht> getSchichtbyIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Schicht> getSchichtbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setSchicht", ReplyAction="http://tempuri.org/IService1/setSchichtResponse")]
-        void setSchicht(Kasse.ServiceReference1.Schicht schicht);
+        void setSchicht(DAL.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setSchicht", ReplyAction="http://tempuri.org/IService1/setSchichtResponse")]
-        System.Threading.Tasks.Task setSchichtAsync(Kasse.ServiceReference1.Schicht schicht);
+        System.Threading.Tasks.Task setSchichtAsync(DAL.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateSchicht", ReplyAction="http://tempuri.org/IService1/updateSchichtResponse")]
-        void updateSchicht(Kasse.ServiceReference1.Schicht schicht);
+        void updateSchicht(DAL.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateSchicht", ReplyAction="http://tempuri.org/IService1/updateSchichtResponse")]
-        System.Threading.Tasks.Task updateSchichtAsync(Kasse.ServiceReference1.Schicht schicht);
+        System.Threading.Tasks.Task updateSchichtAsync(DAL.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtbyPersonalId", ReplyAction="http://tempuri.org/IService1/getSchichtbyPersonalIdResponse")]
-        Kasse.ServiceReference1.Schicht[] getSchichtbyPersonalId(int id);
+        DAL.Schicht[] getSchichtbyPersonalId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtbyPersonalId", ReplyAction="http://tempuri.org/IService1/getSchichtbyPersonalIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Schicht[]> getSchichtbyPersonalIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Schicht[]> getSchichtbyPersonalIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtBetween", ReplyAction="http://tempuri.org/IService1/getSchichtBetweenResponse")]
-        Kasse.ServiceReference1.Schicht[] getSchichtBetween(System.DateTime von, System.DateTime bis);
+        DAL.Schicht[] getSchichtBetween(System.DateTime von, System.DateTime bis);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtBetween", ReplyAction="http://tempuri.org/IService1/getSchichtBetweenResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Schicht[]> getSchichtBetweenAsync(System.DateTime von, System.DateTime bis);
+        System.Threading.Tasks.Task<DAL.Schicht[]> getSchichtBetweenAsync(System.DateTime von, System.DateTime bis);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween", ReplyAction="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetweenResponse")]
-        Kasse.ServiceReference1.Schicht[] getSchichtByPersonalIdAndBetween(int id, System.DateTime von, System.DateTime bis);
+        DAL.Schicht[] getSchichtByPersonalIdAndBetween(int id, System.DateTime von, System.DateTime bis);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween", ReplyAction="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetweenResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis);
+        System.Threading.Tasks.Task<DAL.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferantbyId", ReplyAction="http://tempuri.org/IService1/getLieferantbyIdResponse")]
-        Kasse.ServiceReference1.Lieferant getLieferantbyId(int id);
+        DAL.Lieferant getLieferantbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferantbyId", ReplyAction="http://tempuri.org/IService1/getLieferantbyIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Lieferant> getLieferantbyIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Lieferant> getLieferantbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setLieferant", ReplyAction="http://tempuri.org/IService1/setLieferantResponse")]
-        void setLieferant(Kasse.ServiceReference1.Lieferant lieferant);
+        void setLieferant(DAL.Lieferant lieferant);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setLieferant", ReplyAction="http://tempuri.org/IService1/setLieferantResponse")]
-        System.Threading.Tasks.Task setLieferantAsync(Kasse.ServiceReference1.Lieferant lieferant);
+        System.Threading.Tasks.Task setLieferantAsync(DAL.Lieferant lieferant);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateLieferant", ReplyAction="http://tempuri.org/IService1/updateLieferantResponse")]
-        void updateLieferant(Kasse.ServiceReference1.Lieferant lieferant);
+        void updateLieferant(DAL.Lieferant lieferant);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateLieferant", ReplyAction="http://tempuri.org/IService1/updateLieferantResponse")]
-        System.Threading.Tasks.Task updateLieferantAsync(Kasse.ServiceReference1.Lieferant lieferant);
+        System.Threading.Tasks.Task updateLieferantAsync(DAL.Lieferant lieferant);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferantList", ReplyAction="http://tempuri.org/IService1/getLieferantListResponse")]
-        Kasse.ServiceReference1.Lieferant[] getLieferantList();
+        DAL.Lieferant[] getLieferantList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferantList", ReplyAction="http://tempuri.org/IService1/getLieferantListResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Lieferant[]> getLieferantListAsync();
+        System.Threading.Tasks.Task<DAL.Lieferant[]> getLieferantListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyId", ReplyAction="http://tempuri.org/IService1/getArtikelbyIdResponse")]
-        Kasse.ServiceReference1.Artikel getArtikelbyId(int id);
+        DAL.Artikel getArtikelbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyId", ReplyAction="http://tempuri.org/IService1/getArtikelbyIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Artikel> getArtikelbyIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Artikel> getArtikelbyIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelByGTIN", ReplyAction="http://tempuri.org/IService1/getArtikelByGTINResponse")]
+        DAL.Artikel getArtikelByGTIN(string GTIN);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelByGTIN", ReplyAction="http://tempuri.org/IService1/getArtikelByGTINResponse")]
+        System.Threading.Tasks.Task<DAL.Artikel> getArtikelByGTINAsync(string GTIN);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArtikel", ReplyAction="http://tempuri.org/IService1/setArtikelResponse")]
-        void setArtikel(Kasse.ServiceReference1.Artikel artikel);
+        void setArtikel(DAL.Artikel artikel);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArtikel", ReplyAction="http://tempuri.org/IService1/setArtikelResponse")]
-        System.Threading.Tasks.Task setArtikelAsync(Kasse.ServiceReference1.Artikel artikel);
+        System.Threading.Tasks.Task setArtikelAsync(DAL.Artikel artikel);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArtikel", ReplyAction="http://tempuri.org/IService1/updateArtikelResponse")]
-        void updateArtikel(Kasse.ServiceReference1.Artikel artikel);
+        void updateArtikel(DAL.Artikel artikel);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArtikel", ReplyAction="http://tempuri.org/IService1/updateArtikelResponse")]
-        System.Threading.Tasks.Task updateArtikelAsync(Kasse.ServiceReference1.Artikel artikel);
+        System.Threading.Tasks.Task updateArtikelAsync(DAL.Artikel artikel);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelList", ReplyAction="http://tempuri.org/IService1/getArtikelListResponse")]
-        Kasse.ServiceReference1.Artikel[] getArtikelList();
+        DAL.Artikel[] getArtikelList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelList", ReplyAction="http://tempuri.org/IService1/getArtikelListResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Artikel[]> getArtikelListAsync();
+        System.Threading.Tasks.Task<DAL.Artikel[]> getArtikelListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyLieferantId", ReplyAction="http://tempuri.org/IService1/getArtikelbyLieferantIdResponse")]
-        Kasse.ServiceReference1.Artikel[] getArtikelbyLieferantId(int id);
+        DAL.Artikel[] getArtikelbyLieferantId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyLieferantId", ReplyAction="http://tempuri.org/IService1/getArtikelbyLieferantIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Artikel[]> getArtikelbyLieferantIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Artikel[]> getArtikelbyLieferantIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyWarengruppeId", ReplyAction="http://tempuri.org/IService1/getArtikelbyWarengruppeIdResponse")]
-        Kasse.ServiceReference1.Artikel[] getArtikelbyWarengruppeId(int id);
+        DAL.Artikel[] getArtikelbyWarengruppeId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyWarengruppeId", ReplyAction="http://tempuri.org/IService1/getArtikelbyWarengruppeIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Artikel[]> getArtikelbyWarengruppeIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Artikel[]> getArtikelbyWarengruppeIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegbyId", ReplyAction="http://tempuri.org/IService1/getBelegbyIdResponse")]
-        Kasse.ServiceReference1.Beleg getBelegbyId(int id);
+        DAL.Beleg getBelegbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegbyId", ReplyAction="http://tempuri.org/IService1/getBelegbyIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Beleg> getBelegbyIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Beleg> getBelegbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setBeleg", ReplyAction="http://tempuri.org/IService1/setBelegResponse")]
-        void setBeleg(Kasse.ServiceReference1.Beleg beleg);
+        void setBeleg(DAL.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setBeleg", ReplyAction="http://tempuri.org/IService1/setBelegResponse")]
-        System.Threading.Tasks.Task setBelegAsync(Kasse.ServiceReference1.Beleg beleg);
+        System.Threading.Tasks.Task setBelegAsync(DAL.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateBeleg", ReplyAction="http://tempuri.org/IService1/updateBelegResponse")]
-        void updateBeleg(Kasse.ServiceReference1.Beleg beleg);
+        void updateBeleg(DAL.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateBeleg", ReplyAction="http://tempuri.org/IService1/updateBelegResponse")]
-        System.Threading.Tasks.Task updateBelegAsync(Kasse.ServiceReference1.Beleg beleg);
+        System.Threading.Tasks.Task updateBelegAsync(DAL.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegList", ReplyAction="http://tempuri.org/IService1/getBelegListResponse")]
-        Kasse.ServiceReference1.Beleg[] getBelegList();
+        DAL.Beleg[] getBelegList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegList", ReplyAction="http://tempuri.org/IService1/getBelegListResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Beleg[]> getBelegListAsync();
+        System.Threading.Tasks.Task<DAL.Beleg[]> getBelegListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetween", ReplyAction="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetweenRe" +
             "sponse")]
@@ -2129,124 +270,124 @@ namespace Kasse.ServiceReference1 {
         System.Threading.Tasks.Task<int> getArtikelCountByArtikelIdAndLieferartIdAndBetweenAsync(int artikel_id, int lieferart_id, System.DateTime von, System.DateTime bis);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArtikelBeleg", ReplyAction="http://tempuri.org/IService1/setArtikelBelegResponse")]
-        void setArtikelBeleg(Kasse.ServiceReference1.Artikel artikel, Kasse.ServiceReference1.Beleg beleg);
+        void setArtikelBeleg(DAL.Artikel artikel, DAL.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArtikelBeleg", ReplyAction="http://tempuri.org/IService1/setArtikelBelegResponse")]
-        System.Threading.Tasks.Task setArtikelBelegAsync(Kasse.ServiceReference1.Artikel artikel, Kasse.ServiceReference1.Beleg beleg);
+        System.Threading.Tasks.Task setArtikelBelegAsync(DAL.Artikel artikel, DAL.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArtikelBeleg", ReplyAction="http://tempuri.org/IService1/updateArtikelBelegResponse")]
-        void updateArtikelBeleg(Kasse.ServiceReference1.ArtikelBeleg artikelbeleg);
+        void updateArtikelBeleg(DAL.ArtikelBeleg artikelbeleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArtikelBeleg", ReplyAction="http://tempuri.org/IService1/updateArtikelBelegResponse")]
-        System.Threading.Tasks.Task updateArtikelBelegAsync(Kasse.ServiceReference1.ArtikelBeleg artikelbeleg);
+        System.Threading.Tasks.Task updateArtikelBelegAsync(DAL.ArtikelBeleg artikelbeleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelfromBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelfromBelegIdResponse")]
-        Kasse.ServiceReference1.Artikel[] getArtikelfromBelegId(int id);
+        DAL.Artikel[] getArtikelfromBelegId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelfromBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelfromBelegIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Artikel[]> getArtikelfromBelegIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Artikel[]> getArtikelfromBelegIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegfromArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegfromArtikelIdResponse")]
-        Kasse.ServiceReference1.Beleg[] getBelegfromArtikelId(int id);
+        DAL.Beleg[] getBelegfromArtikelId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegfromArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegfromArtikelIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Beleg[]> getBelegfromArtikelIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Beleg[]> getBelegfromArtikelIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppebyId", ReplyAction="http://tempuri.org/IService1/getWarengruppebyIdResponse")]
-        Kasse.ServiceReference1.Warengruppe getWarengruppebyId(int id);
+        DAL.Warengruppe getWarengruppebyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppebyId", ReplyAction="http://tempuri.org/IService1/getWarengruppebyIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Warengruppe> getWarengruppebyIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Warengruppe> getWarengruppebyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setWarengruppe", ReplyAction="http://tempuri.org/IService1/setWarengruppeResponse")]
-        void setWarengruppe(Kasse.ServiceReference1.Warengruppe gruppe);
+        void setWarengruppe(DAL.Warengruppe gruppe);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setWarengruppe", ReplyAction="http://tempuri.org/IService1/setWarengruppeResponse")]
-        System.Threading.Tasks.Task setWarengruppeAsync(Kasse.ServiceReference1.Warengruppe gruppe);
+        System.Threading.Tasks.Task setWarengruppeAsync(DAL.Warengruppe gruppe);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateWarengruppe", ReplyAction="http://tempuri.org/IService1/updateWarengruppeResponse")]
-        void updateWarengruppe(Kasse.ServiceReference1.Warengruppe warengruppe);
+        void updateWarengruppe(DAL.Warengruppe warengruppe);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateWarengruppe", ReplyAction="http://tempuri.org/IService1/updateWarengruppeResponse")]
-        System.Threading.Tasks.Task updateWarengruppeAsync(Kasse.ServiceReference1.Warengruppe warengruppe);
+        System.Threading.Tasks.Task updateWarengruppeAsync(DAL.Warengruppe warengruppe);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppeList", ReplyAction="http://tempuri.org/IService1/getWarengruppeListResponse")]
-        Kasse.ServiceReference1.Warengruppe[] getWarengruppeList();
+        DAL.Warengruppe[] getWarengruppeList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppeList", ReplyAction="http://tempuri.org/IService1/getWarengruppeListResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Warengruppe[]> getWarengruppeListAsync();
+        System.Threading.Tasks.Task<DAL.Warengruppe[]> getWarengruppeListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppebyName", ReplyAction="http://tempuri.org/IService1/getWarengruppebyNameResponse")]
-        Kasse.ServiceReference1.Warengruppe getWarengruppebyName(string name);
+        DAL.Warengruppe getWarengruppebyName(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppebyName", ReplyAction="http://tempuri.org/IService1/getWarengruppebyNameResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Warengruppe> getWarengruppebyNameAsync(string name);
+        System.Threading.Tasks.Task<DAL.Warengruppe> getWarengruppebyNameAsync(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyId", ReplyAction="http://tempuri.org/IService1/getPrognosebyIdResponse")]
-        Kasse.ServiceReference1.Prognose getPrognosebyId(int id);
+        DAL.Prognose getPrognosebyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyId", ReplyAction="http://tempuri.org/IService1/getPrognosebyIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Prognose> getPrognosebyIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Prognose> getPrognosebyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPrognose", ReplyAction="http://tempuri.org/IService1/setPrognoseResponse")]
-        void setPrognose(Kasse.ServiceReference1.Prognose prognose);
+        void setPrognose(DAL.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPrognose", ReplyAction="http://tempuri.org/IService1/setPrognoseResponse")]
-        System.Threading.Tasks.Task setPrognoseAsync(Kasse.ServiceReference1.Prognose prognose);
+        System.Threading.Tasks.Task setPrognoseAsync(DAL.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePrognose", ReplyAction="http://tempuri.org/IService1/updatePrognoseResponse")]
-        void updatePrognose(Kasse.ServiceReference1.Prognose prognose);
+        void updatePrognose(DAL.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePrognose", ReplyAction="http://tempuri.org/IService1/updatePrognoseResponse")]
-        System.Threading.Tasks.Task updatePrognoseAsync(Kasse.ServiceReference1.Prognose prognose);
+        System.Threading.Tasks.Task updatePrognoseAsync(DAL.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognoseList", ReplyAction="http://tempuri.org/IService1/getPrognoseListResponse")]
-        Kasse.ServiceReference1.Prognose[] getPrognoseList();
+        DAL.Prognose[] getPrognoseList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognoseList", ReplyAction="http://tempuri.org/IService1/getPrognoseListResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Prognose[]> getPrognoseListAsync();
+        System.Threading.Tasks.Task<DAL.Prognose[]> getPrognoseListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyArtikelId", ReplyAction="http://tempuri.org/IService1/getPrognosebyArtikelIdResponse")]
-        Kasse.ServiceReference1.Prognose getPrognosebyArtikelId(int id);
+        DAL.Prognose getPrognosebyArtikelId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyArtikelId", ReplyAction="http://tempuri.org/IService1/getPrognosebyArtikelIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Prognose> getPrognosebyArtikelIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Prognose> getPrognosebyArtikelIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyDate", ReplyAction="http://tempuri.org/IService1/getPrognosebyDateResponse")]
-        Kasse.ServiceReference1.Prognose[] getPrognosebyDate(System.DateTime date);
+        DAL.Prognose[] getPrognosebyDate(System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyDate", ReplyAction="http://tempuri.org/IService1/getPrognosebyDateResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Prognose[]> getPrognosebyDateAsync(System.DateTime date);
+        System.Threading.Tasks.Task<DAL.Prognose[]> getPrognosebyDateAsync(System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartbyId", ReplyAction="http://tempuri.org/IService1/getLieferartbyIdResponse")]
-        Kasse.ServiceReference1.Lieferart getLieferartbyId(int id);
+        DAL.Lieferart getLieferartbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartbyId", ReplyAction="http://tempuri.org/IService1/getLieferartbyIdResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Lieferart> getLieferartbyIdAsync(int id);
+        System.Threading.Tasks.Task<DAL.Lieferart> getLieferartbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartByName", ReplyAction="http://tempuri.org/IService1/getLieferartByNameResponse")]
-        Kasse.ServiceReference1.Lieferart getLieferartByName(string name);
+        DAL.Lieferart getLieferartByName(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartByName", ReplyAction="http://tempuri.org/IService1/getLieferartByNameResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Lieferart> getLieferartByNameAsync(string name);
+        System.Threading.Tasks.Task<DAL.Lieferart> getLieferartByNameAsync(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setLieferart", ReplyAction="http://tempuri.org/IService1/setLieferartResponse")]
-        void setLieferart(Kasse.ServiceReference1.Lieferart lieferart);
+        void setLieferart(DAL.Lieferart lieferart);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setLieferart", ReplyAction="http://tempuri.org/IService1/setLieferartResponse")]
-        System.Threading.Tasks.Task setLieferartAsync(Kasse.ServiceReference1.Lieferart lieferart);
+        System.Threading.Tasks.Task setLieferartAsync(DAL.Lieferart lieferart);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateLieferart", ReplyAction="http://tempuri.org/IService1/updateLieferartResponse")]
-        void updateLieferart(Kasse.ServiceReference1.Lieferart lieferart);
+        void updateLieferart(DAL.Lieferart lieferart);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateLieferart", ReplyAction="http://tempuri.org/IService1/updateLieferartResponse")]
-        System.Threading.Tasks.Task updateLieferartAsync(Kasse.ServiceReference1.Lieferart lieferart);
+        System.Threading.Tasks.Task updateLieferartAsync(DAL.Lieferart lieferart);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartList", ReplyAction="http://tempuri.org/IService1/getLieferartListResponse")]
-        Kasse.ServiceReference1.Lieferart[] getLieferartList();
+        DAL.Lieferart[] getLieferartList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartList", ReplyAction="http://tempuri.org/IService1/getLieferartListResponse")]
-        System.Threading.Tasks.Task<Kasse.ServiceReference1.Lieferart[]> getLieferartListAsync();
+        System.Threading.Tasks.Task<DAL.Lieferart[]> getLieferartListAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2276,323 +417,331 @@ namespace Kasse.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public Kasse.ServiceReference1.Personal getPersonalbyId(int id) {
+        public DAL.Personal getPersonalbyId(int id) {
             return base.Channel.getPersonalbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Personal> getPersonalbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Personal> getPersonalbyIdAsync(int id) {
             return base.Channel.getPersonalbyIdAsync(id);
         }
         
-        public void setPersonal(Kasse.ServiceReference1.Personal person) {
+        public void setPersonal(DAL.Personal person) {
             base.Channel.setPersonal(person);
         }
         
-        public System.Threading.Tasks.Task setPersonalAsync(Kasse.ServiceReference1.Personal person) {
+        public System.Threading.Tasks.Task setPersonalAsync(DAL.Personal person) {
             return base.Channel.setPersonalAsync(person);
         }
         
-        public void updatePersonal(Kasse.ServiceReference1.Personal personal) {
+        public void updatePersonal(DAL.Personal personal) {
             base.Channel.updatePersonal(personal);
         }
         
-        public System.Threading.Tasks.Task updatePersonalAsync(Kasse.ServiceReference1.Personal personal) {
+        public System.Threading.Tasks.Task updatePersonalAsync(DAL.Personal personal) {
             return base.Channel.updatePersonalAsync(personal);
         }
         
-        public Kasse.ServiceReference1.Personal[] getPersonalList() {
+        public DAL.Personal[] getPersonalList() {
             return base.Channel.getPersonalList();
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Personal[]> getPersonalListAsync() {
+        public System.Threading.Tasks.Task<DAL.Personal[]> getPersonalListAsync() {
             return base.Channel.getPersonalListAsync();
         }
         
-        public Kasse.ServiceReference1.Personal[] getPersonalbyRolleId(int id) {
+        public DAL.Personal[] getPersonalbyRolleId(int id) {
             return base.Channel.getPersonalbyRolleId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Personal[]> getPersonalbyRolleIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Personal[]> getPersonalbyRolleIdAsync(int id) {
             return base.Channel.getPersonalbyRolleIdAsync(id);
         }
         
-        public Kasse.ServiceReference1.Arbeitsvertrag getArbeitsvertragbyId(int id) {
+        public DAL.Arbeitsvertrag getArbeitsvertragbyId(int id) {
             return base.Channel.getArbeitsvertragbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Arbeitsvertrag> getArbeitsvertragbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Arbeitsvertrag> getArbeitsvertragbyIdAsync(int id) {
             return base.Channel.getArbeitsvertragbyIdAsync(id);
         }
         
-        public void setArbeitsvertrag(Kasse.ServiceReference1.Arbeitsvertrag vertrag) {
+        public void setArbeitsvertrag(DAL.Arbeitsvertrag vertrag) {
             base.Channel.setArbeitsvertrag(vertrag);
         }
         
-        public System.Threading.Tasks.Task setArbeitsvertragAsync(Kasse.ServiceReference1.Arbeitsvertrag vertrag) {
+        public System.Threading.Tasks.Task setArbeitsvertragAsync(DAL.Arbeitsvertrag vertrag) {
             return base.Channel.setArbeitsvertragAsync(vertrag);
         }
         
-        public void updateArbeitsvertrag(Kasse.ServiceReference1.Arbeitsvertrag arbeitsvertrag) {
+        public void updateArbeitsvertrag(DAL.Arbeitsvertrag arbeitsvertrag) {
             base.Channel.updateArbeitsvertrag(arbeitsvertrag);
         }
         
-        public System.Threading.Tasks.Task updateArbeitsvertragAsync(Kasse.ServiceReference1.Arbeitsvertrag arbeitsvertrag) {
+        public System.Threading.Tasks.Task updateArbeitsvertragAsync(DAL.Arbeitsvertrag arbeitsvertrag) {
             return base.Channel.updateArbeitsvertragAsync(arbeitsvertrag);
         }
         
-        public Kasse.ServiceReference1.Arbeitsvertrag[] getArbeitsvertragList() {
+        public DAL.Arbeitsvertrag[] getArbeitsvertragList() {
             return base.Channel.getArbeitsvertragList();
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Arbeitsvertrag[]> getArbeitsvertragListAsync() {
+        public System.Threading.Tasks.Task<DAL.Arbeitsvertrag[]> getArbeitsvertragListAsync() {
             return base.Channel.getArbeitsvertragListAsync();
         }
         
-        public Kasse.ServiceReference1.Rolle getRollebyId(int id) {
+        public DAL.Rolle getRollebyId(int id) {
             return base.Channel.getRollebyId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Rolle> getRollebyIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Rolle> getRollebyIdAsync(int id) {
             return base.Channel.getRollebyIdAsync(id);
         }
         
-        public void setRolle(Kasse.ServiceReference1.Rolle role) {
+        public void setRolle(DAL.Rolle role) {
             base.Channel.setRolle(role);
         }
         
-        public System.Threading.Tasks.Task setRolleAsync(Kasse.ServiceReference1.Rolle role) {
+        public System.Threading.Tasks.Task setRolleAsync(DAL.Rolle role) {
             return base.Channel.setRolleAsync(role);
         }
         
-        public void updateRolle(Kasse.ServiceReference1.Rolle rolle) {
+        public void updateRolle(DAL.Rolle rolle) {
             base.Channel.updateRolle(rolle);
         }
         
-        public System.Threading.Tasks.Task updateRolleAsync(Kasse.ServiceReference1.Rolle rolle) {
+        public System.Threading.Tasks.Task updateRolleAsync(DAL.Rolle rolle) {
             return base.Channel.updateRolleAsync(rolle);
         }
         
-        public Kasse.ServiceReference1.Rolle[] getRolleList() {
+        public DAL.Rolle[] getRolleList() {
             return base.Channel.getRolleList();
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Rolle[]> getRolleListAsync() {
+        public System.Threading.Tasks.Task<DAL.Rolle[]> getRolleListAsync() {
             return base.Channel.getRolleListAsync();
         }
         
-        public Kasse.ServiceReference1.Recht getRechtbyId(int id) {
+        public DAL.Recht getRechtbyId(int id) {
             return base.Channel.getRechtbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Recht> getRechtbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Recht> getRechtbyIdAsync(int id) {
             return base.Channel.getRechtbyIdAsync(id);
         }
         
-        public void setRecht(Kasse.ServiceReference1.Recht recht) {
+        public void setRecht(DAL.Recht recht) {
             base.Channel.setRecht(recht);
         }
         
-        public System.Threading.Tasks.Task setRechtAsync(Kasse.ServiceReference1.Recht recht) {
+        public System.Threading.Tasks.Task setRechtAsync(DAL.Recht recht) {
             return base.Channel.setRechtAsync(recht);
         }
         
-        public void updateRecht(Kasse.ServiceReference1.Recht recht) {
+        public void updateRecht(DAL.Recht recht) {
             base.Channel.updateRecht(recht);
         }
         
-        public System.Threading.Tasks.Task updateRechtAsync(Kasse.ServiceReference1.Recht recht) {
+        public System.Threading.Tasks.Task updateRechtAsync(DAL.Recht recht) {
             return base.Channel.updateRechtAsync(recht);
         }
         
-        public void setRolleRecht(Kasse.ServiceReference1.Rolle rolle, Kasse.ServiceReference1.Recht recht) {
+        public void setRolleRecht(DAL.Rolle rolle, DAL.Recht recht) {
             base.Channel.setRolleRecht(rolle, recht);
         }
         
-        public System.Threading.Tasks.Task setRolleRechtAsync(Kasse.ServiceReference1.Rolle rolle, Kasse.ServiceReference1.Recht recht) {
+        public System.Threading.Tasks.Task setRolleRechtAsync(DAL.Rolle rolle, DAL.Recht recht) {
             return base.Channel.setRolleRechtAsync(rolle, recht);
         }
         
-        public void updateRolleRecht(Kasse.ServiceReference1.RolleRecht rollerecht) {
+        public void updateRolleRecht(DAL.RolleRecht rollerecht) {
             base.Channel.updateRolleRecht(rollerecht);
         }
         
-        public System.Threading.Tasks.Task updateRolleRechtAsync(Kasse.ServiceReference1.RolleRecht rollerecht) {
+        public System.Threading.Tasks.Task updateRolleRechtAsync(DAL.RolleRecht rollerecht) {
             return base.Channel.updateRolleRechtAsync(rollerecht);
         }
         
-        public Kasse.ServiceReference1.Rolle[] getRollefromRechtId(int id) {
+        public DAL.Rolle[] getRollefromRechtId(int id) {
             return base.Channel.getRollefromRechtId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Rolle[]> getRollefromRechtIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Rolle[]> getRollefromRechtIdAsync(int id) {
             return base.Channel.getRollefromRechtIdAsync(id);
         }
         
-        public Kasse.ServiceReference1.Recht[] getRechtfromRolleId(int id) {
+        public DAL.Recht[] getRechtfromRolleId(int id) {
             return base.Channel.getRechtfromRolleId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Recht[]> getRechtfromRolleIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Recht[]> getRechtfromRolleIdAsync(int id) {
             return base.Channel.getRechtfromRolleIdAsync(id);
         }
         
-        public Kasse.ServiceReference1.Schicht getSchichtbyId(int id) {
+        public DAL.Schicht getSchichtbyId(int id) {
             return base.Channel.getSchichtbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Schicht> getSchichtbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Schicht> getSchichtbyIdAsync(int id) {
             return base.Channel.getSchichtbyIdAsync(id);
         }
         
-        public void setSchicht(Kasse.ServiceReference1.Schicht schicht) {
+        public void setSchicht(DAL.Schicht schicht) {
             base.Channel.setSchicht(schicht);
         }
         
-        public System.Threading.Tasks.Task setSchichtAsync(Kasse.ServiceReference1.Schicht schicht) {
+        public System.Threading.Tasks.Task setSchichtAsync(DAL.Schicht schicht) {
             return base.Channel.setSchichtAsync(schicht);
         }
         
-        public void updateSchicht(Kasse.ServiceReference1.Schicht schicht) {
+        public void updateSchicht(DAL.Schicht schicht) {
             base.Channel.updateSchicht(schicht);
         }
         
-        public System.Threading.Tasks.Task updateSchichtAsync(Kasse.ServiceReference1.Schicht schicht) {
+        public System.Threading.Tasks.Task updateSchichtAsync(DAL.Schicht schicht) {
             return base.Channel.updateSchichtAsync(schicht);
         }
         
-        public Kasse.ServiceReference1.Schicht[] getSchichtbyPersonalId(int id) {
+        public DAL.Schicht[] getSchichtbyPersonalId(int id) {
             return base.Channel.getSchichtbyPersonalId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Schicht[]> getSchichtbyPersonalIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Schicht[]> getSchichtbyPersonalIdAsync(int id) {
             return base.Channel.getSchichtbyPersonalIdAsync(id);
         }
         
-        public Kasse.ServiceReference1.Schicht[] getSchichtBetween(System.DateTime von, System.DateTime bis) {
+        public DAL.Schicht[] getSchichtBetween(System.DateTime von, System.DateTime bis) {
             return base.Channel.getSchichtBetween(von, bis);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Schicht[]> getSchichtBetweenAsync(System.DateTime von, System.DateTime bis) {
+        public System.Threading.Tasks.Task<DAL.Schicht[]> getSchichtBetweenAsync(System.DateTime von, System.DateTime bis) {
             return base.Channel.getSchichtBetweenAsync(von, bis);
         }
         
-        public Kasse.ServiceReference1.Schicht[] getSchichtByPersonalIdAndBetween(int id, System.DateTime von, System.DateTime bis) {
+        public DAL.Schicht[] getSchichtByPersonalIdAndBetween(int id, System.DateTime von, System.DateTime bis) {
             return base.Channel.getSchichtByPersonalIdAndBetween(id, von, bis);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis) {
+        public System.Threading.Tasks.Task<DAL.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis) {
             return base.Channel.getSchichtByPersonalIdAndBetweenAsync(id, von, bis);
         }
         
-        public Kasse.ServiceReference1.Lieferant getLieferantbyId(int id) {
+        public DAL.Lieferant getLieferantbyId(int id) {
             return base.Channel.getLieferantbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Lieferant> getLieferantbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Lieferant> getLieferantbyIdAsync(int id) {
             return base.Channel.getLieferantbyIdAsync(id);
         }
         
-        public void setLieferant(Kasse.ServiceReference1.Lieferant lieferant) {
+        public void setLieferant(DAL.Lieferant lieferant) {
             base.Channel.setLieferant(lieferant);
         }
         
-        public System.Threading.Tasks.Task setLieferantAsync(Kasse.ServiceReference1.Lieferant lieferant) {
+        public System.Threading.Tasks.Task setLieferantAsync(DAL.Lieferant lieferant) {
             return base.Channel.setLieferantAsync(lieferant);
         }
         
-        public void updateLieferant(Kasse.ServiceReference1.Lieferant lieferant) {
+        public void updateLieferant(DAL.Lieferant lieferant) {
             base.Channel.updateLieferant(lieferant);
         }
         
-        public System.Threading.Tasks.Task updateLieferantAsync(Kasse.ServiceReference1.Lieferant lieferant) {
+        public System.Threading.Tasks.Task updateLieferantAsync(DAL.Lieferant lieferant) {
             return base.Channel.updateLieferantAsync(lieferant);
         }
         
-        public Kasse.ServiceReference1.Lieferant[] getLieferantList() {
+        public DAL.Lieferant[] getLieferantList() {
             return base.Channel.getLieferantList();
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Lieferant[]> getLieferantListAsync() {
+        public System.Threading.Tasks.Task<DAL.Lieferant[]> getLieferantListAsync() {
             return base.Channel.getLieferantListAsync();
         }
         
-        public Kasse.ServiceReference1.Artikel getArtikelbyId(int id) {
+        public DAL.Artikel getArtikelbyId(int id) {
             return base.Channel.getArtikelbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Artikel> getArtikelbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Artikel> getArtikelbyIdAsync(int id) {
             return base.Channel.getArtikelbyIdAsync(id);
         }
         
-        public void setArtikel(Kasse.ServiceReference1.Artikel artikel) {
+        public DAL.Artikel getArtikelByGTIN(string GTIN) {
+            return base.Channel.getArtikelByGTIN(GTIN);
+        }
+        
+        public System.Threading.Tasks.Task<DAL.Artikel> getArtikelByGTINAsync(string GTIN) {
+            return base.Channel.getArtikelByGTINAsync(GTIN);
+        }
+        
+        public void setArtikel(DAL.Artikel artikel) {
             base.Channel.setArtikel(artikel);
         }
         
-        public System.Threading.Tasks.Task setArtikelAsync(Kasse.ServiceReference1.Artikel artikel) {
+        public System.Threading.Tasks.Task setArtikelAsync(DAL.Artikel artikel) {
             return base.Channel.setArtikelAsync(artikel);
         }
         
-        public void updateArtikel(Kasse.ServiceReference1.Artikel artikel) {
+        public void updateArtikel(DAL.Artikel artikel) {
             base.Channel.updateArtikel(artikel);
         }
         
-        public System.Threading.Tasks.Task updateArtikelAsync(Kasse.ServiceReference1.Artikel artikel) {
+        public System.Threading.Tasks.Task updateArtikelAsync(DAL.Artikel artikel) {
             return base.Channel.updateArtikelAsync(artikel);
         }
         
-        public Kasse.ServiceReference1.Artikel[] getArtikelList() {
+        public DAL.Artikel[] getArtikelList() {
             return base.Channel.getArtikelList();
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Artikel[]> getArtikelListAsync() {
+        public System.Threading.Tasks.Task<DAL.Artikel[]> getArtikelListAsync() {
             return base.Channel.getArtikelListAsync();
         }
         
-        public Kasse.ServiceReference1.Artikel[] getArtikelbyLieferantId(int id) {
+        public DAL.Artikel[] getArtikelbyLieferantId(int id) {
             return base.Channel.getArtikelbyLieferantId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Artikel[]> getArtikelbyLieferantIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Artikel[]> getArtikelbyLieferantIdAsync(int id) {
             return base.Channel.getArtikelbyLieferantIdAsync(id);
         }
         
-        public Kasse.ServiceReference1.Artikel[] getArtikelbyWarengruppeId(int id) {
+        public DAL.Artikel[] getArtikelbyWarengruppeId(int id) {
             return base.Channel.getArtikelbyWarengruppeId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Artikel[]> getArtikelbyWarengruppeIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Artikel[]> getArtikelbyWarengruppeIdAsync(int id) {
             return base.Channel.getArtikelbyWarengruppeIdAsync(id);
         }
         
-        public Kasse.ServiceReference1.Beleg getBelegbyId(int id) {
+        public DAL.Beleg getBelegbyId(int id) {
             return base.Channel.getBelegbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Beleg> getBelegbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Beleg> getBelegbyIdAsync(int id) {
             return base.Channel.getBelegbyIdAsync(id);
         }
         
-        public void setBeleg(Kasse.ServiceReference1.Beleg beleg) {
+        public void setBeleg(DAL.Beleg beleg) {
             base.Channel.setBeleg(beleg);
         }
         
-        public System.Threading.Tasks.Task setBelegAsync(Kasse.ServiceReference1.Beleg beleg) {
+        public System.Threading.Tasks.Task setBelegAsync(DAL.Beleg beleg) {
             return base.Channel.setBelegAsync(beleg);
         }
         
-        public void updateBeleg(Kasse.ServiceReference1.Beleg beleg) {
+        public void updateBeleg(DAL.Beleg beleg) {
             base.Channel.updateBeleg(beleg);
         }
         
-        public System.Threading.Tasks.Task updateBelegAsync(Kasse.ServiceReference1.Beleg beleg) {
+        public System.Threading.Tasks.Task updateBelegAsync(DAL.Beleg beleg) {
             return base.Channel.updateBelegAsync(beleg);
         }
         
-        public Kasse.ServiceReference1.Beleg[] getBelegList() {
+        public DAL.Beleg[] getBelegList() {
             return base.Channel.getBelegList();
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Beleg[]> getBelegListAsync() {
+        public System.Threading.Tasks.Task<DAL.Beleg[]> getBelegListAsync() {
             return base.Channel.getBelegListAsync();
         }
         
@@ -2604,163 +753,163 @@ namespace Kasse.ServiceReference1 {
             return base.Channel.getArtikelCountByArtikelIdAndLieferartIdAndBetweenAsync(artikel_id, lieferart_id, von, bis);
         }
         
-        public void setArtikelBeleg(Kasse.ServiceReference1.Artikel artikel, Kasse.ServiceReference1.Beleg beleg) {
+        public void setArtikelBeleg(DAL.Artikel artikel, DAL.Beleg beleg) {
             base.Channel.setArtikelBeleg(artikel, beleg);
         }
         
-        public System.Threading.Tasks.Task setArtikelBelegAsync(Kasse.ServiceReference1.Artikel artikel, Kasse.ServiceReference1.Beleg beleg) {
+        public System.Threading.Tasks.Task setArtikelBelegAsync(DAL.Artikel artikel, DAL.Beleg beleg) {
             return base.Channel.setArtikelBelegAsync(artikel, beleg);
         }
         
-        public void updateArtikelBeleg(Kasse.ServiceReference1.ArtikelBeleg artikelbeleg) {
+        public void updateArtikelBeleg(DAL.ArtikelBeleg artikelbeleg) {
             base.Channel.updateArtikelBeleg(artikelbeleg);
         }
         
-        public System.Threading.Tasks.Task updateArtikelBelegAsync(Kasse.ServiceReference1.ArtikelBeleg artikelbeleg) {
+        public System.Threading.Tasks.Task updateArtikelBelegAsync(DAL.ArtikelBeleg artikelbeleg) {
             return base.Channel.updateArtikelBelegAsync(artikelbeleg);
         }
         
-        public Kasse.ServiceReference1.Artikel[] getArtikelfromBelegId(int id) {
+        public DAL.Artikel[] getArtikelfromBelegId(int id) {
             return base.Channel.getArtikelfromBelegId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Artikel[]> getArtikelfromBelegIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Artikel[]> getArtikelfromBelegIdAsync(int id) {
             return base.Channel.getArtikelfromBelegIdAsync(id);
         }
         
-        public Kasse.ServiceReference1.Beleg[] getBelegfromArtikelId(int id) {
+        public DAL.Beleg[] getBelegfromArtikelId(int id) {
             return base.Channel.getBelegfromArtikelId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Beleg[]> getBelegfromArtikelIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Beleg[]> getBelegfromArtikelIdAsync(int id) {
             return base.Channel.getBelegfromArtikelIdAsync(id);
         }
         
-        public Kasse.ServiceReference1.Warengruppe getWarengruppebyId(int id) {
+        public DAL.Warengruppe getWarengruppebyId(int id) {
             return base.Channel.getWarengruppebyId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Warengruppe> getWarengruppebyIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Warengruppe> getWarengruppebyIdAsync(int id) {
             return base.Channel.getWarengruppebyIdAsync(id);
         }
         
-        public void setWarengruppe(Kasse.ServiceReference1.Warengruppe gruppe) {
+        public void setWarengruppe(DAL.Warengruppe gruppe) {
             base.Channel.setWarengruppe(gruppe);
         }
         
-        public System.Threading.Tasks.Task setWarengruppeAsync(Kasse.ServiceReference1.Warengruppe gruppe) {
+        public System.Threading.Tasks.Task setWarengruppeAsync(DAL.Warengruppe gruppe) {
             return base.Channel.setWarengruppeAsync(gruppe);
         }
         
-        public void updateWarengruppe(Kasse.ServiceReference1.Warengruppe warengruppe) {
+        public void updateWarengruppe(DAL.Warengruppe warengruppe) {
             base.Channel.updateWarengruppe(warengruppe);
         }
         
-        public System.Threading.Tasks.Task updateWarengruppeAsync(Kasse.ServiceReference1.Warengruppe warengruppe) {
+        public System.Threading.Tasks.Task updateWarengruppeAsync(DAL.Warengruppe warengruppe) {
             return base.Channel.updateWarengruppeAsync(warengruppe);
         }
         
-        public Kasse.ServiceReference1.Warengruppe[] getWarengruppeList() {
+        public DAL.Warengruppe[] getWarengruppeList() {
             return base.Channel.getWarengruppeList();
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Warengruppe[]> getWarengruppeListAsync() {
+        public System.Threading.Tasks.Task<DAL.Warengruppe[]> getWarengruppeListAsync() {
             return base.Channel.getWarengruppeListAsync();
         }
         
-        public Kasse.ServiceReference1.Warengruppe getWarengruppebyName(string name) {
+        public DAL.Warengruppe getWarengruppebyName(string name) {
             return base.Channel.getWarengruppebyName(name);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Warengruppe> getWarengruppebyNameAsync(string name) {
+        public System.Threading.Tasks.Task<DAL.Warengruppe> getWarengruppebyNameAsync(string name) {
             return base.Channel.getWarengruppebyNameAsync(name);
         }
         
-        public Kasse.ServiceReference1.Prognose getPrognosebyId(int id) {
+        public DAL.Prognose getPrognosebyId(int id) {
             return base.Channel.getPrognosebyId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Prognose> getPrognosebyIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Prognose> getPrognosebyIdAsync(int id) {
             return base.Channel.getPrognosebyIdAsync(id);
         }
         
-        public void setPrognose(Kasse.ServiceReference1.Prognose prognose) {
+        public void setPrognose(DAL.Prognose prognose) {
             base.Channel.setPrognose(prognose);
         }
         
-        public System.Threading.Tasks.Task setPrognoseAsync(Kasse.ServiceReference1.Prognose prognose) {
+        public System.Threading.Tasks.Task setPrognoseAsync(DAL.Prognose prognose) {
             return base.Channel.setPrognoseAsync(prognose);
         }
         
-        public void updatePrognose(Kasse.ServiceReference1.Prognose prognose) {
+        public void updatePrognose(DAL.Prognose prognose) {
             base.Channel.updatePrognose(prognose);
         }
         
-        public System.Threading.Tasks.Task updatePrognoseAsync(Kasse.ServiceReference1.Prognose prognose) {
+        public System.Threading.Tasks.Task updatePrognoseAsync(DAL.Prognose prognose) {
             return base.Channel.updatePrognoseAsync(prognose);
         }
         
-        public Kasse.ServiceReference1.Prognose[] getPrognoseList() {
+        public DAL.Prognose[] getPrognoseList() {
             return base.Channel.getPrognoseList();
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Prognose[]> getPrognoseListAsync() {
+        public System.Threading.Tasks.Task<DAL.Prognose[]> getPrognoseListAsync() {
             return base.Channel.getPrognoseListAsync();
         }
         
-        public Kasse.ServiceReference1.Prognose getPrognosebyArtikelId(int id) {
+        public DAL.Prognose getPrognosebyArtikelId(int id) {
             return base.Channel.getPrognosebyArtikelId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Prognose> getPrognosebyArtikelIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Prognose> getPrognosebyArtikelIdAsync(int id) {
             return base.Channel.getPrognosebyArtikelIdAsync(id);
         }
         
-        public Kasse.ServiceReference1.Prognose[] getPrognosebyDate(System.DateTime date) {
+        public DAL.Prognose[] getPrognosebyDate(System.DateTime date) {
             return base.Channel.getPrognosebyDate(date);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Prognose[]> getPrognosebyDateAsync(System.DateTime date) {
+        public System.Threading.Tasks.Task<DAL.Prognose[]> getPrognosebyDateAsync(System.DateTime date) {
             return base.Channel.getPrognosebyDateAsync(date);
         }
         
-        public Kasse.ServiceReference1.Lieferart getLieferartbyId(int id) {
+        public DAL.Lieferart getLieferartbyId(int id) {
             return base.Channel.getLieferartbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Lieferart> getLieferartbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<DAL.Lieferart> getLieferartbyIdAsync(int id) {
             return base.Channel.getLieferartbyIdAsync(id);
         }
         
-        public Kasse.ServiceReference1.Lieferart getLieferartByName(string name) {
+        public DAL.Lieferart getLieferartByName(string name) {
             return base.Channel.getLieferartByName(name);
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Lieferart> getLieferartByNameAsync(string name) {
+        public System.Threading.Tasks.Task<DAL.Lieferart> getLieferartByNameAsync(string name) {
             return base.Channel.getLieferartByNameAsync(name);
         }
         
-        public void setLieferart(Kasse.ServiceReference1.Lieferart lieferart) {
+        public void setLieferart(DAL.Lieferart lieferart) {
             base.Channel.setLieferart(lieferart);
         }
         
-        public System.Threading.Tasks.Task setLieferartAsync(Kasse.ServiceReference1.Lieferart lieferart) {
+        public System.Threading.Tasks.Task setLieferartAsync(DAL.Lieferart lieferart) {
             return base.Channel.setLieferartAsync(lieferart);
         }
         
-        public void updateLieferart(Kasse.ServiceReference1.Lieferart lieferart) {
+        public void updateLieferart(DAL.Lieferart lieferart) {
             base.Channel.updateLieferart(lieferart);
         }
         
-        public System.Threading.Tasks.Task updateLieferartAsync(Kasse.ServiceReference1.Lieferart lieferart) {
+        public System.Threading.Tasks.Task updateLieferartAsync(DAL.Lieferart lieferart) {
             return base.Channel.updateLieferartAsync(lieferart);
         }
         
-        public Kasse.ServiceReference1.Lieferart[] getLieferartList() {
+        public DAL.Lieferart[] getLieferartList() {
             return base.Channel.getLieferartList();
         }
         
-        public System.Threading.Tasks.Task<Kasse.ServiceReference1.Lieferart[]> getLieferartListAsync() {
+        public System.Threading.Tasks.Task<DAL.Lieferart[]> getLieferartListAsync() {
             return base.Channel.getLieferartListAsync();
         }
     }

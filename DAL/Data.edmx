@@ -92,6 +92,8 @@
     <Property Name="Mobil" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ArbeitsvertragId" Type="int" Nullable="false" />
     <Property Name="RolleId" Type="int" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="passwort" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="ArbeitsvertragSet">
     <Key>
@@ -119,16 +121,16 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Straße" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Hausnummer" Type="int" Nullable="false" />
+    <Property Name="Straße" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Hausnummer" Type="int" Nullable="true" />
     <Property Name="Zusatz" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Postleitzahl" Type="int" Nullable="false" />
-    <Property Name="Ort" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Telefon" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Mobil" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="IBAN" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="BIC" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Postleitzahl" Type="int" Nullable="true" />
+    <Property Name="Ort" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Telefon" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Mobil" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IBAN" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="BIC" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="ArtikelSet">
     <Key>
@@ -136,7 +138,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="GTIN" Type="int" Nullable="false" />
+    <Property Name="GTIN" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Bestand" Type="float" Nullable="false" />
     <Property Name="Einheit" Type="int" Nullable="false" />
     <Property Name="Nettoeinkaufspreis" Type="float" Nullable="false" />
@@ -434,6 +436,8 @@
           <Property Name="ArbeitsvertragId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Rolle" Relationship="Data.RollePersonal" FromRole="Personal" ToRole="Rolle" />
           <Property Name="RolleId" Type="Int32" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" />
+          <Property Name="passwort" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Arbeitsvertrag">
           <Key>
@@ -463,16 +467,16 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
-          <Property Name="Straße" Type="String" Nullable="false" />
-          <Property Name="Hausnummer" Type="Int32" Nullable="false" />
+          <Property Name="Straße" Type="String" Nullable="true" />
+          <Property Name="Hausnummer" Type="Int32" Nullable="true" />
           <Property Name="Zusatz" Type="String" Nullable="true" />
-          <Property Name="Postleitzahl" Type="Int32" Nullable="false" />
-          <Property Name="Ort" Type="String" Nullable="false" />
-          <Property Name="Telefon" Type="String" Nullable="false" />
-          <Property Name="Mobil" Type="String" Nullable="false" />
-          <Property Name="Email" Type="String" Nullable="false" />
-          <Property Name="IBAN" Type="String" Nullable="false" />
-          <Property Name="BIC" Type="String" Nullable="false" />
+          <Property Name="Postleitzahl" Type="Int32" Nullable="true" />
+          <Property Name="Ort" Type="String" Nullable="true" />
+          <Property Name="Telefon" Type="String" Nullable="true" />
+          <Property Name="Mobil" Type="String" Nullable="true" />
+          <Property Name="Email" Type="String" Nullable="true" />
+          <Property Name="IBAN" Type="String" Nullable="true" />
+          <Property Name="BIC" Type="String" Nullable="true" />
           <NavigationProperty Name="Artikel" Relationship="Data.LieferantArtikel" FromRole="Lieferant" ToRole="Artikel" />
         </EntityType>
         <EntityType Name="Artikel">
@@ -481,7 +485,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
-          <Property Name="GTIN" Type="Int32" Nullable="false" />
+          <Property Name="GTIN" Type="String" Nullable="false" />
           <Property Name="Bestand" Type="Double" Nullable="false" />
           <Property Name="Einheit" Type="Data.Einheit" Nullable="false" />
           <Property Name="Nettoeinkaufspreis" Type="Double" Nullable="false" />
@@ -739,6 +743,8 @@
           <ScalarProperty Name="Mobil" ColumnName="Mobil" />
           <ScalarProperty Name="ArbeitsvertragId" ColumnName="ArbeitsvertragId" />
           <ScalarProperty Name="RolleId" ColumnName="RolleId" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="passwort" ColumnName="passwort" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

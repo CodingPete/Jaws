@@ -132,6 +132,9 @@ namespace WCFServiceWebRole1
         Artikel getArtikelbyId(int id);
 
         [OperationContract]
+        Artikel getArtikelByGTIN(String GTIN);
+
+        [OperationContract]
         void setArtikel(Artikel artikel);
 
         [OperationContract]

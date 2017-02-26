@@ -92,39 +92,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ServiceReference1\Kasse.ServiceReference1.Arbeitsvertrag.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference1\Kasse.ServiceReference1.Artikel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference1\Kasse.ServiceReference1.Beleg.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference1\Kasse.ServiceReference1.Lieferant.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference1\Kasse.ServiceReference1.Lieferart.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference1\Kasse.ServiceReference1.Personal.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference1\Kasse.ServiceReference1.Prognose.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference1\Kasse.ServiceReference1.Recht.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference1\Kasse.ServiceReference1.Rolle.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference1\Kasse.ServiceReference1.Schicht.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference1\Kasse.ServiceReference1.Warengruppe.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\ServiceReference1\Service1.wsdl" />
     <None Include="Connected Services\ServiceReference1\Service1.xsd">
       <SubType>Designer</SubType>
@@ -135,6 +102,17 @@
     <None Include="Connected Services\ServiceReference1\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\DAL.Arbeitsvertrag.datasource" />
+    <None Include="Properties\DataSources\DAL.Artikel.datasource" />
+    <None Include="Properties\DataSources\DAL.Beleg.datasource" />
+    <None Include="Properties\DataSources\DAL.Lieferant.datasource" />
+    <None Include="Properties\DataSources\DAL.Lieferart.datasource" />
+    <None Include="Properties\DataSources\DAL.Personal.datasource" />
+    <None Include="Properties\DataSources\DAL.Prognose.datasource" />
+    <None Include="Properties\DataSources\DAL.Recht.datasource" />
+    <None Include="Properties\DataSources\DAL.Rolle.datasource" />
+    <None Include="Properties\DataSources\DAL.Schicht.datasource" />
+    <None Include="Properties\DataSources\DAL.Warengruppe.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -46,7 +46,7 @@ namespace Dashboard.Controllers
 
         // POST: Artikel/Create
         // Aktivieren Sie zum Schutz vor übermäßigem Senden von Angriffen die spezifischen Eigenschaften, mit denen eine Bindung erfolgen soll. Weitere Informationen 
-        // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
+        // finden Sie unter https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,GTIN,Bestand,Einheit,Nettoeinkaufspreis,Nettoverkaufspreis,LieferantId,WarengruppeId")] Artikel artikel)
@@ -82,7 +82,7 @@ namespace Dashboard.Controllers
 
         // POST: Artikel/Edit/5
         // Aktivieren Sie zum Schutz vor übermäßigem Senden von Angriffen die spezifischen Eigenschaften, mit denen eine Bindung erfolgen soll. Weitere Informationen 
-        // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
+        // finden Sie unter https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,GTIN,Bestand,Einheit,Nettoeinkaufspreis,Nettoverkaufspreis,LieferantId,WarengruppeId")] Artikel artikel)

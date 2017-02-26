@@ -36,6 +36,11 @@ namespace WCFServiceWebRole1
             return db.ArtikelSet.Find(id);
         }
 
+        public Artikel getArtikelByGTIN(String GTIN)
+        {
+            return db.ArtikelSet.Where((a) => a.GTIN == GTIN).First();
+        }
+
         public List<Artikel> getArtikelbyLieferantId(int id)
         {
             return db.ArtikelSet.Where((a) => a.LieferantId == id).ToList();

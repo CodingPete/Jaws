@@ -137,7 +137,7 @@
       <xs:element minOccurs="0" name="ArtikelBeleg" nillable="true" type="tns:ArrayOfArtikelBeleg" />
       <xs:element minOccurs="0" name="Bestand" type="xs:double" />
       <xs:element minOccurs="0" name="Einheit" type="tns:Einheit" />
-      <xs:element minOccurs="0" name="GTIN" type="xs:int" />
+      <xs:element minOccurs="0" name="GTIN" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Lieferant" nillable="true" type="tns:Lieferant" />
       <xs:element minOccurs="0" name="LieferantId" type="xs:int" />
