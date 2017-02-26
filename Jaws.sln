@@ -15,6 +15,8 @@ Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Jaws_Azure_Service", "Jaws_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceWebRole1", "WCFServiceWebRole1\WCFServiceWebRole1.csproj", "{CA0446AD-DC84-4CA5-939E-D2506284C47D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kasse", "Kasse\Kasse.csproj", "{0BB8D323-5C6F-44E9-BDA4-D17410ACA7AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{CA0446AD-DC84-4CA5-939E-D2506284C47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA0446AD-DC84-4CA5-939E-D2506284C47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA0446AD-DC84-4CA5-939E-D2506284C47D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BB8D323-5C6F-44E9-BDA4-D17410ACA7AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BB8D323-5C6F-44E9-BDA4-D17410ACA7AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BB8D323-5C6F-44E9-BDA4-D17410ACA7AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BB8D323-5C6F-44E9-BDA4-D17410ACA7AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
