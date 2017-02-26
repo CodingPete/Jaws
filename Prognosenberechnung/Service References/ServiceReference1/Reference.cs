@@ -1450,6 +1450,9 @@ namespace Prognosenberechnung.ServiceReference1 {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MengeField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -1521,6 +1524,19 @@ namespace Prognosenberechnung.ServiceReference1 {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Menge {
+            get {
+                return this.MengeField;
+            }
+            set {
+                if ((this.MengeField.Equals(value) != true)) {
+                    this.MengeField = value;
+                    this.RaisePropertyChanged("Menge");
                 }
             }
         }

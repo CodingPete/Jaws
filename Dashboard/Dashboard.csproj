@@ -4505,10 +4505,6 @@
       <Project>{d0aed700-c12c-4a69-b48a-86b056e8d2de}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Jaws_Service_Library\Jaws_Service_Library.csproj">
-      <Project>{c8866848-7eb9-4d98-96ee-a168d126e5e1}</Project>
-      <Name>Jaws_Service_Library</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Content\template\vendor\moment\moment.d.ts" />

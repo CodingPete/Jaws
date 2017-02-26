@@ -16,7 +16,10 @@ namespace Prognosenberechnung
         static void Main(string[] args)
         {
             client = new Service1Client();
-            prognosen_timer = new Timer(callback, null, 0, 2000);
+            //prognosen_timer = new Timer(callback, null, 0, 2000);
+
+            Lieferant lieferant = client.getLieferantbyId(1);
+            Console.WriteLine(lieferant.Name);
             Console.ReadLine();
         }
 
@@ -24,6 +27,8 @@ namespace Prognosenberechnung
         {
             // Hole die Abverkaufslieferart aus der Datenbank
             Lieferart lieferart = client.getLieferartByName("Abverkauf");
+
+            Console.WriteLine(lieferart.Name);
 
             // Alle Artikel holen
             var artikels = client.getArtikelList();
@@ -46,6 +51,7 @@ namespace Prognosenberechnung
 
                 Double prognose_value = 1 / 6 * summe;
 
+                
                 Prognose prognose = new Prognose();
                 prognose.ArtikelId = artikel.Id;
                 prognose.Abverkauf_soll = prognose_value;
@@ -53,7 +59,7 @@ namespace Prognosenberechnung
                 prognose.Datum = Verkaufstag.Date;
 
                 client.setPrognose(prognose);
-
+                
                 Console.WriteLine("Prognose geschrieben");
 
             }
