@@ -7,6 +7,7 @@ using System.ServiceModel;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.ServiceModel.Description;
+using System.Web.UI;
 
 namespace Dashboard
 {
