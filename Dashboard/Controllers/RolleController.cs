@@ -58,11 +58,11 @@ namespace Dashboard.Controllers
 
                 var Rechte = db.RechtSet.ToList();
 
-                var test = Request.Form;
+                var post = Request.Form;
 
                 Rechte.ForEach(item =>
                 {
-                    if (test[item.Name] != null)
+                    if (post[item.Name] != null)
                     {
                         RolleRecht nRolleRecht = new RolleRecht();
                         nRolleRecht.RechtId = item.Id;
@@ -167,6 +167,15 @@ namespace Dashboard.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+
+            var rollerecht = db.RolleRechtSet.ToList();
+            rollerecht.ForEach(item =>
+            {
+                if(item.RolleId== id)
+                {
+                    rollerecht.Remove(item);
+                }
+            });
             Rolle rolle = db.RolleSet.Find(id);
             db.RolleSet.Remove(rolle);
             db.SaveChanges();
