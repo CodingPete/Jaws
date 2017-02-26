@@ -138,6 +138,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LieferantController.cs" />
     <Compile Include="Controllers\LieferartController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MarktController.cs" />
     <Compile Include="Controllers\PersonalController.cs" />
     <Compile Include="Controllers\PrognoseController.cs" />
@@ -201,6 +202,7 @@
     <Content Include="Content\template\styles\app.skins.css" />
     <Content Include="Content\template\styles\gsi-step-indicator.css" />
     <Content Include="Content\template\styles\loaders.css" />
+    <Content Include="Content\template\styles\login.css" />
     <Content Include="Content\template\styles\tsf-step-form-wizard.css" />
     <Content Include="Content\template\vendor\angular\angular-csp.css" />
     <Content Include="Content\template\vendor\angular\angular.js" />
@@ -4480,6 +4482,7 @@
     <Content Include="Views\ArtikelBeleg\Edit.cshtml" />
     <Content Include="Views\ArtikelBeleg\Index.cshtml" />
     <Content Include="Web.config" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
