@@ -16,19 +16,14 @@ namespace Prognosenberechnung
         static void Main(string[] args)
         {
             client = new Service1Client();
-            //prognosen_timer = new Timer(callback, null, 0, 2000);
-
-            Lieferant lieferant = client.getLieferantbyId(1);
-            Console.WriteLine(lieferant.Name);
+            prognosen_timer = new Timer(callback, null, 0, 10000000);
             Console.ReadLine();
         }
 
         private static void callback(object state)
         {
             // Hole die Abverkaufslieferart aus der Datenbank
-            Lieferart lieferart = client.getLieferartByName("Abverkauf");
-
-            Console.WriteLine(lieferart.Name);
+            Lieferart lieferart = client.getLieferartByName("Verkauf");
 
             // Alle Artikel holen
             var artikels = client.getArtikelList();
@@ -39,28 +34,39 @@ namespace Prognosenberechnung
                 // ... hole die Abverkaufsbelege dieses Wochentages der letzen 6 Wochen
                 int summe = 0;
 
-                // Morgen in einer Woche. Davon 6 Wochen zurück
-                DateTime Verkaufstag = DateTime.Now.AddDays(1 + -(7*6));
+                // Gestern in einer Woche. Davon 6 Wochen zurück
+                DateTime Verkaufstag = DateTime.Now.AddDays(-1 -(7*6));
                 
-
+                // Gleitenden Mittelwert über die vergangenen 6 Wochen berechnen
                 for (int i = 0; i < 7; i++ )
                 {
                     Verkaufstag = Verkaufstag.AddDays(7);
-                    summe += client.getArtikelCountByArtikelIdAndLieferartIdAndBetween(artikel.Id, lieferart.Id, Verkaufstag, Verkaufstag);
+                    var tagesVerkauf = client.getArtikelCountByArtikelIdAndLieferartIdAndBetween(artikel.Id, lieferart.Id, Verkaufstag, Verkaufstag.AddDays(1));
+                    summe += tagesVerkauf;
+
+                    // Wenn Gestern, dann Prognose holen falls vorhanden und Abverkauf_ist setzen
+                    if(Verkaufstag.Date == DateTime.Now.AddDays(-1).Date)
+                    {
+                        Prognose old_prognose = client.getPrognoseByArtikelIdAndDate(artikel.Id, Verkaufstag);
+                        if(old_prognose != null)
+                        {
+                            old_prognose.Abverkauf_ist = tagesVerkauf;
+                            client.updatePrognose(old_prognose);
+                        }
+                    }
                 }
+                Double prognose_value = 1.0 / 6.0 * summe;
 
-                Double prognose_value = 1 / 6 * summe;
-
-                
+                // Prognose speichern
                 Prognose prognose = new Prognose();
                 prognose.ArtikelId = artikel.Id;
                 prognose.Abverkauf_soll = prognose_value;
                 prognose.Abverkauf_ist = 0;
                 prognose.Datum = Verkaufstag.Date;
-
                 client.setPrognose(prognose);
                 
-                Console.WriteLine("Prognose geschrieben");
+                Console.WriteLine(prognose.Abverkauf_soll);
+                Console.ReadLine();
 
             }
         }
