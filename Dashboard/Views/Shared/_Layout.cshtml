@@ -45,8 +45,11 @@
                         </div>
                         <div class="user-info expanding-hidden">
                             @User.Identity.Name
-                            <small class="bold">@Request.Cookies["UserInformation"].Values["Email"].ToString()</small>
-                            <small class="bold">@Request.Cookies["UserInformation"].Values["Rolle"].ToString()</small>
+                            @if (Request.Cookies["UserInformation"] != null)
+                            {
+                                <small class="bold">@Request.Cookies["UserInformation"].Values["Email"].ToString()</small>
+                                <small class="bold">@Request.Cookies["UserInformation"].Values["Rolle"].ToString()</small>
+                            }
                         </div>
                     </a>
                     <div class="dropdown-menu">

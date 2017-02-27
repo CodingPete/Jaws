@@ -45,10 +45,10 @@ namespace Dashboard.Controllers
 
         // POST: Beleg/Create
         // Aktivieren Sie zum Schutz vor übermäßigem Senden von Angriffen die spezifischen Eigenschaften, mit denen eine Bindung erfolgen soll. Weitere Informationen 
-        // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
+        // finden Sie unter https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LieferartId")] Beleg beleg)
+        public ActionResult Create([Bind(Include = "Id,LieferartId,Datum")] Beleg beleg)
         {
             if (ModelState.IsValid)
             {
@@ -79,10 +79,10 @@ namespace Dashboard.Controllers
 
         // POST: Beleg/Edit/5
         // Aktivieren Sie zum Schutz vor übermäßigem Senden von Angriffen die spezifischen Eigenschaften, mit denen eine Bindung erfolgen soll. Weitere Informationen 
-        // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
+        // finden Sie unter https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,LieferartId")] Beleg beleg)
+        public ActionResult Edit([Bind(Include = "Id,LieferartId,Datum")] Beleg beleg)
         {
             if (ModelState.IsValid)
             {
