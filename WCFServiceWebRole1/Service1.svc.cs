@@ -257,7 +257,7 @@ namespace WCFServiceWebRole1
             Lieferart lfa = this.getLieferartbyId(beleg.LieferartId);
             beleg.Lieferart = lfa;
             beleg.Lieferart.Beleg.Add(beleg);
-            updateLieferart(beleg.Lieferart);
+            //updateLieferart(beleg.Lieferart);
             db.BelegSet.Add(beleg);
             db.SaveChanges();
             return beleg.Id;
@@ -285,14 +285,15 @@ namespace WCFServiceWebRole1
 
         }
 
-        public void setPrognose(Prognose prognose)
+        public int setPrognose(Prognose prognose)
         {
             Artikel artikel = getArtikelbyId(prognose.ArtikelId);
             prognose.Artikel = artikel;
             prognose.Artikel.Prognose.Add(prognose);
-            updateArtikel(prognose.Artikel);
+            //updateArtikel(prognose.Artikel);
             db.PrognoseSet.Add(prognose);
             db.SaveChanges();
+            return prognose.Id;
         }
 
         public void setRecht(Recht recht)
