@@ -198,12 +198,15 @@
                     <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">
                         <span>Dashboard</span>
                     </a>
+@if (User.Identity.IsAuthenticated)
+{
                     <div class="navbar-search navbar-item">
                         <form class="search-form">
                             <i class="material-icons">search</i>
                             <input class="form-control" type="text" placeholder="Suche" />
                         </form>
                     </div>
+}
                 </div>
             </nav>
             <!-- /top header -->
