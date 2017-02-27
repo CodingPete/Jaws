@@ -19,9 +19,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceWebRole1", "WCFServiceWebRole1\WCFServiceWebRole1.csproj", "{CA0446AD-DC84-4CA5-939E-D2506284C47D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kasse", "Kasse\Kasse.csproj", "{0BB8D323-5C6F-44E9-BDA4-D17410ACA7AD}"
-	ProjectSection(ProjectDependencies) = postProject
-		{CA0446AD-DC84-4CA5-939E-D2506284C47D} = {CA0446AD-DC84-4CA5-939E-D2506284C47D}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
