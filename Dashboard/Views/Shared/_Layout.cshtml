@@ -469,6 +469,15 @@
     <!-- end page scripts -->
     <!-- initialize page scripts -->
     @Scripts.Render("~/Content/template/scripts/dashboard/dashboard.js")
+    @Scripts.Render("~/Content/template/vendor/datatables/media/js/jquery.dataTables.js")
+    @Scripts.Render("~/Content/template/vendor/datatables/media/js/dataTables.bootstrap4.js")
+    <!-- end page scripts -->
+    <!-- initialize page scripts -->
+    <script type="text/javascript">
+        $('.datatable').DataTable({
+
+        });
+    </script>
 
     @RenderSection("scripts", required: false)
 </body>

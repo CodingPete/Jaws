@@ -155,7 +155,7 @@ namespace WCFServiceWebRole1
         Beleg getBelegbyId(int id);
 
         [OperationContract]
-        void setBeleg(Beleg beleg);
+        int setBeleg(Beleg beleg);
 
         [OperationContract]
         void updateBeleg(Beleg beleg);
@@ -204,7 +204,7 @@ namespace WCFServiceWebRole1
         Prognose getPrognosebyId(int id);
 
         [OperationContract]
-        void setPrognose(Prognose prognose);
+        int setPrognose(Prognose prognose);
 
         [OperationContract]
         void updatePrognose(Prognose prognose);

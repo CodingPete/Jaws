@@ -244,10 +244,10 @@ namespace Kasse.ServiceReference1 {
         System.Threading.Tasks.Task<DAL.Beleg> getBelegbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setBeleg", ReplyAction="http://tempuri.org/IService1/setBelegResponse")]
-        void setBeleg(DAL.Beleg beleg);
+        int setBeleg(DAL.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setBeleg", ReplyAction="http://tempuri.org/IService1/setBelegResponse")]
-        System.Threading.Tasks.Task setBelegAsync(DAL.Beleg beleg);
+        System.Threading.Tasks.Task<int> setBelegAsync(DAL.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateBeleg", ReplyAction="http://tempuri.org/IService1/updateBelegResponse")]
         void updateBeleg(DAL.Beleg beleg);
@@ -721,11 +721,11 @@ namespace Kasse.ServiceReference1 {
             return base.Channel.getBelegbyIdAsync(id);
         }
         
-        public void setBeleg(DAL.Beleg beleg) {
-            base.Channel.setBeleg(beleg);
+        public int setBeleg(DAL.Beleg beleg) {
+            return base.Channel.setBeleg(beleg);
         }
         
-        public System.Threading.Tasks.Task setBelegAsync(DAL.Beleg beleg) {
+        public System.Threading.Tasks.Task<int> setBelegAsync(DAL.Beleg beleg) {
             return base.Channel.setBelegAsync(beleg);
         }
         
