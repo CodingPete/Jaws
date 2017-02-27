@@ -76,6 +76,12 @@ namespace Prognosenberechnung.ServiceReference1 {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ZusatzField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string emailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string passwortField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -316,6 +322,32 @@ namespace Prognosenberechnung.ServiceReference1 {
                 if ((object.ReferenceEquals(this.ZusatzField, value) != true)) {
                     this.ZusatzField = value;
                     this.RaisePropertyChanged("Zusatz");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string email {
+            get {
+                return this.emailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.emailField, value) != true)) {
+                    this.emailField = value;
+                    this.RaisePropertyChanged("email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string passwort {
+            get {
+                return this.passwortField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.passwortField, value) != true)) {
+                    this.passwortField = value;
+                    this.RaisePropertyChanged("passwort");
                 }
             }
         }
@@ -878,7 +910,7 @@ namespace Prognosenberechnung.ServiceReference1 {
         private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int HausnummerField;
+        private System.Nullable<int> HausnummerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string IBANField;
@@ -896,7 +928,7 @@ namespace Prognosenberechnung.ServiceReference1 {
         private string OrtField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PostleitzahlField;
+        private System.Nullable<int> PostleitzahlField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StraßeField;
@@ -957,7 +989,7 @@ namespace Prognosenberechnung.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Hausnummer {
+        public System.Nullable<int> Hausnummer {
             get {
                 return this.HausnummerField;
             }
@@ -1035,7 +1067,7 @@ namespace Prognosenberechnung.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Postleitzahl {
+        public System.Nullable<int> Postleitzahl {
             get {
                 return this.PostleitzahlField;
             }
@@ -1115,7 +1147,7 @@ namespace Prognosenberechnung.ServiceReference1 {
         private Prognosenberechnung.ServiceReference1.Einheit EinheitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GTINField;
+        private string GTINField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
@@ -1194,12 +1226,12 @@ namespace Prognosenberechnung.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int GTIN {
+        public string GTIN {
             get {
                 return this.GTINField;
             }
             set {
-                if ((this.GTINField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.GTINField, value) != true)) {
                     this.GTINField = value;
                     this.RaisePropertyChanged("GTIN");
                 }
@@ -2066,6 +2098,12 @@ namespace Prognosenberechnung.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyId", ReplyAction="http://tempuri.org/IService1/getArtikelbyIdResponse")]
         System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Artikel> getArtikelbyIdAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelByGTIN", ReplyAction="http://tempuri.org/IService1/getArtikelByGTINResponse")]
+        Prognosenberechnung.ServiceReference1.Artikel getArtikelByGTIN(string GTIN);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelByGTIN", ReplyAction="http://tempuri.org/IService1/getArtikelByGTINResponse")]
+        System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Artikel> getArtikelByGTINAsync(string GTIN);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArtikel", ReplyAction="http://tempuri.org/IService1/setArtikelResponse")]
         void setArtikel(Prognosenberechnung.ServiceReference1.Artikel artikel);
         
@@ -2103,10 +2141,10 @@ namespace Prognosenberechnung.ServiceReference1 {
         System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Beleg> getBelegbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setBeleg", ReplyAction="http://tempuri.org/IService1/setBelegResponse")]
-        void setBeleg(Prognosenberechnung.ServiceReference1.Beleg beleg);
+        int setBeleg(Prognosenberechnung.ServiceReference1.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setBeleg", ReplyAction="http://tempuri.org/IService1/setBelegResponse")]
-        System.Threading.Tasks.Task setBelegAsync(Prognosenberechnung.ServiceReference1.Beleg beleg);
+        System.Threading.Tasks.Task<int> setBelegAsync(Prognosenberechnung.ServiceReference1.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateBeleg", ReplyAction="http://tempuri.org/IService1/updateBelegResponse")]
         void updateBeleg(Prognosenberechnung.ServiceReference1.Beleg beleg);
@@ -2189,10 +2227,10 @@ namespace Prognosenberechnung.ServiceReference1 {
         System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Prognose> getPrognosebyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPrognose", ReplyAction="http://tempuri.org/IService1/setPrognoseResponse")]
-        void setPrognose(Prognosenberechnung.ServiceReference1.Prognose prognose);
+        int setPrognose(Prognosenberechnung.ServiceReference1.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPrognose", ReplyAction="http://tempuri.org/IService1/setPrognoseResponse")]
-        System.Threading.Tasks.Task setPrognoseAsync(Prognosenberechnung.ServiceReference1.Prognose prognose);
+        System.Threading.Tasks.Task<int> setPrognoseAsync(Prognosenberechnung.ServiceReference1.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePrognose", ReplyAction="http://tempuri.org/IService1/updatePrognoseResponse")]
         void updatePrognose(Prognosenberechnung.ServiceReference1.Prognose prognose);
@@ -2211,6 +2249,12 @@ namespace Prognosenberechnung.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyArtikelId", ReplyAction="http://tempuri.org/IService1/getPrognosebyArtikelIdResponse")]
         System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Prognose> getPrognosebyArtikelIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate", ReplyAction="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDateResponse")]
+        Prognosenberechnung.ServiceReference1.Prognose getPrognoseByArtikelIdAndDate(int id, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate", ReplyAction="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDateResponse")]
+        System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Prognose> getPrognoseByArtikelIdAndDateAsync(int id, System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyDate", ReplyAction="http://tempuri.org/IService1/getPrognosebyDateResponse")]
         Prognosenberechnung.ServiceReference1.Prognose[] getPrognosebyDate(System.DateTime date);
@@ -2524,6 +2568,14 @@ namespace Prognosenberechnung.ServiceReference1 {
             return base.Channel.getArtikelbyIdAsync(id);
         }
         
+        public Prognosenberechnung.ServiceReference1.Artikel getArtikelByGTIN(string GTIN) {
+            return base.Channel.getArtikelByGTIN(GTIN);
+        }
+        
+        public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Artikel> getArtikelByGTINAsync(string GTIN) {
+            return base.Channel.getArtikelByGTINAsync(GTIN);
+        }
+        
         public void setArtikel(Prognosenberechnung.ServiceReference1.Artikel artikel) {
             base.Channel.setArtikel(artikel);
         }
@@ -2572,11 +2624,11 @@ namespace Prognosenberechnung.ServiceReference1 {
             return base.Channel.getBelegbyIdAsync(id);
         }
         
-        public void setBeleg(Prognosenberechnung.ServiceReference1.Beleg beleg) {
-            base.Channel.setBeleg(beleg);
+        public int setBeleg(Prognosenberechnung.ServiceReference1.Beleg beleg) {
+            return base.Channel.setBeleg(beleg);
         }
         
-        public System.Threading.Tasks.Task setBelegAsync(Prognosenberechnung.ServiceReference1.Beleg beleg) {
+        public System.Threading.Tasks.Task<int> setBelegAsync(Prognosenberechnung.ServiceReference1.Beleg beleg) {
             return base.Channel.setBelegAsync(beleg);
         }
         
@@ -2684,11 +2736,11 @@ namespace Prognosenberechnung.ServiceReference1 {
             return base.Channel.getPrognosebyIdAsync(id);
         }
         
-        public void setPrognose(Prognosenberechnung.ServiceReference1.Prognose prognose) {
-            base.Channel.setPrognose(prognose);
+        public int setPrognose(Prognosenberechnung.ServiceReference1.Prognose prognose) {
+            return base.Channel.setPrognose(prognose);
         }
         
-        public System.Threading.Tasks.Task setPrognoseAsync(Prognosenberechnung.ServiceReference1.Prognose prognose) {
+        public System.Threading.Tasks.Task<int> setPrognoseAsync(Prognosenberechnung.ServiceReference1.Prognose prognose) {
             return base.Channel.setPrognoseAsync(prognose);
         }
         
@@ -2714,6 +2766,14 @@ namespace Prognosenberechnung.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Prognose> getPrognosebyArtikelIdAsync(int id) {
             return base.Channel.getPrognosebyArtikelIdAsync(id);
+        }
+        
+        public Prognosenberechnung.ServiceReference1.Prognose getPrognoseByArtikelIdAndDate(int id, System.DateTime date) {
+            return base.Channel.getPrognoseByArtikelIdAndDate(id, date);
+        }
+        
+        public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Prognose> getPrognoseByArtikelIdAndDateAsync(int id, System.DateTime date) {
+            return base.Channel.getPrognoseByArtikelIdAndDateAsync(id, date);
         }
         
         public Prognosenberechnung.ServiceReference1.Prognose[] getPrognosebyDate(System.DateTime date) {
