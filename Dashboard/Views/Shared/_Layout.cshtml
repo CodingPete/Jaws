@@ -22,6 +22,8 @@
 
     <div class="app skin-4">
         <!--sidebar panel-->
+@if (User.Identity.IsAuthenticated)
+            {
         <div class="off-canvas-overlay" data-toggle="sidebar"></div>
         <div class="sidebar-panel">
             <div class="brand">
@@ -36,8 +38,6 @@
                 </a>
                 <!-- /logo -->
             </div>
-            @if (User.Identity.IsAuthenticated)
-            {
                 <div class="nav-profile dropdown">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                         <div class="user-image">
@@ -157,26 +157,10 @@
                     </ul>
                 </nav>
             <!-- /main navigation -->
-            }
-            else
-            {
-                <div class="nav-profile dropdown">
-                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                        <div class="user-image">
-                            <img src="/Content/template/images/avatar.jpg" class="avatar img-circle" alt="user" title="user" />
-                        </div>
-                        <div class="user-info expanding-hidden">
-                            Nicht angemeldet
-                            <small class="bold">-</small>
-                        </div>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="Login">Login</a>
-                    </div>
-                </div>
-            }
+
 
         </div>
+            }
         <!-- /sidebar panel -->
         <!-- content panel -->
         <div class="main-panel">
@@ -198,12 +182,15 @@
                     <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">
                         <span>Dashboard</span>
                     </a>
+@if (User.Identity.IsAuthenticated)
+{
                     <div class="navbar-search navbar-item">
                         <form class="search-form">
                             <i class="material-icons">search</i>
                             <input class="form-control" type="text" placeholder="Suche" />
                         </form>
                     </div>
+}
                 </div>
             </nav>
             <!-- /top header -->
