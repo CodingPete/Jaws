@@ -252,10 +252,15 @@ namespace WCFServiceWebRole1
 
         }
 
-        public void setBeleg(Beleg beleg)
+        public int setBeleg(Beleg beleg)
         {
+            Lieferart lfa = this.getLieferartbyId(beleg.LieferartId);
+            beleg.Lieferart = lfa;
+            beleg.Lieferart.Beleg.Add(beleg);
+            updateLieferart(beleg.Lieferart);
             db.BelegSet.Add(beleg);
             db.SaveChanges();
+            return beleg.Id;
 
         }
 

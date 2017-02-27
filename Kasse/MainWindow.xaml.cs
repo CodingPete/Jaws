@@ -73,6 +73,32 @@ namespace Kasse
             
 
         }
+
+        private void button_Delete_Click(object sender, RoutedEventArgs e)
+        {
+            listBox.Items.Clear();
+            artikel_count.Content = listBox.Items.Count;
+            gesamtbetrag.Content = 0;
+        }
+
+        private void button_book_Click(object sender, RoutedEventArgs e)
+        {
+
+            Lieferart lfa = client.getLieferartByName("Verkauf");
+            Beleg beleg = new Beleg();
+            beleg.LieferartId = lfa.Id;
+            beleg.Datum = DateTime.Now;
+            beleg.Id = client.setBeleg(beleg);
+
+            foreach(Artikel item in listBox.Items)
+            {
+                client.setArtikelBeleg(item, beleg);
+            }
+
+            listBox.Items.Clear();
+            artikel_count.Content = listBox.Items.Count;
+            gesamtbetrag.Content = 0;
+        }
     }
     
 }

@@ -155,7 +155,7 @@ namespace WCFServiceWebRole1
         Beleg getBelegbyId(int id);
 
         [OperationContract]
-        void setBeleg(Beleg beleg);
+        int setBeleg(Beleg beleg);
 
         [OperationContract]
         void updateBeleg(Beleg beleg);
