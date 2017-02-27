@@ -19,7 +19,7 @@ namespace Dashboard.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "Id,Name")] Rolle rolle) //TODO: Bind Ersetzen, keine Ahnung was man da machen kann
+        public ActionResult Index([Bind(Include = "Username")] String temp) //TODO: Bind Ersetzen, keine Ahnung was man da machen kann
         {
             var post = Request.Form;
             String username = post["Username"];
