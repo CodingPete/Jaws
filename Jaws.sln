@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard", "Dashboard\Dashboard.csproj", "{1B887387-F7ED-4700-B3D3-16120FDE884E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schichtplaner", "Schichtplaner\Schichtplaner.csproj", "{457E6056-2E7C-4931-9D4D-1B23F9F676C6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CA0446AD-DC84-4CA5-939E-D2506284C47D} = {CA0446AD-DC84-4CA5-939E-D2506284C47D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosenberechnung", "Prognosenberechnung\Prognosenberechnung.csproj", "{9803B4D6-95FE-4733-918F-F8F8277E83A8}"
 	ProjectSection(ProjectDependencies) = postProject

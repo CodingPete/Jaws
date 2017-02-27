@@ -8,12 +8,12 @@ namespace Schichtplaner.Controllers
 {
     public class PlanController : Controller
     {
-        private Jaws_Service.Service1Client client;
+        private ServiceReference1.Service1Client client;
 
         public PlanController()
         {
             // Verbindungsaufbau zum Jaws_Server
-            client = new Jaws_Service.Service1Client();
+            client = new ServiceReference1.Service1Client();
             
         }
 
@@ -24,9 +24,10 @@ namespace Schichtplaner.Controllers
 
             // Hole alle Angestellten
             var personalliste = client.getPersonalList();
-
-            foreach(Jaws_Service.Personal person in personalliste)
+            ViewBag.personalliste = personalliste;
+            /*foreach(Jaws_Service.Personal person in personalliste)
             {
+                person.V
                 // Für jede Person, die Schichten dieser Woche holen
                 DateTime dieseWocheMontag = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
 
@@ -44,7 +45,7 @@ namespace Schichtplaner.Controllers
                 }
                 
                    
-            }
+            }*/
 
             ViewBag.schichtenListe = schichtenListe;
 
@@ -89,7 +90,9 @@ namespace Schichtplaner.Controllers
         // GET: Plan/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            //var person = client.getPersonalbyId(id);
+            var schicht = client.getSchichtbyPersonalId(id);
+            return View(schicht);
         }
 
         // POST: Plan/Edit/5
