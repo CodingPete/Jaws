@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Schichtplaner.ServiceReference1;
 
 namespace Schichtplaner.Controllers
 {
@@ -20,37 +21,24 @@ namespace Schichtplaner.Controllers
         // GET: Plan
         public ActionResult Index()
         {
-            List<Object> schichtenListe = new List<Object>();
+            List<PersonSchichten> personSchichtenListe = new List<PersonSchichten>();
 
             // Hole alle Angestellten
             var personalliste = client.getPersonalList();
-            ViewBag.personalliste = personalliste;
-            /*foreach(Jaws_Service.Personal person in personalliste)
+
+            foreach(Personal person in personalliste)
             {
-                person.V
-                // Für jede Person, die Schichten dieser Woche holen
-                DateTime dieseWocheMontag = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
+                // Person in ihrer Schichtenliste ablegen
+                PersonSchichten personSchicht = new PersonSchichten();
+                personSchicht.person = person;
 
-                // Für jeden Wochentag eine Schicht oder 0 holen
-                for(int i = 0; i < 7; i++)
-                {
-                    var schichten = client.getSchichtByPersonalIdAndBetween(person.Id, dieseWocheMontag, dieseWocheMontag.AddDays(i));
+                // Alle Schichten dieser Woche holen             
+                personSchicht.schichten = client.getSchichtByPersonalIdAndBetween(person.Id, DateTime.Now, DateTime.Now);
 
-                    // Ablage der Schichten in Array
-                    if (schichten.Count() == 0)
-                    {
-
-                    }
-
-                }
-                
-                   
-            }*/
-
-            ViewBag.schichtenListe = schichtenListe;
-
-            // Übergeben der Schichten an View
-            return View();
+                personSchichtenListe.Add(personSchicht);
+            }
+            
+            return View(personSchichtenListe);
         }
 
         // GET: Plan/Details/5

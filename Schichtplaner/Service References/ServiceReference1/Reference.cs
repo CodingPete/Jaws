@@ -2098,6 +2098,12 @@ namespace Schichtplaner.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyId", ReplyAction="http://tempuri.org/IService1/getArtikelbyIdResponse")]
         System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel> getArtikelbyIdAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelByGTIN", ReplyAction="http://tempuri.org/IService1/getArtikelByGTINResponse")]
+        Schichtplaner.ServiceReference1.Artikel getArtikelByGTIN(string GTIN);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelByGTIN", ReplyAction="http://tempuri.org/IService1/getArtikelByGTINResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel> getArtikelByGTINAsync(string GTIN);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArtikel", ReplyAction="http://tempuri.org/IService1/setArtikelResponse")]
         void setArtikel(Schichtplaner.ServiceReference1.Artikel artikel);
         
@@ -2135,10 +2141,10 @@ namespace Schichtplaner.ServiceReference1 {
         System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Beleg> getBelegbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setBeleg", ReplyAction="http://tempuri.org/IService1/setBelegResponse")]
-        void setBeleg(Schichtplaner.ServiceReference1.Beleg beleg);
+        int setBeleg(Schichtplaner.ServiceReference1.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setBeleg", ReplyAction="http://tempuri.org/IService1/setBelegResponse")]
-        System.Threading.Tasks.Task setBelegAsync(Schichtplaner.ServiceReference1.Beleg beleg);
+        System.Threading.Tasks.Task<int> setBelegAsync(Schichtplaner.ServiceReference1.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateBeleg", ReplyAction="http://tempuri.org/IService1/updateBelegResponse")]
         void updateBeleg(Schichtplaner.ServiceReference1.Beleg beleg);
@@ -2221,10 +2227,10 @@ namespace Schichtplaner.ServiceReference1 {
         System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose> getPrognosebyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPrognose", ReplyAction="http://tempuri.org/IService1/setPrognoseResponse")]
-        void setPrognose(Schichtplaner.ServiceReference1.Prognose prognose);
+        int setPrognose(Schichtplaner.ServiceReference1.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPrognose", ReplyAction="http://tempuri.org/IService1/setPrognoseResponse")]
-        System.Threading.Tasks.Task setPrognoseAsync(Schichtplaner.ServiceReference1.Prognose prognose);
+        System.Threading.Tasks.Task<int> setPrognoseAsync(Schichtplaner.ServiceReference1.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePrognose", ReplyAction="http://tempuri.org/IService1/updatePrognoseResponse")]
         void updatePrognose(Schichtplaner.ServiceReference1.Prognose prognose);
@@ -2243,6 +2249,12 @@ namespace Schichtplaner.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyArtikelId", ReplyAction="http://tempuri.org/IService1/getPrognosebyArtikelIdResponse")]
         System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose> getPrognosebyArtikelIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate", ReplyAction="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDateResponse")]
+        Schichtplaner.ServiceReference1.Prognose getPrognoseByArtikelIdAndDate(int id, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate", ReplyAction="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDateResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose> getPrognoseByArtikelIdAndDateAsync(int id, System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyDate", ReplyAction="http://tempuri.org/IService1/getPrognosebyDateResponse")]
         Schichtplaner.ServiceReference1.Prognose[] getPrognosebyDate(System.DateTime date);
@@ -2556,6 +2568,14 @@ namespace Schichtplaner.ServiceReference1 {
             return base.Channel.getArtikelbyIdAsync(id);
         }
         
+        public Schichtplaner.ServiceReference1.Artikel getArtikelByGTIN(string GTIN) {
+            return base.Channel.getArtikelByGTIN(GTIN);
+        }
+        
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel> getArtikelByGTINAsync(string GTIN) {
+            return base.Channel.getArtikelByGTINAsync(GTIN);
+        }
+        
         public void setArtikel(Schichtplaner.ServiceReference1.Artikel artikel) {
             base.Channel.setArtikel(artikel);
         }
@@ -2604,11 +2624,11 @@ namespace Schichtplaner.ServiceReference1 {
             return base.Channel.getBelegbyIdAsync(id);
         }
         
-        public void setBeleg(Schichtplaner.ServiceReference1.Beleg beleg) {
-            base.Channel.setBeleg(beleg);
+        public int setBeleg(Schichtplaner.ServiceReference1.Beleg beleg) {
+            return base.Channel.setBeleg(beleg);
         }
         
-        public System.Threading.Tasks.Task setBelegAsync(Schichtplaner.ServiceReference1.Beleg beleg) {
+        public System.Threading.Tasks.Task<int> setBelegAsync(Schichtplaner.ServiceReference1.Beleg beleg) {
             return base.Channel.setBelegAsync(beleg);
         }
         
@@ -2716,11 +2736,11 @@ namespace Schichtplaner.ServiceReference1 {
             return base.Channel.getPrognosebyIdAsync(id);
         }
         
-        public void setPrognose(Schichtplaner.ServiceReference1.Prognose prognose) {
-            base.Channel.setPrognose(prognose);
+        public int setPrognose(Schichtplaner.ServiceReference1.Prognose prognose) {
+            return base.Channel.setPrognose(prognose);
         }
         
-        public System.Threading.Tasks.Task setPrognoseAsync(Schichtplaner.ServiceReference1.Prognose prognose) {
+        public System.Threading.Tasks.Task<int> setPrognoseAsync(Schichtplaner.ServiceReference1.Prognose prognose) {
             return base.Channel.setPrognoseAsync(prognose);
         }
         
@@ -2746,6 +2766,14 @@ namespace Schichtplaner.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose> getPrognosebyArtikelIdAsync(int id) {
             return base.Channel.getPrognosebyArtikelIdAsync(id);
+        }
+        
+        public Schichtplaner.ServiceReference1.Prognose getPrognoseByArtikelIdAndDate(int id, System.DateTime date) {
+            return base.Channel.getPrognoseByArtikelIdAndDate(id, date);
+        }
+        
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose> getPrognoseByArtikelIdAndDateAsync(int id, System.DateTime date) {
+            return base.Channel.getPrognoseByArtikelIdAndDateAsync(id, date);
         }
         
         public Schichtplaner.ServiceReference1.Prognose[] getPrognosebyDate(System.DateTime date) {

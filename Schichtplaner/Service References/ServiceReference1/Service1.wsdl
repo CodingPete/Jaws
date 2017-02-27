@@ -193,6 +193,12 @@
   <wsdl:message name="IService1_getArtikelbyId_OutputMessage">
     <wsdl:part name="parameters" element="tns:getArtikelbyIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getArtikelByGTIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelByGTIN" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelByGTIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelByGTINResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_setArtikel_InputMessage">
     <wsdl:part name="parameters" element="tns:setArtikel" />
   </wsdl:message>
@@ -336,6 +342,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_getPrognosebyArtikelId_OutputMessage">
     <wsdl:part name="parameters" element="tns:getPrognosebyArtikelIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPrognoseByArtikelIdAndDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognoseByArtikelIdAndDate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPrognoseByArtikelIdAndDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognoseByArtikelIdAndDateResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_getPrognosebyDate_InputMessage">
     <wsdl:part name="parameters" element="tns:getPrognosebyDate" />
@@ -498,6 +510,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArtikelbyId" message="tns:IService1_getArtikelbyId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArtikelbyIdResponse" message="tns:IService1_getArtikelbyId_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getArtikelByGTIN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArtikelByGTIN" message="tns:IService1_getArtikelByGTIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArtikelByGTINResponse" message="tns:IService1_getArtikelByGTIN_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="setArtikel">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/setArtikel" message="tns:IService1_setArtikel_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/setArtikelResponse" message="tns:IService1_setArtikel_OutputMessage" />
@@ -593,6 +609,10 @@
     <wsdl:operation name="getPrognosebyArtikelId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPrognosebyArtikelId" message="tns:IService1_getPrognosebyArtikelId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPrognosebyArtikelIdResponse" message="tns:IService1_getPrognosebyArtikelId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrognoseByArtikelIdAndDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate" message="tns:IService1_getPrognoseByArtikelIdAndDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDateResponse" message="tns:IService1_getPrognoseByArtikelIdAndDate_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getPrognosebyDate">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPrognosebyDate" message="tns:IService1_getPrognosebyDate_InputMessage" />
@@ -900,6 +920,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getArtikelByGTIN">
+      <soap:operation soapAction="http://tempuri.org/IService1/getArtikelByGTIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="setArtikel">
       <soap:operation soapAction="http://tempuri.org/IService1/setArtikel" style="document" />
       <wsdl:input>
@@ -1109,6 +1138,15 @@
     </wsdl:operation>
     <wsdl:operation name="getPrognosebyArtikelId">
       <soap:operation soapAction="http://tempuri.org/IService1/getPrognosebyArtikelId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrognoseByArtikelIdAndDate">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
