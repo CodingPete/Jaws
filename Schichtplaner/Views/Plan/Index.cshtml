@@ -1,15 +1,39 @@
-﻿@model IEnumerable<Schichtplaner.Jaws_Service.Schicht>
-
+﻿
 @{
     ViewBag.Title = "Schichtplaner";
 }
-
-@foreach (var item in ViewBag.schichtenListe) {
-    foreach(var schicht in item)
-    {
-        <p>@schicht.Startzeit_soll</p>
-    }
- 
-}
-
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Vorname</th>
+            <th>Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in ViewBag.personalliste)
+        {
+            <tr class="editPerson" id="@person.Id">
+                <th scope="row">
+                    @person.Id
+                </th>
+                <td>@person.Name</td>
+                <td>@person.Vorname</td>
+                <td>Marktleiter</td>
+            </tr>
+        }
+    </tbody>
 </table>
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        $(".editPerson").mouseover(() => {
+            $(this).css('cursor', 'pointer');
+        })
+        $(".editPerson").click((e) => {
+            e.preventDefault();
+            window.location = window.location = "../Plan/Edit/" + $(e.target).parent().attr('id')
+
+        });
+    });
+</script>
