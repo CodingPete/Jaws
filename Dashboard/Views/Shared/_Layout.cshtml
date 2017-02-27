@@ -36,121 +36,143 @@
                 </a>
                 <!-- /logo -->
             </div>
-            <div class="nav-profile dropdown">
-                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                    <div class="user-image">
-                        <img src="/Content/template/images/avatar.jpg" class="avatar img-circle" alt="user" title="user" />
-                    </div>
-                    <div class="user-info expanding-hidden">
-                        Betty Simmons
-                        <small class="bold">Administrator</small>
-                    </div>
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:;">Settings</a>
-                    <a class="dropdown-item" href="javascript:;">Upgrade</a>
-                    <a class="dropdown-item" href="javascript:;">
-                        <span>Notifications</span>
-                        <span class="tag bg-primary">34</span>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="nav-profile dropdown">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                        <div class="user-image">
+                            <img src="/Content/template/images/avatar.jpg" class="avatar img-circle" alt="user" title="user" />
+                        </div>
+                        <div class="user-info expanding-hidden">
+                            @User.Identity.Name
+                            <small class="bold">@Request.Cookies["UserInformation"].Values["Email"].ToString()</small>
+                            <small class="bold">@Request.Cookies["UserInformation"].Values["Rolle"].ToString()</small>
+                        </div>
                     </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="javascript:;">Help</a>
-                    <a class="dropdown-item" href="">Logout</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="javascript:;">Settings</a>
+                        <a class="dropdown-item" href="javascript:;">Upgrade</a>
+                        <a class="dropdown-item" href="javascript:;">
+                            <span>Notifications</span>
+                            <span class="tag bg-primary">34</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="javascript:;">Help</a>
+                        <a class="dropdown-item" href="Login/Logout">Logout</a>
+                    </div>
                 </div>
-            </div>
-            <!-- main navigation -->
-            <nav>
-                <p class="nav-title">NAVIGATION</p>
-                <ul class="nav">
-                    <!-- dashboard -->
-                    <li>
-                        <a href="@Url.Action("Index", "Home")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>Startseite</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "Lieferant")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>Lieferanten</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "Warengruppe")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>Warengruppen</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "Artikel")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>Artikel</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "Beleg")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>Beleg</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "ArtikelBeleg")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>ArtikelBeleg</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "Lieferart")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>Lieferart</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "Personal")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>Personal</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "Arbeitsvertrag")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>Arbeitsvertrag</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "Rolle")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>Rolle</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "RolleRecht")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>RolleRecht</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Index", "Recht")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>Recht</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("About", "Home")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>Info</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Contact", "Home")">
-                            <i class="material-icons text-primary">home</i>
-                            <span>Kontakt</span>
-                        </a>
-                    </li>
-                    <!-- /dashboard -->
-                </ul>
-            </nav>
+                <!-- main navigation -->
+                <nav>
+                    <p class="nav-title">NAVIGATION</p>
+                    <ul class="nav">
+                        <!-- dashboard -->
+                        <li>
+                            <a href="@Url.Action("Index", "Home")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>Startseite</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Lieferant")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>Lieferanten</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Warengruppe")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>Warengruppen</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Artikel")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>Artikel</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Beleg")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>Beleg</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "ArtikelBeleg")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>ArtikelBeleg</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Lieferart")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>Lieferart</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Personal")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>Personal</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Arbeitsvertrag")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>Arbeitsvertrag</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Rolle")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>Rolle</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "RolleRecht")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>RolleRecht</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Recht")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>Recht</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("About", "Home")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>Info</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Contact", "Home")">
+                                <i class="material-icons text-primary">home</i>
+                                <span>Kontakt</span>
+                            </a>
+                        </li>
+                        <!-- /dashboard -->
+                    </ul>
+                </nav>
             <!-- /main navigation -->
+            }
+            else
+            {
+                <div class="nav-profile dropdown">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                        <div class="user-image">
+                            <img src="/Content/template/images/avatar.jpg" class="avatar img-circle" alt="user" title="user" />
+                        </div>
+                        <div class="user-info expanding-hidden">
+                            Nicht angemeldet
+                            <small class="bold">-</small>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="Login">Login</a>
+                    </div>
+                </div>
+            }
+
         </div>
         <!-- /sidebar panel -->
         <!-- content panel -->

@@ -4481,7 +4481,9 @@
     <Content Include="Views\ArtikelBeleg\Details.cshtml" />
     <Content Include="Views\ArtikelBeleg\Edit.cshtml" />
     <Content Include="Views\ArtikelBeleg\Index.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

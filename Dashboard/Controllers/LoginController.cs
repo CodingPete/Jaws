@@ -24,13 +24,36 @@ namespace Dashboard.Controllers
             var post = Request.Form;
             String username = post["Username"];
             String password = post["Password"];
-            var User = db.PersonalSet.Where((x) => x.Name.Equals(username));
-            FormsAuthentication.RedirectFromLoginPage(post["Username"], true);
-            if (User != null)
+            Personal person = null;
+            try
             {
-                FormsAuthentication.RedirectFromLoginPage(post["Username"], true);
+                person = db.PersonalSet.First((x) => x.email == username);
+
+            }catch(Exception e)
+            {
+                person = null;
+            }
+            FormsAuthentication.RedirectFromLoginPage(post["Username"], true);
+            if (person != null && person.passwort==password)
+            {
+                FormsAuthentication.RedirectFromLoginPage(person.Vorname+" "+person.Name, false);
+                //create a cookie
+                HttpCookie myCookie = new HttpCookie("UserInformation");
+
+                //Add key-values in the cookie
+                myCookie.Values.Add("Rolle", person.Rolle.Name);
+                myCookie.Values.Add("Email", person.email);
+                //Most important, write the cookie to client.
+                Response.Cookies.Add(myCookie);
             }
             return RedirectToAction("Index","Home");
+        }
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Response.Cookies[FormsAuthentication.FormsCookieName].Expires = DateTime.Now.AddYears(-1);
+            Response.Cookies["UserInformation"].Expires = DateTime.Now.AddYears(-1);
+            return RedirectToAction("Index", "Home");
         }
     }
 }
