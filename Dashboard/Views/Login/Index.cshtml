@@ -4,17 +4,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @Styles.Render(Url.Content("~/Content/template/styles/login.css"))
-<div class="container">
-    <div class="wrapper">
-        <form action="Login" method="post" name="Login_Form" class="form-signin">
+<div class="card card-block form-layout">
+    <form role="form" action="Login" method="post">
             @Html.AntiForgeryToken()
-            <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
-            <hr class="colorgraph"><br>
-
-            <input type="text" class="form-control" name="Username" placeholder="Username" required="" autofocus="" />
-            <input type="password" class="form-control" name="Password" placeholder="Password" required="" />
-
-            <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">Login</button>
+            <div class="text-xs-center m-b-3">
+                <img src="images/logo-icon.png" height="80" alt="" class="m-b-1" />
+                <h5>
+                    Welcome back!
+                </h5>
+                <p class="text-muted">
+                    Sign in with your app id to continue.
+                </p>
+            </div>
+            <fieldset class="form-group">
+                <label for="username">
+                    Enter your username
+                </label>
+                <input type="text" class="form-control form-control-lg" name="Username" placeholder="username" required />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="password">
+                    Enter your password
+                </label>
+                <input type="password" class="form-control form-control-lg" name="Password" placeholder="********" required />
+            </fieldset>
+            <label class="custom-control custom-checkbox m-b-1">
+                <input type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Stay logged in</span>
+            </label>
+            <button class="btn btn-primary btn-block btn-lg" type="submit">
+                Login
+            </button>
         </form>
-    </div>
 </div>
