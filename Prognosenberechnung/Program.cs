@@ -16,7 +16,9 @@ namespace Prognosenberechnung
         static void Main(string[] args)
         {
             client = new Service1Client();
-            prognosen_timer = new Timer(callback, null, 0, 10000000);
+
+            // Alle 24 Stunden die Prognosen aller Artikel berechnen
+            prognosen_timer = new Timer(callback, null,  0, 24 * 3600000);
             Console.ReadLine();
         }
 
