@@ -51,7 +51,7 @@ namespace Schichtplaner.Controllers
         public ActionResult Create()
         {
             // Empfange Liste an Schichten
-
+            ViewBag.personalliste = client.getPersonalList();
             // Sende Schichten an den Server
 
             return View();
