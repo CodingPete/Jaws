@@ -36,10 +36,11 @@ namespace Dashboard.Controllers
             FormsAuthentication.RedirectFromLoginPage(post["Username"], true);
             if (person != null && person.passwort==password)
             {
-                FormsAuthentication.RedirectFromLoginPage(person.Vorname+" "+person.Name, false);
+                FormsAuthentication.RedirectFromLoginPage(person.email, false);
                 //create a cookie
+                Session["Name"] = person.Name;
+                Session["Vorname"] = person.Vorname;
                 Session["Rolle"] = person.Rolle.Name;
-                Session["Email"] = person.email;
 
             }
             return RedirectToAction("Index","Home");
@@ -47,6 +48,7 @@ namespace Dashboard.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
+            Session.Abandon();
             return RedirectToAction("Index", "Home");
         }
     }
