@@ -25,12 +25,7 @@ namespace WCFServiceWebRole1
         {
             return db.ArbeitsvertragSet.Find(id);
         }
-
-        public Arbeitsvertrag getArbeitsvertragByPersonalId(int id)
-        {
-            return getPersonalbyId(id).Arbeitsvertrag;
-        }
-
+       
         public List<Arbeitsvertrag> getArbeitsvertragList()
         {
             return db.ArbeitsvertragSet.ToList();
