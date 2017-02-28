@@ -221,32 +221,75 @@
 
     $('.create-via-ajax').on('click', function () {
         $('form').first().bind('submit', function () {
-            var form = $('form').first();
-            var data = form.serialize();
-            swal({
-                title: 'Warten',
-                text: 'auf Fertigstellung',
-                type: 'info',
-                showCancelButton: false,
-                closeOnConfirm: false,     
-                showLoaderOnConfirm: true
-            });
-            $.ajax({
-                type: "POST",
-                url: form.attr('action'),
-                data: data,
-                success: function () {
-                    swal({
-                        title: 'Erfolgreich',
-                        text: 'erstellt.',
-                        type: 'success',
-                    }, function () {
-                        window.location = form.attr('action').substr(0, form.attr('action').lastIndexOf('/Create'));
-                    });
-                }
-            });
+            if (validationCheck()) {
+                var form = $('form').first();
+                var data = form.serialize();
+                swal({
+                    title: 'Warten',
+                    text: 'auf Fertigstellung',
+                    type: 'info',
+                    showCancelButton: false,
+                    closeOnConfirm: false,
+                    showLoaderOnConfirm: true
+                });
+                $.ajax({
+                    type: "POST",
+                    url: form.attr('action'),
+                    data: data,
+                    success: function () {
+                        swal({
+                            title: 'Erfolgreich',
+                            text: 'erstellt.',
+                            type: 'success',
+                        }, function (response) {
+                            console.log(response);
+                            window.location = form.attr('action').substr(0, form.attr('action').lastIndexOf('/Create'));
+                        });
+                    }
+                });
+            }
             return false;
         });
+    });
+
+    function validationCheck() {
+        $('.field-validation-error').each(function () {
+            if (this.html() != '')
+                return false;
+        })
+
+        return true;
+    }
+
+    $('input[type="datetime-local"]').each(function () {
+        if (this.value.indexOf('/') > -1) {
+            var data = this.value.split('/');
+
+            var day = data[1];
+            if (day.length == 1) {
+                day = "0" + day;
+            }
+
+            var month = data[0];
+            if (month.length == 1) {
+                month = "0" + month;
+            }
+
+            var time = data[2].split(' ');
+
+            var year = time[0];
+            var timeSplit = time[1].split(':');
+            var hour = timeSplit[0];
+            var minute = timeSplit[1];
+            var second = timeSplit[2];
+
+            if (time[2] == "PM") {
+                var hourInt = parseInt(hour) + 12;
+                hour = "" + hourInt;
+            }
+
+            this.value = year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second;
+        }
     });
 
 })(jQuery);
