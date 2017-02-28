@@ -9,6 +9,7 @@ namespace Schichtplaner
     public class PersonSchichten
     {
         public Personal person;
+        public Arbeitsvertrag vertrag;
         public Schicht[] schichten;
     }
 }

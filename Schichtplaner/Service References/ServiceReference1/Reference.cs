@@ -1954,6 +1954,12 @@ namespace Schichtplaner.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragbyId", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragbyIdResponse")]
         System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Arbeitsvertrag> getArbeitsvertragbyIdAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragByPersonalId", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragByPersonalIdResponse")]
+        Schichtplaner.ServiceReference1.Arbeitsvertrag getArbeitsvertragByPersonalId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragByPersonalId", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragByPersonalIdResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Arbeitsvertrag> getArbeitsvertragByPersonalIdAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArbeitsvertrag", ReplyAction="http://tempuri.org/IService1/setArbeitsvertragResponse")]
         void setArbeitsvertrag(Schichtplaner.ServiceReference1.Arbeitsvertrag vertrag);
         
@@ -2386,6 +2392,14 @@ namespace Schichtplaner.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Arbeitsvertrag> getArbeitsvertragbyIdAsync(int id) {
             return base.Channel.getArbeitsvertragbyIdAsync(id);
+        }
+        
+        public Schichtplaner.ServiceReference1.Arbeitsvertrag getArbeitsvertragByPersonalId(int id) {
+            return base.Channel.getArbeitsvertragByPersonalId(id);
+        }
+        
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Arbeitsvertrag> getArbeitsvertragByPersonalIdAsync(int id) {
+            return base.Channel.getArbeitsvertragByPersonalIdAsync(id);
         }
         
         public void setArbeitsvertrag(Schichtplaner.ServiceReference1.Arbeitsvertrag vertrag) {
