@@ -3284,8 +3284,11 @@ table.dataTable {
     position: absolute;
     top: -9999px;
     left: -9999px; }
-  .no-more-tables tr {
-    border: 0.0625rem solid rgba(0, 0, 0, 0.1); }
+    .no-more-tables tr {
+        border: 0;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.05);
+        border-radius: 2px;
+    }
   .no-more-tables td {
     position: relative;
     padding-left: 50% !important;

@@ -150,4 +150,86 @@
         }
     }
 
+    $('.mouseEffects').find('th').find('a').hide();
+
+    $('.mouseEffects').mouseover(function () {
+        $(this).find('th').find('a').show();
+    });
+    $('.mouseEffects').mouseout(function () {
+        $(this).find('th').find('a').hide();
+    });
+
+    $('.delete-confirmation').on('click', function () {
+        var that = $(this);
+        swal({
+            title: 'Wirklich l\u00f6schen?',
+            text: 'Unwideruflich l\u00f6schen!',
+            type: 'warning',
+            cancelButtonText: 'Nein',
+            showCancelButton: true,
+            confirmButtonColor: '#DD6B55',
+            confirmButtonText: 'Ja, l\u00f6schen.',
+            closeOnConfirm: false
+        }, function () {
+
+            var url = that.attr('id');
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: {
+                    __RequestVerificationToken: $('input[name=__RequestVerificationToken]').val()
+                },
+                success: function () {
+                    swal({
+                        title: 'Erfolgreich',
+                        text: 'gel\u00f6scht.',
+                        type: 'success',
+                    }, function () {
+                        window.location.reload();
+                    });
+                }
+            });
+
+        });
+    });
+
+    $('.edit-via-ajax').on('click', function () {
+        $('form').first().bind('submit', function () {
+            var form = $('form').first();
+            var data = form.serialize();
+            $.ajax({
+                type: "POST",
+                url: form.attr('action'),
+                data: data,
+                success: function () {
+                    swal({
+                        title: 'Erfolgreich',
+                        text: 'gespeichert.',
+                        type: 'success',
+                    }, function () {
+                        window.location = form.attr('action').substr(0, form.attr('action').lastIndexOf('/Edit'));
+                    });
+                }
+            });
+            return false;
+        });	
+        var url = that.attr('id');
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {
+                __RequestVerificationToken: $('input[name=__RequestVerificationToken]').val()
+            },
+            success: function () {
+                swal({
+                    title: 'Erfolgreich',
+                    text: 'gel\u00f6scht.',
+                    type: 'success',
+                }, function () {
+                    window.location.reload();
+                });
+            }
+        });
+    });
+
 })(jQuery);

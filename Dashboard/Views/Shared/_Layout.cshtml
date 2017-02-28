@@ -7,10 +7,10 @@
     <title>@ViewBag.Title - Meine ASP.NET-Anwendung</title>
 
     @Styles.Render(Url.Content("~/Content/template/vendor/bower-jvectormap/jquery-jvectormap-1.2.2.css"))
+    @Styles.Render(Url.Content("~/Content/template/vendor/sweetalert/dist/sweetalert.css"))
 
     <!-- build:css({.tmp,app}) styles/app.min.css -->
     @Styles.Render(Url.Content("~/Content/template/vendor/bootstrap/dist/css/bootstrap.css"))
-    @Styles.Render(Url.Content("~/Content/template/vendor/pace/themes/blue/pace-theme-minimal.css"))
     @Styles.Render(Url.Content("~/Content/template/vendor/font-awesome/css/font-awesome.css"))
     @Styles.Render(Url.Content("~/Content/template/vendor/animate.css/animate.css"))
     @Styles.Render(Url.Content("~/Content/template/styles/app.css"))
@@ -182,15 +182,6 @@
                     <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">
                         <span>Dashboard</span>
                     </a>
-@if (User.Identity.IsAuthenticated)
-{
-                    <div class="navbar-search navbar-item">
-                        <form class="search-form">
-                            <i class="material-icons">search</i>
-                            <input class="form-control" type="text" placeholder="Suche" />
-                        </form>
-                    </div>
-}
                 </div>
             </nav>
             <!-- /top header -->
@@ -449,7 +440,6 @@
 
     <!-- build:js({.tmp,app}) scripts/app.min.js -->
     @Scripts.Render("~/Content/template/vendor/jquery/dist/jquery.js")
-    @Scripts.Render("~/Content/template/vendor/pace/pace.js")
     @Scripts.Render("~/Content/template/vendor/tether/dist/js/tether.js")
     @Scripts.Render("~/Content/template/vendor/bootstrap/dist/js/bootstrap.js")
     @Scripts.Render("~/Content/template/vendor/fastclick/lib/fastclick.js")
@@ -471,6 +461,7 @@
     @Scripts.Render("~/Content/template/scripts/dashboard/dashboard.js")
     @Scripts.Render("~/Content/template/vendor/datatables/media/js/jquery.dataTables.js")
     @Scripts.Render("~/Content/template/vendor/datatables/media/js/dataTables.bootstrap4.js")
+    @Scripts.Render("~/Content/template/vendor/sweetalert/dist/sweetalert.min.js")
     <!-- end page scripts -->
     <!-- initialize page scripts -->
     <script type="text/javascript">
