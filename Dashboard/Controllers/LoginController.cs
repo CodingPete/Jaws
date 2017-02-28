@@ -48,6 +48,7 @@ namespace Dashboard.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
+            Session.Abandon();
             return RedirectToAction("Index", "Home");
         }
     }
