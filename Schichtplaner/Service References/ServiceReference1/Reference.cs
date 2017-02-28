@@ -1942,6 +1942,12 @@ namespace Schichtplaner.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyRolleId", ReplyAction="http://tempuri.org/IService1/getPersonalbyRolleIdResponse")]
         System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Personal[]> getPersonalbyRolleIdAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyEmail", ReplyAction="http://tempuri.org/IService1/getPersonalbyEmailResponse")]
+        Schichtplaner.ServiceReference1.Personal getPersonalbyEmail(string mail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyEmail", ReplyAction="http://tempuri.org/IService1/getPersonalbyEmailResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Personal> getPersonalbyEmailAsync(string mail);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragbyId", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragbyIdResponse")]
         Schichtplaner.ServiceReference1.Arbeitsvertrag getArbeitsvertragbyId(int id);
         
@@ -2008,6 +2014,12 @@ namespace Schichtplaner.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRecht", ReplyAction="http://tempuri.org/IService1/updateRechtResponse")]
         System.Threading.Tasks.Task updateRechtAsync(Schichtplaner.ServiceReference1.Recht recht);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyName", ReplyAction="http://tempuri.org/IService1/getRechtbyNameResponse")]
+        Schichtplaner.ServiceReference1.Recht getRechtbyName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyName", ReplyAction="http://tempuri.org/IService1/getRechtbyNameResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Recht> getRechtbyNameAsync(string name);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRolleRecht", ReplyAction="http://tempuri.org/IService1/setRolleRechtResponse")]
         void setRolleRecht(Schichtplaner.ServiceReference1.Rolle rolle, Schichtplaner.ServiceReference1.Recht recht);
         
@@ -2020,17 +2032,17 @@ namespace Schichtplaner.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRolleRecht", ReplyAction="http://tempuri.org/IService1/updateRolleRechtResponse")]
         System.Threading.Tasks.Task updateRolleRechtAsync(Schichtplaner.ServiceReference1.RolleRecht rollerecht);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollefromRechtId", ReplyAction="http://tempuri.org/IService1/getRollefromRechtIdResponse")]
-        Schichtplaner.ServiceReference1.Rolle[] getRollefromRechtId(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollebyRechtId", ReplyAction="http://tempuri.org/IService1/getRollebyRechtIdResponse")]
+        Schichtplaner.ServiceReference1.Rolle[] getRollebyRechtId(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollefromRechtId", ReplyAction="http://tempuri.org/IService1/getRollefromRechtIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Rolle[]> getRollefromRechtIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollebyRechtId", ReplyAction="http://tempuri.org/IService1/getRollebyRechtIdResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Rolle[]> getRollebyRechtIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtfromRolleId", ReplyAction="http://tempuri.org/IService1/getRechtfromRolleIdResponse")]
-        Schichtplaner.ServiceReference1.Recht[] getRechtfromRolleId(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyRolleId", ReplyAction="http://tempuri.org/IService1/getRechtbyRolleIdResponse")]
+        Schichtplaner.ServiceReference1.Recht[] getRechtbyRolleId(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtfromRolleId", ReplyAction="http://tempuri.org/IService1/getRechtfromRolleIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Recht[]> getRechtfromRolleIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyRolleId", ReplyAction="http://tempuri.org/IService1/getRechtbyRolleIdResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Recht[]> getRechtbyRolleIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtbyId", ReplyAction="http://tempuri.org/IService1/getSchichtbyIdResponse")]
         Schichtplaner.ServiceReference1.Schicht getSchichtbyId(int id);
@@ -2178,17 +2190,17 @@ namespace Schichtplaner.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArtikelBeleg", ReplyAction="http://tempuri.org/IService1/updateArtikelBelegResponse")]
         System.Threading.Tasks.Task updateArtikelBelegAsync(Schichtplaner.ServiceReference1.ArtikelBeleg artikelbeleg);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelfromBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelfromBelegIdResponse")]
-        Schichtplaner.ServiceReference1.Artikel[] getArtikelfromBelegId(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelbyBelegIdResponse")]
+        Schichtplaner.ServiceReference1.Artikel[] getArtikelbyBelegId(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelfromBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelfromBelegIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel[]> getArtikelfromBelegIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelbyBelegIdResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel[]> getArtikelbyBelegIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegfromArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegfromArtikelIdResponse")]
-        Schichtplaner.ServiceReference1.Beleg[] getBelegfromArtikelId(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegbyArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegbyArtikelIdResponse")]
+        Schichtplaner.ServiceReference1.Beleg[] getBelegbyArtikelId(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegfromArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegfromArtikelIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Beleg[]> getBelegfromArtikelIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegbyArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegbyArtikelIdResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Beleg[]> getBelegbyArtikelIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppebyId", ReplyAction="http://tempuri.org/IService1/getWarengruppebyIdResponse")]
         Schichtplaner.ServiceReference1.Warengruppe getWarengruppebyId(int id);
@@ -2360,6 +2372,14 @@ namespace Schichtplaner.ServiceReference1 {
             return base.Channel.getPersonalbyRolleIdAsync(id);
         }
         
+        public Schichtplaner.ServiceReference1.Personal getPersonalbyEmail(string mail) {
+            return base.Channel.getPersonalbyEmail(mail);
+        }
+        
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Personal> getPersonalbyEmailAsync(string mail) {
+            return base.Channel.getPersonalbyEmailAsync(mail);
+        }
+        
         public Schichtplaner.ServiceReference1.Arbeitsvertrag getArbeitsvertragbyId(int id) {
             return base.Channel.getArbeitsvertragbyId(id);
         }
@@ -2448,6 +2468,14 @@ namespace Schichtplaner.ServiceReference1 {
             return base.Channel.updateRechtAsync(recht);
         }
         
+        public Schichtplaner.ServiceReference1.Recht getRechtbyName(string name) {
+            return base.Channel.getRechtbyName(name);
+        }
+        
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Recht> getRechtbyNameAsync(string name) {
+            return base.Channel.getRechtbyNameAsync(name);
+        }
+        
         public void setRolleRecht(Schichtplaner.ServiceReference1.Rolle rolle, Schichtplaner.ServiceReference1.Recht recht) {
             base.Channel.setRolleRecht(rolle, recht);
         }
@@ -2464,20 +2492,20 @@ namespace Schichtplaner.ServiceReference1 {
             return base.Channel.updateRolleRechtAsync(rollerecht);
         }
         
-        public Schichtplaner.ServiceReference1.Rolle[] getRollefromRechtId(int id) {
-            return base.Channel.getRollefromRechtId(id);
+        public Schichtplaner.ServiceReference1.Rolle[] getRollebyRechtId(int id) {
+            return base.Channel.getRollebyRechtId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Rolle[]> getRollefromRechtIdAsync(int id) {
-            return base.Channel.getRollefromRechtIdAsync(id);
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Rolle[]> getRollebyRechtIdAsync(int id) {
+            return base.Channel.getRollebyRechtIdAsync(id);
         }
         
-        public Schichtplaner.ServiceReference1.Recht[] getRechtfromRolleId(int id) {
-            return base.Channel.getRechtfromRolleId(id);
+        public Schichtplaner.ServiceReference1.Recht[] getRechtbyRolleId(int id) {
+            return base.Channel.getRechtbyRolleId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Recht[]> getRechtfromRolleIdAsync(int id) {
-            return base.Channel.getRechtfromRolleIdAsync(id);
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Recht[]> getRechtbyRolleIdAsync(int id) {
+            return base.Channel.getRechtbyRolleIdAsync(id);
         }
         
         public Schichtplaner.ServiceReference1.Schicht getSchichtbyId(int id) {
@@ -2672,20 +2700,20 @@ namespace Schichtplaner.ServiceReference1 {
             return base.Channel.updateArtikelBelegAsync(artikelbeleg);
         }
         
-        public Schichtplaner.ServiceReference1.Artikel[] getArtikelfromBelegId(int id) {
-            return base.Channel.getArtikelfromBelegId(id);
+        public Schichtplaner.ServiceReference1.Artikel[] getArtikelbyBelegId(int id) {
+            return base.Channel.getArtikelbyBelegId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel[]> getArtikelfromBelegIdAsync(int id) {
-            return base.Channel.getArtikelfromBelegIdAsync(id);
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel[]> getArtikelbyBelegIdAsync(int id) {
+            return base.Channel.getArtikelbyBelegIdAsync(id);
         }
         
-        public Schichtplaner.ServiceReference1.Beleg[] getBelegfromArtikelId(int id) {
-            return base.Channel.getBelegfromArtikelId(id);
+        public Schichtplaner.ServiceReference1.Beleg[] getBelegbyArtikelId(int id) {
+            return base.Channel.getBelegbyArtikelId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Beleg[]> getBelegfromArtikelIdAsync(int id) {
-            return base.Channel.getBelegfromArtikelIdAsync(id);
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Beleg[]> getBelegbyArtikelIdAsync(int id) {
+            return base.Channel.getBelegbyArtikelIdAsync(id);
         }
         
         public Schichtplaner.ServiceReference1.Warengruppe getWarengruppebyId(int id) {
