@@ -49,6 +49,12 @@
   <wsdl:message name="IService1_getArbeitsvertragbyId_OutputMessage">
     <wsdl:part name="parameters" element="tns:getArbeitsvertragbyIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getArbeitsvertragByPersonalId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArbeitsvertragByPersonalId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArbeitsvertragByPersonalId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArbeitsvertragByPersonalIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_setArbeitsvertrag_InputMessage">
     <wsdl:part name="parameters" element="tns:setArbeitsvertrag" />
   </wsdl:message>
@@ -426,6 +432,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragbyId" message="tns:IService1_getArbeitsvertragbyId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragbyIdResponse" message="tns:IService1_getArbeitsvertragbyId_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getArbeitsvertragByPersonalId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragByPersonalId" message="tns:IService1_getArbeitsvertragByPersonalId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragByPersonalIdResponse" message="tns:IService1_getArbeitsvertragByPersonalId_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="setArbeitsvertrag">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/setArbeitsvertrag" message="tns:IService1_setArbeitsvertrag_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/setArbeitsvertragResponse" message="tns:IService1_setArbeitsvertrag_OutputMessage" />
@@ -717,6 +727,15 @@
     </wsdl:operation>
     <wsdl:operation name="getArbeitsvertragbyId">
       <soap:operation soapAction="http://tempuri.org/IService1/getArbeitsvertragbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArbeitsvertragByPersonalId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getArbeitsvertragByPersonalId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
