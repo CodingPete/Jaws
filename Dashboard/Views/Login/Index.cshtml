@@ -1,9 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@Styles.Render(Url.Content("~/Content/template/styles/login.css"))
 <div class="card card-block form-layout">
     <form role="form" action="Login" method="post">
             @Html.AntiForgeryToken()
