@@ -19,6 +19,7 @@
     @Styles.Render(Url.Content("~/Content/template/styles/app.skins.css"))
     <!-- endbuild -->
     @Styles.Render("~/Content/schichtplaner.css")
+    @Styles.Render("~/Content/jquery.timepicker.min.css");
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -47,7 +48,7 @@
                     <ul class="nav">
                         <!-- dashboard -->
                         <li>
-                            <a href="@Url.Action("Index", "´Plan")">
+                            <a href="@Url.Action("Index", "Plan")">
                                 <i class="material-icons text-primary">perm_contact_calendar</i>
                                 <span>Plan</span>
                             </a>
@@ -170,6 +171,7 @@
     <!-- data for calender-->
     @Scripts.Render("~/Content/template/scripts/app/calendar.js")
     <!-- end page scripts -->
+    @Scripts.Render("~/Scripts/jquery.timepicker.min.js")
     <!-- initialize page scripts -->
     <script type="text/javascript">
         $('.datatable').DataTable({
