@@ -208,6 +208,8 @@
     <Content Include="Content\template\images\man.png" />
     <Content Include="Content\template\images\mdesign.png" />
     <Content Include="Content\template\images\onlinelogomaker-022817-1735-2110.png" />
+    <Content Include="Content\template\images\onlinelogomaker-022817-1747-1697.png" />
+    <Content Include="Content\template\images\onlinelogomaker-022817-1749-7556.png" />
     <Content Include="Content\template\index-horizontal.html" />
     <Content Include="Content\template\index.html" />
     <Content Include="Content\template\map-google.html" />

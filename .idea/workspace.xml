@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae05cfd1-d24c-4dae-9c99-af1f1f44e908" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/images/logo.png" afterPath="$PROJECT_DIR$/Dashboard/Content/template/images/logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Controllers/LoginController.cs" afterPath="$PROJECT_DIR$/Dashboard/Controllers/LoginController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Dashboard.csproj" afterPath="$PROJECT_DIR$/Dashboard/Dashboard.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Views/Login/Index.cshtml" afterPath="$PROJECT_DIR$/Dashboard/Views/Login/Index.cshtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Views/Shared/_Layout.cshtml" afterPath="$PROJECT_DIR$/Dashboard/Views/Shared/_Layout.cshtml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -370,12 +374,12 @@
       <option name="presentableId" value="Default" />
       <updated>1488272107436</updated>
       <workItem from="1488272110749" duration="647000" />
-      <workItem from="1488282768409" duration="6980000" />
+      <workItem from="1488282768409" duration="7167000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7627000" />
+    <option name="totallyTimeSpent" value="7814000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
