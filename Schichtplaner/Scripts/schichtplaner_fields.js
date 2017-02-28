@@ -45,10 +45,10 @@ function person_summe(thut) {
         var tr = $(that);
         tr.find(".arbwo").text(durationUnix2Time(sum_unix));
 
-        var max = parseInt(tr.find(".mawo").attr("max")) * 3600;
+        var max = parseInt(tr.find(".mawo").attr("max")) * 36000;
 
-        var mehrarbeitwoche = durationUnix2Time(max - sum_unix);
-        tr.find(".mawo").text(mehrarbeitwoche);
+        var mehrarbeitwoche = max - sum_unix;
+        tr.find(".mawo").text((durationUnix2Time(mehrarbeitwoche)));
     } catch (err) {
         // Fehlermeldung ausgeben
         console.log(err);
@@ -57,12 +57,20 @@ function person_summe(thut) {
 }
 
 function durationUnix2Time(unix) {
-    var unix_in_minutes = unix / 10 / 60;
+    
+    var unix_in_minutes = Math.abs(unix) / 10 / 60;
 
     var hours = parseInt(unix_in_minutes / 60);
     var minutes = parseInt((unix_in_minutes - hours * 60) % 60);
 
-    return (hours >= 10 ? hours : "0" + hours) + ":" + (minutes >= 10 ? minutes : "0" + minutes);
+    var string = (hours >= 10 ? hours : "0" + hours) + ":" + (minutes >= 10 ? minutes : "0" + minutes);
+    if (unix > 0) {
+        return string;
+    }
+    else {
+        return '-' + string;
+    }
+    
 }
 
 function value2minutes(value) {
