@@ -213,23 +213,6 @@
             });
             return false;
         });	
-        var url = that.attr('id');
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: {
-                __RequestVerificationToken: $('input[name=__RequestVerificationToken]').val()
-            },
-            success: function () {
-                swal({
-                    title: 'Erfolgreich',
-                    text: 'gel\u00f6scht.',
-                    type: 'success',
-                }, function () {
-                    window.location.reload();
-                });
-            }
-        });
     });
 
 })(jQuery);
