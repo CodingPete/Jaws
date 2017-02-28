@@ -50,7 +50,7 @@ namespace Schichtplaner.Controllers
                 HttpCookie myCookie = new HttpCookie("UserInformation");
 
                 //Add key-values in the cookie
-                myCookie.Values.Add("Rolle", person.Rolle.Name);
+                myCookie.Values.Add("Rolle", role.Name);
                 myCookie.Values.Add("Email", person.email);
                 //Most important, write the cookie to client.
                 Response.Cookies.Add(myCookie);
