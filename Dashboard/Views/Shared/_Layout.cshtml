@@ -9,6 +9,7 @@
     @Styles.Render(Url.Content("~/Content/template/vendor/bower-jvectormap/jquery-jvectormap-1.2.2.css"))
     @Styles.Render(Url.Content("~/Content/template/vendor/datatables/media/css/dataTables.bootstrap4.css"))
     @Styles.Render(Url.Content("~/Content/template/vendor/sweetalert/dist/sweetalert.css"))
+    @Styles.Render(Url.Content("~/Content/template/vendor/fullcalendar/dist/fullcalendar.min.css"))
 
     <!-- build:css({.tmp,app}) styles/app.min.css -->
     @Styles.Render(Url.Content("~/Content/template/vendor/bootstrap/dist/css/bootstrap.css"))
@@ -234,6 +235,17 @@
     @Scripts.Render("~/Content/template/vendor/datatables/media/js/jquery.dataTables.js")
     @Scripts.Render("~/Content/template/vendor/datatables/media/js/dataTables.bootstrap4.js")
     @Scripts.Render("~/Content/template/vendor/sweetalert/dist/sweetalert.min.js")
+    <!-- calender -->
+    @Scripts.Render("~/Content/template/vendor/moment/min/moment.min.js")
+    @Scripts.Render("~/Content/template/vendor/jquery.ui/ui/core.js")
+    @Scripts.Render("~/Content/template/vendor/jquery.ui/ui/widget.js")
+    @Scripts.Render("~/Content/template/vendor/jquery.ui/ui/mouse.js")
+    @Scripts.Render("~/Content/template/vendor/jquery.ui/ui/draggable.js")
+    @Scripts.Render("~/Content/template/vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js")
+    @Scripts.Render("~/Content/template/vendor/fullcalendar/dist/fullcalendar.min.js")
+    @Scripts.Render("~/Content/template/vendor/fullcalendar/dist/gcal.js")
+    <!-- data for calender-->
+    @Scripts.Render("~/Content/template/scripts/app/calendar.js")
     <!-- end page scripts -->
     <!-- initialize page scripts -->
     <script type="text/javascript">

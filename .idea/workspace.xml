@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae05cfd1-d24c-4dae-9c99-af1f1f44e908" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/images/logo.png" afterPath="$PROJECT_DIR$/Dashboard/Content/template/images/logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Controllers/LoginController.cs" afterPath="$PROJECT_DIR$/Dashboard/Controllers/LoginController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Dashboard.csproj" afterPath="$PROJECT_DIR$/Dashboard/Dashboard.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Views/Login/Index.cshtml" afterPath="$PROJECT_DIR$/Dashboard/Views/Login/Index.cshtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Views/Home/Index.cshtml" afterPath="$PROJECT_DIR$/Dashboard/Views/Home/Index.cshtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Views/Shared/_Layout.cshtml" afterPath="$PROJECT_DIR$/Dashboard/Views/Shared/_Layout.cshtml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,10 +28,10 @@
             <state relative-caret-position="493">
               <caret line="29" column="88" lean-forward="false" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
               <folding>
-                <marker date="1488298384959" expanded="true" signature="288:569" ph="{...}" />
-                <marker date="1488298384959" expanded="true" signature="364:569" ph="{...}" />
-                <marker date="1488298384959" expanded="true" signature="2470:2619" ph="{...}" />
-                <marker date="1488298384959" expanded="true" signature="2652:2795" ph="{...}" />
+                <marker date="1488300823238" expanded="true" signature="288:569" ph="{...}" />
+                <marker date="1488300823238" expanded="true" signature="364:569" ph="{...}" />
+                <marker date="1488300823238" expanded="true" signature="2594:2743" ph="{...}" />
+                <marker date="1488300823238" expanded="true" signature="2776:2919" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -90,11 +87,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="178">
-              <caret line="62" column="69" lean-forward="true" selection-start-line="62" selection-start-column="69" selection-end-line="62" selection-end-column="69" />
+              <caret line="62" column="69" lean-forward="false" selection-start-line="62" selection-start-column="69" selection-end-line="62" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app-calendar.html" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/app-calendar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calendar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/scripts/app/calendar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -117,6 +134,7 @@
       <find>value2datetimestr</find>
       <find>and by</find>
       <find>demo6</find>
+      <find>divider</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -374,15 +392,15 @@
       <option name="presentableId" value="Default" />
       <updated>1488272107436</updated>
       <workItem from="1488272110749" duration="647000" />
-      <workItem from="1488282768409" duration="7167000" />
+      <workItem from="1488282768409" duration="7721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7814000" />
+    <option name="totallyTimeSpent" value="8368000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -431,10 +449,10 @@
         <state relative-caret-position="476">
           <caret line="28" column="88" lean-forward="true" selection-start-line="28" selection-start-column="88" selection-end-line="28" selection-end-column="88" />
           <folding>
-            <marker date="1488298384959" expanded="true" signature="288:569" ph="{...}" />
-            <marker date="1488298384959" expanded="true" signature="364:569" ph="{...}" />
-            <marker date="1488298384959" expanded="true" signature="2470:2619" ph="{...}" />
-            <marker date="1488298384959" expanded="true" signature="2652:2795" ph="{...}" />
+            <marker date="1488300823238" expanded="true" signature="288:569" ph="{...}" />
+            <marker date="1488300823238" expanded="true" signature="364:569" ph="{...}" />
+            <marker date="1488300823238" expanded="true" signature="2594:2743" ph="{...}" />
+            <marker date="1488300823238" expanded="true" signature="2776:2919" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -468,10 +486,10 @@
         <state relative-caret-position="493">
           <caret line="29" column="88" lean-forward="false" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
           <folding>
-            <marker date="1488298384959" expanded="true" signature="288:569" ph="{...}" />
-            <marker date="1488298384959" expanded="true" signature="364:569" ph="{...}" />
-            <marker date="1488298384959" expanded="true" signature="2470:2619" ph="{...}" />
-            <marker date="1488298384959" expanded="true" signature="2652:2795" ph="{...}" />
+            <marker date="1488300823238" expanded="true" signature="288:569" ph="{...}" />
+            <marker date="1488300823238" expanded="true" signature="364:569" ph="{...}" />
+            <marker date="1488300823238" expanded="true" signature="2594:2743" ph="{...}" />
+            <marker date="1488300823238" expanded="true" signature="2776:2919" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -527,7 +545,23 @@
     <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
-          <caret line="62" column="69" lean-forward="true" selection-start-line="62" selection-start-column="69" selection-end-line="62" selection-end-column="69" />
+          <caret line="62" column="69" lean-forward="false" selection-start-line="62" selection-start-column="69" selection-end-line="62" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/scripts/app/calendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/app-calendar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="80" />
           <folding />
         </state>
       </provider>
