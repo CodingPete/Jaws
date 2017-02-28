@@ -101,7 +101,7 @@ namespace WCFServiceWebRole1
         Schicht getSchichtbyId(int id);
 
         [OperationContract]
-        void setSchicht(Schicht schicht);
+        int setSchicht(Schicht schicht);
 
         [OperationContract]
         void updateSchicht(Schicht schicht);
@@ -114,6 +114,9 @@ namespace WCFServiceWebRole1
 
         [OperationContract]
         List<Schicht> getSchichtByPersonalIdAndBetween(int id, DateTime von, DateTime bis);
+
+        [OperationContract]
+        void deleteSchichtByWeek(DateTime date);
 
         //Lieferant
 

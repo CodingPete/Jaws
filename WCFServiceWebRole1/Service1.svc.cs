@@ -263,7 +263,6 @@ namespace WCFServiceWebRole1
             Lieferart lfa = this.getLieferartbyId(beleg.LieferartId);
             beleg.Lieferart = lfa;
             beleg.Lieferart.Beleg.Add(beleg);
-            //updateLieferart(beleg.Lieferart);
             db.BelegSet.Add(beleg);
             db.SaveChanges();
             return beleg.Id;
@@ -323,10 +322,16 @@ namespace WCFServiceWebRole1
 
         }
 
-        public void setSchicht(Schicht schicht)
+        public int setSchicht(Schicht schicht)
         {
+            Personal person = getPersonalbyId(schicht.PersonalId);
+            schicht.Personal = person;
+            schicht.Personal.Schicht.Add(schicht);
             db.SchichtSet.Add(schicht);
             db.SaveChanges();
+            return schicht.Id;
+
+
 
         }
 
@@ -343,11 +348,6 @@ namespace WCFServiceWebRole1
             var entry = db.Entry(arbeitsvertrag);
             entry.State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
-            /*db.Users.Attach(updatedUser);
-            var entry = db.Entry(updatedUser);
-            entry.Property(e => e.Email).IsModified = true;
-            // other changed properties
-            db.SaveChanges();*/
         }
 
         public void updateArtikel(Artikel artikel)
@@ -472,5 +472,21 @@ namespace WCFServiceWebRole1
             }
             return recht;
         }
+
+        public void deleteSchichtByWeek(DateTime date)
+        {
+            DateTime monday = date.AddDays(-(int)date.DayOfWeek + (int)DayOfWeek.Monday);
+            DateTime sunday = monday.AddDays(6).Date;
+
+            List<Schicht> list =  db.SchichtSet.Where((s) => s.Startzeit_soll >= monday && s.Startzeit_soll <= sunday).ToList();
+            foreach (Schicht schicht in list)
+            {
+                db.SchichtSet.Attach(schicht);
+                db.SchichtSet.Remove(schicht);
+            }
+            db.SaveChanges();
+
+        }
+        
     }
 }

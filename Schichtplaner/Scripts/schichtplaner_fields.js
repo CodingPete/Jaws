@@ -1,4 +1,17 @@
-﻿$(document).on("blur", ".schicht_input", function () {
+﻿$(document).ready(function () {
+    $("input").each(function () {
+
+        if ($(this).attr("val") !== "") {
+            var val = $(this).attr("val").substr(11, 8);
+            val = val.slice(0, 2) + val.slice(3, 2);
+            $(this).val(val);
+            console.log(val);
+        }
+        
+    }) 
+});
+
+$(document).on("blur", ".schicht_input", function () {
 
     // Prüfen ob Eingabe gültig
     var date = $(this).attr("date");

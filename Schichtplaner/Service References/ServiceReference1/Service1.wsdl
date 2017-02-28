@@ -49,12 +49,6 @@
   <wsdl:message name="IService1_getArbeitsvertragbyId_OutputMessage">
     <wsdl:part name="parameters" element="tns:getArbeitsvertragbyIdResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_getArbeitsvertragByPersonalId_InputMessage">
-    <wsdl:part name="parameters" element="tns:getArbeitsvertragByPersonalId" />
-  </wsdl:message>
-  <wsdl:message name="IService1_getArbeitsvertragByPersonalId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getArbeitsvertragByPersonalIdResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_setArbeitsvertrag_InputMessage">
     <wsdl:part name="parameters" element="tns:setArbeitsvertrag" />
   </wsdl:message>
@@ -180,6 +174,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_getSchichtByPersonalIdAndBetween_OutputMessage">
     <wsdl:part name="parameters" element="tns:getSchichtByPersonalIdAndBetweenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteSchichtByWeek_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteSchichtByWeek" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteSchichtByWeek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteSchichtByWeekResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_getLieferantbyId_InputMessage">
     <wsdl:part name="parameters" element="tns:getLieferantbyId" />
@@ -432,10 +432,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragbyId" message="tns:IService1_getArbeitsvertragbyId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragbyIdResponse" message="tns:IService1_getArbeitsvertragbyId_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getArbeitsvertragByPersonalId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragByPersonalId" message="tns:IService1_getArbeitsvertragByPersonalId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragByPersonalIdResponse" message="tns:IService1_getArbeitsvertragByPersonalId_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="setArbeitsvertrag">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/setArbeitsvertrag" message="tns:IService1_setArbeitsvertrag_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/setArbeitsvertragResponse" message="tns:IService1_setArbeitsvertrag_OutputMessage" />
@@ -519,6 +515,10 @@
     <wsdl:operation name="getSchichtByPersonalIdAndBetween">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween" message="tns:IService1_getSchichtByPersonalIdAndBetween_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetweenResponse" message="tns:IService1_getSchichtByPersonalIdAndBetween_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteSchichtByWeek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteSchichtByWeek" message="tns:IService1_deleteSchichtByWeek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteSchichtByWeekResponse" message="tns:IService1_deleteSchichtByWeek_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getLieferantbyId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getLieferantbyId" message="tns:IService1_getLieferantbyId_InputMessage" />
@@ -734,15 +734,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getArbeitsvertragByPersonalId">
-      <soap:operation soapAction="http://tempuri.org/IService1/getArbeitsvertragByPersonalId" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="setArbeitsvertrag">
       <soap:operation soapAction="http://tempuri.org/IService1/setArbeitsvertrag" style="document" />
       <wsdl:input>
@@ -925,6 +916,15 @@
     </wsdl:operation>
     <wsdl:operation name="getSchichtByPersonalIdAndBetween">
       <soap:operation soapAction="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSchichtByWeek">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteSchichtByWeek" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

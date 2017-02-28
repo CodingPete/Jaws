@@ -1954,12 +1954,6 @@ namespace Schichtplaner.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragbyId", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragbyIdResponse")]
         System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Arbeitsvertrag> getArbeitsvertragbyIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragByPersonalId", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragByPersonalIdResponse")]
-        Schichtplaner.ServiceReference1.Arbeitsvertrag getArbeitsvertragByPersonalId(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragByPersonalId", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragByPersonalIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Arbeitsvertrag> getArbeitsvertragByPersonalIdAsync(int id);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArbeitsvertrag", ReplyAction="http://tempuri.org/IService1/setArbeitsvertragResponse")]
         void setArbeitsvertrag(Schichtplaner.ServiceReference1.Arbeitsvertrag vertrag);
         
@@ -2057,10 +2051,10 @@ namespace Schichtplaner.ServiceReference1 {
         System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht> getSchichtbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setSchicht", ReplyAction="http://tempuri.org/IService1/setSchichtResponse")]
-        void setSchicht(Schichtplaner.ServiceReference1.Schicht schicht);
+        int setSchicht(Schichtplaner.ServiceReference1.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setSchicht", ReplyAction="http://tempuri.org/IService1/setSchichtResponse")]
-        System.Threading.Tasks.Task setSchichtAsync(Schichtplaner.ServiceReference1.Schicht schicht);
+        System.Threading.Tasks.Task<int> setSchichtAsync(Schichtplaner.ServiceReference1.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateSchicht", ReplyAction="http://tempuri.org/IService1/updateSchichtResponse")]
         void updateSchicht(Schichtplaner.ServiceReference1.Schicht schicht);
@@ -2085,6 +2079,12 @@ namespace Schichtplaner.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween", ReplyAction="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetweenResponse")]
         System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteSchichtByWeek", ReplyAction="http://tempuri.org/IService1/deleteSchichtByWeekResponse")]
+        void deleteSchichtByWeek(System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteSchichtByWeek", ReplyAction="http://tempuri.org/IService1/deleteSchichtByWeekResponse")]
+        System.Threading.Tasks.Task deleteSchichtByWeekAsync(System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferantbyId", ReplyAction="http://tempuri.org/IService1/getLieferantbyIdResponse")]
         Schichtplaner.ServiceReference1.Lieferant getLieferantbyId(int id);
@@ -2394,14 +2394,6 @@ namespace Schichtplaner.ServiceReference1 {
             return base.Channel.getArbeitsvertragbyIdAsync(id);
         }
         
-        public Schichtplaner.ServiceReference1.Arbeitsvertrag getArbeitsvertragByPersonalId(int id) {
-            return base.Channel.getArbeitsvertragByPersonalId(id);
-        }
-        
-        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Arbeitsvertrag> getArbeitsvertragByPersonalIdAsync(int id) {
-            return base.Channel.getArbeitsvertragByPersonalIdAsync(id);
-        }
-        
         public void setArbeitsvertrag(Schichtplaner.ServiceReference1.Arbeitsvertrag vertrag) {
             base.Channel.setArbeitsvertrag(vertrag);
         }
@@ -2530,11 +2522,11 @@ namespace Schichtplaner.ServiceReference1 {
             return base.Channel.getSchichtbyIdAsync(id);
         }
         
-        public void setSchicht(Schichtplaner.ServiceReference1.Schicht schicht) {
-            base.Channel.setSchicht(schicht);
+        public int setSchicht(Schichtplaner.ServiceReference1.Schicht schicht) {
+            return base.Channel.setSchicht(schicht);
         }
         
-        public System.Threading.Tasks.Task setSchichtAsync(Schichtplaner.ServiceReference1.Schicht schicht) {
+        public System.Threading.Tasks.Task<int> setSchichtAsync(Schichtplaner.ServiceReference1.Schicht schicht) {
             return base.Channel.setSchichtAsync(schicht);
         }
         
@@ -2568,6 +2560,14 @@ namespace Schichtplaner.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis) {
             return base.Channel.getSchichtByPersonalIdAndBetweenAsync(id, von, bis);
+        }
+        
+        public void deleteSchichtByWeek(System.DateTime date) {
+            base.Channel.deleteSchichtByWeek(date);
+        }
+        
+        public System.Threading.Tasks.Task deleteSchichtByWeekAsync(System.DateTime date) {
+            return base.Channel.deleteSchichtByWeekAsync(date);
         }
         
         public Schichtplaner.ServiceReference1.Lieferant getLieferantbyId(int id) {
