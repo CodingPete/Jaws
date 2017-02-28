@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Schichtplaner.Jaws_Service {
+namespace Schichtplaner.ServiceReference1 {
     using System.Runtime.Serialization;
     using System;
     
@@ -23,7 +23,7 @@ namespace Schichtplaner.Jaws_Service {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Arbeitsvertrag ArbeitsvertragField;
+        private Schichtplaner.ServiceReference1.Arbeitsvertrag ArbeitsvertragField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ArbeitsvertragIdField;
@@ -53,13 +53,13 @@ namespace Schichtplaner.Jaws_Service {
         private int PostleitzahlField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Rolle RolleField;
+        private Schichtplaner.ServiceReference1.Rolle RolleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int RolleIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Schicht[] SchichtField;
+        private Schichtplaner.ServiceReference1.Schicht[] SchichtField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int SteuerklasseField;
@@ -76,6 +76,12 @@ namespace Schichtplaner.Jaws_Service {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ZusatzField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string emailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string passwortField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -87,7 +93,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Arbeitsvertrag Arbeitsvertrag {
+        public Schichtplaner.ServiceReference1.Arbeitsvertrag Arbeitsvertrag {
             get {
                 return this.ArbeitsvertragField;
             }
@@ -217,7 +223,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Rolle Rolle {
+        public Schichtplaner.ServiceReference1.Rolle Rolle {
             get {
                 return this.RolleField;
             }
@@ -243,7 +249,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Schicht[] Schicht {
+        public Schichtplaner.ServiceReference1.Schicht[] Schicht {
             get {
                 return this.SchichtField;
             }
@@ -320,6 +326,32 @@ namespace Schichtplaner.Jaws_Service {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string email {
+            get {
+                return this.emailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.emailField, value) != true)) {
+                    this.emailField = value;
+                    this.RaisePropertyChanged("email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string passwort {
+            get {
+                return this.passwortField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.passwortField, value) != true)) {
+                    this.passwortField = value;
+                    this.RaisePropertyChanged("passwort");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -343,7 +375,7 @@ namespace Schichtplaner.Jaws_Service {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Personal[] PersonalField;
+        private Schichtplaner.ServiceReference1.Personal[] PersonalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double StundenlohnField;
@@ -375,7 +407,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Personal[] Personal {
+        public Schichtplaner.ServiceReference1.Personal[] Personal {
             get {
                 return this.PersonalField;
             }
@@ -439,10 +471,10 @@ namespace Schichtplaner.Jaws_Service {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Personal[] PersonalField;
+        private Schichtplaner.ServiceReference1.Personal[] PersonalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.RolleRecht[] RolleRechtField;
+        private Schichtplaner.ServiceReference1.RolleRecht[] RolleRechtField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -481,7 +513,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Personal[] Personal {
+        public Schichtplaner.ServiceReference1.Personal[] Personal {
             get {
                 return this.PersonalField;
             }
@@ -494,7 +526,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.RolleRecht[] RolleRecht {
+        public Schichtplaner.ServiceReference1.RolleRecht[] RolleRecht {
             get {
                 return this.RolleRechtField;
             }
@@ -538,7 +570,7 @@ namespace Schichtplaner.Jaws_Service {
         private int PauseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Personal PersonalField;
+        private Schichtplaner.ServiceReference1.Personal PersonalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PersonalIdField;
@@ -612,7 +644,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Personal Personal {
+        public Schichtplaner.ServiceReference1.Personal Personal {
             get {
                 return this.PersonalField;
             }
@@ -686,13 +718,13 @@ namespace Schichtplaner.Jaws_Service {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Recht RechtField;
+        private Schichtplaner.ServiceReference1.Recht RechtField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int RechtIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Rolle RolleField;
+        private Schichtplaner.ServiceReference1.Rolle RolleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int RolleIdField;
@@ -721,7 +753,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Recht Recht {
+        public Schichtplaner.ServiceReference1.Recht Recht {
             get {
                 return this.RechtField;
             }
@@ -747,7 +779,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Rolle Rolle {
+        public Schichtplaner.ServiceReference1.Rolle Rolle {
             get {
                 return this.RolleField;
             }
@@ -798,7 +830,7 @@ namespace Schichtplaner.Jaws_Service {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.RolleRecht[] RolleRechtField;
+        private Schichtplaner.ServiceReference1.RolleRecht[] RolleRechtField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -837,7 +869,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.RolleRecht[] RolleRecht {
+        public Schichtplaner.ServiceReference1.RolleRecht[] RolleRecht {
             get {
                 return this.RolleRechtField;
             }
@@ -869,7 +901,7 @@ namespace Schichtplaner.Jaws_Service {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Artikel[] ArtikelField;
+        private Schichtplaner.ServiceReference1.Artikel[] ArtikelField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string BICField;
@@ -878,7 +910,7 @@ namespace Schichtplaner.Jaws_Service {
         private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int HausnummerField;
+        private System.Nullable<int> HausnummerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string IBANField;
@@ -896,7 +928,7 @@ namespace Schichtplaner.Jaws_Service {
         private string OrtField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PostleitzahlField;
+        private System.Nullable<int> PostleitzahlField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StraßeField;
@@ -918,7 +950,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Artikel[] Artikel {
+        public Schichtplaner.ServiceReference1.Artikel[] Artikel {
             get {
                 return this.ArtikelField;
             }
@@ -957,7 +989,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Hausnummer {
+        public System.Nullable<int> Hausnummer {
             get {
                 return this.HausnummerField;
             }
@@ -1035,7 +1067,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Postleitzahl {
+        public System.Nullable<int> Postleitzahl {
             get {
                 return this.PostleitzahlField;
             }
@@ -1106,22 +1138,22 @@ namespace Schichtplaner.Jaws_Service {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.ArtikelBeleg[] ArtikelBelegField;
+        private Schichtplaner.ServiceReference1.ArtikelBeleg[] ArtikelBelegField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double BestandField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Einheit EinheitField;
+        private Schichtplaner.ServiceReference1.Einheit EinheitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GTINField;
+        private string GTINField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Lieferant LieferantField;
+        private Schichtplaner.ServiceReference1.Lieferant LieferantField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int LieferantIdField;
@@ -1136,10 +1168,10 @@ namespace Schichtplaner.Jaws_Service {
         private double NettoverkaufspreisField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Prognose[] PrognoseField;
+        private Schichtplaner.ServiceReference1.Prognose[] PrognoseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Warengruppe WarengruppeField;
+        private Schichtplaner.ServiceReference1.Warengruppe WarengruppeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int WarengruppeIdField;
@@ -1155,7 +1187,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.ArtikelBeleg[] ArtikelBeleg {
+        public Schichtplaner.ServiceReference1.ArtikelBeleg[] ArtikelBeleg {
             get {
                 return this.ArtikelBelegField;
             }
@@ -1181,7 +1213,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Einheit Einheit {
+        public Schichtplaner.ServiceReference1.Einheit Einheit {
             get {
                 return this.EinheitField;
             }
@@ -1194,12 +1226,12 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int GTIN {
+        public string GTIN {
             get {
                 return this.GTINField;
             }
             set {
-                if ((this.GTINField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.GTINField, value) != true)) {
                     this.GTINField = value;
                     this.RaisePropertyChanged("GTIN");
                 }
@@ -1220,7 +1252,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Lieferant Lieferant {
+        public Schichtplaner.ServiceReference1.Lieferant Lieferant {
             get {
                 return this.LieferantField;
             }
@@ -1285,7 +1317,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Prognose[] Prognose {
+        public Schichtplaner.ServiceReference1.Prognose[] Prognose {
             get {
                 return this.PrognoseField;
             }
@@ -1298,7 +1330,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Warengruppe Warengruppe {
+        public Schichtplaner.ServiceReference1.Warengruppe Warengruppe {
             get {
                 return this.WarengruppeField;
             }
@@ -1343,7 +1375,7 @@ namespace Schichtplaner.Jaws_Service {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Artikel[] ArtikelField;
+        private Schichtplaner.ServiceReference1.Artikel[] ArtikelField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
@@ -1365,7 +1397,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Artikel[] Artikel {
+        public Schichtplaner.ServiceReference1.Artikel[] Artikel {
             get {
                 return this.ArtikelField;
             }
@@ -1436,19 +1468,22 @@ namespace Schichtplaner.Jaws_Service {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Artikel ArtikelField;
+        private Schichtplaner.ServiceReference1.Artikel ArtikelField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ArtikelIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Beleg BelegField;
+        private Schichtplaner.ServiceReference1.Beleg BelegField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int BelegIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MengeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1461,7 +1496,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Artikel Artikel {
+        public Schichtplaner.ServiceReference1.Artikel Artikel {
             get {
                 return this.ArtikelField;
             }
@@ -1487,7 +1522,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Beleg Beleg {
+        public Schichtplaner.ServiceReference1.Beleg Beleg {
             get {
                 return this.BelegField;
             }
@@ -1521,6 +1556,19 @@ namespace Schichtplaner.Jaws_Service {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Menge {
+            get {
+                return this.MengeField;
+            }
+            set {
+                if ((this.MengeField.Equals(value) != true)) {
+                    this.MengeField = value;
+                    this.RaisePropertyChanged("Menge");
                 }
             }
         }
@@ -1565,7 +1613,7 @@ namespace Schichtplaner.Jaws_Service {
         private double Abverkauf_sollField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Artikel ArtikelField;
+        private Schichtplaner.ServiceReference1.Artikel ArtikelField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ArtikelIdField;
@@ -1613,7 +1661,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Artikel Artikel {
+        public Schichtplaner.ServiceReference1.Artikel Artikel {
             get {
                 return this.ArtikelField;
             }
@@ -1684,13 +1732,16 @@ namespace Schichtplaner.Jaws_Service {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.ArtikelBeleg[] ArtikelBelegField;
+        private Schichtplaner.ServiceReference1.ArtikelBeleg[] ArtikelBelegField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DatumField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Lieferart LieferartField;
+        private Schichtplaner.ServiceReference1.Lieferart LieferartField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int LieferartIdField;
@@ -1706,7 +1757,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.ArtikelBeleg[] ArtikelBeleg {
+        public Schichtplaner.ServiceReference1.ArtikelBeleg[] ArtikelBeleg {
             get {
                 return this.ArtikelBelegField;
             }
@@ -1714,6 +1765,19 @@ namespace Schichtplaner.Jaws_Service {
                 if ((object.ReferenceEquals(this.ArtikelBelegField, value) != true)) {
                     this.ArtikelBelegField = value;
                     this.RaisePropertyChanged("ArtikelBeleg");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Datum {
+            get {
+                return this.DatumField;
+            }
+            set {
+                if ((this.DatumField.Equals(value) != true)) {
+                    this.DatumField = value;
+                    this.RaisePropertyChanged("Datum");
                 }
             }
         }
@@ -1732,7 +1796,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Lieferart Lieferart {
+        public Schichtplaner.ServiceReference1.Lieferart Lieferart {
             get {
                 return this.LieferartField;
             }
@@ -1777,7 +1841,7 @@ namespace Schichtplaner.Jaws_Service {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Schichtplaner.Jaws_Service.Beleg[] BelegField;
+        private Schichtplaner.ServiceReference1.Beleg[] BelegField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
@@ -1796,7 +1860,7 @@ namespace Schichtplaner.Jaws_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Schichtplaner.Jaws_Service.Beleg[] Beleg {
+        public Schichtplaner.ServiceReference1.Beleg[] Beleg {
             get {
                 return this.BelegField;
             }
@@ -1845,371 +1909,397 @@ namespace Schichtplaner.Jaws_Service {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Jaws_Service.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyId", ReplyAction="http://tempuri.org/IService1/getPersonalbyIdResponse")]
-        Schichtplaner.Jaws_Service.Personal getPersonalbyId(int id);
+        Schichtplaner.ServiceReference1.Personal getPersonalbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyId", ReplyAction="http://tempuri.org/IService1/getPersonalbyIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Personal> getPersonalbyIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Personal> getPersonalbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPersonal", ReplyAction="http://tempuri.org/IService1/setPersonalResponse")]
-        void setPersonal(Schichtplaner.Jaws_Service.Personal person);
+        void setPersonal(Schichtplaner.ServiceReference1.Personal person);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPersonal", ReplyAction="http://tempuri.org/IService1/setPersonalResponse")]
-        System.Threading.Tasks.Task setPersonalAsync(Schichtplaner.Jaws_Service.Personal person);
+        System.Threading.Tasks.Task setPersonalAsync(Schichtplaner.ServiceReference1.Personal person);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePersonal", ReplyAction="http://tempuri.org/IService1/updatePersonalResponse")]
-        void updatePersonal(Schichtplaner.Jaws_Service.Personal personal);
+        void updatePersonal(Schichtplaner.ServiceReference1.Personal personal);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePersonal", ReplyAction="http://tempuri.org/IService1/updatePersonalResponse")]
-        System.Threading.Tasks.Task updatePersonalAsync(Schichtplaner.Jaws_Service.Personal personal);
+        System.Threading.Tasks.Task updatePersonalAsync(Schichtplaner.ServiceReference1.Personal personal);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalList", ReplyAction="http://tempuri.org/IService1/getPersonalListResponse")]
-        Schichtplaner.Jaws_Service.Personal[] getPersonalList();
+        Schichtplaner.ServiceReference1.Personal[] getPersonalList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalList", ReplyAction="http://tempuri.org/IService1/getPersonalListResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Personal[]> getPersonalListAsync();
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Personal[]> getPersonalListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyRolleId", ReplyAction="http://tempuri.org/IService1/getPersonalbyRolleIdResponse")]
-        Schichtplaner.Jaws_Service.Personal[] getPersonalbyRolleId(int id);
+        Schichtplaner.ServiceReference1.Personal[] getPersonalbyRolleId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyRolleId", ReplyAction="http://tempuri.org/IService1/getPersonalbyRolleIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Personal[]> getPersonalbyRolleIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Personal[]> getPersonalbyRolleIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragbyId", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragbyIdResponse")]
-        Schichtplaner.Jaws_Service.Arbeitsvertrag getArbeitsvertragbyId(int id);
+        Schichtplaner.ServiceReference1.Arbeitsvertrag getArbeitsvertragbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragbyId", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragbyIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Arbeitsvertrag> getArbeitsvertragbyIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Arbeitsvertrag> getArbeitsvertragbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArbeitsvertrag", ReplyAction="http://tempuri.org/IService1/setArbeitsvertragResponse")]
-        void setArbeitsvertrag(Schichtplaner.Jaws_Service.Arbeitsvertrag vertrag);
+        void setArbeitsvertrag(Schichtplaner.ServiceReference1.Arbeitsvertrag vertrag);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArbeitsvertrag", ReplyAction="http://tempuri.org/IService1/setArbeitsvertragResponse")]
-        System.Threading.Tasks.Task setArbeitsvertragAsync(Schichtplaner.Jaws_Service.Arbeitsvertrag vertrag);
+        System.Threading.Tasks.Task setArbeitsvertragAsync(Schichtplaner.ServiceReference1.Arbeitsvertrag vertrag);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArbeitsvertrag", ReplyAction="http://tempuri.org/IService1/updateArbeitsvertragResponse")]
-        void updateArbeitsvertrag(Schichtplaner.Jaws_Service.Arbeitsvertrag arbeitsvertrag);
+        void updateArbeitsvertrag(Schichtplaner.ServiceReference1.Arbeitsvertrag arbeitsvertrag);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArbeitsvertrag", ReplyAction="http://tempuri.org/IService1/updateArbeitsvertragResponse")]
-        System.Threading.Tasks.Task updateArbeitsvertragAsync(Schichtplaner.Jaws_Service.Arbeitsvertrag arbeitsvertrag);
+        System.Threading.Tasks.Task updateArbeitsvertragAsync(Schichtplaner.ServiceReference1.Arbeitsvertrag arbeitsvertrag);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragList", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragListResponse")]
-        Schichtplaner.Jaws_Service.Arbeitsvertrag[] getArbeitsvertragList();
+        Schichtplaner.ServiceReference1.Arbeitsvertrag[] getArbeitsvertragList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragList", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragListResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Arbeitsvertrag[]> getArbeitsvertragListAsync();
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Arbeitsvertrag[]> getArbeitsvertragListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollebyId", ReplyAction="http://tempuri.org/IService1/getRollebyIdResponse")]
-        Schichtplaner.Jaws_Service.Rolle getRollebyId(int id);
+        Schichtplaner.ServiceReference1.Rolle getRollebyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollebyId", ReplyAction="http://tempuri.org/IService1/getRollebyIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Rolle> getRollebyIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Rolle> getRollebyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRolle", ReplyAction="http://tempuri.org/IService1/setRolleResponse")]
-        void setRolle(Schichtplaner.Jaws_Service.Rolle role);
+        void setRolle(Schichtplaner.ServiceReference1.Rolle role);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRolle", ReplyAction="http://tempuri.org/IService1/setRolleResponse")]
-        System.Threading.Tasks.Task setRolleAsync(Schichtplaner.Jaws_Service.Rolle role);
+        System.Threading.Tasks.Task setRolleAsync(Schichtplaner.ServiceReference1.Rolle role);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRolle", ReplyAction="http://tempuri.org/IService1/updateRolleResponse")]
-        void updateRolle(Schichtplaner.Jaws_Service.Rolle rolle);
+        void updateRolle(Schichtplaner.ServiceReference1.Rolle rolle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRolle", ReplyAction="http://tempuri.org/IService1/updateRolleResponse")]
-        System.Threading.Tasks.Task updateRolleAsync(Schichtplaner.Jaws_Service.Rolle rolle);
+        System.Threading.Tasks.Task updateRolleAsync(Schichtplaner.ServiceReference1.Rolle rolle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRolleList", ReplyAction="http://tempuri.org/IService1/getRolleListResponse")]
-        Schichtplaner.Jaws_Service.Rolle[] getRolleList();
+        Schichtplaner.ServiceReference1.Rolle[] getRolleList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRolleList", ReplyAction="http://tempuri.org/IService1/getRolleListResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Rolle[]> getRolleListAsync();
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Rolle[]> getRolleListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyId", ReplyAction="http://tempuri.org/IService1/getRechtbyIdResponse")]
-        Schichtplaner.Jaws_Service.Recht getRechtbyId(int id);
+        Schichtplaner.ServiceReference1.Recht getRechtbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyId", ReplyAction="http://tempuri.org/IService1/getRechtbyIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Recht> getRechtbyIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Recht> getRechtbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRecht", ReplyAction="http://tempuri.org/IService1/setRechtResponse")]
-        void setRecht(Schichtplaner.Jaws_Service.Recht recht);
+        void setRecht(Schichtplaner.ServiceReference1.Recht recht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRecht", ReplyAction="http://tempuri.org/IService1/setRechtResponse")]
-        System.Threading.Tasks.Task setRechtAsync(Schichtplaner.Jaws_Service.Recht recht);
+        System.Threading.Tasks.Task setRechtAsync(Schichtplaner.ServiceReference1.Recht recht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRecht", ReplyAction="http://tempuri.org/IService1/updateRechtResponse")]
-        void updateRecht(Schichtplaner.Jaws_Service.Recht recht);
+        void updateRecht(Schichtplaner.ServiceReference1.Recht recht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRecht", ReplyAction="http://tempuri.org/IService1/updateRechtResponse")]
-        System.Threading.Tasks.Task updateRechtAsync(Schichtplaner.Jaws_Service.Recht recht);
+        System.Threading.Tasks.Task updateRechtAsync(Schichtplaner.ServiceReference1.Recht recht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRolleRecht", ReplyAction="http://tempuri.org/IService1/setRolleRechtResponse")]
-        void setRolleRecht(Schichtplaner.Jaws_Service.Rolle rolle, Schichtplaner.Jaws_Service.Recht recht);
+        void setRolleRecht(Schichtplaner.ServiceReference1.Rolle rolle, Schichtplaner.ServiceReference1.Recht recht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRolleRecht", ReplyAction="http://tempuri.org/IService1/setRolleRechtResponse")]
-        System.Threading.Tasks.Task setRolleRechtAsync(Schichtplaner.Jaws_Service.Rolle rolle, Schichtplaner.Jaws_Service.Recht recht);
+        System.Threading.Tasks.Task setRolleRechtAsync(Schichtplaner.ServiceReference1.Rolle rolle, Schichtplaner.ServiceReference1.Recht recht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRolleRecht", ReplyAction="http://tempuri.org/IService1/updateRolleRechtResponse")]
-        void updateRolleRecht(Schichtplaner.Jaws_Service.RolleRecht rollerecht);
+        void updateRolleRecht(Schichtplaner.ServiceReference1.RolleRecht rollerecht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRolleRecht", ReplyAction="http://tempuri.org/IService1/updateRolleRechtResponse")]
-        System.Threading.Tasks.Task updateRolleRechtAsync(Schichtplaner.Jaws_Service.RolleRecht rollerecht);
+        System.Threading.Tasks.Task updateRolleRechtAsync(Schichtplaner.ServiceReference1.RolleRecht rollerecht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollefromRechtId", ReplyAction="http://tempuri.org/IService1/getRollefromRechtIdResponse")]
-        Schichtplaner.Jaws_Service.Rolle[] getRollefromRechtId(int id);
+        Schichtplaner.ServiceReference1.Rolle[] getRollefromRechtId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollefromRechtId", ReplyAction="http://tempuri.org/IService1/getRollefromRechtIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Rolle[]> getRollefromRechtIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Rolle[]> getRollefromRechtIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtfromRolleId", ReplyAction="http://tempuri.org/IService1/getRechtfromRolleIdResponse")]
-        Schichtplaner.Jaws_Service.Recht[] getRechtfromRolleId(int id);
+        Schichtplaner.ServiceReference1.Recht[] getRechtfromRolleId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtfromRolleId", ReplyAction="http://tempuri.org/IService1/getRechtfromRolleIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Recht[]> getRechtfromRolleIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Recht[]> getRechtfromRolleIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtbyId", ReplyAction="http://tempuri.org/IService1/getSchichtbyIdResponse")]
-        Schichtplaner.Jaws_Service.Schicht getSchichtbyId(int id);
+        Schichtplaner.ServiceReference1.Schicht getSchichtbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtbyId", ReplyAction="http://tempuri.org/IService1/getSchichtbyIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Schicht> getSchichtbyIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht> getSchichtbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setSchicht", ReplyAction="http://tempuri.org/IService1/setSchichtResponse")]
-        void setSchicht(Schichtplaner.Jaws_Service.Schicht schicht);
+        void setSchicht(Schichtplaner.ServiceReference1.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setSchicht", ReplyAction="http://tempuri.org/IService1/setSchichtResponse")]
-        System.Threading.Tasks.Task setSchichtAsync(Schichtplaner.Jaws_Service.Schicht schicht);
+        System.Threading.Tasks.Task setSchichtAsync(Schichtplaner.ServiceReference1.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateSchicht", ReplyAction="http://tempuri.org/IService1/updateSchichtResponse")]
-        void updateSchicht(Schichtplaner.Jaws_Service.Schicht schicht);
+        void updateSchicht(Schichtplaner.ServiceReference1.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateSchicht", ReplyAction="http://tempuri.org/IService1/updateSchichtResponse")]
-        System.Threading.Tasks.Task updateSchichtAsync(Schichtplaner.Jaws_Service.Schicht schicht);
+        System.Threading.Tasks.Task updateSchichtAsync(Schichtplaner.ServiceReference1.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtbyPersonalId", ReplyAction="http://tempuri.org/IService1/getSchichtbyPersonalIdResponse")]
-        Schichtplaner.Jaws_Service.Schicht[] getSchichtbyPersonalId(int id);
+        Schichtplaner.ServiceReference1.Schicht[] getSchichtbyPersonalId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtbyPersonalId", ReplyAction="http://tempuri.org/IService1/getSchichtbyPersonalIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Schicht[]> getSchichtbyPersonalIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht[]> getSchichtbyPersonalIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtBetween", ReplyAction="http://tempuri.org/IService1/getSchichtBetweenResponse")]
-        Schichtplaner.Jaws_Service.Schicht[] getSchichtBetween(System.DateTime von, System.DateTime bis);
+        Schichtplaner.ServiceReference1.Schicht[] getSchichtBetween(System.DateTime von, System.DateTime bis);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtBetween", ReplyAction="http://tempuri.org/IService1/getSchichtBetweenResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Schicht[]> getSchichtBetweenAsync(System.DateTime von, System.DateTime bis);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht[]> getSchichtBetweenAsync(System.DateTime von, System.DateTime bis);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween", ReplyAction="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetweenResponse")]
-        Schichtplaner.Jaws_Service.Schicht[] getSchichtByPersonalIdAndBetween(int id, System.DateTime von, System.DateTime bis);
+        Schichtplaner.ServiceReference1.Schicht[] getSchichtByPersonalIdAndBetween(int id, System.DateTime von, System.DateTime bis);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween", ReplyAction="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetweenResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferantbyId", ReplyAction="http://tempuri.org/IService1/getLieferantbyIdResponse")]
-        Schichtplaner.Jaws_Service.Lieferant getLieferantbyId(int id);
+        Schichtplaner.ServiceReference1.Lieferant getLieferantbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferantbyId", ReplyAction="http://tempuri.org/IService1/getLieferantbyIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Lieferant> getLieferantbyIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Lieferant> getLieferantbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setLieferant", ReplyAction="http://tempuri.org/IService1/setLieferantResponse")]
-        void setLieferant(Schichtplaner.Jaws_Service.Lieferant lieferant);
+        void setLieferant(Schichtplaner.ServiceReference1.Lieferant lieferant);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setLieferant", ReplyAction="http://tempuri.org/IService1/setLieferantResponse")]
-        System.Threading.Tasks.Task setLieferantAsync(Schichtplaner.Jaws_Service.Lieferant lieferant);
+        System.Threading.Tasks.Task setLieferantAsync(Schichtplaner.ServiceReference1.Lieferant lieferant);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateLieferant", ReplyAction="http://tempuri.org/IService1/updateLieferantResponse")]
-        void updateLieferant(Schichtplaner.Jaws_Service.Lieferant lieferant);
+        void updateLieferant(Schichtplaner.ServiceReference1.Lieferant lieferant);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateLieferant", ReplyAction="http://tempuri.org/IService1/updateLieferantResponse")]
-        System.Threading.Tasks.Task updateLieferantAsync(Schichtplaner.Jaws_Service.Lieferant lieferant);
+        System.Threading.Tasks.Task updateLieferantAsync(Schichtplaner.ServiceReference1.Lieferant lieferant);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferantList", ReplyAction="http://tempuri.org/IService1/getLieferantListResponse")]
-        Schichtplaner.Jaws_Service.Lieferant[] getLieferantList();
+        Schichtplaner.ServiceReference1.Lieferant[] getLieferantList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferantList", ReplyAction="http://tempuri.org/IService1/getLieferantListResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Lieferant[]> getLieferantListAsync();
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Lieferant[]> getLieferantListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyId", ReplyAction="http://tempuri.org/IService1/getArtikelbyIdResponse")]
-        Schichtplaner.Jaws_Service.Artikel getArtikelbyId(int id);
+        Schichtplaner.ServiceReference1.Artikel getArtikelbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyId", ReplyAction="http://tempuri.org/IService1/getArtikelbyIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Artikel> getArtikelbyIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel> getArtikelbyIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelByGTIN", ReplyAction="http://tempuri.org/IService1/getArtikelByGTINResponse")]
+        Schichtplaner.ServiceReference1.Artikel getArtikelByGTIN(string GTIN);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelByGTIN", ReplyAction="http://tempuri.org/IService1/getArtikelByGTINResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel> getArtikelByGTINAsync(string GTIN);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArtikel", ReplyAction="http://tempuri.org/IService1/setArtikelResponse")]
-        void setArtikel(Schichtplaner.Jaws_Service.Artikel artikel);
+        void setArtikel(Schichtplaner.ServiceReference1.Artikel artikel);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArtikel", ReplyAction="http://tempuri.org/IService1/setArtikelResponse")]
-        System.Threading.Tasks.Task setArtikelAsync(Schichtplaner.Jaws_Service.Artikel artikel);
+        System.Threading.Tasks.Task setArtikelAsync(Schichtplaner.ServiceReference1.Artikel artikel);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArtikel", ReplyAction="http://tempuri.org/IService1/updateArtikelResponse")]
-        void updateArtikel(Schichtplaner.Jaws_Service.Artikel artikel);
+        void updateArtikel(Schichtplaner.ServiceReference1.Artikel artikel);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArtikel", ReplyAction="http://tempuri.org/IService1/updateArtikelResponse")]
-        System.Threading.Tasks.Task updateArtikelAsync(Schichtplaner.Jaws_Service.Artikel artikel);
+        System.Threading.Tasks.Task updateArtikelAsync(Schichtplaner.ServiceReference1.Artikel artikel);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelList", ReplyAction="http://tempuri.org/IService1/getArtikelListResponse")]
-        Schichtplaner.Jaws_Service.Artikel[] getArtikelList();
+        Schichtplaner.ServiceReference1.Artikel[] getArtikelList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelList", ReplyAction="http://tempuri.org/IService1/getArtikelListResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Artikel[]> getArtikelListAsync();
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel[]> getArtikelListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyLieferantId", ReplyAction="http://tempuri.org/IService1/getArtikelbyLieferantIdResponse")]
-        Schichtplaner.Jaws_Service.Artikel[] getArtikelbyLieferantId(int id);
+        Schichtplaner.ServiceReference1.Artikel[] getArtikelbyLieferantId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyLieferantId", ReplyAction="http://tempuri.org/IService1/getArtikelbyLieferantIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Artikel[]> getArtikelbyLieferantIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel[]> getArtikelbyLieferantIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyWarengruppeId", ReplyAction="http://tempuri.org/IService1/getArtikelbyWarengruppeIdResponse")]
-        Schichtplaner.Jaws_Service.Artikel[] getArtikelbyWarengruppeId(int id);
+        Schichtplaner.ServiceReference1.Artikel[] getArtikelbyWarengruppeId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyWarengruppeId", ReplyAction="http://tempuri.org/IService1/getArtikelbyWarengruppeIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Artikel[]> getArtikelbyWarengruppeIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel[]> getArtikelbyWarengruppeIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegbyId", ReplyAction="http://tempuri.org/IService1/getBelegbyIdResponse")]
-        Schichtplaner.Jaws_Service.Beleg getBelegbyId(int id);
+        Schichtplaner.ServiceReference1.Beleg getBelegbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegbyId", ReplyAction="http://tempuri.org/IService1/getBelegbyIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Beleg> getBelegbyIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Beleg> getBelegbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setBeleg", ReplyAction="http://tempuri.org/IService1/setBelegResponse")]
-        void setBeleg(Schichtplaner.Jaws_Service.Beleg beleg);
+        int setBeleg(Schichtplaner.ServiceReference1.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setBeleg", ReplyAction="http://tempuri.org/IService1/setBelegResponse")]
-        System.Threading.Tasks.Task setBelegAsync(Schichtplaner.Jaws_Service.Beleg beleg);
+        System.Threading.Tasks.Task<int> setBelegAsync(Schichtplaner.ServiceReference1.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateBeleg", ReplyAction="http://tempuri.org/IService1/updateBelegResponse")]
-        void updateBeleg(Schichtplaner.Jaws_Service.Beleg beleg);
+        void updateBeleg(Schichtplaner.ServiceReference1.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateBeleg", ReplyAction="http://tempuri.org/IService1/updateBelegResponse")]
-        System.Threading.Tasks.Task updateBelegAsync(Schichtplaner.Jaws_Service.Beleg beleg);
+        System.Threading.Tasks.Task updateBelegAsync(Schichtplaner.ServiceReference1.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegList", ReplyAction="http://tempuri.org/IService1/getBelegListResponse")]
-        Schichtplaner.Jaws_Service.Beleg[] getBelegList();
+        Schichtplaner.ServiceReference1.Beleg[] getBelegList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegList", ReplyAction="http://tempuri.org/IService1/getBelegListResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Beleg[]> getBelegListAsync();
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Beleg[]> getBelegListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetween", ReplyAction="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetweenRe" +
+            "sponse")]
+        int getArtikelCountByArtikelIdAndLieferartIdAndBetween(int artikel_id, int lieferart_id, System.DateTime von, System.DateTime bis);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetween", ReplyAction="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetweenRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<int> getArtikelCountByArtikelIdAndLieferartIdAndBetweenAsync(int artikel_id, int lieferart_id, System.DateTime von, System.DateTime bis);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArtikelBeleg", ReplyAction="http://tempuri.org/IService1/setArtikelBelegResponse")]
-        void setArtikelBeleg(Schichtplaner.Jaws_Service.Artikel artikel, Schichtplaner.Jaws_Service.Beleg beleg);
+        void setArtikelBeleg(Schichtplaner.ServiceReference1.Artikel artikel, Schichtplaner.ServiceReference1.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setArtikelBeleg", ReplyAction="http://tempuri.org/IService1/setArtikelBelegResponse")]
-        System.Threading.Tasks.Task setArtikelBelegAsync(Schichtplaner.Jaws_Service.Artikel artikel, Schichtplaner.Jaws_Service.Beleg beleg);
+        System.Threading.Tasks.Task setArtikelBelegAsync(Schichtplaner.ServiceReference1.Artikel artikel, Schichtplaner.ServiceReference1.Beleg beleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArtikelBeleg", ReplyAction="http://tempuri.org/IService1/updateArtikelBelegResponse")]
-        void updateArtikelBeleg(Schichtplaner.Jaws_Service.ArtikelBeleg artikelbeleg);
+        void updateArtikelBeleg(Schichtplaner.ServiceReference1.ArtikelBeleg artikelbeleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArtikelBeleg", ReplyAction="http://tempuri.org/IService1/updateArtikelBelegResponse")]
-        System.Threading.Tasks.Task updateArtikelBelegAsync(Schichtplaner.Jaws_Service.ArtikelBeleg artikelbeleg);
+        System.Threading.Tasks.Task updateArtikelBelegAsync(Schichtplaner.ServiceReference1.ArtikelBeleg artikelbeleg);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelfromBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelfromBelegIdResponse")]
-        Schichtplaner.Jaws_Service.Artikel[] getArtikelfromBelegId(int id);
+        Schichtplaner.ServiceReference1.Artikel[] getArtikelfromBelegId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelfromBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelfromBelegIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Artikel[]> getArtikelfromBelegIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel[]> getArtikelfromBelegIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegfromArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegfromArtikelIdResponse")]
-        Schichtplaner.Jaws_Service.Beleg[] getBelegfromArtikelId(int id);
+        Schichtplaner.ServiceReference1.Beleg[] getBelegfromArtikelId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegfromArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegfromArtikelIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Beleg[]> getBelegfromArtikelIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Beleg[]> getBelegfromArtikelIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppebyId", ReplyAction="http://tempuri.org/IService1/getWarengruppebyIdResponse")]
-        Schichtplaner.Jaws_Service.Warengruppe getWarengruppebyId(int id);
+        Schichtplaner.ServiceReference1.Warengruppe getWarengruppebyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppebyId", ReplyAction="http://tempuri.org/IService1/getWarengruppebyIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Warengruppe> getWarengruppebyIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Warengruppe> getWarengruppebyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setWarengruppe", ReplyAction="http://tempuri.org/IService1/setWarengruppeResponse")]
-        void setWarengruppe(Schichtplaner.Jaws_Service.Warengruppe gruppe);
+        void setWarengruppe(Schichtplaner.ServiceReference1.Warengruppe gruppe);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setWarengruppe", ReplyAction="http://tempuri.org/IService1/setWarengruppeResponse")]
-        System.Threading.Tasks.Task setWarengruppeAsync(Schichtplaner.Jaws_Service.Warengruppe gruppe);
+        System.Threading.Tasks.Task setWarengruppeAsync(Schichtplaner.ServiceReference1.Warengruppe gruppe);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateWarengruppe", ReplyAction="http://tempuri.org/IService1/updateWarengruppeResponse")]
-        void updateWarengruppe(Schichtplaner.Jaws_Service.Warengruppe warengruppe);
+        void updateWarengruppe(Schichtplaner.ServiceReference1.Warengruppe warengruppe);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateWarengruppe", ReplyAction="http://tempuri.org/IService1/updateWarengruppeResponse")]
-        System.Threading.Tasks.Task updateWarengruppeAsync(Schichtplaner.Jaws_Service.Warengruppe warengruppe);
+        System.Threading.Tasks.Task updateWarengruppeAsync(Schichtplaner.ServiceReference1.Warengruppe warengruppe);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppeList", ReplyAction="http://tempuri.org/IService1/getWarengruppeListResponse")]
-        Schichtplaner.Jaws_Service.Warengruppe[] getWarengruppeList();
+        Schichtplaner.ServiceReference1.Warengruppe[] getWarengruppeList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppeList", ReplyAction="http://tempuri.org/IService1/getWarengruppeListResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Warengruppe[]> getWarengruppeListAsync();
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Warengruppe[]> getWarengruppeListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppebyName", ReplyAction="http://tempuri.org/IService1/getWarengruppebyNameResponse")]
-        Schichtplaner.Jaws_Service.Warengruppe getWarengruppebyName(string name);
+        Schichtplaner.ServiceReference1.Warengruppe getWarengruppebyName(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppebyName", ReplyAction="http://tempuri.org/IService1/getWarengruppebyNameResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Warengruppe> getWarengruppebyNameAsync(string name);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Warengruppe> getWarengruppebyNameAsync(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyId", ReplyAction="http://tempuri.org/IService1/getPrognosebyIdResponse")]
-        Schichtplaner.Jaws_Service.Prognose getPrognosebyId(int id);
+        Schichtplaner.ServiceReference1.Prognose getPrognosebyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyId", ReplyAction="http://tempuri.org/IService1/getPrognosebyIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Prognose> getPrognosebyIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose> getPrognosebyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPrognose", ReplyAction="http://tempuri.org/IService1/setPrognoseResponse")]
-        void setPrognose(Schichtplaner.Jaws_Service.Prognose prognose);
+        int setPrognose(Schichtplaner.ServiceReference1.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPrognose", ReplyAction="http://tempuri.org/IService1/setPrognoseResponse")]
-        System.Threading.Tasks.Task setPrognoseAsync(Schichtplaner.Jaws_Service.Prognose prognose);
+        System.Threading.Tasks.Task<int> setPrognoseAsync(Schichtplaner.ServiceReference1.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePrognose", ReplyAction="http://tempuri.org/IService1/updatePrognoseResponse")]
-        void updatePrognose(Schichtplaner.Jaws_Service.Prognose prognose);
+        void updatePrognose(Schichtplaner.ServiceReference1.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePrognose", ReplyAction="http://tempuri.org/IService1/updatePrognoseResponse")]
-        System.Threading.Tasks.Task updatePrognoseAsync(Schichtplaner.Jaws_Service.Prognose prognose);
+        System.Threading.Tasks.Task updatePrognoseAsync(Schichtplaner.ServiceReference1.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognoseList", ReplyAction="http://tempuri.org/IService1/getPrognoseListResponse")]
-        Schichtplaner.Jaws_Service.Prognose[] getPrognoseList();
+        Schichtplaner.ServiceReference1.Prognose[] getPrognoseList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognoseList", ReplyAction="http://tempuri.org/IService1/getPrognoseListResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Prognose[]> getPrognoseListAsync();
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose[]> getPrognoseListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyArtikelId", ReplyAction="http://tempuri.org/IService1/getPrognosebyArtikelIdResponse")]
-        Schichtplaner.Jaws_Service.Prognose getPrognosebyArtikelId(int id);
+        Schichtplaner.ServiceReference1.Prognose getPrognosebyArtikelId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyArtikelId", ReplyAction="http://tempuri.org/IService1/getPrognosebyArtikelIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Prognose> getPrognosebyArtikelIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose> getPrognosebyArtikelIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate", ReplyAction="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDateResponse")]
+        Schichtplaner.ServiceReference1.Prognose getPrognoseByArtikelIdAndDate(int id, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate", ReplyAction="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDateResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose> getPrognoseByArtikelIdAndDateAsync(int id, System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyDate", ReplyAction="http://tempuri.org/IService1/getPrognosebyDateResponse")]
-        Schichtplaner.Jaws_Service.Prognose[] getPrognosebyDate(System.DateTime date);
+        Schichtplaner.ServiceReference1.Prognose[] getPrognosebyDate(System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyDate", ReplyAction="http://tempuri.org/IService1/getPrognosebyDateResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Prognose[]> getPrognosebyDateAsync(System.DateTime date);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose[]> getPrognosebyDateAsync(System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartbyId", ReplyAction="http://tempuri.org/IService1/getLieferartbyIdResponse")]
-        Schichtplaner.Jaws_Service.Lieferart getLieferartbyId(int id);
+        Schichtplaner.ServiceReference1.Lieferart getLieferartbyId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartbyId", ReplyAction="http://tempuri.org/IService1/getLieferartbyIdResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Lieferart> getLieferartbyIdAsync(int id);
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Lieferart> getLieferartbyIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartByName", ReplyAction="http://tempuri.org/IService1/getLieferartByNameResponse")]
+        Schichtplaner.ServiceReference1.Lieferart getLieferartByName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartByName", ReplyAction="http://tempuri.org/IService1/getLieferartByNameResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Lieferart> getLieferartByNameAsync(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setLieferart", ReplyAction="http://tempuri.org/IService1/setLieferartResponse")]
-        void setLieferart(Schichtplaner.Jaws_Service.Lieferart lieferart);
+        void setLieferart(Schichtplaner.ServiceReference1.Lieferart lieferart);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setLieferart", ReplyAction="http://tempuri.org/IService1/setLieferartResponse")]
-        System.Threading.Tasks.Task setLieferartAsync(Schichtplaner.Jaws_Service.Lieferart lieferart);
+        System.Threading.Tasks.Task setLieferartAsync(Schichtplaner.ServiceReference1.Lieferart lieferart);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateLieferart", ReplyAction="http://tempuri.org/IService1/updateLieferartResponse")]
-        void updateLieferart(Schichtplaner.Jaws_Service.Lieferart lieferart);
+        void updateLieferart(Schichtplaner.ServiceReference1.Lieferart lieferart);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateLieferart", ReplyAction="http://tempuri.org/IService1/updateLieferartResponse")]
-        System.Threading.Tasks.Task updateLieferartAsync(Schichtplaner.Jaws_Service.Lieferart lieferart);
+        System.Threading.Tasks.Task updateLieferartAsync(Schichtplaner.ServiceReference1.Lieferart lieferart);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartList", ReplyAction="http://tempuri.org/IService1/getLieferartListResponse")]
-        Schichtplaner.Jaws_Service.Lieferart[] getLieferartList();
+        Schichtplaner.ServiceReference1.Lieferart[] getLieferartList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferartList", ReplyAction="http://tempuri.org/IService1/getLieferartListResponse")]
-        System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Lieferart[]> getLieferartListAsync();
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Lieferart[]> getLieferartListAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : Schichtplaner.Jaws_Service.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : Schichtplaner.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<Schichtplaner.Jaws_Service.IService1>, Schichtplaner.Jaws_Service.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<Schichtplaner.ServiceReference1.IService1>, Schichtplaner.ServiceReference1.IService1 {
         
         public Service1Client() {
         }
@@ -2230,475 +2320,507 @@ namespace Schichtplaner.Jaws_Service {
                 base(binding, remoteAddress) {
         }
         
-        public Schichtplaner.Jaws_Service.Personal getPersonalbyId(int id) {
+        public Schichtplaner.ServiceReference1.Personal getPersonalbyId(int id) {
             return base.Channel.getPersonalbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Personal> getPersonalbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Personal> getPersonalbyIdAsync(int id) {
             return base.Channel.getPersonalbyIdAsync(id);
         }
         
-        public void setPersonal(Schichtplaner.Jaws_Service.Personal person) {
+        public void setPersonal(Schichtplaner.ServiceReference1.Personal person) {
             base.Channel.setPersonal(person);
         }
         
-        public System.Threading.Tasks.Task setPersonalAsync(Schichtplaner.Jaws_Service.Personal person) {
+        public System.Threading.Tasks.Task setPersonalAsync(Schichtplaner.ServiceReference1.Personal person) {
             return base.Channel.setPersonalAsync(person);
         }
         
-        public void updatePersonal(Schichtplaner.Jaws_Service.Personal personal) {
+        public void updatePersonal(Schichtplaner.ServiceReference1.Personal personal) {
             base.Channel.updatePersonal(personal);
         }
         
-        public System.Threading.Tasks.Task updatePersonalAsync(Schichtplaner.Jaws_Service.Personal personal) {
+        public System.Threading.Tasks.Task updatePersonalAsync(Schichtplaner.ServiceReference1.Personal personal) {
             return base.Channel.updatePersonalAsync(personal);
         }
         
-        public Schichtplaner.Jaws_Service.Personal[] getPersonalList() {
+        public Schichtplaner.ServiceReference1.Personal[] getPersonalList() {
             return base.Channel.getPersonalList();
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Personal[]> getPersonalListAsync() {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Personal[]> getPersonalListAsync() {
             return base.Channel.getPersonalListAsync();
         }
         
-        public Schichtplaner.Jaws_Service.Personal[] getPersonalbyRolleId(int id) {
+        public Schichtplaner.ServiceReference1.Personal[] getPersonalbyRolleId(int id) {
             return base.Channel.getPersonalbyRolleId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Personal[]> getPersonalbyRolleIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Personal[]> getPersonalbyRolleIdAsync(int id) {
             return base.Channel.getPersonalbyRolleIdAsync(id);
         }
         
-        public Schichtplaner.Jaws_Service.Arbeitsvertrag getArbeitsvertragbyId(int id) {
+        public Schichtplaner.ServiceReference1.Arbeitsvertrag getArbeitsvertragbyId(int id) {
             return base.Channel.getArbeitsvertragbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Arbeitsvertrag> getArbeitsvertragbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Arbeitsvertrag> getArbeitsvertragbyIdAsync(int id) {
             return base.Channel.getArbeitsvertragbyIdAsync(id);
         }
         
-        public void setArbeitsvertrag(Schichtplaner.Jaws_Service.Arbeitsvertrag vertrag) {
+        public void setArbeitsvertrag(Schichtplaner.ServiceReference1.Arbeitsvertrag vertrag) {
             base.Channel.setArbeitsvertrag(vertrag);
         }
         
-        public System.Threading.Tasks.Task setArbeitsvertragAsync(Schichtplaner.Jaws_Service.Arbeitsvertrag vertrag) {
+        public System.Threading.Tasks.Task setArbeitsvertragAsync(Schichtplaner.ServiceReference1.Arbeitsvertrag vertrag) {
             return base.Channel.setArbeitsvertragAsync(vertrag);
         }
         
-        public void updateArbeitsvertrag(Schichtplaner.Jaws_Service.Arbeitsvertrag arbeitsvertrag) {
+        public void updateArbeitsvertrag(Schichtplaner.ServiceReference1.Arbeitsvertrag arbeitsvertrag) {
             base.Channel.updateArbeitsvertrag(arbeitsvertrag);
         }
         
-        public System.Threading.Tasks.Task updateArbeitsvertragAsync(Schichtplaner.Jaws_Service.Arbeitsvertrag arbeitsvertrag) {
+        public System.Threading.Tasks.Task updateArbeitsvertragAsync(Schichtplaner.ServiceReference1.Arbeitsvertrag arbeitsvertrag) {
             return base.Channel.updateArbeitsvertragAsync(arbeitsvertrag);
         }
         
-        public Schichtplaner.Jaws_Service.Arbeitsvertrag[] getArbeitsvertragList() {
+        public Schichtplaner.ServiceReference1.Arbeitsvertrag[] getArbeitsvertragList() {
             return base.Channel.getArbeitsvertragList();
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Arbeitsvertrag[]> getArbeitsvertragListAsync() {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Arbeitsvertrag[]> getArbeitsvertragListAsync() {
             return base.Channel.getArbeitsvertragListAsync();
         }
         
-        public Schichtplaner.Jaws_Service.Rolle getRollebyId(int id) {
+        public Schichtplaner.ServiceReference1.Rolle getRollebyId(int id) {
             return base.Channel.getRollebyId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Rolle> getRollebyIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Rolle> getRollebyIdAsync(int id) {
             return base.Channel.getRollebyIdAsync(id);
         }
         
-        public void setRolle(Schichtplaner.Jaws_Service.Rolle role) {
+        public void setRolle(Schichtplaner.ServiceReference1.Rolle role) {
             base.Channel.setRolle(role);
         }
         
-        public System.Threading.Tasks.Task setRolleAsync(Schichtplaner.Jaws_Service.Rolle role) {
+        public System.Threading.Tasks.Task setRolleAsync(Schichtplaner.ServiceReference1.Rolle role) {
             return base.Channel.setRolleAsync(role);
         }
         
-        public void updateRolle(Schichtplaner.Jaws_Service.Rolle rolle) {
+        public void updateRolle(Schichtplaner.ServiceReference1.Rolle rolle) {
             base.Channel.updateRolle(rolle);
         }
         
-        public System.Threading.Tasks.Task updateRolleAsync(Schichtplaner.Jaws_Service.Rolle rolle) {
+        public System.Threading.Tasks.Task updateRolleAsync(Schichtplaner.ServiceReference1.Rolle rolle) {
             return base.Channel.updateRolleAsync(rolle);
         }
         
-        public Schichtplaner.Jaws_Service.Rolle[] getRolleList() {
+        public Schichtplaner.ServiceReference1.Rolle[] getRolleList() {
             return base.Channel.getRolleList();
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Rolle[]> getRolleListAsync() {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Rolle[]> getRolleListAsync() {
             return base.Channel.getRolleListAsync();
         }
         
-        public Schichtplaner.Jaws_Service.Recht getRechtbyId(int id) {
+        public Schichtplaner.ServiceReference1.Recht getRechtbyId(int id) {
             return base.Channel.getRechtbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Recht> getRechtbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Recht> getRechtbyIdAsync(int id) {
             return base.Channel.getRechtbyIdAsync(id);
         }
         
-        public void setRecht(Schichtplaner.Jaws_Service.Recht recht) {
+        public void setRecht(Schichtplaner.ServiceReference1.Recht recht) {
             base.Channel.setRecht(recht);
         }
         
-        public System.Threading.Tasks.Task setRechtAsync(Schichtplaner.Jaws_Service.Recht recht) {
+        public System.Threading.Tasks.Task setRechtAsync(Schichtplaner.ServiceReference1.Recht recht) {
             return base.Channel.setRechtAsync(recht);
         }
         
-        public void updateRecht(Schichtplaner.Jaws_Service.Recht recht) {
+        public void updateRecht(Schichtplaner.ServiceReference1.Recht recht) {
             base.Channel.updateRecht(recht);
         }
         
-        public System.Threading.Tasks.Task updateRechtAsync(Schichtplaner.Jaws_Service.Recht recht) {
+        public System.Threading.Tasks.Task updateRechtAsync(Schichtplaner.ServiceReference1.Recht recht) {
             return base.Channel.updateRechtAsync(recht);
         }
         
-        public void setRolleRecht(Schichtplaner.Jaws_Service.Rolle rolle, Schichtplaner.Jaws_Service.Recht recht) {
+        public void setRolleRecht(Schichtplaner.ServiceReference1.Rolle rolle, Schichtplaner.ServiceReference1.Recht recht) {
             base.Channel.setRolleRecht(rolle, recht);
         }
         
-        public System.Threading.Tasks.Task setRolleRechtAsync(Schichtplaner.Jaws_Service.Rolle rolle, Schichtplaner.Jaws_Service.Recht recht) {
+        public System.Threading.Tasks.Task setRolleRechtAsync(Schichtplaner.ServiceReference1.Rolle rolle, Schichtplaner.ServiceReference1.Recht recht) {
             return base.Channel.setRolleRechtAsync(rolle, recht);
         }
         
-        public void updateRolleRecht(Schichtplaner.Jaws_Service.RolleRecht rollerecht) {
+        public void updateRolleRecht(Schichtplaner.ServiceReference1.RolleRecht rollerecht) {
             base.Channel.updateRolleRecht(rollerecht);
         }
         
-        public System.Threading.Tasks.Task updateRolleRechtAsync(Schichtplaner.Jaws_Service.RolleRecht rollerecht) {
+        public System.Threading.Tasks.Task updateRolleRechtAsync(Schichtplaner.ServiceReference1.RolleRecht rollerecht) {
             return base.Channel.updateRolleRechtAsync(rollerecht);
         }
         
-        public Schichtplaner.Jaws_Service.Rolle[] getRollefromRechtId(int id) {
+        public Schichtplaner.ServiceReference1.Rolle[] getRollefromRechtId(int id) {
             return base.Channel.getRollefromRechtId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Rolle[]> getRollefromRechtIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Rolle[]> getRollefromRechtIdAsync(int id) {
             return base.Channel.getRollefromRechtIdAsync(id);
         }
         
-        public Schichtplaner.Jaws_Service.Recht[] getRechtfromRolleId(int id) {
+        public Schichtplaner.ServiceReference1.Recht[] getRechtfromRolleId(int id) {
             return base.Channel.getRechtfromRolleId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Recht[]> getRechtfromRolleIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Recht[]> getRechtfromRolleIdAsync(int id) {
             return base.Channel.getRechtfromRolleIdAsync(id);
         }
         
-        public Schichtplaner.Jaws_Service.Schicht getSchichtbyId(int id) {
+        public Schichtplaner.ServiceReference1.Schicht getSchichtbyId(int id) {
             return base.Channel.getSchichtbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Schicht> getSchichtbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht> getSchichtbyIdAsync(int id) {
             return base.Channel.getSchichtbyIdAsync(id);
         }
         
-        public void setSchicht(Schichtplaner.Jaws_Service.Schicht schicht) {
+        public void setSchicht(Schichtplaner.ServiceReference1.Schicht schicht) {
             base.Channel.setSchicht(schicht);
         }
         
-        public System.Threading.Tasks.Task setSchichtAsync(Schichtplaner.Jaws_Service.Schicht schicht) {
+        public System.Threading.Tasks.Task setSchichtAsync(Schichtplaner.ServiceReference1.Schicht schicht) {
             return base.Channel.setSchichtAsync(schicht);
         }
         
-        public void updateSchicht(Schichtplaner.Jaws_Service.Schicht schicht) {
+        public void updateSchicht(Schichtplaner.ServiceReference1.Schicht schicht) {
             base.Channel.updateSchicht(schicht);
         }
         
-        public System.Threading.Tasks.Task updateSchichtAsync(Schichtplaner.Jaws_Service.Schicht schicht) {
+        public System.Threading.Tasks.Task updateSchichtAsync(Schichtplaner.ServiceReference1.Schicht schicht) {
             return base.Channel.updateSchichtAsync(schicht);
         }
         
-        public Schichtplaner.Jaws_Service.Schicht[] getSchichtbyPersonalId(int id) {
+        public Schichtplaner.ServiceReference1.Schicht[] getSchichtbyPersonalId(int id) {
             return base.Channel.getSchichtbyPersonalId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Schicht[]> getSchichtbyPersonalIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht[]> getSchichtbyPersonalIdAsync(int id) {
             return base.Channel.getSchichtbyPersonalIdAsync(id);
         }
         
-        public Schichtplaner.Jaws_Service.Schicht[] getSchichtBetween(System.DateTime von, System.DateTime bis) {
+        public Schichtplaner.ServiceReference1.Schicht[] getSchichtBetween(System.DateTime von, System.DateTime bis) {
             return base.Channel.getSchichtBetween(von, bis);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Schicht[]> getSchichtBetweenAsync(System.DateTime von, System.DateTime bis) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht[]> getSchichtBetweenAsync(System.DateTime von, System.DateTime bis) {
             return base.Channel.getSchichtBetweenAsync(von, bis);
         }
         
-        public Schichtplaner.Jaws_Service.Schicht[] getSchichtByPersonalIdAndBetween(int id, System.DateTime von, System.DateTime bis) {
+        public Schichtplaner.ServiceReference1.Schicht[] getSchichtByPersonalIdAndBetween(int id, System.DateTime von, System.DateTime bis) {
             return base.Channel.getSchichtByPersonalIdAndBetween(id, von, bis);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis) {
             return base.Channel.getSchichtByPersonalIdAndBetweenAsync(id, von, bis);
         }
         
-        public Schichtplaner.Jaws_Service.Lieferant getLieferantbyId(int id) {
+        public Schichtplaner.ServiceReference1.Lieferant getLieferantbyId(int id) {
             return base.Channel.getLieferantbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Lieferant> getLieferantbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Lieferant> getLieferantbyIdAsync(int id) {
             return base.Channel.getLieferantbyIdAsync(id);
         }
         
-        public void setLieferant(Schichtplaner.Jaws_Service.Lieferant lieferant) {
+        public void setLieferant(Schichtplaner.ServiceReference1.Lieferant lieferant) {
             base.Channel.setLieferant(lieferant);
         }
         
-        public System.Threading.Tasks.Task setLieferantAsync(Schichtplaner.Jaws_Service.Lieferant lieferant) {
+        public System.Threading.Tasks.Task setLieferantAsync(Schichtplaner.ServiceReference1.Lieferant lieferant) {
             return base.Channel.setLieferantAsync(lieferant);
         }
         
-        public void updateLieferant(Schichtplaner.Jaws_Service.Lieferant lieferant) {
+        public void updateLieferant(Schichtplaner.ServiceReference1.Lieferant lieferant) {
             base.Channel.updateLieferant(lieferant);
         }
         
-        public System.Threading.Tasks.Task updateLieferantAsync(Schichtplaner.Jaws_Service.Lieferant lieferant) {
+        public System.Threading.Tasks.Task updateLieferantAsync(Schichtplaner.ServiceReference1.Lieferant lieferant) {
             return base.Channel.updateLieferantAsync(lieferant);
         }
         
-        public Schichtplaner.Jaws_Service.Lieferant[] getLieferantList() {
+        public Schichtplaner.ServiceReference1.Lieferant[] getLieferantList() {
             return base.Channel.getLieferantList();
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Lieferant[]> getLieferantListAsync() {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Lieferant[]> getLieferantListAsync() {
             return base.Channel.getLieferantListAsync();
         }
         
-        public Schichtplaner.Jaws_Service.Artikel getArtikelbyId(int id) {
+        public Schichtplaner.ServiceReference1.Artikel getArtikelbyId(int id) {
             return base.Channel.getArtikelbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Artikel> getArtikelbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel> getArtikelbyIdAsync(int id) {
             return base.Channel.getArtikelbyIdAsync(id);
         }
         
-        public void setArtikel(Schichtplaner.Jaws_Service.Artikel artikel) {
+        public Schichtplaner.ServiceReference1.Artikel getArtikelByGTIN(string GTIN) {
+            return base.Channel.getArtikelByGTIN(GTIN);
+        }
+        
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel> getArtikelByGTINAsync(string GTIN) {
+            return base.Channel.getArtikelByGTINAsync(GTIN);
+        }
+        
+        public void setArtikel(Schichtplaner.ServiceReference1.Artikel artikel) {
             base.Channel.setArtikel(artikel);
         }
         
-        public System.Threading.Tasks.Task setArtikelAsync(Schichtplaner.Jaws_Service.Artikel artikel) {
+        public System.Threading.Tasks.Task setArtikelAsync(Schichtplaner.ServiceReference1.Artikel artikel) {
             return base.Channel.setArtikelAsync(artikel);
         }
         
-        public void updateArtikel(Schichtplaner.Jaws_Service.Artikel artikel) {
+        public void updateArtikel(Schichtplaner.ServiceReference1.Artikel artikel) {
             base.Channel.updateArtikel(artikel);
         }
         
-        public System.Threading.Tasks.Task updateArtikelAsync(Schichtplaner.Jaws_Service.Artikel artikel) {
+        public System.Threading.Tasks.Task updateArtikelAsync(Schichtplaner.ServiceReference1.Artikel artikel) {
             return base.Channel.updateArtikelAsync(artikel);
         }
         
-        public Schichtplaner.Jaws_Service.Artikel[] getArtikelList() {
+        public Schichtplaner.ServiceReference1.Artikel[] getArtikelList() {
             return base.Channel.getArtikelList();
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Artikel[]> getArtikelListAsync() {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel[]> getArtikelListAsync() {
             return base.Channel.getArtikelListAsync();
         }
         
-        public Schichtplaner.Jaws_Service.Artikel[] getArtikelbyLieferantId(int id) {
+        public Schichtplaner.ServiceReference1.Artikel[] getArtikelbyLieferantId(int id) {
             return base.Channel.getArtikelbyLieferantId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Artikel[]> getArtikelbyLieferantIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel[]> getArtikelbyLieferantIdAsync(int id) {
             return base.Channel.getArtikelbyLieferantIdAsync(id);
         }
         
-        public Schichtplaner.Jaws_Service.Artikel[] getArtikelbyWarengruppeId(int id) {
+        public Schichtplaner.ServiceReference1.Artikel[] getArtikelbyWarengruppeId(int id) {
             return base.Channel.getArtikelbyWarengruppeId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Artikel[]> getArtikelbyWarengruppeIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel[]> getArtikelbyWarengruppeIdAsync(int id) {
             return base.Channel.getArtikelbyWarengruppeIdAsync(id);
         }
         
-        public Schichtplaner.Jaws_Service.Beleg getBelegbyId(int id) {
+        public Schichtplaner.ServiceReference1.Beleg getBelegbyId(int id) {
             return base.Channel.getBelegbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Beleg> getBelegbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Beleg> getBelegbyIdAsync(int id) {
             return base.Channel.getBelegbyIdAsync(id);
         }
         
-        public void setBeleg(Schichtplaner.Jaws_Service.Beleg beleg) {
-            base.Channel.setBeleg(beleg);
+        public int setBeleg(Schichtplaner.ServiceReference1.Beleg beleg) {
+            return base.Channel.setBeleg(beleg);
         }
         
-        public System.Threading.Tasks.Task setBelegAsync(Schichtplaner.Jaws_Service.Beleg beleg) {
+        public System.Threading.Tasks.Task<int> setBelegAsync(Schichtplaner.ServiceReference1.Beleg beleg) {
             return base.Channel.setBelegAsync(beleg);
         }
         
-        public void updateBeleg(Schichtplaner.Jaws_Service.Beleg beleg) {
+        public void updateBeleg(Schichtplaner.ServiceReference1.Beleg beleg) {
             base.Channel.updateBeleg(beleg);
         }
         
-        public System.Threading.Tasks.Task updateBelegAsync(Schichtplaner.Jaws_Service.Beleg beleg) {
+        public System.Threading.Tasks.Task updateBelegAsync(Schichtplaner.ServiceReference1.Beleg beleg) {
             return base.Channel.updateBelegAsync(beleg);
         }
         
-        public Schichtplaner.Jaws_Service.Beleg[] getBelegList() {
+        public Schichtplaner.ServiceReference1.Beleg[] getBelegList() {
             return base.Channel.getBelegList();
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Beleg[]> getBelegListAsync() {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Beleg[]> getBelegListAsync() {
             return base.Channel.getBelegListAsync();
         }
         
-        public void setArtikelBeleg(Schichtplaner.Jaws_Service.Artikel artikel, Schichtplaner.Jaws_Service.Beleg beleg) {
+        public int getArtikelCountByArtikelIdAndLieferartIdAndBetween(int artikel_id, int lieferart_id, System.DateTime von, System.DateTime bis) {
+            return base.Channel.getArtikelCountByArtikelIdAndLieferartIdAndBetween(artikel_id, lieferart_id, von, bis);
+        }
+        
+        public System.Threading.Tasks.Task<int> getArtikelCountByArtikelIdAndLieferartIdAndBetweenAsync(int artikel_id, int lieferart_id, System.DateTime von, System.DateTime bis) {
+            return base.Channel.getArtikelCountByArtikelIdAndLieferartIdAndBetweenAsync(artikel_id, lieferart_id, von, bis);
+        }
+        
+        public void setArtikelBeleg(Schichtplaner.ServiceReference1.Artikel artikel, Schichtplaner.ServiceReference1.Beleg beleg) {
             base.Channel.setArtikelBeleg(artikel, beleg);
         }
         
-        public System.Threading.Tasks.Task setArtikelBelegAsync(Schichtplaner.Jaws_Service.Artikel artikel, Schichtplaner.Jaws_Service.Beleg beleg) {
+        public System.Threading.Tasks.Task setArtikelBelegAsync(Schichtplaner.ServiceReference1.Artikel artikel, Schichtplaner.ServiceReference1.Beleg beleg) {
             return base.Channel.setArtikelBelegAsync(artikel, beleg);
         }
         
-        public void updateArtikelBeleg(Schichtplaner.Jaws_Service.ArtikelBeleg artikelbeleg) {
+        public void updateArtikelBeleg(Schichtplaner.ServiceReference1.ArtikelBeleg artikelbeleg) {
             base.Channel.updateArtikelBeleg(artikelbeleg);
         }
         
-        public System.Threading.Tasks.Task updateArtikelBelegAsync(Schichtplaner.Jaws_Service.ArtikelBeleg artikelbeleg) {
+        public System.Threading.Tasks.Task updateArtikelBelegAsync(Schichtplaner.ServiceReference1.ArtikelBeleg artikelbeleg) {
             return base.Channel.updateArtikelBelegAsync(artikelbeleg);
         }
         
-        public Schichtplaner.Jaws_Service.Artikel[] getArtikelfromBelegId(int id) {
+        public Schichtplaner.ServiceReference1.Artikel[] getArtikelfromBelegId(int id) {
             return base.Channel.getArtikelfromBelegId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Artikel[]> getArtikelfromBelegIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Artikel[]> getArtikelfromBelegIdAsync(int id) {
             return base.Channel.getArtikelfromBelegIdAsync(id);
         }
         
-        public Schichtplaner.Jaws_Service.Beleg[] getBelegfromArtikelId(int id) {
+        public Schichtplaner.ServiceReference1.Beleg[] getBelegfromArtikelId(int id) {
             return base.Channel.getBelegfromArtikelId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Beleg[]> getBelegfromArtikelIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Beleg[]> getBelegfromArtikelIdAsync(int id) {
             return base.Channel.getBelegfromArtikelIdAsync(id);
         }
         
-        public Schichtplaner.Jaws_Service.Warengruppe getWarengruppebyId(int id) {
+        public Schichtplaner.ServiceReference1.Warengruppe getWarengruppebyId(int id) {
             return base.Channel.getWarengruppebyId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Warengruppe> getWarengruppebyIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Warengruppe> getWarengruppebyIdAsync(int id) {
             return base.Channel.getWarengruppebyIdAsync(id);
         }
         
-        public void setWarengruppe(Schichtplaner.Jaws_Service.Warengruppe gruppe) {
+        public void setWarengruppe(Schichtplaner.ServiceReference1.Warengruppe gruppe) {
             base.Channel.setWarengruppe(gruppe);
         }
         
-        public System.Threading.Tasks.Task setWarengruppeAsync(Schichtplaner.Jaws_Service.Warengruppe gruppe) {
+        public System.Threading.Tasks.Task setWarengruppeAsync(Schichtplaner.ServiceReference1.Warengruppe gruppe) {
             return base.Channel.setWarengruppeAsync(gruppe);
         }
         
-        public void updateWarengruppe(Schichtplaner.Jaws_Service.Warengruppe warengruppe) {
+        public void updateWarengruppe(Schichtplaner.ServiceReference1.Warengruppe warengruppe) {
             base.Channel.updateWarengruppe(warengruppe);
         }
         
-        public System.Threading.Tasks.Task updateWarengruppeAsync(Schichtplaner.Jaws_Service.Warengruppe warengruppe) {
+        public System.Threading.Tasks.Task updateWarengruppeAsync(Schichtplaner.ServiceReference1.Warengruppe warengruppe) {
             return base.Channel.updateWarengruppeAsync(warengruppe);
         }
         
-        public Schichtplaner.Jaws_Service.Warengruppe[] getWarengruppeList() {
+        public Schichtplaner.ServiceReference1.Warengruppe[] getWarengruppeList() {
             return base.Channel.getWarengruppeList();
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Warengruppe[]> getWarengruppeListAsync() {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Warengruppe[]> getWarengruppeListAsync() {
             return base.Channel.getWarengruppeListAsync();
         }
         
-        public Schichtplaner.Jaws_Service.Warengruppe getWarengruppebyName(string name) {
+        public Schichtplaner.ServiceReference1.Warengruppe getWarengruppebyName(string name) {
             return base.Channel.getWarengruppebyName(name);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Warengruppe> getWarengruppebyNameAsync(string name) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Warengruppe> getWarengruppebyNameAsync(string name) {
             return base.Channel.getWarengruppebyNameAsync(name);
         }
         
-        public Schichtplaner.Jaws_Service.Prognose getPrognosebyId(int id) {
+        public Schichtplaner.ServiceReference1.Prognose getPrognosebyId(int id) {
             return base.Channel.getPrognosebyId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Prognose> getPrognosebyIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose> getPrognosebyIdAsync(int id) {
             return base.Channel.getPrognosebyIdAsync(id);
         }
         
-        public void setPrognose(Schichtplaner.Jaws_Service.Prognose prognose) {
-            base.Channel.setPrognose(prognose);
+        public int setPrognose(Schichtplaner.ServiceReference1.Prognose prognose) {
+            return base.Channel.setPrognose(prognose);
         }
         
-        public System.Threading.Tasks.Task setPrognoseAsync(Schichtplaner.Jaws_Service.Prognose prognose) {
+        public System.Threading.Tasks.Task<int> setPrognoseAsync(Schichtplaner.ServiceReference1.Prognose prognose) {
             return base.Channel.setPrognoseAsync(prognose);
         }
         
-        public void updatePrognose(Schichtplaner.Jaws_Service.Prognose prognose) {
+        public void updatePrognose(Schichtplaner.ServiceReference1.Prognose prognose) {
             base.Channel.updatePrognose(prognose);
         }
         
-        public System.Threading.Tasks.Task updatePrognoseAsync(Schichtplaner.Jaws_Service.Prognose prognose) {
+        public System.Threading.Tasks.Task updatePrognoseAsync(Schichtplaner.ServiceReference1.Prognose prognose) {
             return base.Channel.updatePrognoseAsync(prognose);
         }
         
-        public Schichtplaner.Jaws_Service.Prognose[] getPrognoseList() {
+        public Schichtplaner.ServiceReference1.Prognose[] getPrognoseList() {
             return base.Channel.getPrognoseList();
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Prognose[]> getPrognoseListAsync() {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose[]> getPrognoseListAsync() {
             return base.Channel.getPrognoseListAsync();
         }
         
-        public Schichtplaner.Jaws_Service.Prognose getPrognosebyArtikelId(int id) {
+        public Schichtplaner.ServiceReference1.Prognose getPrognosebyArtikelId(int id) {
             return base.Channel.getPrognosebyArtikelId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Prognose> getPrognosebyArtikelIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose> getPrognosebyArtikelIdAsync(int id) {
             return base.Channel.getPrognosebyArtikelIdAsync(id);
         }
         
-        public Schichtplaner.Jaws_Service.Prognose[] getPrognosebyDate(System.DateTime date) {
+        public Schichtplaner.ServiceReference1.Prognose getPrognoseByArtikelIdAndDate(int id, System.DateTime date) {
+            return base.Channel.getPrognoseByArtikelIdAndDate(id, date);
+        }
+        
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose> getPrognoseByArtikelIdAndDateAsync(int id, System.DateTime date) {
+            return base.Channel.getPrognoseByArtikelIdAndDateAsync(id, date);
+        }
+        
+        public Schichtplaner.ServiceReference1.Prognose[] getPrognosebyDate(System.DateTime date) {
             return base.Channel.getPrognosebyDate(date);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Prognose[]> getPrognosebyDateAsync(System.DateTime date) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Prognose[]> getPrognosebyDateAsync(System.DateTime date) {
             return base.Channel.getPrognosebyDateAsync(date);
         }
         
-        public Schichtplaner.Jaws_Service.Lieferart getLieferartbyId(int id) {
+        public Schichtplaner.ServiceReference1.Lieferart getLieferartbyId(int id) {
             return base.Channel.getLieferartbyId(id);
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Lieferart> getLieferartbyIdAsync(int id) {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Lieferart> getLieferartbyIdAsync(int id) {
             return base.Channel.getLieferartbyIdAsync(id);
         }
         
-        public void setLieferart(Schichtplaner.Jaws_Service.Lieferart lieferart) {
+        public Schichtplaner.ServiceReference1.Lieferart getLieferartByName(string name) {
+            return base.Channel.getLieferartByName(name);
+        }
+        
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Lieferart> getLieferartByNameAsync(string name) {
+            return base.Channel.getLieferartByNameAsync(name);
+        }
+        
+        public void setLieferart(Schichtplaner.ServiceReference1.Lieferart lieferart) {
             base.Channel.setLieferart(lieferart);
         }
         
-        public System.Threading.Tasks.Task setLieferartAsync(Schichtplaner.Jaws_Service.Lieferart lieferart) {
+        public System.Threading.Tasks.Task setLieferartAsync(Schichtplaner.ServiceReference1.Lieferart lieferart) {
             return base.Channel.setLieferartAsync(lieferart);
         }
         
-        public void updateLieferart(Schichtplaner.Jaws_Service.Lieferart lieferart) {
+        public void updateLieferart(Schichtplaner.ServiceReference1.Lieferart lieferart) {
             base.Channel.updateLieferart(lieferart);
         }
         
-        public System.Threading.Tasks.Task updateLieferartAsync(Schichtplaner.Jaws_Service.Lieferart lieferart) {
+        public System.Threading.Tasks.Task updateLieferartAsync(Schichtplaner.ServiceReference1.Lieferart lieferart) {
             return base.Channel.updateLieferartAsync(lieferart);
         }
         
-        public Schichtplaner.Jaws_Service.Lieferart[] getLieferartList() {
+        public Schichtplaner.ServiceReference1.Lieferart[] getLieferartList() {
             return base.Channel.getLieferartList();
         }
         
-        public System.Threading.Tasks.Task<Schichtplaner.Jaws_Service.Lieferart[]> getLieferartListAsync() {
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Lieferart[]> getLieferartListAsync() {
             return base.Channel.getLieferartListAsync();
         }
     }

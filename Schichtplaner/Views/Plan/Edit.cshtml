@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Startzeit_Soll</th>
+            <th>Endzeit_Soll</th>
+            <th>Startzeit_Ist</th>
+            <th>Endzeit_Ist</th>
+            <th>Pause</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var schicht in Model)
+        {
+            <tr class="editPlan" id="@schicht.Id">
+                <th scope="row">
+                    @schicht.Id
+                </th>
+                <td>@schicht.Startzeit_soll</td>
+                <td>@schicht.Endzeit_soll</td>
+                <td>@schicht.Startzeit_ist</td>
+                <td>@schicht.Endzeit_ist</td>
+                <td>@schicht.Pause</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        $(".editPlan").click(() => {
+            window.location = "Plan/Edit/"+$(this).attr('id');
+        });
+    });
+</script>

@@ -20,6 +20,8 @@
       <xs:element minOccurs="0" name="Telefon" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Vorname" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Zusatz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="passwort" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Personal" nillable="true" type="tns:Personal" />
@@ -113,13 +115,13 @@
       <xs:element minOccurs="0" name="Artikel" nillable="true" type="tns:ArrayOfArtikel" />
       <xs:element minOccurs="0" name="BIC" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Hausnummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Hausnummer" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="IBAN" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Mobil" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Ort" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Postleitzahl" type="xs:int" />
+      <xs:element minOccurs="0" name="Postleitzahl" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="Straße" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Telefon" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Zusatz" nillable="true" type="xs:string" />
@@ -137,7 +139,7 @@
       <xs:element minOccurs="0" name="ArtikelBeleg" nillable="true" type="tns:ArrayOfArtikelBeleg" />
       <xs:element minOccurs="0" name="Bestand" type="xs:double" />
       <xs:element minOccurs="0" name="Einheit" type="tns:Einheit" />
-      <xs:element minOccurs="0" name="GTIN" type="xs:int" />
+      <xs:element minOccurs="0" name="GTIN" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Lieferant" nillable="true" type="tns:Lieferant" />
       <xs:element minOccurs="0" name="LieferantId" type="xs:int" />

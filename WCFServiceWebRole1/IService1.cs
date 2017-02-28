@@ -216,6 +216,9 @@ namespace WCFServiceWebRole1
         Prognose getPrognosebyArtikelId(int id);
 
         [OperationContract]
+        Prognose getPrognoseByArtikelIdAndDate(int id, DateTime date);
+
+        [OperationContract]
         List<Prognose> getPrognosebyDate(DateTime date);
 
 

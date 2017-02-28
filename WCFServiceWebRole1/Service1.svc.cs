@@ -68,18 +68,14 @@ namespace WCFServiceWebRole1
 
         public int getArtikelCountByArtikelIdAndLieferartIdAndBetween(int artikel_id, int lieferart_id, DateTime von, DateTime bis)
         {
-            var artikel_ids = (from a in db.ArtikelBelegSet
-                               join b in db.BelegSet
-                               on a.BelegId equals b.Id
-                               where (b.LieferartId == 1)
-                               where (b.Datum >= von.Date)
-                               where (b.Datum <= bis.Date)
-                               select a.ArtikelId
-                                );
 
-            int artikel_zahl = artikel_ids.Count();
-
-            return artikel_zahl;
+            var result = (
+                    from ab in db.ArtikelBelegSet
+                    join b in db.BelegSet on ab.BelegId equals b.Id
+                    where b.Datum >= von.Date && b.Datum <= bis.Date && ab.ArtikelId == artikel_id
+                    select ab.ArtikelId
+                );
+            return result.Count();
         }
 
         public Beleg getBelegbyId(int id)
@@ -144,6 +140,16 @@ namespace WCFServiceWebRole1
         public Prognose getPrognosebyArtikelId(int id)
         {
             return (DAL.Prognose)db.PrognoseSet.Where((p) => p.ArtikelId == id);
+        }
+
+        public Prognose getPrognoseByArtikelIdAndDate(int id, DateTime date)
+        {
+            DateTime start = date.Date;
+            DateTime end = date.AddDays(1).Date;
+
+            var prognosen = db.PrognoseSet.Where((p) => p.Id == id && p.Datum >= start && p.Datum <= end);
+            if (prognosen.Count() != 0) return prognosen.First();
+            else return null;
         }
 
         public List<Prognose> getPrognosebyDate(DateTime date)

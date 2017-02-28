@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import namespace="http://schemas.datacontract.org/2004/07/DAL" />
+  <xs:import schemaLocation="http://localhost:52220/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DAL" />
   <xs:element name="getPersonalbyId">
     <xs:complexType>
       <xs:sequence>
@@ -403,10 +403,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getArtikelByGTIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GTIN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getArtikelByGTINResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getArtikelByGTINResult" nillable="true" type="q33:Artikel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="setArtikel">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="artikel" nillable="true" type="q33:Artikel" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="artikel" nillable="true" type="q34:Artikel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -418,7 +432,7 @@
   <xs:element name="updateArtikel">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="artikel" nillable="true" type="q34:Artikel" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="artikel" nillable="true" type="q35:Artikel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -435,7 +449,7 @@
   <xs:element name="getArtikelListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getArtikelListResult" nillable="true" type="q35:ArrayOfArtikel" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getArtikelListResult" nillable="true" type="q36:ArrayOfArtikel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -449,7 +463,7 @@
   <xs:element name="getArtikelbyLieferantIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getArtikelbyLieferantIdResult" nillable="true" type="q36:ArrayOfArtikel" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getArtikelbyLieferantIdResult" nillable="true" type="q37:ArrayOfArtikel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -463,7 +477,7 @@
   <xs:element name="getArtikelbyWarengruppeIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getArtikelbyWarengruppeIdResult" nillable="true" type="q37:ArrayOfArtikel" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getArtikelbyWarengruppeIdResult" nillable="true" type="q38:ArrayOfArtikel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -477,26 +491,28 @@
   <xs:element name="getBelegbyIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getBelegbyIdResult" nillable="true" type="q38:Beleg" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getBelegbyIdResult" nillable="true" type="q39:Beleg" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="setBeleg">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="beleg" nillable="true" type="q39:Beleg" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="beleg" nillable="true" type="q40:Beleg" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="setBelegResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setBelegResult" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="updateBeleg">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="beleg" nillable="true" type="q40:Beleg" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="beleg" nillable="true" type="q41:Beleg" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -513,15 +529,32 @@
   <xs:element name="getBelegListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getBelegListResult" nillable="true" type="q41:ArrayOfBeleg" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getBelegListResult" nillable="true" type="q42:ArrayOfBeleg" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getArtikelCountByArtikelIdAndLieferartIdAndBetween">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="artikel_id" type="xs:int" />
+        <xs:element minOccurs="0" name="lieferart_id" type="xs:int" />
+        <xs:element minOccurs="0" name="von" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="bis" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getArtikelCountByArtikelIdAndLieferartIdAndBetweenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getArtikelCountByArtikelIdAndLieferartIdAndBetweenResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="setArtikelBeleg">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="artikel" nillable="true" type="q42:Artikel" />
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="beleg" nillable="true" type="q43:Beleg" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="artikel" nillable="true" type="q43:Artikel" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="beleg" nillable="true" type="q44:Beleg" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -533,7 +566,7 @@
   <xs:element name="updateArtikelBeleg">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="artikelbeleg" nillable="true" type="q44:ArtikelBeleg" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="artikelbeleg" nillable="true" type="q45:ArtikelBeleg" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -552,7 +585,7 @@
   <xs:element name="getArtikelfromBelegIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getArtikelfromBelegIdResult" nillable="true" type="q45:ArrayOfArtikel" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getArtikelfromBelegIdResult" nillable="true" type="q46:ArrayOfArtikel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -566,7 +599,7 @@
   <xs:element name="getBelegfromArtikelIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getBelegfromArtikelIdResult" nillable="true" type="q46:ArrayOfBeleg" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getBelegfromArtikelIdResult" nillable="true" type="q47:ArrayOfBeleg" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -580,14 +613,14 @@
   <xs:element name="getWarengruppebyIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getWarengruppebyIdResult" nillable="true" type="q47:Warengruppe" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getWarengruppebyIdResult" nillable="true" type="q48:Warengruppe" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="setWarengruppe">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="gruppe" nillable="true" type="q48:Warengruppe" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="gruppe" nillable="true" type="q49:Warengruppe" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -599,7 +632,7 @@
   <xs:element name="updateWarengruppe">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="warengruppe" nillable="true" type="q49:Warengruppe" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="warengruppe" nillable="true" type="q50:Warengruppe" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -616,7 +649,7 @@
   <xs:element name="getWarengruppeListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getWarengruppeListResult" nillable="true" type="q50:ArrayOfWarengruppe" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getWarengruppeListResult" nillable="true" type="q51:ArrayOfWarengruppe" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -630,7 +663,7 @@
   <xs:element name="getWarengruppebyNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getWarengruppebyNameResult" nillable="true" type="q51:Warengruppe" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getWarengruppebyNameResult" nillable="true" type="q52:Warengruppe" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -644,26 +677,28 @@
   <xs:element name="getPrognosebyIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getPrognosebyIdResult" nillable="true" type="q52:Prognose" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getPrognosebyIdResult" nillable="true" type="q53:Prognose" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="setPrognose">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="prognose" nillable="true" type="q53:Prognose" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="prognose" nillable="true" type="q54:Prognose" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="setPrognoseResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setPrognoseResult" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="updatePrognose">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="prognose" nillable="true" type="q54:Prognose" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="prognose" nillable="true" type="q55:Prognose" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -680,7 +715,7 @@
   <xs:element name="getPrognoseListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getPrognoseListResult" nillable="true" type="q55:ArrayOfPrognose" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getPrognoseListResult" nillable="true" type="q56:ArrayOfPrognose" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -694,7 +729,22 @@
   <xs:element name="getPrognosebyArtikelIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getPrognosebyArtikelIdResult" nillable="true" type="q56:Prognose" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getPrognosebyArtikelIdResult" nillable="true" type="q57:Prognose" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPrognoseByArtikelIdAndDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPrognoseByArtikelIdAndDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getPrognoseByArtikelIdAndDateResult" nillable="true" type="q58:Prognose" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -708,7 +758,7 @@
   <xs:element name="getPrognosebyDateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getPrognosebyDateResult" nillable="true" type="q57:ArrayOfPrognose" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getPrognosebyDateResult" nillable="true" type="q59:ArrayOfPrognose" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -722,14 +772,28 @@
   <xs:element name="getLieferartbyIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getLieferartbyIdResult" nillable="true" type="q58:Lieferart" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getLieferartbyIdResult" nillable="true" type="q60:Lieferart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLieferartByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLieferartByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getLieferartByNameResult" nillable="true" type="q61:Lieferart" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="setLieferart">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="lieferart" nillable="true" type="q59:Lieferart" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="lieferart" nillable="true" type="q62:Lieferart" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -741,7 +805,7 @@
   <xs:element name="updateLieferart">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="lieferart" nillable="true" type="q60:Lieferart" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="lieferart" nillable="true" type="q63:Lieferart" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -758,7 +822,7 @@
   <xs:element name="getLieferartListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getLieferartListResult" nillable="true" type="q61:ArrayOfLieferart" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/DAL" minOccurs="0" name="getLieferartListResult" nillable="true" type="q64:ArrayOfLieferart" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

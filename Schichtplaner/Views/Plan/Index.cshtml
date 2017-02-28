@@ -1,15 +1,83 @@
-﻿@model IEnumerable<Schichtplaner.Jaws_Service.Schicht>
-
+﻿
 @{
     ViewBag.Title = "Schichtplaner";
+    DateTime montag = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
 }
 
-@foreach (var item in ViewBag.schichtenListe) {
-    foreach(var schicht in item)
-    {
-        <p>@schicht.Startzeit_soll</p>
-    }
- 
-}
+<table>
+    <thead>
+        <tr>
+            <th>Mitarbeiter</th>
+            <th>MoV</th>
+            <th>MoB</th>
+            <th>MoP</th>
+            <th>DiV</th>
+            <th>DiB</th>
+            <th>DiP</th>
+            <th>MiV</th>
+            <th>MiB</th>
+            <th>MiP</th>
+            <th>DoV</th>
+            <th>DoB</th>
+            <th>DoP</th>
+            <th>FrV</th>
+            <th>FrB</th>
+            <th>FrP</th>
+            <th>SaV</th>
+            <th>SaB</th>
+            <th>SaP</th>
+            <th>SoV</th>
+            <th>SoB</th>
+            <th>SoP</th>
+            <th>ArbWo</th>
+            <th>MaWo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (PersonSchichten personSchichten in Model)
+        {
+           <tr>
+               <td>
+                   <div>
+                       <span>@personSchichten.person.Name</span>
+                       <span>@personSchichten.person.Vorname</span>
+                   </div>
+               </td>
+               @for (int i = 0; i < 7; i++)
+               {
 
+                   DateTime start = montag.AddDays(i).Date;
+                   DateTime end = montag.AddDays(i + 1).Date;
+                   var schichten = personSchichten.schichten.Where((s) => s.Startzeit_soll >= start && s.Startzeit_soll <= end);
+                   if (schichten.Count() > 0)
+                   {
+                       var schicht = schichten.First();
+
+                                <td>@schicht.Startzeit_soll</td>
+                                <td>@schicht.Endzeit_soll</td>
+                                <td>@schicht.Pause</td>
+                   }
+                   else
+                   {
+                       <td>00:00</td>
+                       <td>00:00</td>
+                       <td>0:00</td>
+                   }
+               }
+
+           </tr>
+        }
+    </tbody>
 </table>
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        $(".editPerson").mouseover(() => {
+            $(this).css('cursor', 'pointer');
+        })
+        $(".editPerson").click((e) => {
+            e.preventDefault();
+            window.location = window.location = "../Plan/Edit/" + $(e.target).parent().attr('id')
+
+        });
+    });
+</script>

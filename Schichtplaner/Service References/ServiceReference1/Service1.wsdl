@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import namespace="http://tempuri.org/" />
-      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DAL" />
+      <xsd:import schemaLocation="http://localhost:52220/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:52220/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:52220/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DAL" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_getPersonalbyId_InputMessage">
@@ -193,6 +193,12 @@
   <wsdl:message name="IService1_getArtikelbyId_OutputMessage">
     <wsdl:part name="parameters" element="tns:getArtikelbyIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getArtikelByGTIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelByGTIN" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelByGTIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelByGTINResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_setArtikel_InputMessage">
     <wsdl:part name="parameters" element="tns:setArtikel" />
   </wsdl:message>
@@ -246,6 +252,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_getBelegList_OutputMessage">
     <wsdl:part name="parameters" element="tns:getBelegListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelCountByArtikelIdAndLieferartIdAndBetween_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelCountByArtikelIdAndLieferartIdAndBetween" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getArtikelCountByArtikelIdAndLieferartIdAndBetween_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelCountByArtikelIdAndLieferartIdAndBetweenResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_setArtikelBeleg_InputMessage">
     <wsdl:part name="parameters" element="tns:setArtikelBeleg" />
@@ -331,6 +343,12 @@
   <wsdl:message name="IService1_getPrognosebyArtikelId_OutputMessage">
     <wsdl:part name="parameters" element="tns:getPrognosebyArtikelIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getPrognoseByArtikelIdAndDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognoseByArtikelIdAndDate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPrognoseByArtikelIdAndDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognoseByArtikelIdAndDateResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_getPrognosebyDate_InputMessage">
     <wsdl:part name="parameters" element="tns:getPrognosebyDate" />
   </wsdl:message>
@@ -342,6 +360,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_getLieferartbyId_OutputMessage">
     <wsdl:part name="parameters" element="tns:getLieferartbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getLieferartByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getLieferartByName" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getLieferartByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getLieferartByNameResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_setLieferart_InputMessage">
     <wsdl:part name="parameters" element="tns:setLieferart" />
@@ -486,6 +510,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArtikelbyId" message="tns:IService1_getArtikelbyId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArtikelbyIdResponse" message="tns:IService1_getArtikelbyId_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getArtikelByGTIN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArtikelByGTIN" message="tns:IService1_getArtikelByGTIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArtikelByGTINResponse" message="tns:IService1_getArtikelByGTIN_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="setArtikel">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/setArtikel" message="tns:IService1_setArtikel_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/setArtikelResponse" message="tns:IService1_setArtikel_OutputMessage" />
@@ -521,6 +549,10 @@
     <wsdl:operation name="getBelegList">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getBelegList" message="tns:IService1_getBelegList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getBelegListResponse" message="tns:IService1_getBelegList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtikelCountByArtikelIdAndLieferartIdAndBetween">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetween" message="tns:IService1_getArtikelCountByArtikelIdAndLieferartIdAndBetween_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetweenResponse" message="tns:IService1_getArtikelCountByArtikelIdAndLieferartIdAndBetween_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="setArtikelBeleg">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/setArtikelBeleg" message="tns:IService1_setArtikelBeleg_InputMessage" />
@@ -578,6 +610,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPrognosebyArtikelId" message="tns:IService1_getPrognosebyArtikelId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPrognosebyArtikelIdResponse" message="tns:IService1_getPrognosebyArtikelId_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getPrognoseByArtikelIdAndDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate" message="tns:IService1_getPrognoseByArtikelIdAndDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDateResponse" message="tns:IService1_getPrognoseByArtikelIdAndDate_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getPrognosebyDate">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPrognosebyDate" message="tns:IService1_getPrognosebyDate_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPrognosebyDateResponse" message="tns:IService1_getPrognosebyDate_OutputMessage" />
@@ -585,6 +621,10 @@
     <wsdl:operation name="getLieferartbyId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getLieferartbyId" message="tns:IService1_getLieferartbyId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getLieferartbyIdResponse" message="tns:IService1_getLieferartbyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLieferartByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getLieferartByName" message="tns:IService1_getLieferartByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getLieferartByNameResponse" message="tns:IService1_getLieferartByName_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="setLieferart">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/setLieferart" message="tns:IService1_setLieferart_InputMessage" />
@@ -880,6 +920,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getArtikelByGTIN">
+      <soap:operation soapAction="http://tempuri.org/IService1/getArtikelByGTIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="setArtikel">
       <soap:operation soapAction="http://tempuri.org/IService1/setArtikel" style="document" />
       <wsdl:input>
@@ -954,6 +1003,15 @@
     </wsdl:operation>
     <wsdl:operation name="getBelegList">
       <soap:operation soapAction="http://tempuri.org/IService1/getBelegList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtikelCountByArtikelIdAndLieferartIdAndBetween">
+      <soap:operation soapAction="http://tempuri.org/IService1/getArtikelCountByArtikelIdAndLieferartIdAndBetween" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1087,6 +1145,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getPrognoseByArtikelIdAndDate">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getPrognosebyDate">
       <soap:operation soapAction="http://tempuri.org/IService1/getPrognosebyDate" style="document" />
       <wsdl:input>
@@ -1098,6 +1165,15 @@
     </wsdl:operation>
     <wsdl:operation name="getLieferartbyId">
       <soap:operation soapAction="http://tempuri.org/IService1/getLieferartbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLieferartByName">
+      <soap:operation soapAction="http://tempuri.org/IService1/getLieferartByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1135,7 +1211,7 @@
   </wsdl:binding>
   <wsdl:service name="Service1">
     <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
-      <soap:address location="http://localhost:8733/Design_Time_Addresses/Jaws_Service_Library/Service1/" />
+      <soap:address location="http://localhost:52220/Service1.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -8,17 +8,20 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard", "Dashboard\Dashboard.csproj", "{1B887387-F7ED-4700-B3D3-16120FDE884E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schichtplaner", "Schichtplaner\Schichtplaner.csproj", "{457E6056-2E7C-4931-9D4D-1B23F9F676C6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CA0446AD-DC84-4CA5-939E-D2506284C47D} = {CA0446AD-DC84-4CA5-939E-D2506284C47D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosenberechnung", "Prognosenberechnung\Prognosenberechnung.csproj", "{9803B4D6-95FE-4733-918F-F8F8277E83A8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CA0446AD-DC84-4CA5-939E-D2506284C47D} = {CA0446AD-DC84-4CA5-939E-D2506284C47D}
+	EndProjectSection
 EndProject
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Jaws_Azure_Service", "Jaws_Azure_Service\Jaws_Azure_Service.ccproj", "{B57A9E08-F585-481C-BEE4-6C19FB48AC3F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceWebRole1", "WCFServiceWebRole1\WCFServiceWebRole1.csproj", "{CA0446AD-DC84-4CA5-939E-D2506284C47D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kasse", "Kasse\Kasse.csproj", "{0BB8D323-5C6F-44E9-BDA4-D17410ACA7AD}"
-	ProjectSection(ProjectDependencies) = postProject
-		{CA0446AD-DC84-4CA5-939E-D2506284C47D} = {CA0446AD-DC84-4CA5-939E-D2506284C47D}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
