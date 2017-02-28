@@ -1,14 +1,7 @@
 ﻿$(document).ready(function () {
-    $("input").each(function () {
-
-        if ($(this).attr("val") !== "") {
-            var val = $(this).attr("val").substr(11, 8);
-            val = val.slice(0, 2) + val.slice(3, 2);
-            $(this).val(val);
-            console.log(val);
-        }
-        
-    }) 
+    $(".person").each(function () {
+        person_summe($(this));
+    });
 });
 
 $(document).on("blur", ".schicht_input", function () {
