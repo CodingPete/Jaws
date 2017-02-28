@@ -38,13 +38,9 @@ namespace Dashboard.Controllers
             {
                 FormsAuthentication.RedirectFromLoginPage(person.Vorname+" "+person.Name, false);
                 //create a cookie
-                HttpCookie myCookie = new HttpCookie("UserInformation");
+                Session["Rolle"] = person.Rolle.Name;
+                Session["Email"] = person.email;
 
-                //Add key-values in the cookie
-                myCookie.Values.Add("Rolle", person.Rolle.Name);
-                myCookie.Values.Add("Email", person.email);
-                //Most important, write the cookie to client.
-                Response.Cookies.Add(myCookie);
             }
             return RedirectToAction("Index","Home");
         }

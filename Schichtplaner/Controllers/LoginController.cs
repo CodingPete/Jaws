@@ -40,20 +40,17 @@ namespace Schichtplaner.Controllers
                 Rolle role = client.getRollebyId(person.RolleId);
                 Boolean isAdmin = false;
                 var rechte = client.getRechtbyRolleId(role.Id);
+
                 if (rechte.Contains(admin))
                 {
                     isAdmin = true;
                 }
-                
-                FormsAuthentication.RedirectFromLoginPage(isAdmin.ToString(), false);
-                //create a cookie
-                HttpCookie myCookie = new HttpCookie("UserInformation");
 
-                //Add key-values in the cookie
-                myCookie.Values.Add("Rolle", role.Name);
-                myCookie.Values.Add("Email", person.email);
-                //Most important, write the cookie to client.
-                Response.Cookies.Add(myCookie);
+                FormsAuthentication.RedirectFromLoginPage(person.Vorname+" "+person.Name, false);
+            
+                Session["Email"] = person.email;
+                Session["Rolle"] = role.Name;
+                Session["isAdmin"] = isAdmin;
             }
             return RedirectToAction("Index", "Plan");
         }
