@@ -40,10 +40,7 @@ namespace WCFServiceWebRole1
 
         [OperationContract]
         Arbeitsvertrag getArbeitsvertragbyId(int id);
-
-        [OperationContract]
-        Arbeitsvertrag getArbeitsvertragByPersonalId(int id);
-
+       
         [OperationContract]
         void setArbeitsvertrag(Arbeitsvertrag vertrag);
 

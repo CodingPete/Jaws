@@ -159,6 +159,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\schichtplaner_fields.js" />
+    <Content Include="Scripts\schichtplaner_send.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Service References\ServiceReference1\Schichtplaner.ServiceReference1.Arbeitsvertrag.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
