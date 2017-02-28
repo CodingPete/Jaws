@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae05cfd1-d24c-4dae-9c99-af1f1f44e908" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Controllers/SchichtController.cs" afterPath="$PROJECT_DIR$/Dashboard/Controllers/SchichtController.cs" />
-    </list>
+    <list default="true" id="ae05cfd1-d24c-4dae-9c99-af1f1f44e908" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,12 +22,14 @@
         <entry file="file://$PROJECT_DIR$/Schichtplaner/Scripts/schichtplaner_fields.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
-              <caret line="29" column="88" lean-forward="false" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
+              <caret line="43" column="67" lean-forward="false" selection-start-line="43" selection-start-column="67" selection-end-line="43" selection-end-column="67" />
               <folding>
-                <marker date="1488300823238" expanded="true" signature="288:569" ph="{...}" />
-                <marker date="1488300823238" expanded="true" signature="364:569" ph="{...}" />
-                <marker date="1488300823238" expanded="true" signature="2594:2743" ph="{...}" />
-                <marker date="1488300823238" expanded="true" signature="2776:2919" ph="{...}" />
+                <marker date="1488313325836" expanded="true" signature="364:567" ph="{...}" />
+                <marker date="1488313325836" expanded="true" signature="599:880" ph="{...}" />
+                <marker date="1488313325836" expanded="true" signature="675:880" ph="{...}" />
+                <marker date="1488313325836" expanded="true" signature="713:880" ph="{...}" />
+                <marker date="1488313325836" expanded="true" signature="2905:3054" ph="{...}" />
+                <marker date="1488313325836" expanded="true" signature="3087:3230" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -99,7 +99,7 @@
         <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/app-calendar.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
-              <caret line="26" column="82" lean-forward="true" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
+              <caret line="26" column="82" lean-forward="false" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -109,7 +109,7 @@
         <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/scripts/app/calendar.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+              <caret line="22" column="6" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -398,7 +398,7 @@
     <option name="totallyTimeSpent" value="9248000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -447,10 +447,12 @@
         <state relative-caret-position="476">
           <caret line="28" column="88" lean-forward="true" selection-start-line="28" selection-start-column="88" selection-end-line="28" selection-end-column="88" />
           <folding>
-            <marker date="1488300823238" expanded="true" signature="288:569" ph="{...}" />
-            <marker date="1488300823238" expanded="true" signature="364:569" ph="{...}" />
-            <marker date="1488300823238" expanded="true" signature="2594:2743" ph="{...}" />
-            <marker date="1488300823238" expanded="true" signature="2776:2919" ph="{...}" />
+            <marker date="1488313325836" expanded="true" signature="364:567" ph="{...}" />
+            <marker date="1488313325836" expanded="true" signature="599:880" ph="{...}" />
+            <marker date="1488313325836" expanded="true" signature="675:880" ph="{...}" />
+            <marker date="1488313325836" expanded="true" signature="713:880" ph="{...}" />
+            <marker date="1488313325836" expanded="true" signature="2905:3054" ph="{...}" />
+            <marker date="1488313325836" expanded="true" signature="3087:3230" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -482,12 +484,14 @@
     <entry file="file://$PROJECT_DIR$/Schichtplaner/Scripts/schichtplaner_fields.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="29" column="88" lean-forward="false" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
+          <caret line="43" column="67" lean-forward="false" selection-start-line="43" selection-start-column="67" selection-end-line="43" selection-end-column="67" />
           <folding>
-            <marker date="1488300823238" expanded="true" signature="288:569" ph="{...}" />
-            <marker date="1488300823238" expanded="true" signature="364:569" ph="{...}" />
-            <marker date="1488300823238" expanded="true" signature="2594:2743" ph="{...}" />
-            <marker date="1488300823238" expanded="true" signature="2776:2919" ph="{...}" />
+            <marker date="1488313325836" expanded="true" signature="364:567" ph="{...}" />
+            <marker date="1488313325836" expanded="true" signature="599:880" ph="{...}" />
+            <marker date="1488313325836" expanded="true" signature="675:880" ph="{...}" />
+            <marker date="1488313325836" expanded="true" signature="713:880" ph="{...}" />
+            <marker date="1488313325836" expanded="true" signature="2905:3054" ph="{...}" />
+            <marker date="1488313325836" expanded="true" signature="3087:3230" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -551,7 +555,7 @@
     <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/scripts/app/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <caret line="22" column="6" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -559,7 +563,7 @@
     <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/app-calendar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="26" column="82" lean-forward="true" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
+          <caret line="26" column="82" lean-forward="false" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
           <folding />
         </state>
       </provider>
