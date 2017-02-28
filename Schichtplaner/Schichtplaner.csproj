@@ -138,6 +138,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\schichtplaner.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -153,8 +154,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\schichtplaner_fields.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Service References\ServiceReference1\Schichtplaner.ServiceReference1.Arbeitsvertrag.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
