@@ -47,8 +47,6 @@ namespace Dashboard.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            Response.Cookies[FormsAuthentication.FormsCookieName].Expires = DateTime.Now.AddYears(-1);
-            Response.Cookies["UserInformation"].Expires = DateTime.Now.AddYears(-1);
             return RedirectToAction("Index", "Home");
         }
     }
