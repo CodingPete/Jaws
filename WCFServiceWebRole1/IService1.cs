@@ -30,6 +30,8 @@ namespace WCFServiceWebRole1
 
         [OperationContract]
         List<Personal> getPersonalbyRolleId(int id);
+        [OperationContract]
+        Personal getPersonalbyEmail(String mail);
 
 
 
@@ -74,6 +76,8 @@ namespace WCFServiceWebRole1
         [OperationContract]
         void updateRecht(Recht recht);
 
+        [OperationContract]
+        Recht getRechtbyName(String name);
 
         //RolleRecht
 
@@ -84,10 +88,10 @@ namespace WCFServiceWebRole1
         void updateRolleRecht(RolleRecht rollerecht);
 
         [OperationContract]
-        List<Rolle> getRollefromRechtId(int id);
+        List<Rolle> getRollebyRechtId(int id);
 
         [OperationContract]
-        List<Recht> getRechtfromRolleId(int id);
+        List<Recht> getRechtbyRolleId(int id);
 
 
 
@@ -175,10 +179,10 @@ namespace WCFServiceWebRole1
         void updateArtikelBeleg(ArtikelBeleg artikelbeleg);
 
         [OperationContract]
-        List<Artikel> getArtikelfromBelegId(int id);
+        List<Artikel> getArtikelbyBelegId(int id);
 
         [OperationContract]
-        List<Beleg> getBelegfromArtikelId(int id);
+        List<Beleg> getBelegbyArtikelId(int id);
 
 
         //Warengruppe

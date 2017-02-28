@@ -51,7 +51,7 @@ namespace WCFServiceWebRole1
             return db.ArtikelSet.Where((a) => a.WarengruppeId == id).ToList();
         }
 
-        public List<Artikel> getArtikelfromBelegId(int id)
+        public List<Artikel> getArtikelbyBelegId(int id)
         {
             var buff = (from a in db.ArtikelSet
                         join c in db.ArtikelBelegSet on a.Id equals c.ArtikelId
@@ -83,7 +83,7 @@ namespace WCFServiceWebRole1
             return db.BelegSet.Find(id);
         }
 
-        public List<Beleg> getBelegfromArtikelId(int id)
+        public List<Beleg> getBelegbyArtikelId(int id)
         {
             var buff = (from a in db.BelegSet
                         join c in db.ArtikelBelegSet on a.Id equals c.BelegId
@@ -172,7 +172,7 @@ namespace WCFServiceWebRole1
             return db.RechtSet.Find(id);
         }
 
-        public List<Recht> getRechtfromRolleId(int id)
+        public List<Recht> getRechtbyRolleId(int id)
         {
             var buff = (from a in db.RechtSet
                         join c in db.RolleRechtSet on a.Id equals c.RechtId
@@ -187,7 +187,7 @@ namespace WCFServiceWebRole1
             return db.RolleSet.Find(id);
         }
 
-        public List<Rolle> getRollefromRechtId(int id)
+        public List<Rolle> getRollebyRechtId(int id)
         {
             var buff = (from a in db.RolleSet
                         join c in db.RolleRechtSet on a.Id equals c.RolleId
@@ -444,6 +444,33 @@ namespace WCFServiceWebRole1
             var entry = db.Entry(warengruppe);
             entry.State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
+        }
+
+        public Personal getPersonalbyEmail(string mail)
+        {
+            Personal person;
+            try
+            {
+                person = db.PersonalSet.First((x) => x.email.Equals(mail));
+            }
+            catch(Exception e)
+            {
+                person = null;
+            }
+            return person;
+        }
+
+        public Recht getRechtbyName(string name)
+        {
+            Recht recht;
+            try
+            {
+                recht = db.RechtSet.First((x) => x.Name.Equals(name));
+            }catch(Exception e)
+            {
+                recht = null;
+            }
+            return recht;
         }
     }
 }

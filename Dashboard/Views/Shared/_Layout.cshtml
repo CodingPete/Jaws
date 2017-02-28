@@ -62,7 +62,7 @@
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="javascript:;">Help</a>
-                        <a class="dropdown-item" href="Login/Logout">Logout</a>
+                        @Html.ActionLink("Logout", "Logout", new { controller = "Login" }, new { @class = "dropdown-item" })
                     </div>
                 </div>
                 <!-- main navigation -->
