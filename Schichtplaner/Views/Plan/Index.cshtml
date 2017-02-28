@@ -3,7 +3,8 @@
     ViewBag.Title = "Schichtplaner";
     DateTime montag = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
 }
-
+<button class="speicher_button">Speichern</button>
+@Html.AntiForgeryToken()
 <table>
     <thead>
         <tr>
@@ -38,26 +39,27 @@
         {
            <tr>
                <td>
-                   <div>
+                   <div class="person" person-id="@personSchichten.person.Id">
                        <span>@personSchichten.person.Name</span>
                        <span>@personSchichten.person.Vorname</span>
                    </div>
                </td>
                @for (int i = 0; i < 7; i++)
-               {
+                       {
 
-                   DateTime start = montag.AddDays(i).Date;
-                   DateTime end = montag.AddDays(i + 1).Date;
-                   var schichten = personSchichten.schichten.Where((s) => s.Startzeit_soll >= start && s.Startzeit_soll <= end);
-                   if (schichten.Count() > 0)
-                   {
-                       var schicht = schichten.First();
-
+                           DateTime start = montag.AddDays(i).Date;
+                           DateTime end = montag.AddDays(i + 1).Date;
+                           var schichten = personSchichten.schichten.Where((s) => s.Startzeit_soll >= start && s.Startzeit_soll <= end);
+                           if (schichten.Count() > 0)
+                           {
+                               var schicht = schichten.First();
+                               var startzeit = schicht.Startzeit_soll.ToString("HHmm");
+                               var endzeit = schicht.Endzeit_soll.ToString("HHmm");
                         <td>
-                            <input wochentag="@i" date="@start.Date" class="schicht_input"  type="number" value="@schicht.Startzeit_soll"/>
+                            <input wochentag="@i" date="@start.Date" class="schicht_input"  type="number" value="@startzeit"/>
                         </td>
                         <td>
-                            <input wochentag="@i" date="@start.Date" class="schicht_input"  type="number" value="@schicht.Endzeit_soll" />
+                            <input wochentag="@i" date="@start.Date" class="schicht_input"  type="number" value="@endzeit" />
                         </td>
                         <td>
                             <input wochentag="@i" date="@start.Date" class="schicht_input"  type="number" value="@schicht.Pause" />

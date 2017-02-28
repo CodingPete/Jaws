@@ -7,7 +7,7 @@ using Schichtplaner.ServiceReference1;
 
 namespace Schichtplaner.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    
     public class PlanController : Controller
     {
         private ServiceReference1.Service1Client client;
@@ -27,7 +27,9 @@ namespace Schichtplaner.Controllers
             // Hole alle Angestellten
             var personalliste = client.getPersonalList();
 
-            foreach(Personal person in personalliste)
+            DateTime monday = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
+            DateTime sunday = monday.AddDays(6).Date;
+            foreach (Personal person in personalliste)
             {
                 // Person in ihrer Schichtenliste ablegen
                 PersonSchichten personSchicht = new PersonSchichten();
@@ -35,7 +37,7 @@ namespace Schichtplaner.Controllers
                 personSchicht.vertrag = client.getArbeitsvertragbyId(person.ArbeitsvertragId);
                 
                 // Alle Schichten dieser Woche holen             
-                personSchicht.schichten = client.getSchichtByPersonalIdAndBetween(person.Id, DateTime.Now, DateTime.Now);
+                personSchicht.schichten = client.getSchichtByPersonalIdAndBetween(person.Id, monday, sunday);
 
                 personSchichtenListe.Add(personSchicht);
             }
@@ -61,13 +63,16 @@ namespace Schichtplaner.Controllers
 
         // POST: Plan/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(List<Schicht> schichten)
         {
             try
             {
-                // Empfange Liste an Schichten
+                client.deleteSchichtByWeek(schichten.First().Startzeit_ist);
 
-                // Sende Schichten an den Server
+                foreach (Schicht schicht in schichten)
+                {
+                    client.setSchicht(schicht);
+                }
 
                 return RedirectToAction("Index");
             }
