@@ -31,7 +31,8 @@ namespace Schichtplaner.Controllers
                 // Person in ihrer Schichtenliste ablegen
                 PersonSchichten personSchicht = new PersonSchichten();
                 personSchicht.person = person;
-
+                personSchicht.vertrag = client.getArbeitsvertragByPersonalId(person.Id);
+                
                 // Alle Schichten dieser Woche holen             
                 personSchicht.schichten = client.getSchichtByPersonalIdAndBetween(person.Id, DateTime.Now, DateTime.Now);
 
