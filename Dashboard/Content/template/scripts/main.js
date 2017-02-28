@@ -154,9 +154,13 @@
 
     $('.mouseEffects').mouseover(function () {
         $(this).find('th').find('a').show();
+        $(this).find('th').find('a').find('.edit').html('edit');
+        $(this).find('th').find('a').find('.delete').html('delete');
     });
     $('.mouseEffects').mouseout(function () {
         $(this).find('th').find('a').hide();
+        $(this).find('th').find('a').find('.edit').html('');
+        $(this).find('th').find('a').find('.delete').html('');
     });
 
     $('.delete-confirmation').on('click', function () {
@@ -212,7 +216,37 @@
                 }
             });
             return false;
-        });	
+        });
+    });
+
+    $('.create-via-ajax').on('click', function () {
+        $('form').first().bind('submit', function () {
+            var form = $('form').first();
+            var data = form.serialize();
+            swal({
+                title: 'Warten',
+                text: 'auf Fertigstellung',
+                type: 'info',
+                showCancelButton: false,
+                closeOnConfirm: false,     
+                showLoaderOnConfirm: true
+            });
+            $.ajax({
+                type: "POST",
+                url: form.attr('action'),
+                data: data,
+                success: function () {
+                    swal({
+                        title: 'Erfolgreich',
+                        text: 'erstellt.',
+                        type: 'success',
+                    }, function () {
+                        window.location = form.attr('action').substr(0, form.attr('action').lastIndexOf('/Create'));
+                    });
+                }
+            });
+            return false;
+        });
     });
 
 })(jQuery);
