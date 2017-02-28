@@ -53,7 +53,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.BelegSet.Add(beleg);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
 
@@ -87,7 +94,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(beleg).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
             ViewBag.LieferartId = new SelectList(db.LieferartSet, "Id", "Name", beleg.LieferartId);
@@ -116,7 +130,14 @@ namespace Dashboard.Controllers
         {
             Beleg beleg = db.BelegSet.Find(id);
             db.BelegSet.Remove(beleg);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+            }
             return RedirectToAction("Index");
         }
 

@@ -51,7 +51,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.ArbeitsvertragSet.Add(arbeitsvertrag);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
 
@@ -83,7 +90,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(arbeitsvertrag).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
             return View(arbeitsvertrag);
@@ -111,7 +125,14 @@ namespace Dashboard.Controllers
         {
             Arbeitsvertrag arbeitsvertrag = db.ArbeitsvertragSet.Find(id);
             db.ArbeitsvertragSet.Remove(arbeitsvertrag);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+            }
             return RedirectToAction("Index");
         }
 

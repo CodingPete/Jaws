@@ -51,7 +51,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.LieferantSet.Add(lieferant);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
 
@@ -83,7 +90,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(lieferant).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
             return View(lieferant);
@@ -111,7 +125,14 @@ namespace Dashboard.Controllers
         {
             Lieferant lieferant = db.LieferantSet.Find(id);
             db.LieferantSet.Remove(lieferant);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+            }
             return RedirectToAction("Index");
         }
 

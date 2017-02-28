@@ -51,7 +51,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.RechtSet.Add(recht);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
 
@@ -83,7 +90,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(recht).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
             return View(recht);
@@ -111,7 +125,14 @@ namespace Dashboard.Controllers
         {
             Recht recht = db.RechtSet.Find(id);
             db.RechtSet.Remove(recht);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+            }
             return RedirectToAction("Index");
         }
 

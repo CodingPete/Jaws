@@ -54,7 +54,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.PersonalSet.Add(personal);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
 
@@ -90,7 +97,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(personal).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
             ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Id", personal.ArbeitsvertragId);
@@ -120,7 +134,14 @@ namespace Dashboard.Controllers
         {
             Personal personal = db.PersonalSet.Find(id);
             db.PersonalSet.Remove(personal);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+            }
             return RedirectToAction("Index");
         }
 

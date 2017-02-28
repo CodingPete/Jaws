@@ -53,7 +53,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.RolleSet.Add(rolle);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
 
 
                 var Rechte = db.RechtSet.ToList();
@@ -71,7 +78,14 @@ namespace Dashboard.Controllers
 
                     }
                 });
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
 
             }
@@ -111,7 +125,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(rolle).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
 
                 var Rechte = db.RechtSet.ToList();
 
@@ -141,7 +162,14 @@ namespace Dashboard.Controllers
                        
                     }
                 });
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
             return View(rolle);
@@ -178,7 +206,14 @@ namespace Dashboard.Controllers
             });
             Rolle rolle = db.RolleSet.Find(id);
             db.RolleSet.Remove(rolle);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+            }
             return RedirectToAction("Index");
         }
 

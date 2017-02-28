@@ -54,7 +54,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.RolleRechtSet.Add(rolleRecht);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
 
@@ -90,7 +97,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(rolleRecht).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
             ViewBag.RolleId = new SelectList(db.RolleSet, "Id", "Name", rolleRecht.RolleId);
@@ -120,7 +134,14 @@ namespace Dashboard.Controllers
         {
             RolleRecht rolleRecht = db.RolleRechtSet.Find(id);
             db.RolleRechtSet.Remove(rolleRecht);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+            }
             return RedirectToAction("Index");
         }
 

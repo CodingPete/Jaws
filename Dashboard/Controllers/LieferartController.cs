@@ -51,7 +51,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.LieferartSet.Add(lieferart);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
 
@@ -83,7 +90,14 @@ namespace Dashboard.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(lieferart).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+                }
                 return RedirectToAction("Index");
             }
             return View(lieferart);
@@ -111,7 +125,15 @@ namespace Dashboard.Controllers
         {
             Lieferart lieferart = db.LieferartSet.Find(id);
             db.LieferartSet.Remove(lieferart);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
+            }
+            
             return RedirectToAction("Index");
         }
 

@@ -193,6 +193,9 @@
                     }, function () {
                         window.location.reload();
                     });
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    swal('Fehler', errorThrown, 'error');
                 }
             });
 
@@ -216,6 +219,9 @@
                         }, function () {
                             window.location = form.attr('action').substr(0, form.attr('action').lastIndexOf('/Edit'));
                         });
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        swal('Fehler', errorThrown, 'error');
                     }
                 });
             }
@@ -249,6 +255,9 @@
                             console.log(response);
                             window.location = form.attr('action').substr(0, form.attr('action').lastIndexOf('/Create'));
                         });
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        swal('Fehler', errorThrown, 'error');
                     }
                 });
             }

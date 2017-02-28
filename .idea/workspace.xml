@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae05cfd1-d24c-4dae-9c99-af1f1f44e908" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/css/dataTables.bootstrap4.css" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/css/dataTables.bootstrap4.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.bootstrap.min.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.bootstrap4.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.bootstrap4.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.bootstrap4.min.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.bootstrap4.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.foundation.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.foundation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.foundation.min.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.foundation.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.jqueryui.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.jqueryui.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.jqueryui.min.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.jqueryui.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.material.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.material.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.material.min.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.material.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.semanticui.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.semanticui.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.semanticui.min.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.semanticui.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.uikit.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.uikit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.uikit.min.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/dataTables.uikit.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/jquery.dataTables.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/jquery.dataTables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/jquery.dataTables.min.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/jquery.dataTables.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/jquery.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/vendor/datatables/media/js/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Views/Beleg/Index.cshtml" afterPath="$PROJECT_DIR$/Dashboard/Views/Beleg/Index.cshtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Content/template/scripts/main.js" afterPath="$PROJECT_DIR$/Dashboard/Content/template/scripts/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dashboard/Controllers/LieferartController.cs" afterPath="$PROJECT_DIR$/Dashboard/Controllers/LieferartController.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,11 +51,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table-datatables.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="table-datatables.html" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/table-datatables.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="699" column="18" lean-forward="true" selection-start-line="672" selection-start-column="12" selection-end-line="699" selection-end-column="18" />
+            <state relative-caret-position="200">
+              <caret line="680" column="26" lean-forward="false" selection-start-line="680" selection-start-column="26" selection-end-line="680" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ui-alerts.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/ui-alerts.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="756" column="78" lean-forward="false" selection-start-line="756" selection-start-column="78" selection-end-line="756" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alert.js" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/scripts/ui/alert.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="543">
+              <caret line="55" column="8" lean-forward="true" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -83,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/Dashboard/Content/template/scripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4862">
-              <caret line="289" column="32" lean-forward="true" selection-start-line="289" selection-start-column="32" selection-end-line="289" selection-end-column="32" />
+              <caret line="293" column="32" lean-forward="false" selection-start-line="293" selection-start-column="32" selection-end-line="293" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -94,6 +96,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>value2datetimestr</find>
+      <find>and by</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -351,12 +354,12 @@
       <option name="presentableId" value="Default" />
       <updated>1488272107436</updated>
       <workItem from="1488272110749" duration="647000" />
-      <workItem from="1488282768409" duration="1392000" />
+      <workItem from="1488282768409" duration="2953000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2039000" />
+    <option name="totallyTimeSpent" value="3600000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -454,7 +457,7 @@
     <entry file="file://$PROJECT_DIR$/Dashboard/Content/template/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4862">
-          <caret line="289" column="32" lean-forward="true" selection-start-line="289" selection-start-column="32" selection-end-line="289" selection-end-column="32" />
+          <caret line="293" column="32" lean-forward="false" selection-start-line="293" selection-start-column="32" selection-end-line="293" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -469,8 +472,24 @@
     </entry>
     <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/table-datatables.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="699" column="18" lean-forward="true" selection-start-line="672" selection-start-column="12" selection-end-line="699" selection-end-column="18" />
+        <state relative-caret-position="200">
+          <caret line="680" column="26" lean-forward="false" selection-start-line="680" selection-start-column="26" selection-end-line="680" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/ui-alerts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="756" column="78" lean-forward="false" selection-start-line="756" selection-start-column="78" selection-end-line="756" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/themeforest-16401649-milestone-bootstrap-4-dashboard-template/html/app/scripts/ui/alert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="55" column="8" lean-forward="true" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="69" />
           <folding />
         </state>
       </provider>
