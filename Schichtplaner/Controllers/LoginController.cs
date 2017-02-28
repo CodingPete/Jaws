@@ -40,15 +40,17 @@ namespace Schichtplaner.Controllers
                 Rolle role = client.getRollebyId(person.RolleId);
                 Boolean isAdmin = false;
                 var rechte = client.getRechtbyRolleId(role.Id);
-
+                FormsAuthentication.RedirectFromLoginPage(person.email, false);
                 if (rechte.Contains(admin))
                 {
                     isAdmin = true;
+                    Roles.AddUserToRole(person.email, admin.Name);
                 }
 
-                FormsAuthentication.RedirectFromLoginPage(person.Vorname+" "+person.Name, false);
+                
             
-                Session["Email"] = person.email;
+                Session["Name"] = person.Name;
+                Session["Vorname"] = person.Vorname;
                 Session["Rolle"] = role.Name;
                 Session["isAdmin"] = isAdmin;
             }
