@@ -53,15 +53,27 @@
                    {
                        var schicht = schichten.First();
 
-                                <td>@schicht.Startzeit_soll</td>
-                                <td>@schicht.Endzeit_soll</td>
-                                <td>@schicht.Pause</td>
+                        <td>
+                            <input wochentag="@i" date="@start.Date" class="schicht_input"  type="number" value="@schicht.Startzeit_soll"/>
+                        </td>
+                        <td>
+                            <input wochentag="@i" date="@start.Date" class="schicht_input"  type="number" value="@schicht.Endzeit_soll" />
+                        </td>
+                        <td>
+                            <input wochentag="@i" date="@start.Date" class="schicht_input"  type="number" value="@schicht.Pause" />
+                        </td>
                    }
                    else
                    {
-                       <td>00:00</td>
-                       <td>00:00</td>
-                       <td>0:00</td>
+                       <td>
+                           <input wochentag="@i"  date="@start.Date" class="schicht_input"  type="number" />
+                       </td>
+                       <td>
+                            <input wochentag="@i"  date="@start.Date" class="schicht_input" type="number" />
+                       </td>
+                       <td>
+                            <input wochentag="@i"  date="@start.Date" class="schicht_input" type="number" />
+                       </td>
                    }
                }
 
