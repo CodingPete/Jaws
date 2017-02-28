@@ -2,7 +2,15 @@
  * Calendar app page
  */
 (function($) {
-  'use strict';
+    'use strict';
+
+    $.ajax({
+        type: "GET",
+        url: "/Schicht/GetAll",
+        success: function (response) {
+            console.log(response);
+        }
+    });
 
   var date = new Date();
   var d = date.getDate();
