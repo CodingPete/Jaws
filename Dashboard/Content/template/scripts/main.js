@@ -199,22 +199,24 @@
 
     $('.edit-via-ajax').on('click', function () {
         $('form').first().bind('submit', function () {
-            var form = $('form').first();
-            var data = form.serialize();
-            $.ajax({
-                type: "POST",
-                url: form.attr('action'),
-                data: data,
-                success: function () {
-                    swal({
-                        title: 'Erfolgreich',
-                        text: 'gespeichert.',
-                        type: 'success',
-                    }, function () {
-                        window.location = form.attr('action').substr(0, form.attr('action').lastIndexOf('/Edit'));
-                    });
-                }
-            });
+            if (validationCheck()) {
+                var form = $('form').first();
+                var data = form.serialize();
+                $.ajax({
+                    type: "POST",
+                    url: form.attr('action'),
+                    data: data,
+                    success: function () {
+                        swal({
+                            title: 'Erfolgreich',
+                            text: 'gespeichert.',
+                            type: 'success',
+                        }, function () {
+                            window.location = form.attr('action').substr(0, form.attr('action').lastIndexOf('/Edit'));
+                        });
+                    }
+                });
+            }
             return false;
         });
     });
@@ -261,35 +263,66 @@
         return true;
     }
 
-    $('input[type="datetime-local"]').each(function () {
-        if (this.value.indexOf('/') > -1) {
-            var data = this.value.split('/');
-
-            var day = data[1];
-            if (day.length == 1) {
-                day = "0" + day;
-            }
-
-            var month = data[0];
-            if (month.length == 1) {
-                month = "0" + month;
-            }
-
-            var time = data[2].split(' ');
-
-            var year = time[0];
-            var timeSplit = time[1].split(':');
-            var hour = timeSplit[0];
-            var minute = timeSplit[1];
-            var second = timeSplit[2];
-
-            if (time[2] == "PM") {
-                var hourInt = parseInt(hour) + 12;
-                hour = "" + hourInt;
-            }
-
-            this.value = year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second;
-        }
-    });
-
 })(jQuery);
+
+function currentDateFormatToObj(str) {
+    var obj = new Object();
+    var strLocal = currentFormatToDateTimeLocal(str);
+    var strLocalArr = currentFormatToDateTimeLocal(strLocal).split('T')
+    if (strLocal.indexOf('T') > -1) {
+        obj = {
+            "day": strLocal.split('T')[0].split('-')[2],
+            "month": strLocal.split('T')[0].split('-')[1],
+            "year": strLocal.split('T')[0].split('-')[0],
+            "hour": strLocal.split('T')[1].split(':')[0],
+            "minute": strLocal.split('T')[1].split(':')[1],
+            "second": str.split(' ')[1].split(':')[2],
+            "str": strLocalArr[0] + " " + strLocalArr[1]
+        }
+    }
+
+    return obj;
+}
+
+function currentFormatToDateTimeLocal(str) {
+    if (str.indexOf('/') > -1) {
+        var data = str.split('/');
+
+        var day = data[1];
+        if (day.length == 1) {
+            day = "0" + day;
+        }
+
+        var month = data[0];
+        if (month.length == 1) {
+            month = "0" + month;
+        }
+
+        var time = data[2].split(' ');
+
+        var year = time[0];
+        var timeSplit = time[1].split(':');
+        var hour = timeSplit[0];
+        var minute = timeSplit[1];
+        var second = timeSplit[2];
+
+        if (time[2] == "PM") {
+            if (parseInt(hour) != 12) {
+                var hourInt = parseInt(hour) + 12;
+                if (hourInt == 0)
+                    hour = "00";
+                else
+                    hour = "" + hourInt;
+            }
+        } else {
+            if (parseInt(hour) == 12)
+                hour = "00";
+            if (hour.length == 1)
+                hour = "0" + hour;
+        }
+
+        return year + "-" + month + "-" + day + "T" + hour + ":" + minute;
+    }
+
+    return str;
+}

@@ -2,123 +2,148 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+@Html.AntiForgeryToken()
+<div class="card">
+    <div class="card-header no-bg b-a-0">
+        Personal
+    </div>
+    <div class="card-block">
+        <p>
+            <a href="@Url.Action("Create")" class="btn btn-success"><i class="material-icons text-default">add_circle</i></a>
+        </p>
+        <div class="table-responsive no-more-tables">
+            <table class="table table-hover datatable">
+                <thead>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            <a style="opacity: 0;"><i class="material-icons text-primary">edit</i></a>
+                        </th>
+                        <th>
+                            <a style="opacity: 0;"><i class="material-icons text-primary">delete</i></a>
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Vorname)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Straße)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Hausnummer)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Zusatz)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Postleitzahl)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ort)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IBAN)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BIC)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Steuerklasse)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Telefon)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Mobil)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.passwort)
+                        </th>
+                        <th>
+                            Arbeitsvertrag Id
+                        </th>
+                        <th>
+                            Rolle
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Vorname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Straße)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hausnummer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Zusatz)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Postleitzahl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ort)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IBAN)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BIC)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Steuerklasse)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Telefon)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Mobil)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.passwort)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Arbeitsvertrag.Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rolle.Name)
-        </th>
-        <th></th>
-    </tr>
+                        <tr class="mouseEffects">
+                            <th scope="row" data-title="#">
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </th>
+                            <th scope="row" data-title="">
+                                <a href="@Url.Action("Edit", new { id = item.Id })"><i class="material-icons text-primary edit"></i></a>
+                            </th>
+                            <th scope="row" data-title="">
+                                <a class="delete-confirmation" id="@Url.Action("Delete", new { id = item.Id })"><i class="material-icons text-primary delete"></i></a>
+                            </th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Vorname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Straße)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hausnummer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Zusatz)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Postleitzahl)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ort)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IBAN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BIC)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Steuerklasse)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Telefon)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mobil)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.passwort)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Arbeitsvertrag.Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rolle.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+                            <td data-title="@Html.DisplayNameFor(model => model.Name)">
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td data-title="@Html.DisplayNameFor(model => model.Vorname)">
+                                @Html.DisplayFor(modelItem => item.Vorname)
+                            </td>
+                            <td data-title="@Html.DisplayNameFor(model => model.Straße)">
+                                @Html.DisplayFor(modelItem => item.Straße)
+                            </td>
+                            <td data-title="@Html.DisplayNameFor(model => model.Hausnummer)">
+                                @Html.DisplayFor(modelItem => item.Hausnummer)
+                            </td>
+                            <td data-title="@Html.DisplayNameFor(model => model.Zusatz)">
+                                @Html.DisplayFor(modelItem => item.Zusatz)
+                            </td>
+                            <td data-title="@Html.DisplayNameFor(model => model.Postleitzahl)">
+                                @Html.DisplayFor(modelItem => item.Postleitzahl)
+                            </td>
+                            <td data-title="@Html.DisplayNameFor(model => model.Ort)">
+                                @Html.DisplayFor(modelItem => item.Ort)
+                            </td>
+                            <td data-title="@Html.DisplayNameFor(model => model.IBAN)">
+                                @Html.DisplayFor(modelItem => item.IBAN)
+                            </td>
+                            <td data-title="@Html.DisplayNameFor(model => model.BIC)">
+                                @Html.DisplayFor(modelItem => item.BIC)
+                            </td>
+                            <td data-title="@Html.DisplayNameFor(model => model.Steuerklasse)">
+                                @Html.DisplayFor(modelItem => item.Steuerklasse)
+                            </td>
+                            <td data-title="@Html.DisplayNameFor(model => model.Telefon)">
+                                @Html.DisplayFor(modelItem => item.Telefon)
+                            </td>
+                            <td data-title="@Html.DisplayNameFor(model => model.Mobil)">
+                                @Html.DisplayFor(modelItem => item.Mobil)
+                            </td>
+                            <td data-title="@Html.DisplayNameFor(model => model.email)">
+                                @Html.DisplayFor(modelItem => item.email)
+                            </td>
+                            <td data-title="@Html.DisplayNameFor(model => model.passwort)">
+                                @Html.DisplayFor(modelItem => item.passwort)
+                            </td>
+                            <td data-title="Arbeitsvertrag Id">
+                                @Html.DisplayFor(modelItem => item.Arbeitsvertrag.Id)
+                            </td>
+                            <td data-title="Rolle">
+                                @Html.DisplayFor(modelItem => item.Rolle.Name)
+                            </td>
+                        </tr>
 
-</table>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
