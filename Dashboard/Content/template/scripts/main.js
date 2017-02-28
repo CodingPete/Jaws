@@ -150,15 +150,17 @@
         }
     }
 
-    $('.mouseEffects').find('th').find('a').hide();
+    $('.mouseEffects').css('height', '50px');
+
+    $('.mouseEffects').find('th').find('a').css('visibility', 'hidden');
 
     $('.mouseEffects').mouseover(function () {
-        $(this).find('th').find('a').show();
+        $(this).find('th').find('a').css('visibility', 'visible');
         $(this).find('th').find('a').find('.edit').html('edit');
         $(this).find('th').find('a').find('.delete').html('delete');
     });
     $('.mouseEffects').mouseout(function () {
-        $(this).find('th').find('a').hide();
+        $(this).find('th').find('a').css('visibility', 'hidden');
         $(this).find('th').find('a').find('.edit').html('');
         $(this).find('th').find('a').find('.delete').html('');
     });
