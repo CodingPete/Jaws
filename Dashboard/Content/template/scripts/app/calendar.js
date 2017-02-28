@@ -6,9 +6,9 @@
 
     $.ajax({
         type: "GET",
-        url: "/Schicht/GetAll",
+        url: "/Schicht/Index",
         success: function (response) {
-            console.log(response);
+
         }
     });
 

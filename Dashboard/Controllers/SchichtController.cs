@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DAL;
+using System.Web.Services;
+using System.Web.Script.Services;
+using System.Web.Script.Serialization;
 
 namespace Dashboard.Controllers
 {
@@ -19,18 +22,6 @@ namespace Dashboard.Controllers
         {
             var schichtSet = db.SchichtSet.Include(s => s.Personal);
             return View(schichtSet.ToList());
-        }
-
-        public ActionResult GetAll()
-        {
-            var schichtSet = db.SchichtSet.Include(s => s.Personal);
-
-            var javaScriptSerializer = new
-            System.Web.Script.Serialization.JavaScriptSerializer();
-            string jsonString = javaScriptSerializer.Serialize(schichtSet.ToArray());
-
-            //  Send "Success"
-            return Json(new { success = true, responseText = jsonString }, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Schicht/Details/5
