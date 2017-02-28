@@ -41,6 +41,8 @@ function person_summe(thut) {
 
                 sum_unix += end_unix - start_unix;
         }
+        $(that).find(".arbwo").text(sum_unix);
+        $(that).find(".arbwo");
         console.log(sum_unix);
     } catch (err) {
         // Fehlermeldung ausgeben
