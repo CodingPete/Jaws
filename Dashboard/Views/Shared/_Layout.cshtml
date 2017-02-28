@@ -23,47 +23,21 @@
 
     <div class="app skin-4">
         <!--sidebar panel-->
-@if (User.Identity.IsAuthenticated)
-            {
-        <div class="off-canvas-overlay" data-toggle="sidebar"></div>
-        <div class="sidebar-panel">
-            <div class="brand">
-                <!-- toggle offscreen menu -->
-                <a href="javascript:;" data-toggle="sidebar" class="toggle-offscreen hidden-lg-up">
-                    <i class="material-icons">menu</i>
-                </a>
-                <!-- /toggle offscreen menu -->
-                <!-- logo -->
-                <a class="brand-logo">
-                    <img class="expanding-hidden" src="~/Content/template/images/logo.png" alt="" />
-                </a>
-                <!-- /logo -->
-            </div>
-                <div class="nav-profile dropdown">
-                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                        <div class="user-image">
-                            <img src="/Content/template/images/avatar.jpg" class="avatar img-circle" alt="user" title="user" />
-                        </div>
-                        <div class="user-info expanding-hidden">
-                            @User.Identity.Name
-                            @if (Request.Cookies["UserInformation"] != null)
-                            {
-                                <small class="bold">@Request.Cookies["UserInformation"].Values["Email"].ToString()</small>
-                                <small class="bold">@Request.Cookies["UserInformation"].Values["Rolle"].ToString()</small>
-                            }
-                        </div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="off-canvas-overlay" data-toggle="sidebar"></div>
+            <div class="sidebar-panel">
+                <div class="brand">
+                    <!-- toggle offscreen menu -->
+                    <a href="javascript:;" data-toggle="sidebar" class="toggle-offscreen hidden-lg-up">
+                        <i class="material-icons">menu</i>
                     </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:;">Settings</a>
-                        <a class="dropdown-item" href="javascript:;">Upgrade</a>
-                        <a class="dropdown-item" href="javascript:;">
-                            <span>Notifications</span>
-                            <span class="tag bg-primary">34</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:;">Help</a>
-                        @Html.ActionLink("Logout", "Logout", new { controller = "Login" }, new { @class = "dropdown-item" })
-                    </div>
+                    <!-- /toggle offscreen menu -->
+                    <!-- logo -->
+                    <a class="brand-logo">
+                        <img class="expanding-hidden" src="~/Content/template/images/logo.png" alt="" />
+                    </a>
+                    <!-- /logo -->
                 </div>
                 <!-- main navigation -->
                 <nav>
@@ -72,102 +46,102 @@
                         <!-- dashboard -->
                         <li>
                             <a href="@Url.Action("Index", "Home")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>Startseite</span>
+                                <i class="material-icons text-primary">dashboard</i>
+                                <span>Dashboard</span>
                             </a>
                         </li>
                         <li>
-                            <a href="@Url.Action("Index", "Lieferant")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>Lieferanten</span>
+                            <a href="javascript:;">
+                                <span class="menu-caret">
+                                    <i class="material-icons">arrow_drop_down</i>
+                                </span>
+                                <i class="material-icons text-success">add_shopping_cart</i>
+                                <span>Warendisposition</span>
                             </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="@Url.Action("Index", "Lieferant")">
+                                        <span>Lieferanten</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index", "Lieferart")">
+                                        <span>Lieferarten</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index", "Artikel")">
+                                        <span>Artikel</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index", "Warengruppe")">
+                                        <span>Warengruppen</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index", "Beleg")">
+                                        <span>Beleg</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="@Url.Action("Index", "Warengruppe")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>Warengruppen</span>
+                            <a href="javascript:;">
+                                <span class="menu-caret">
+                                    <i class="material-icons">arrow_drop_down</i>
+                                </span>
+                                <i class="material-icons text-warning">assignment_ind</i>
+                                <span>Personalverwaltung</span>
                             </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#">
+                                        <span>Personaleinsatzplanung</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index", "Personal")">
+                                        <span>Personal</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index", "Arbeitsvertrag")">
+                                        <span>Arbeitsvertrag</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index", "Rolle")">
+                                        <span>Rolle</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index", "Recht")">
+                                        <span>Recht</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="@Url.Action("Index", "Artikel")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>Artikel</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index", "Beleg")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>Beleg</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index", "ArtikelBeleg")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>ArtikelBeleg</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index", "Lieferart")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>Lieferart</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index", "Personal")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>Personal</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index", "Arbeitsvertrag")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>Arbeitsvertrag</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index", "Rolle")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>Rolle</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index", "RolleRecht")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>RolleRecht</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index", "Recht")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>Recht</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("About", "Home")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>Info</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Contact", "Home")">
-                                <i class="material-icons text-primary">home</i>
-                                <span>Kontakt</span>
+                            <a href="#">
+                                <i class="material-icons text-danger">assessment</i>
+                                <span>Benchmark</span>
                             </a>
                         </li>
                         <!-- /dashboard -->
                     </ul>
                 </nav>
-            <!-- /main navigation -->
+                <!-- /main navigation -->
 
 
-        </div>
-            }
+            </div>
+        }
         <!-- /sidebar panel -->
         <!-- content panel -->
         <div class="main-panel">
             <!-- top header -->
             <nav class="header navbar">
-                <div class="header-inner search-focus">
+                <div class="header-inner">
                     <div class="navbar-item navbar-spacer-right brand hidden-lg-up">
                         <!-- toggle offscreen menu -->
                         <a href="javascript:;" data-toggle="sidebar" class="toggle-offscreen">
@@ -181,8 +155,21 @@
                         <!-- /logo -->
                     </div>
                     <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">
-                        <span>Dashboard</span>
+                        <span>Administration</span>
                     </a>
+                    <div class="navbar-item nav navbar-nav">
+                        <div class="nav-item nav-link dropdown">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                <span>@User.Identity.Name</span>
+                                <span class="menu-caret">
+                                    <i class="material-icons">arrow_drop_down</i>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="Login/Logout">Logout</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </nav>
             <!-- /top header -->
@@ -193,13 +180,6 @@
                 </div>
                 <!-- bottom footer -->
                 <div class="content-footer">
-                    <nav class="footer-right">
-                        <ul class="nav">
-                            <li>
-                                <a href="javascript:;">Feedback</a>
-                            </li>
-                        </ul>
-                    </nav>
                     <nav class="footer-left">
                         <ul class="nav">
                             <li>
@@ -207,15 +187,6 @@
                                     <span>Copyright</span>
                                     &copy; 2016 Your App
                                 </a>
-                            </li>
-                            <li class="hidden-md-down">
-                                <a href="javascript:;">Privacy</a>
-                            </li>
-                            <li class="hidden-md-down">
-                                <a href="javascript:;">Terms</a>
-                            </li>
-                            <li class="hidden-md-down">
-                                <a href="javascript:;">help</a>
                             </li>
                         </ul>
                     </nav>
@@ -225,218 +196,18 @@
             <!-- /main area -->
         </div>
         <!-- /content panel -->
-        <!--Chat panel-->
-        <div class="modal fade sidebar-modal chat-panel" tabindex="-1" role="dialog" aria-labelledby="chat-panel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="chat-header">
-                        <a class="pull-right" href="javascript:;" data-dismiss="modal">
-                            <i class="material-icons">close</i>
-                        </a>
-                        <div class="chat-header-title">People</div>
-                    </div>
-                    <div class="modal-body flex scroll-y">
-                        <div class="chat-group">
-                            <div class="chat-group-header">Favourites</div>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-online"></span>
-                                <span>Catherine Moreno</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-online"></span>
-                                <span>Denise Peterson</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-away"></span>
-                                <span>Charles Wilson</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-away"></span>
-                                <span>Melissa Welch</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-no-disturb"></span>
-                                <span>Vincent Peterson</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Pamela Wood</span>
-                            </a>
-                        </div>
-                        <div class="chat-group">
-                            <div class="chat-group-header">Online</div>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-online"></span>
-                                <span>Tammy Carpenter</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-away"></span>
-                                <span>Emma Sullivan</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-no-disturb"></span>
-                                <span>Andrea Brewer</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-online"></span>
-                                <span>Betty Simmons</span>
-                            </a>
-                        </div>
-                        <div class="chat-group">
-                            <div class="chat-group-header">Other</div>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Denise Peterson</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Jose Rivera</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Diana Robertson</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>William Fields</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Emily Stanley</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Jack Hunt</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Sharon Rice</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Mary Holland</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Diane Hughes</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Steven Smith</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Emily Henderson</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Wayne Kelly</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Jane Garcia</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Jose Jimenez</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Rachel Burton</span>
-                            </a>
-                            <a href="javascript:;" data-toggle="modal" data-target=".chat-message">
-                                <span class="status-offline"></span>
-                                <span>Samantha Ruiz</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade chat-message" tabindex="-1" role="dialog" aria-labelledby="chat-message" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="chat-header">
-                        <div class="pull-right dropdown">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="material-icons">more_vert</i>
-                            </a>
-                            <div class="dropdown-menu" role="menu">
-                                <a class="dropdown-item" href="javascript:;">Profile</a>
-                                <a class="dropdown-item" href="javascript:;">Clear messages</a>
-                                <a class="dropdown-item" href="javascript:;">Delete conversation</a>
-                                <a class="dropdown-item" href="javascript:;" data-dismiss="modal">Close chat</a>
-                            </div>
-                        </div>
-                        <div class="chat-conversation-title">
-                            <img src="~/Content/template/images/face1.jpg" class="avatar avatar-xs img-circle m-r-1 pull-left" alt="">
-                            <div class="overflow-hidden">
-                                <span><strong>Charles Wilson</strong></span>
-                                <small>Last seen today at 03:11</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-body flex scroll-y">
-                        <p class="text-xs-center text-muted small text-uppercase bold m-b-1">Yesterday</p>
-                        <div class="chat-conversation-user them">
-                            <div class="chat-conversation-message">
-                                <p>Hey.</p>
-                            </div>
-                        </div>
-                        <div class="chat-conversation-user them">
-                            <div class="chat-conversation-message">
-                                <p>How are the wife and kids, Taylor?</p>
-                            </div>
-                        </div>
-                        <div class="chat-conversation-user me">
-                            <div class="chat-conversation-message">
-                                <p>Pretty good, Samuel.</p>
-                            </div>
-                        </div>
-                        <p class="text-xs-center text-muted small text-uppercase bold m-b-1">Today</p>
-                        <div class="chat-conversation-user them">
-                            <div class="chat-conversation-message">
-                                <p>Curabitur blandit tempus porttitor.</p>
-                            </div>
-                        </div>
-                        <div class="chat-conversation-user me">
-                            <div class="chat-conversation-message">
-                                <p>Goodnight!</p>
-                            </div>
-                        </div>
-                        <div class="chat-conversation-user them">
-                            <div class="chat-conversation-message">
-                                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chat-conversation-footer">
-                        <button class="chat-left">
-                            <i class="material-icons">face</i>
-                        </button>
-                        <div class="chat-input" contenteditable=""></div>
-                        <button class="chat-right">
-                            <i class="material-icons">photo</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/Chat panel-->
-
     </div>
 
     <script type="text/javascript">
-          window.paceOptions = {
+        window.paceOptions = {
             document: true,
             eventLag: true,
             restartOnPushState: true,
             restartOnRequestAfter: true,
             ajax: {
-              trackMethods: [ 'POST','GET']
+                trackMethods: ['POST', 'GET']
             }
-          };
+        };
     </script>
 
     <!-- build:js({.tmp,app}) scripts/app.min.js -->

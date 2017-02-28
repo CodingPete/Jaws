@@ -144,7 +144,6 @@
     <Compile Include="Controllers\PrognoseController.cs" />
     <Compile Include="Controllers\RechtController.cs" />
     <Compile Include="Controllers\RolleController.cs" />
-    <Compile Include="Controllers\RolleRechtController.cs" />
     <Compile Include="Controllers\SchichtController.cs" />
     <Compile Include="Controllers\WarengruppeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -202,7 +201,6 @@
     <Content Include="Content\template\styles\app.skins.css" />
     <Content Include="Content\template\styles\gsi-step-indicator.css" />
     <Content Include="Content\template\styles\loaders.css" />
-    <Content Include="Content\template\styles\login.css" />
     <Content Include="Content\template\styles\tsf-step-form-wizard.css" />
     <Content Include="Content\template\vendor\angular\angular-csp.css" />
     <Content Include="Content\template\vendor\angular\angular.js" />
@@ -4403,32 +4401,20 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Personal\Create.cshtml" />
-    <Content Include="Views\Personal\Delete.cshtml" />
-    <Content Include="Views\Personal\Details.cshtml" />
     <Content Include="Views\Personal\Edit.cshtml" />
     <Content Include="Views\Personal\Index.cshtml" />
     <Content Include="Views\Arbeitsvertrag\Create.cshtml" />
-    <Content Include="Views\Arbeitsvertrag\Delete.cshtml" />
-    <Content Include="Views\Arbeitsvertrag\Details.cshtml" />
     <Content Include="Views\Arbeitsvertrag\Edit.cshtml" />
     <Content Include="Views\Arbeitsvertrag\Index.cshtml" />
     <Content Include="Views\Artikel\Create.cshtml" />
-    <Content Include="Views\Artikel\Delete.cshtml" />
-    <Content Include="Views\Artikel\Details.cshtml" />
     <Content Include="Views\Artikel\Edit.cshtml" />
     <Content Include="Views\Artikel\Index.cshtml" />
     <Content Include="Views\Warengruppe\Create.cshtml" />
-    <Content Include="Views\Warengruppe\Delete.cshtml" />
-    <Content Include="Views\Warengruppe\Details.cshtml" />
     <Content Include="Views\Warengruppe\Edit.cshtml" />
     <Content Include="Views\Warengruppe\Index.cshtml" />
     <Content Include="Views\Lieferant\Create.cshtml" />
-    <Content Include="Views\Lieferant\Delete.cshtml" />
-    <Content Include="Views\Lieferant\Details.cshtml" />
     <Content Include="Views\Lieferant\Edit.cshtml" />
     <Content Include="Views\Lieferant\Index.cshtml" />
     <Content Include="Views\Markt\Create.cshtml" />
@@ -4442,43 +4428,18 @@
     <Content Include="Views\Schicht\Edit.cshtml" />
     <Content Include="Views\Schicht\Index.cshtml" />
     <Content Include="Views\Rolle\Create.cshtml" />
-    <Content Include="Views\Rolle\Delete.cshtml" />
-    <Content Include="Views\Rolle\Details.cshtml" />
     <Content Include="Views\Rolle\Edit.cshtml" />
     <Content Include="Views\Rolle\Index.cshtml" />
     <Content Include="Views\Recht\Create.cshtml" />
-    <Content Include="Views\Recht\Delete.cshtml" />
-    <Content Include="Views\Recht\Details.cshtml" />
     <Content Include="Views\Recht\Edit.cshtml" />
     <Content Include="Views\Recht\Index.cshtml" />
-    <Content Include="Views\Prognose\Create.cshtml" />
-    <Content Include="Views\Prognose\Delete.cshtml" />
-    <Content Include="Views\Prognose\Details.cshtml" />
-    <Content Include="Views\Prognose\Edit.cshtml" />
-    <Content Include="Views\Prognose\Index.cshtml" />
     <Content Include="Views\Beleg\Create.cshtml" />
-    <Content Include="Views\Beleg\Delete.cshtml" />
-    <Content Include="Views\Beleg\Details.cshtml" />
     <Content Include="Views\Beleg\Edit.cshtml" />
     <Content Include="Views\Beleg\Index.cshtml" />
     <Content Include="Views\Lieferart\Create.cshtml" />
-    <Content Include="Views\Lieferart\Delete.cshtml" />
-    <Content Include="Views\Lieferart\Details.cshtml" />
     <Content Include="Views\Lieferart\Edit.cshtml" />
     <Content Include="Views\Lieferart\Index.cshtml" />
-    <Content Include="Views\PersonalRolle\Create.cshtml" />
-    <Content Include="Views\PersonalRolle\Delete.cshtml" />
-    <Content Include="Views\PersonalRolle\Details.cshtml" />
-    <Content Include="Views\PersonalRolle\Edit.cshtml" />
-    <Content Include="Views\PersonalRolle\Index.cshtml" />
-    <Content Include="Views\RolleRecht\Create.cshtml" />
-    <Content Include="Views\RolleRecht\Delete.cshtml" />
-    <Content Include="Views\RolleRecht\Details.cshtml" />
-    <Content Include="Views\RolleRecht\Edit.cshtml" />
-    <Content Include="Views\RolleRecht\Index.cshtml" />
     <Content Include="Views\ArtikelBeleg\Create.cshtml" />
-    <Content Include="Views\ArtikelBeleg\Delete.cshtml" />
-    <Content Include="Views\ArtikelBeleg\Details.cshtml" />
     <Content Include="Views\ArtikelBeleg\Edit.cshtml" />
     <Content Include="Views\ArtikelBeleg\Index.cshtml" />
     <Content Include="Web.config">
@@ -4532,7 +4493,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60367</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
