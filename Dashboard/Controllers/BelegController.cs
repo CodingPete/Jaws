@@ -17,8 +17,9 @@ namespace Dashboard.Controllers
         // GET: Beleg
         public ActionResult Index()
         {
-            var belegSet = db.BelegSet.Include(b => b.Lieferart).Include((b) => b.ArtikelBeleg);
-            List < Helper_BelegSumme > helper = new List<Helper_BelegSumme>();
+            var belegSet = db.BelegSet.Include(b => b.Lieferart);
+            
+                List< Helper_BelegSumme > helper = new List<Helper_BelegSumme>();
 
             foreach (Beleg beleg in belegSet)
             {
@@ -29,10 +30,11 @@ namespace Dashboard.Controllers
                                   join a in db.ArtikelSet on ab.ArtikelId equals a.Id
                                   select a).ToList();
                 helpi.summe = helpi.artikels.Select((a) => a.Nettoverkaufspreis).Sum();
+                helper.Add(helpi);
             }
             ViewBag.helper = helper;
             
-            return View(helper);
+            return View(belegSet);
         }
 
         // GET: Beleg/Details/5

@@ -32,6 +32,7 @@
                         <th>
                             Lieferart
                         </th>
+                        <th>Summe</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,8 +60,12 @@
                                 @Html.DisplayFor(modelItem => item.Lieferart.Name)
                             </td>
                             <td data-title="Summe">
-                                @foreach (Helper_BelegSumme helper in ViewBag.helper)
+                                @foreach (Helper_BelegSumme helpe in ViewBag.helper)
                                 {
+                                    if (item.Id == helpe.beleg.Id)
+                                    {
+                                        @helpe.summe
+                                    }
                                 }
                             </td>
                         </tr>
