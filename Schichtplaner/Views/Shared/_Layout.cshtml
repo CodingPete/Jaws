@@ -108,15 +108,23 @@
                     </a>
                     <div class="navbar-item nav navbar-nav">
                         <div class="nav-item nav-link dropdown">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                                <span>Hallo @Session["Vorname"] @Session["Name"]</span>
-                                <span class="menu-caret">
-                                    <i class="material-icons">arrow_drop_down</i>
-                                </span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="@Url.Action("Logout", "Login")">Logout</a>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span>Hallo @Session["Vorname"] @Session["Name"]</span>
+                                        <span class="menu-caret">
+                                            <i class="material-icons">arrow_drop_down</i>
+                                        </span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="@Url.Action("Logout", "Login")">Logout</a>
                             </div>
+                                }
+                                else
+                                {
+                                    <span>Bitte logge dich ein</span>
+                                }
+                                
                         </div>
                     </div>
                 </div>
