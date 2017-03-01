@@ -270,8 +270,18 @@ namespace WCFServiceWebRole1
 
         public void setArtikelBeleg(Artikel artikel, Beleg beleg)
         {
+            
             db.ArtikelBelegSet.Add(new ArtikelBeleg() { ArtikelId = artikel.Id, BelegId = beleg.Id });
             db.SaveChanges();
+
+            Lieferart lfa = this.getLieferartbyId(beleg.LieferartId);
+            if (lfa.Name.Equals("Verkauf"))
+            {
+               
+                artikel.Bestand -= 1;
+                artikel.ArtikelBeleg = null;
+                this.updateArtikel(artikel);
+            }
 
         }
 
@@ -279,15 +289,6 @@ namespace WCFServiceWebRole1
         {
             Lieferart lfa = this.getLieferartbyId(beleg.LieferartId);
             beleg.Lieferart = lfa;
-            var artikel = this.getArtikelbyBelegId(beleg.Id);
-            if (lfa.Name.Equals("Verkauf"))
-            {
-                artikel.ForEach(item =>
-                {
-                    item.Bestand = item.Bestand - 1;
-                    this.updateArtikel(item);
-                });
-            }
             beleg.Lieferart.Beleg.Add(beleg);
             db.BelegSet.Add(beleg);
             db.SaveChanges();
@@ -378,6 +379,10 @@ namespace WCFServiceWebRole1
 
         public void updateArtikel(Artikel artikel)
         {
+            //var curartikel = db.ArtikelSet.Find(artikel.Id);
+            //curartikel = artikel;
+            
+
             db.ArtikelSet.Attach(artikel);
             var entry = db.Entry(artikel);
             entry.State = System.Data.Entity.EntityState.Modified;

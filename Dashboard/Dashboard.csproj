@@ -150,6 +150,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper_BelegSumme.cs" />
     <Compile Include="MiniStatistik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\MyMembershipProvider.cs" />
@@ -4523,6 +4524,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Lieferant\Bestellung.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

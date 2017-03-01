@@ -20,6 +20,116 @@ namespace Dashboard.Controllers
             return View(db.LieferantSet.ToList());
         }
 
+
+        public ActionResult TestData()
+        {
+            Artikel artikel = db.ArtikelSet.Where((a) => a.GTIN == "100").First();
+            Lieferart lfa = db.LieferartSet.Where((l) => l.Name == "Verkauf").First();
+
+            DateTime damals = new DateTime(2016, 12, 12).Date;
+            while (!damals.Equals(DateTime.Today.Date))
+            {
+                damals = damals.AddDays(1);
+
+                // Neuen Verkaufsbeleg erstellen
+                Beleg beleg = new Beleg();
+                beleg.Datum = damals;
+                beleg.Lieferart = lfa;
+                beleg.LieferartId = lfa.Id;
+                db.BelegSet.Add(beleg);
+                db.SaveChanges();
+
+                Random rndm = new Random();
+                int menge = rndm.Next(1, 13);
+
+                for (int i = 0; i < menge; i++)
+                {
+                    ArtikelBeleg artikelBeleg = new ArtikelBeleg();
+                    artikelBeleg.Artikel = artikel;
+                    artikelBeleg.ArtikelId = artikel.Id;
+                    artikelBeleg.Beleg = beleg;
+                    artikelBeleg.BelegId = beleg.Id;
+                    artikelBeleg.Menge = 0;
+                    db.ArtikelBelegSet.Add(artikelBeleg);
+                }
+                db.SaveChanges();
+            }
+            return null;
+        }
+        // GET: Lieferant/Bestellung/5
+        public ActionResult Bestellung(int? id)
+        {
+            if(id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            DateTime heute = DateTime.Today.Date;
+            DateTime heuteInEinerWoche = heute.AddDays(7);
+
+            // Der Lieferant zu dem die Bestellung erstellt werden soll
+            Lieferant lieferant = db.LieferantSet.Find(id);
+
+            if (lieferant != null)
+            {
+                // Die Lieferart
+                Lieferart lfa = db.LieferartSet.Where((l) => l.Name == "Einkauf").First();
+
+                // Alle Artikel des Lieferanten
+                List<Artikel> artikels = db.ArtikelSet.Where((a) => a.LieferantId == lieferant.Id).ToList();
+
+                // Artikel-Beleg zuordnung
+                List<ArtikelBeleg> artikelbelegs = new List<ArtikelBeleg>();
+
+                // Der neue Bestellbeleg
+                Beleg bestellung = new Beleg();
+                bestellung.Lieferart = lfa;
+                bestellung.LieferartId = lfa.Id;
+                bestellung.Datum = heute;
+                db.BelegSet.Add(bestellung);
+                db.SaveChanges();
+
+                // Zu jedem Artikel Bestellmenge anhand des derzeitigen Bestandes und der erwarteten Prognosen der kommenden Woche berechnen
+               
+
+                foreach (Artikel artikel in artikels)
+                {
+                    Double prognose_summe = (from p in db.PrognoseSet
+                                             where p.Datum >= heute && p.Datum <= heuteInEinerWoche && p.ArtikelId == artikel.Id
+                                             select p.Abverkauf_soll).DefaultIfEmpty(0).Sum();
+
+                    // Benötigte Menge 
+                    int menge = (int)Math.Ceiling(artikel.Bestand - prognose_summe);
+
+                    // Menge kleiner Null => Bestand reicht nicht aus um den prognostizierten Abverkauf zu decken
+                    if (menge < 0)
+                    {
+                        menge = Math.Abs(menge);
+
+                        for (int i = 0; i < menge; i++)
+                        {
+                            ArtikelBeleg artikelbeleg = new ArtikelBeleg();
+                            artikelbeleg.Artikel = artikel;
+                            artikelbeleg.ArtikelId = artikel.Id;
+                            artikelbeleg.Beleg = bestellung;
+                            artikelbeleg.BelegId = bestellung.Id;
+                            artikelbeleg.Menge = 0;
+                            db.ArtikelBelegSet.Add(artikelbeleg);
+                            artikelbelegs.Add(artikelbeleg);
+                        }
+                    }
+
+                }
+
+                // Wenn keine Artikel in der Bestellung vorliegen
+                if (artikelbelegs.Count() == 0)
+                {
+                    // Leeren Bestellbeleg wieder entfernen
+                    db.BelegSet.Remove(bestellung);
+                }
+                db.SaveChanges();
+            }
+
+            return null;
+        }
+
         // GET: Lieferant/Details/5
         public ActionResult Details(int? id)
         {

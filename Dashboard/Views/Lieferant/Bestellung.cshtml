@@ -65,12 +65,11 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-
                         <tr class="mouseEffects">
                             <th scope="row" data-title="#">
                                 @Html.DisplayFor(modelItem => item.Id)
                             </th>
-                            <th scope="row">
+                            <th scope="row" data-title="">
                                 <a href="/Lieferant/Bestellung/@item.Id">Bestellung</a>
                             </th>
                             <th scope="row" data-title="">
