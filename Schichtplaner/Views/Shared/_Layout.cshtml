@@ -37,7 +37,7 @@
                     <p class="nav-title">NAVIGATION</p>
                     <ul class="nav">
                         <!-- dashboard -->
-                        @if (User.IsInRole("Admin"))
+                        @if (User.IsInRole("Schichtplaner"))
                         {
                             <li>
                                 <a href="@Url.Action("Index", "Plan")">
@@ -87,7 +87,7 @@
                         <!-- /logo -->
                     </div>
                     <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">
-                        @if (User.IsInRole("Admin"))
+                        @if (User.IsInRole("Schichtplaner"))
                         {
                             <span>Schichtplaner - Administration</span>
                         }
