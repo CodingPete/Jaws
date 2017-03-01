@@ -28,6 +28,7 @@
   <xs:complexType name="Arbeitsvertrag">
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Personal" nillable="true" type="tns:ArrayOfPersonal" />
       <xs:element minOccurs="0" name="Stundenlohn" type="xs:double" />
       <xs:element minOccurs="0" name="Wochenstunden" type="xs:int" />
