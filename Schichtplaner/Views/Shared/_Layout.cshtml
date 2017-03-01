@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meine ASP.NET-Anwendung</title>
+    <title>@ViewBag.Title - Jaws</title>
 
     @Styles.Render(Url.Content("~/Content/template/vendor/bower-jvectormap/jquery-jvectormap-1.2.2.css"))
     @Styles.Render(Url.Content("~/Content/template/vendor/datatables/media/css/dataTables.bootstrap4.css"))
@@ -19,7 +19,6 @@
     @Styles.Render(Url.Content("~/Content/template/styles/app.skins.css"))
     <!-- endbuild -->
     @Styles.Render("~/Content/schichtplaner.css")
-    @Styles.Render("~/Content/jquery.timepicker.min.css");
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -47,12 +46,29 @@
                     <p class="nav-title">NAVIGATION</p>
                     <ul class="nav">
                         <!-- dashboard -->
-                        <li>
-                            <a href="@Url.Action("Index", "Plan")">
-                                <i class="material-icons text-primary">perm_contact_calendar</i>
-                                <span>Plan</span>
-                            </a>
-                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a href="@Url.Action("Index", "Plan")">
+                                    <i class="material-icons text-primary">perm_contact_calendar</i>
+                                    <span>Schichten Administrieren</span>
+                                </a>
+                                <a href="@Url.Action("Schichtplan", "Home")">
+                                    <i class="material-icons text-primary">perm_contact_calendar</i>
+                                    <span>Schichtplan</span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="@Url.Action("Schichtplan", "Home")">
+                                    <i class="material-icons text-primary">perm_contact_calendar</i>
+                                    <span>Schichtplan</span>
+                                </a>
+                            </li>
+                        }
+
                         <!-- /dashboard -->
                     </ul>
                 </nav>
@@ -80,7 +96,15 @@
                         <!-- /logo -->
                     </div>
                     <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">
-                        <span>Administration</span>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <span>Schichtplaner - Administration</span>
+                        }
+                        else
+                        {
+                            <span>Schichtplaner</span>
+                        }
+
                     </a>
                     <div class="navbar-item nav navbar-nav">
                         <div class="nav-item nav-link dropdown">
@@ -91,7 +115,7 @@
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="Login/Logout">Logout</a>
+                                <a class="dropdown-item" href="@Url.Action("Logout", "Login")">Logout</a>
                             </div>
                         </div>
                     </div>
@@ -171,7 +195,6 @@
     <!-- data for calender-->
     @Scripts.Render("~/Content/template/scripts/app/calendar.js")
     <!-- end page scripts -->
-    @Scripts.Render("~/Scripts/jquery.timepicker.min.js")
     <!-- initialize page scripts -->
     <script type="text/javascript">
         $('.datatable').DataTable({
