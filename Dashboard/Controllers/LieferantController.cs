@@ -20,6 +20,42 @@ namespace Dashboard.Controllers
             return View(db.LieferantSet.ToList());
         }
 
+
+        public ActionResult TestData()
+        {
+            Artikel artikel = db.ArtikelSet.Where((a) => a.GTIN == "100").First();
+            Lieferart lfa = db.LieferartSet.Where((l) => l.Name == "Verkauf").First();
+
+            DateTime damals = new DateTime(2016, 12, 12).Date;
+            while (!damals.Equals(DateTime.Today.Date))
+            {
+                damals = damals.AddDays(1);
+
+                // Neuen Verkaufsbeleg erstellen
+                Beleg beleg = new Beleg();
+                beleg.Datum = damals;
+                beleg.Lieferart = lfa;
+                beleg.LieferartId = lfa.Id;
+                db.BelegSet.Add(beleg);
+                db.SaveChanges();
+
+                Random rndm = new Random();
+                int menge = rndm.Next(1, 13);
+
+                for (int i = 0; i < menge; i++)
+                {
+                    ArtikelBeleg artikelBeleg = new ArtikelBeleg();
+                    artikelBeleg.Artikel = artikel;
+                    artikelBeleg.ArtikelId = artikel.Id;
+                    artikelBeleg.Beleg = beleg;
+                    artikelBeleg.BelegId = beleg.Id;
+                    artikelBeleg.Menge = 0;
+                    db.ArtikelBelegSet.Add(artikelBeleg);
+                }
+                db.SaveChanges();
+            }
+            return null;
+        }
         // GET: Lieferant/Bestellung/5
         public ActionResult Bestellung(int? id)
         {
