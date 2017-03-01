@@ -58,6 +58,7 @@ namespace Schichtplaner
                 "~/Content/template2/scripts/jquery.ui/draggable.js",
                 "~/Content/template2/scripts/jqueryui-touch-punch/jquery.ui.touch-punch.js",
                 "~/Content/template2/scripts/fullcalendar/fullcalendar.min.js",
+                "~/Content/template2/scripts/fullcalendar/lang-all.js",
                 "~/Content/template2/scripts/fullcalendar/gcal.js",
 
                 "~/Content/template2/scripts/calendar.js"

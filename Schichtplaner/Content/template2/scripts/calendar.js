@@ -51,7 +51,8 @@
   }];
 
   $('.fullcalendar').fullCalendar({
-    editable: true,
+      editable: false,
+      lang: "de",
     contentHeight: 520,
     header: {
       left: 'title',

@@ -233,6 +233,7 @@
     <Content Include="Content\template2\styles\datatables\dataTables.bootstrap4.min.css" />
     <Content Include="Content\template2\styles\font-awesome\font-awesome.css" />
     <Content Include="Content\template2\styles\font-awesome\font-awesome.min.css" />
+    <Content Include="Content\template2\styles\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\template2\styles\fullcalendar\fullcalendar.css" />
     <Content Include="Content\template2\styles\fullcalendar\fullcalendar.min.css" />
     <Content Include="Content\template2\styles\sweetalert\sweetalert.css" />
@@ -4529,6 +4530,11 @@
     <Content Include="Content\template2\fonts\material\MaterialIcons-Regular.ttf" />
     <Content Include="Content\template2\fonts\material\MaterialIcons-Regular.woff" />
     <Content Include="Content\template2\fonts\material\MaterialIcons-Regular.woff2" />
+    <Content Include="Content\template2\styles\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\template2\styles\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\template2\styles\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\template2\styles\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\template2\styles\fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\Schichtplaner20170227110126 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
