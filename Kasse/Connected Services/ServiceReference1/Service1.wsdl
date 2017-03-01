@@ -37,6 +37,12 @@
   <wsdl:message name="IService1_getPersonalbyRolleId_OutputMessage">
     <wsdl:part name="parameters" element="tns:getPersonalbyRolleIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getPersonalbyEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPersonalbyEmail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPersonalbyEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPersonalbyEmailResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_getArbeitsvertragbyId_InputMessage">
     <wsdl:part name="parameters" element="tns:getArbeitsvertragbyId" />
   </wsdl:message>
@@ -103,6 +109,12 @@
   <wsdl:message name="IService1_updateRecht_OutputMessage">
     <wsdl:part name="parameters" element="tns:updateRechtResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getRechtbyName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRechtbyName" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRechtbyName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRechtbyNameResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_setRolleRecht_InputMessage">
     <wsdl:part name="parameters" element="tns:setRolleRecht" />
   </wsdl:message>
@@ -115,17 +127,17 @@
   <wsdl:message name="IService1_updateRolleRecht_OutputMessage">
     <wsdl:part name="parameters" element="tns:updateRolleRechtResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_getRollefromRechtId_InputMessage">
-    <wsdl:part name="parameters" element="tns:getRollefromRechtId" />
+  <wsdl:message name="IService1_getRollebyRechtId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRollebyRechtId" />
   </wsdl:message>
-  <wsdl:message name="IService1_getRollefromRechtId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getRollefromRechtIdResponse" />
+  <wsdl:message name="IService1_getRollebyRechtId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRollebyRechtIdResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_getRechtfromRolleId_InputMessage">
-    <wsdl:part name="parameters" element="tns:getRechtfromRolleId" />
+  <wsdl:message name="IService1_getRechtbyRolleId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRechtbyRolleId" />
   </wsdl:message>
-  <wsdl:message name="IService1_getRechtfromRolleId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getRechtfromRolleIdResponse" />
+  <wsdl:message name="IService1_getRechtbyRolleId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRechtbyRolleIdResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_getSchichtbyId_InputMessage">
     <wsdl:part name="parameters" element="tns:getSchichtbyId" />
@@ -162,6 +174,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_getSchichtByPersonalIdAndBetween_OutputMessage">
     <wsdl:part name="parameters" element="tns:getSchichtByPersonalIdAndBetweenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteSchichtByWeek_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteSchichtByWeek" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteSchichtByWeek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteSchichtByWeekResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_getLieferantbyId_InputMessage">
     <wsdl:part name="parameters" element="tns:getLieferantbyId" />
@@ -271,17 +289,17 @@
   <wsdl:message name="IService1_updateArtikelBeleg_OutputMessage">
     <wsdl:part name="parameters" element="tns:updateArtikelBelegResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_getArtikelfromBelegId_InputMessage">
-    <wsdl:part name="parameters" element="tns:getArtikelfromBelegId" />
+  <wsdl:message name="IService1_getArtikelbyBelegId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelbyBelegId" />
   </wsdl:message>
-  <wsdl:message name="IService1_getArtikelfromBelegId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getArtikelfromBelegIdResponse" />
+  <wsdl:message name="IService1_getArtikelbyBelegId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelbyBelegIdResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_getBelegfromArtikelId_InputMessage">
-    <wsdl:part name="parameters" element="tns:getBelegfromArtikelId" />
+  <wsdl:message name="IService1_getBelegbyArtikelId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBelegbyArtikelId" />
   </wsdl:message>
-  <wsdl:message name="IService1_getBelegfromArtikelId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getBelegfromArtikelIdResponse" />
+  <wsdl:message name="IService1_getBelegbyArtikelId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBelegbyArtikelIdResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_getWarengruppebyId_InputMessage">
     <wsdl:part name="parameters" element="tns:getWarengruppebyId" />
@@ -343,6 +361,12 @@
   <wsdl:message name="IService1_getPrognosebyArtikelId_OutputMessage">
     <wsdl:part name="parameters" element="tns:getPrognosebyArtikelIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getPrognoseByArtikelIdAndDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognoseByArtikelIdAndDate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPrognoseByArtikelIdAndDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPrognoseByArtikelIdAndDateResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_getPrognosebyDate_InputMessage">
     <wsdl:part name="parameters" element="tns:getPrognosebyDate" />
   </wsdl:message>
@@ -400,6 +424,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPersonalbyRolleId" message="tns:IService1_getPersonalbyRolleId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPersonalbyRolleIdResponse" message="tns:IService1_getPersonalbyRolleId_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getPersonalbyEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPersonalbyEmail" message="tns:IService1_getPersonalbyEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPersonalbyEmailResponse" message="tns:IService1_getPersonalbyEmail_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getArbeitsvertragbyId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragbyId" message="tns:IService1_getArbeitsvertragbyId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArbeitsvertragbyIdResponse" message="tns:IService1_getArbeitsvertragbyId_OutputMessage" />
@@ -444,6 +472,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateRecht" message="tns:IService1_updateRecht_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateRechtResponse" message="tns:IService1_updateRecht_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getRechtbyName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRechtbyName" message="tns:IService1_getRechtbyName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRechtbyNameResponse" message="tns:IService1_getRechtbyName_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="setRolleRecht">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/setRolleRecht" message="tns:IService1_setRolleRecht_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/setRolleRechtResponse" message="tns:IService1_setRolleRecht_OutputMessage" />
@@ -452,13 +484,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateRolleRecht" message="tns:IService1_updateRolleRecht_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateRolleRechtResponse" message="tns:IService1_updateRolleRecht_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getRollefromRechtId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRollefromRechtId" message="tns:IService1_getRollefromRechtId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRollefromRechtIdResponse" message="tns:IService1_getRollefromRechtId_OutputMessage" />
+    <wsdl:operation name="getRollebyRechtId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRollebyRechtId" message="tns:IService1_getRollebyRechtId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRollebyRechtIdResponse" message="tns:IService1_getRollebyRechtId_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getRechtfromRolleId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRechtfromRolleId" message="tns:IService1_getRechtfromRolleId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRechtfromRolleIdResponse" message="tns:IService1_getRechtfromRolleId_OutputMessage" />
+    <wsdl:operation name="getRechtbyRolleId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRechtbyRolleId" message="tns:IService1_getRechtbyRolleId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRechtbyRolleIdResponse" message="tns:IService1_getRechtbyRolleId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getSchichtbyId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getSchichtbyId" message="tns:IService1_getSchichtbyId_InputMessage" />
@@ -483,6 +515,10 @@
     <wsdl:operation name="getSchichtByPersonalIdAndBetween">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween" message="tns:IService1_getSchichtByPersonalIdAndBetween_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetweenResponse" message="tns:IService1_getSchichtByPersonalIdAndBetween_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteSchichtByWeek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteSchichtByWeek" message="tns:IService1_deleteSchichtByWeek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteSchichtByWeekResponse" message="tns:IService1_deleteSchichtByWeek_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getLieferantbyId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getLieferantbyId" message="tns:IService1_getLieferantbyId_InputMessage" />
@@ -556,13 +592,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateArtikelBeleg" message="tns:IService1_updateArtikelBeleg_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateArtikelBelegResponse" message="tns:IService1_updateArtikelBeleg_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getArtikelfromBelegId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArtikelfromBelegId" message="tns:IService1_getArtikelfromBelegId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArtikelfromBelegIdResponse" message="tns:IService1_getArtikelfromBelegId_OutputMessage" />
+    <wsdl:operation name="getArtikelbyBelegId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getArtikelbyBelegId" message="tns:IService1_getArtikelbyBelegId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getArtikelbyBelegIdResponse" message="tns:IService1_getArtikelbyBelegId_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getBelegfromArtikelId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getBelegfromArtikelId" message="tns:IService1_getBelegfromArtikelId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getBelegfromArtikelIdResponse" message="tns:IService1_getBelegfromArtikelId_OutputMessage" />
+    <wsdl:operation name="getBelegbyArtikelId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getBelegbyArtikelId" message="tns:IService1_getBelegbyArtikelId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getBelegbyArtikelIdResponse" message="tns:IService1_getBelegbyArtikelId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getWarengruppebyId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getWarengruppebyId" message="tns:IService1_getWarengruppebyId_InputMessage" />
@@ -603,6 +639,10 @@
     <wsdl:operation name="getPrognosebyArtikelId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPrognosebyArtikelId" message="tns:IService1_getPrognosebyArtikelId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPrognosebyArtikelIdResponse" message="tns:IService1_getPrognosebyArtikelId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrognoseByArtikelIdAndDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate" message="tns:IService1_getPrognoseByArtikelIdAndDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDateResponse" message="tns:IService1_getPrognoseByArtikelIdAndDate_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getPrognosebyDate">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPrognosebyDate" message="tns:IService1_getPrognosebyDate_InputMessage" />
@@ -669,6 +709,15 @@
     </wsdl:operation>
     <wsdl:operation name="getPersonalbyRolleId">
       <soap:operation soapAction="http://tempuri.org/IService1/getPersonalbyRolleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonalbyEmail">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPersonalbyEmail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -775,6 +824,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getRechtbyName">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRechtbyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="setRolleRecht">
       <soap:operation soapAction="http://tempuri.org/IService1/setRolleRecht" style="document" />
       <wsdl:input>
@@ -793,8 +851,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getRollefromRechtId">
-      <soap:operation soapAction="http://tempuri.org/IService1/getRollefromRechtId" style="document" />
+    <wsdl:operation name="getRollebyRechtId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRollebyRechtId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -802,8 +860,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getRechtfromRolleId">
-      <soap:operation soapAction="http://tempuri.org/IService1/getRechtfromRolleId" style="document" />
+    <wsdl:operation name="getRechtbyRolleId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRechtbyRolleId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -858,6 +916,15 @@
     </wsdl:operation>
     <wsdl:operation name="getSchichtByPersonalIdAndBetween">
       <soap:operation soapAction="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSchichtByWeek">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteSchichtByWeek" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1027,8 +1094,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getArtikelfromBelegId">
-      <soap:operation soapAction="http://tempuri.org/IService1/getArtikelfromBelegId" style="document" />
+    <wsdl:operation name="getArtikelbyBelegId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getArtikelbyBelegId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1036,8 +1103,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getBelegfromArtikelId">
-      <soap:operation soapAction="http://tempuri.org/IService1/getBelegfromArtikelId" style="document" />
+    <wsdl:operation name="getBelegbyArtikelId">
+      <soap:operation soapAction="http://tempuri.org/IService1/getBelegbyArtikelId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1128,6 +1195,15 @@
     </wsdl:operation>
     <wsdl:operation name="getPrognosebyArtikelId">
       <soap:operation soapAction="http://tempuri.org/IService1/getPrognosebyArtikelId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrognoseByArtikelIdAndDate">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
