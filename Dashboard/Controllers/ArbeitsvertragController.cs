@@ -43,22 +43,15 @@ namespace Dashboard.Controllers
 
         // POST: Arbeitsvertrag/Create
         // Aktivieren Sie zum Schutz vor übermäßigem Senden von Angriffen die spezifischen Eigenschaften, mit denen eine Bindung erfolgen soll. Weitere Informationen 
-        // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
+        // finden Sie unter https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Wochenstunden,Stundenlohn")] Arbeitsvertrag arbeitsvertrag)
+        public ActionResult Create([Bind(Include = "Id,Wochenstunden,Stundenlohn,Name")] Arbeitsvertrag arbeitsvertrag)
         {
             if (ModelState.IsValid)
             {
                 db.ArbeitsvertragSet.Add(arbeitsvertrag);
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (Exception e)
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
-                }
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -82,22 +75,15 @@ namespace Dashboard.Controllers
 
         // POST: Arbeitsvertrag/Edit/5
         // Aktivieren Sie zum Schutz vor übermäßigem Senden von Angriffen die spezifischen Eigenschaften, mit denen eine Bindung erfolgen soll. Weitere Informationen 
-        // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
+        // finden Sie unter https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Wochenstunden,Stundenlohn")] Arbeitsvertrag arbeitsvertrag)
+        public ActionResult Edit([Bind(Include = "Id,Wochenstunden,Stundenlohn,Name")] Arbeitsvertrag arbeitsvertrag)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(arbeitsvertrag).State = EntityState.Modified;
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (Exception e)
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
-                }
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(arbeitsvertrag);
@@ -125,14 +111,7 @@ namespace Dashboard.Controllers
         {
             Arbeitsvertrag arbeitsvertrag = db.ArbeitsvertragSet.Find(id);
             db.ArbeitsvertragSet.Remove(arbeitsvertrag);
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, e.Message);
-            }
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 
