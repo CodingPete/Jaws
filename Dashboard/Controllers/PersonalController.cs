@@ -39,7 +39,7 @@ namespace Dashboard.Controllers
         // GET: Personal/Create
         public ActionResult Create()
         {
-            ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Id");
+            ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Name");
             ViewBag.RolleId = new SelectList(db.RolleSet, "Id", "Name");
             return View();
         }
@@ -82,7 +82,7 @@ namespace Dashboard.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Id", personal.ArbeitsvertragId);
+            ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Name", personal.ArbeitsvertragId);
             ViewBag.RolleId = new SelectList(db.RolleSet, "Id", "Name", personal.RolleId);
             return View(personal);
         }
@@ -107,7 +107,7 @@ namespace Dashboard.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Id", personal.ArbeitsvertragId);
+            ViewBag.ArbeitsvertragId = new SelectList(db.ArbeitsvertragSet, "Id", "Name", personal.ArbeitsvertragId);
             ViewBag.RolleId = new SelectList(db.RolleSet, "Id", "Name", personal.RolleId);
             return View(personal);
         }
