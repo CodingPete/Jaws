@@ -17,17 +17,22 @@ namespace Dashboard.Controllers
         // GET: Beleg
         public ActionResult Index()
         {
-            var belegSet = db.BelegSet.Include(b => b.Lieferart);
+            var belegSet = db.BelegSet.Include(b => b.Lieferart).Include((b) => b.ArtikelBeleg);
+            List < Helper_BelegSumme > helper = new List<Helper_BelegSumme>();
 
             foreach (Beleg beleg in belegSet)
             {
-               /* summen.Add((from b in db.BelegSet
-                              join ab in db.ArtikelBelegSet on b.Id equals ab.BelegId
-                              join a in db.ArtikelSet on ab.ArtikelId equals a.Id
-                              select a.Nettoverkaufspreis).DefaultIfEmpty(0).Sum()); */
+                Helper_BelegSumme helpi = new Helper_BelegSumme();
+                helpi.beleg = beleg;
+                helpi.artikels = (from b in db.BelegSet
+                                  join ab in db.ArtikelBelegSet on b.Id equals ab.BelegId
+                                  join a in db.ArtikelSet on ab.ArtikelId equals a.Id
+                                  select a).ToList();
+                helpi.summe = helpi.artikels.Select((a) => a.Nettoverkaufspreis).Sum();
             }
+            ViewBag.helper = helper;
             
-            return View(belegSet.ToList());
+            return View(helper);
         }
 
         // GET: Beleg/Details/5

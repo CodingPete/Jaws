@@ -150,6 +150,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper_BelegSumme.cs" />
     <Compile Include="MiniStatistik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\MyMembershipProvider.cs" />

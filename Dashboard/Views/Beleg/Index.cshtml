@@ -35,10 +35,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @{ int i = 0; }
                     @foreach (var item in Model)
                     {
-                        i++;
                         <tr class="mouseEffects">
                             <th scope="row" data-title="#">
                                 @Html.DisplayFor(modelItem => item.Id)
@@ -61,7 +59,9 @@
                                 @Html.DisplayFor(modelItem => item.Lieferart.Name)
                             </td>
                             <td data-title="Summe">
-                                @ViewBag.summen.ElementAt(i)
+                                @foreach (Helper_BelegSumme helper in ViewBag.helper)
+                                {
+                                }
                             </td>
                         </tr>
 
