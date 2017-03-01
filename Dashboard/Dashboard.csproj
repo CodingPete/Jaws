@@ -4511,8 +4511,6 @@
     <Content Include="Views\Recht\Create.cshtml" />
     <Content Include="Views\Recht\Edit.cshtml" />
     <Content Include="Views\Recht\Index.cshtml" />
-    <Content Include="Views\Beleg\Create.cshtml" />
-    <Content Include="Views\Beleg\Edit.cshtml" />
     <Content Include="Views\Beleg\Index.cshtml" />
     <Content Include="Views\Lieferart\Create.cshtml" />
     <Content Include="Views\Lieferart\Edit.cshtml" />

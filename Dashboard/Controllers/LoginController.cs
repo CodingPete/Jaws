@@ -25,18 +25,11 @@ namespace Dashboard.Controllers
             var post = Request.Form;
             String username = post["Username"];
             String password = post["Password"];
-            Personal person = null;
-            try
-            {
-                person = db.PersonalSet.First((x) => x.email == username);
-
-            }catch(Exception e)
-            {
-                person = null;
-            }
+            
             FormsAuthentication.RedirectFromLoginPage(post["Username"], true);
             if (new MyMembershipProvider().ValidateUser(username,password))
             {
+                Personal person = db.PersonalSet.First((x) => x.email == username);
                 FormsAuthentication.RedirectFromLoginPage(person.email, false);
                 //create a Session cookie
                 Session["Name"] = person.Name;
