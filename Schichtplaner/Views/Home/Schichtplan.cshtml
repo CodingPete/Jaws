@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Schichtplan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.AntiForgeryToken()
+<div class="row">
+    <div class="card">
+        <div class="card-header no-bg b-a-0">
+            Aktueller Schichtplan
+        </div>
+        <div class="card-block">
+            <table class="table table-responsive table-hover datatable">
+                <thead>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            Startzeit
+                        </th>
+                        <th>
+                            Endzeit
+                        </th>
+                        <th>
+                            Pause
+                        </th>
+                        <th>
+                            Person
+                        </th>
+                        <th>
+                            Wochenstunden
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var personalschicht in Model)
+                    {
+
+                        foreach (var schichten in personalschicht.schichten)
+                        {
+                            <tr class="mouseEffects">
+                                <th scope="row" data-title="#">
+                                    @personalschicht.person.Id
+                                </th>
+                                <td data-title="Startzeit">
+                                    @schichten.Startzeit_soll
+                                </td>
+                                <td data-title="Endzeit">
+                                    @schichten.Startzeit_soll
+                                </td>
+                                <td data-title="Pause">
+                                    @schichten.Pause
+                                </td>
+                                <td data-title="Personal">
+                                    @personalschicht.person.Vorname @personalschicht.person.Name
+                                </td>
+                                <td data-title="Wochenstunden">
+                                    @personalschicht.vertrag.Wochenstunden
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
