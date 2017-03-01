@@ -4,7 +4,6 @@
 (function ($) {
     'use strict';
 
-    var eventsData = [];
     ajaxGetData();
     window.setInterval(ajaxGetData, 5000, false);    
 
@@ -13,7 +12,7 @@
             url: "/Schicht",
             type: "GET",
             success: function (response) {
-                eventsData = getData(response);
+                var eventsData = getData(response);
                 $('.fullcalendar').fullCalendar({
                     editable: false,
                     lang: 'de',
@@ -136,52 +135,5 @@
         json += otArr.join(",") + ']'
 
         return json;
-    }
-    /*
-      var date = new Date();
-      var d = date.getDate();
-      var m = date.getMonth();
-      var y = date.getFullYear();
-    
-      var eventsData = [{
-        title: 'All Day Event',
-        start: new Date(y, m, 1),
-        listColor: 'danger',
-        className: ['bg-danger']
-      }, {
-        title: 'Long Event',
-        start: new Date(y, m, d - 5),
-        end: new Date(y, m, d - 2),
-        listColor: 'success',
-        className: ['bg-success']
-      }, {
-        id: 999,
-        title: 'Repeating Event',
-        start: new Date(y, m, d - 3, 16, 0),
-        allDay: false,
-        listColor: 'info',
-        className: ['bg-info']
-      }, {
-        id: 999,
-        title: 'Repeating Event',
-        start: new Date(y, m, d + 4, 16, 0),
-        allDay: false,
-        listColor: 'primary',
-        className: ['bg-primary']
-      }, {
-        title: 'Birthday Party',
-        start: new Date(y, m, d + 1, 19, 0),
-        end: new Date(y, m, d + 1, 22, 30),
-        allDay: false,
-        listColor: 'default',
-        className: ['bg-default']
-      }, {
-        title: 'Click for Google',
-        start: new Date(y, m, 28),
-        end: new Date(y, m, 29),
-        url: 'http://google.com/',
-        listColor: 'warning',
-        className: ['bg-warning']
-      }];
-        */
+    }   
 })(jQuery);
