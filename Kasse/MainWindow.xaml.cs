@@ -66,6 +66,10 @@ namespace Kasse
                     }
                     gesamtbetrag.Content = Math.Round(gesamt_betrag, 2);
                 }
+                else
+                {
+
+                }
             }
 
             textBox.Text = "";
@@ -76,9 +80,20 @@ namespace Kasse
 
         private void button_Delete_Click(object sender, RoutedEventArgs e)
         {
-            listBox.Items.Clear();
-            artikel_count.Content = listBox.Items.Count;
-            gesamtbetrag.Content = 0;
+            if (listBox.SelectedItem == null)
+            {
+                listBox.Items.Clear();
+                artikel_count.Content = listBox.Items.Count;
+                gesamtbetrag.Content = 0;
+            }
+            else
+            {
+                Artikel delartikel = (Artikel) listBox.SelectedItem;
+                listBox.Items.Remove(delartikel);
+                artikel_count.Content = listBox.Items.Count;
+                gesamtbetrag.Content = Math.Round((double)gesamtbetrag.Content - delartikel.Nettoverkaufspreis,2);
+            }
+            
         }
 
         private void button_book_Click(object sender, RoutedEventArgs e)
