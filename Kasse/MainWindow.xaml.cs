@@ -104,11 +104,29 @@ namespace Kasse
             beleg.LieferartId = lfa.Id;
             beleg.Datum = DateTime.Now;
             beleg.Id = client.setBeleg(beleg);
+            List<int> artikelids = new List<int>();
+            foreach(Artikel item in listBox.Items)
+            {
+                if (!artikelids.Contains(item.Id))
+                {
+                    artikelids.Add(item.Id);
+                }
+            }
 
             foreach(Artikel item in listBox.Items)
             {
                 client.setArtikelBeleg(item, beleg);
             }
+
+            var article = client.getArtikelbyBelegId(beleg.Id);
+            foreach(int id in artikelids)
+            {
+                int artikelverkauft = article.Where((x) => x.Id == id).Count();
+                Artikel artikel = client.getArtikelbyId(id);
+                artikel.Bestand -= artikelverkauft;
+                client.updateArtikel(artikel);
+            }
+            
 
             listBox.Items.Clear();
             artikel_count.Content = listBox.Items.Count;

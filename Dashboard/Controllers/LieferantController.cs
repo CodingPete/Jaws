@@ -113,7 +113,13 @@ namespace Dashboard.Controllers
                             artikelbeleg.Menge = 0;
                             db.ArtikelBelegSet.Add(artikelbeleg);
                             artikelbelegs.Add(artikelbeleg);
+
+                            
                         }
+                        artikel.Bestand += menge;
+                        db.ArtikelSet.Attach(artikel);
+                        var entry = db.Entry(artikel);
+                        entry.State = System.Data.Entity.EntityState.Modified;
                     }
 
                 }

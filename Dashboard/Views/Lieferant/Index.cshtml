@@ -71,7 +71,7 @@
                                 @Html.DisplayFor(modelItem => item.Id)
                             </th>
                             <th scope="row">
-                                <a href="/Lieferant/Bestellung/@item.Id">Bestellung</a>
+                                <a href="@Url.Action("Bestellung/"+@item.Id,"Lieferant")">Bestellung</a>
                             </th>
                             <th scope="row" data-title="">
                                 <a href="@Url.Action("Edit", new { id = item.Id })"><i class="material-icons text-primary edit"></i></a>
