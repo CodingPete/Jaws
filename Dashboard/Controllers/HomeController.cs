@@ -60,7 +60,7 @@ namespace Dashboard.Controllers
         {
 
             DateTime heute = DateTime.Now;
-            DateTime montag = heute.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
+            DateTime montag = heute.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday).Date;
             DateTime heuteLetzteWoche = heute.AddDays(-7);
             DateTime montagLetzteWoche = heuteLetzteWoche.AddDays(-(int)heuteLetzteWoche.DayOfWeek + (int)DayOfWeek.Monday);
 
