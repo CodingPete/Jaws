@@ -28,6 +28,7 @@ namespace Dashboard.Controllers
                 helpi.artikels = (from b in db.BelegSet
                                   join ab in db.ArtikelBelegSet on b.Id equals ab.BelegId
                                   join a in db.ArtikelSet on ab.ArtikelId equals a.Id
+                                  where ab.BelegId == beleg.Id
                                   select a).ToList();
                 helpi.summe = helpi.artikels.Select((a) => a.Nettoverkaufspreis).Sum();
                 helper.Add(helpi);

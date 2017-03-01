@@ -38,7 +38,7 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr class="mouseEffects">
+                        <tr class="mouseEffects" data-toggle="collapse" data-target="#artikel_@item.Id">
                             <th scope="row" data-title="#">
                                 @Html.DisplayFor(modelItem => item.Id)
                             </th>
@@ -65,6 +65,35 @@
                                     if (item.Id == helpe.beleg.Id)
                                     {
                                         @helpe.summe
+                                    }
+                                }
+                            </td>
+                        </tr>
+                        <tr id="artikel_@item.Id" class="collapse">
+                            <td>
+                                
+                                @foreach (Helper_BelegSumme helpe in ViewBag.helper)
+                                {
+                                    if (item.Id == helpe.beleg.Id)
+                                    {
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Artikel</th>
+                                                    <th>GTIN</th>
+                                                    <th>Nettoverkaufspreis</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach (var a in helpe.artikels) {
+                                                <tr>
+                                                    <td>@a.Name</td>
+                                                    <td>@a.GTIN</td>
+                                                    <td>@a.Nettoverkaufspreis</td>
+                                                </tr>
+                                            }
+                                                </tbody>
+                                        </table>
                                     }
                                 }
                             </td>
