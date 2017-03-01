@@ -129,6 +129,10 @@ namespace Dashboard.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Beleg beleg = db.BelegSet.Find(id);
+
+            List<ArtikelBeleg> artikelBeleg = db.ArtikelBelegSet.Where((ab) => ab.BelegId == beleg.Id).ToList();
+            db.ArtikelBelegSet.RemoveRange(artikelBeleg);
+
             db.BelegSet.Remove(beleg);
             try
             {
