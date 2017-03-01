@@ -24,6 +24,13 @@ namespace Dashboard.Controllers
             return View(schichtSet.ToList());
         }
 
+        // GET: Schicht
+        public ActionResult GetAll()
+        {
+            var schichtSet = db.SchichtSet.Include(s => s.Personal);
+            return View(schichtSet.ToList());
+        }
+
         // GET: Schicht/Details/5
         public ActionResult Details(int? id)
         {
