@@ -2,6 +2,26 @@
     ViewBag.Title = "Home Page";
 }
 <div class="row">
+    @foreach (MiniStatistik miniStatistik in Model)
+    {
+        <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="card card-block">
+                <h5 class="m-b-0 v-align-middle text-overflow">
+                    <span class="small pull-xs-right">
+                        <i class="material-icons text-success" style="width: 16px;">arrow_drop_up</i>
+                        <span style="line-height: 24px;">@miniStatistik.Prozent%</span>
+                    </span>
+                    <span>@miniStatistik.Wert @miniStatistik.Einheit</span>
+                </h5>
+                <div class="small text-overflow text-muted">
+                    @miniStatistik.Name
+                </div>
+                <div class="small text-overflow">
+                    Updated:&nbsp;<span>@DateTime.Now.ToShortTimeString()</span>
+                </div>
+            </div>
+        </div>
+    }
               <div class="col-sm-6 col-md-4 col-lg-2">
                 <div class="card card-block">
                   <h5 class="m-b-0 v-align-middle text-overflow">
@@ -9,7 +29,7 @@
                       <i class="material-icons text-success" style="width: 16px;">arrow_drop_up</i>
                       <span style="line-height: 24px;">+76%</span>
                     </span>
-                    <span>@ViewBag.ArtikelCount</span>
+                    <span>Bla</span>
                   </h5>
                   <div class="small text-overflow text-muted">
                     Memory usage
