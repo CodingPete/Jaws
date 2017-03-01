@@ -4,11 +4,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meine ASP.NET-Anwendung</title>
+    <title>@ViewBag.Title - Jaws</title>
 
     @Styles.Render("~/Template/Style")
     <!-- endbuild -->
     @Styles.Render("~/Content/schichtplaner.css")
+    @Styles.Render("~/Content/jquery.timepicker.min.css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -36,12 +37,29 @@
                     <p class="nav-title">NAVIGATION</p>
                     <ul class="nav">
                         <!-- dashboard -->
-                        <li>
-                            <a href="@Url.Action("Index", "´Plan")">
-                                <i class="material-icons text-primary">perm_contact_calendar</i>
-                                <span>Plan</span>
-                            </a>
-                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a href="@Url.Action("Index", "Plan")">
+                                    <i class="material-icons text-primary">perm_contact_calendar</i>
+                                    <span>Schichten Administrieren</span>
+                                </a>
+                                <a href="@Url.Action("Schichtplan", "Home")">
+                                    <i class="material-icons text-primary">perm_contact_calendar</i>
+                                    <span>Schichtplan</span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="@Url.Action("Schichtplan", "Home")">
+                                    <i class="material-icons text-primary">perm_contact_calendar</i>
+                                    <span>Schichtplan</span>
+                                </a>
+                            </li>
+                        }
+
                         <!-- /dashboard -->
                     </ul>
                 </nav>
@@ -69,19 +87,35 @@
                         <!-- /logo -->
                     </div>
                     <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">
-                        <span>Administration</span>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <span>Schichtplaner - Administration</span>
+                        }
+                        else
+                        {
+                            <span>Schichtplaner</span>
+                        }
+
                     </a>
                     <div class="navbar-item nav navbar-nav">
                         <div class="nav-item nav-link dropdown">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                                <span>Hallo @Session["Vorname"] @Session["Name"]</span>
-                                <span class="menu-caret">
-                                    <i class="material-icons">arrow_drop_down</i>
-                                </span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="Login/Logout">Logout</a>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span>Hallo @Session["Vorname"] @Session["Name"]</span>
+                                        <span class="menu-caret">
+                                            <i class="material-icons">arrow_drop_down</i>
+                                        </span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="@Url.Action("Logout", "Login")">Logout</a>
                             </div>
+                                }
+                                else
+                                {
+                                    <span>Bitte logge dich ein</span>
+                                }
+                                
                         </div>
                     </div>
                 </div>
@@ -114,7 +148,43 @@
 
     @Scripts.Render("~/Template/Scripts")
 
-    
+    <!-- build:js({.tmp,app}) scripts/app.min.js -->
+    @Scripts.Render("~/Content/template/vendor/jquery/dist/jquery.js")
+    @Scripts.Render("~/Content/template/vendor/tether/dist/js/tether.js")
+    @Scripts.Render("~/Content/template/vendor/bootstrap/dist/js/bootstrap.js")
+    @Scripts.Render("~/Content/template/vendor/fastclick/lib/fastclick.js")
+    @Scripts.Render("~/Content/template/scripts/constants.js")
+    @Scripts.Render("~/Content/template/scripts/main.js")
+    <!-- endbuild -->
+    <!-- page scripts -->
+    @Scripts.Render("~/Content/template/vendor/flot/jquery.flot.js")
+    @Scripts.Render("~/Content/template/vendor/flot/jquery.flot.resize.js")
+    @Scripts.Render("~/Content/template/vendor/flot/jquery.flot.stack.js")
+    @Scripts.Render("~/Content/template/vendor/flot-spline/js/jquery.flot.spline.js")
+    @Scripts.Render("~/Content/template/vendor/bower-jvectormap/jquery-jvectormap-1.2.2.min.js")
+    @Scripts.Render("~/Content/template/data/maps/jquery-jvectormap-us-aea.js")
+    @Scripts.Render("~/Content/template/vendor/jquery.easy-pie-chart/dist/jquery.easypiechart.js")
+    @Scripts.Render("~/Content/template/vendor/noty/js/noty/packaged/jquery.noty.packaged.min.js")
+    @Scripts.Render("~/Content/template/scripts/helpers/noty-defaults.js")
+    <!-- end page scripts -->
+    <!-- initialize page scripts -->
+    @Scripts.Render("~/Content/template/scripts/dashboard/dashboard.js")
+    @Scripts.Render("~/Content/template/vendor/datatables/media/js/jquery.dataTables.js")
+    @Scripts.Render("~/Content/template/vendor/datatables/media/js/dataTables.bootstrap4.js")
+    @Scripts.Render("~/Content/template/vendor/sweetalert/dist/sweetalert.min.js")
+    <!-- calender -->
+    @Scripts.Render("~/Content/template/vendor/moment/min/moment.min.js")
+    @Scripts.Render("~/Content/template/vendor/jquery.ui/ui/core.js")
+    @Scripts.Render("~/Content/template/vendor/jquery.ui/ui/widget.js")
+    @Scripts.Render("~/Content/template/vendor/jquery.ui/ui/mouse.js")
+    @Scripts.Render("~/Content/template/vendor/jquery.ui/ui/draggable.js")
+    @Scripts.Render("~/Content/template/vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js")
+    @Scripts.Render("~/Content/template/vendor/fullcalendar/dist/fullcalendar.min.js")
+    @Scripts.Render("~/Content/template/vendor/fullcalendar/dist/gcal.js")
+    <!-- data for calender-->
+    @Scripts.Render("~/Content/template/scripts/app/calendar.js")
+    <!-- end page scripts -->
+    <!-- initialize page scripts -->
     <script type="text/javascript">
         $('.datatable').DataTable({
 

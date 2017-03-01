@@ -1942,6 +1942,12 @@ namespace Prognosenberechnung.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyRolleId", ReplyAction="http://tempuri.org/IService1/getPersonalbyRolleIdResponse")]
         System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Personal[]> getPersonalbyRolleIdAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyEmail", ReplyAction="http://tempuri.org/IService1/getPersonalbyEmailResponse")]
+        Prognosenberechnung.ServiceReference1.Personal getPersonalbyEmail(string mail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyEmail", ReplyAction="http://tempuri.org/IService1/getPersonalbyEmailResponse")]
+        System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Personal> getPersonalbyEmailAsync(string mail);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragbyId", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragbyIdResponse")]
         Prognosenberechnung.ServiceReference1.Arbeitsvertrag getArbeitsvertragbyId(int id);
         
@@ -2008,6 +2014,12 @@ namespace Prognosenberechnung.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRecht", ReplyAction="http://tempuri.org/IService1/updateRechtResponse")]
         System.Threading.Tasks.Task updateRechtAsync(Prognosenberechnung.ServiceReference1.Recht recht);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyName", ReplyAction="http://tempuri.org/IService1/getRechtbyNameResponse")]
+        Prognosenberechnung.ServiceReference1.Recht getRechtbyName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyName", ReplyAction="http://tempuri.org/IService1/getRechtbyNameResponse")]
+        System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Recht> getRechtbyNameAsync(string name);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRolleRecht", ReplyAction="http://tempuri.org/IService1/setRolleRechtResponse")]
         void setRolleRecht(Prognosenberechnung.ServiceReference1.Rolle rolle, Prognosenberechnung.ServiceReference1.Recht recht);
         
@@ -2020,17 +2032,17 @@ namespace Prognosenberechnung.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRolleRecht", ReplyAction="http://tempuri.org/IService1/updateRolleRechtResponse")]
         System.Threading.Tasks.Task updateRolleRechtAsync(Prognosenberechnung.ServiceReference1.RolleRecht rollerecht);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollefromRechtId", ReplyAction="http://tempuri.org/IService1/getRollefromRechtIdResponse")]
-        Prognosenberechnung.ServiceReference1.Rolle[] getRollefromRechtId(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollebyRechtId", ReplyAction="http://tempuri.org/IService1/getRollebyRechtIdResponse")]
+        Prognosenberechnung.ServiceReference1.Rolle[] getRollebyRechtId(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollefromRechtId", ReplyAction="http://tempuri.org/IService1/getRollefromRechtIdResponse")]
-        System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Rolle[]> getRollefromRechtIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollebyRechtId", ReplyAction="http://tempuri.org/IService1/getRollebyRechtIdResponse")]
+        System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Rolle[]> getRollebyRechtIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtfromRolleId", ReplyAction="http://tempuri.org/IService1/getRechtfromRolleIdResponse")]
-        Prognosenberechnung.ServiceReference1.Recht[] getRechtfromRolleId(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyRolleId", ReplyAction="http://tempuri.org/IService1/getRechtbyRolleIdResponse")]
+        Prognosenberechnung.ServiceReference1.Recht[] getRechtbyRolleId(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtfromRolleId", ReplyAction="http://tempuri.org/IService1/getRechtfromRolleIdResponse")]
-        System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Recht[]> getRechtfromRolleIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyRolleId", ReplyAction="http://tempuri.org/IService1/getRechtbyRolleIdResponse")]
+        System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Recht[]> getRechtbyRolleIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtbyId", ReplyAction="http://tempuri.org/IService1/getSchichtbyIdResponse")]
         Prognosenberechnung.ServiceReference1.Schicht getSchichtbyId(int id);
@@ -2039,10 +2051,10 @@ namespace Prognosenberechnung.ServiceReference1 {
         System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Schicht> getSchichtbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setSchicht", ReplyAction="http://tempuri.org/IService1/setSchichtResponse")]
-        void setSchicht(Prognosenberechnung.ServiceReference1.Schicht schicht);
+        int setSchicht(Prognosenberechnung.ServiceReference1.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setSchicht", ReplyAction="http://tempuri.org/IService1/setSchichtResponse")]
-        System.Threading.Tasks.Task setSchichtAsync(Prognosenberechnung.ServiceReference1.Schicht schicht);
+        System.Threading.Tasks.Task<int> setSchichtAsync(Prognosenberechnung.ServiceReference1.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateSchicht", ReplyAction="http://tempuri.org/IService1/updateSchichtResponse")]
         void updateSchicht(Prognosenberechnung.ServiceReference1.Schicht schicht);
@@ -2067,6 +2079,12 @@ namespace Prognosenberechnung.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween", ReplyAction="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetweenResponse")]
         System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteSchichtByWeek", ReplyAction="http://tempuri.org/IService1/deleteSchichtByWeekResponse")]
+        void deleteSchichtByWeek(System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteSchichtByWeek", ReplyAction="http://tempuri.org/IService1/deleteSchichtByWeekResponse")]
+        System.Threading.Tasks.Task deleteSchichtByWeekAsync(System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferantbyId", ReplyAction="http://tempuri.org/IService1/getLieferantbyIdResponse")]
         Prognosenberechnung.ServiceReference1.Lieferant getLieferantbyId(int id);
@@ -2178,17 +2196,17 @@ namespace Prognosenberechnung.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArtikelBeleg", ReplyAction="http://tempuri.org/IService1/updateArtikelBelegResponse")]
         System.Threading.Tasks.Task updateArtikelBelegAsync(Prognosenberechnung.ServiceReference1.ArtikelBeleg artikelbeleg);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelfromBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelfromBelegIdResponse")]
-        Prognosenberechnung.ServiceReference1.Artikel[] getArtikelfromBelegId(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelbyBelegIdResponse")]
+        Prognosenberechnung.ServiceReference1.Artikel[] getArtikelbyBelegId(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelfromBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelfromBelegIdResponse")]
-        System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Artikel[]> getArtikelfromBelegIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelbyBelegIdResponse")]
+        System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Artikel[]> getArtikelbyBelegIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegfromArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegfromArtikelIdResponse")]
-        Prognosenberechnung.ServiceReference1.Beleg[] getBelegfromArtikelId(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegbyArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegbyArtikelIdResponse")]
+        Prognosenberechnung.ServiceReference1.Beleg[] getBelegbyArtikelId(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegfromArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegfromArtikelIdResponse")]
-        System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Beleg[]> getBelegfromArtikelIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegbyArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegbyArtikelIdResponse")]
+        System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Beleg[]> getBelegbyArtikelIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppebyId", ReplyAction="http://tempuri.org/IService1/getWarengruppebyIdResponse")]
         Prognosenberechnung.ServiceReference1.Warengruppe getWarengruppebyId(int id);
@@ -2360,6 +2378,14 @@ namespace Prognosenberechnung.ServiceReference1 {
             return base.Channel.getPersonalbyRolleIdAsync(id);
         }
         
+        public Prognosenberechnung.ServiceReference1.Personal getPersonalbyEmail(string mail) {
+            return base.Channel.getPersonalbyEmail(mail);
+        }
+        
+        public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Personal> getPersonalbyEmailAsync(string mail) {
+            return base.Channel.getPersonalbyEmailAsync(mail);
+        }
+        
         public Prognosenberechnung.ServiceReference1.Arbeitsvertrag getArbeitsvertragbyId(int id) {
             return base.Channel.getArbeitsvertragbyId(id);
         }
@@ -2448,6 +2474,14 @@ namespace Prognosenberechnung.ServiceReference1 {
             return base.Channel.updateRechtAsync(recht);
         }
         
+        public Prognosenberechnung.ServiceReference1.Recht getRechtbyName(string name) {
+            return base.Channel.getRechtbyName(name);
+        }
+        
+        public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Recht> getRechtbyNameAsync(string name) {
+            return base.Channel.getRechtbyNameAsync(name);
+        }
+        
         public void setRolleRecht(Prognosenberechnung.ServiceReference1.Rolle rolle, Prognosenberechnung.ServiceReference1.Recht recht) {
             base.Channel.setRolleRecht(rolle, recht);
         }
@@ -2464,20 +2498,20 @@ namespace Prognosenberechnung.ServiceReference1 {
             return base.Channel.updateRolleRechtAsync(rollerecht);
         }
         
-        public Prognosenberechnung.ServiceReference1.Rolle[] getRollefromRechtId(int id) {
-            return base.Channel.getRollefromRechtId(id);
+        public Prognosenberechnung.ServiceReference1.Rolle[] getRollebyRechtId(int id) {
+            return base.Channel.getRollebyRechtId(id);
         }
         
-        public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Rolle[]> getRollefromRechtIdAsync(int id) {
-            return base.Channel.getRollefromRechtIdAsync(id);
+        public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Rolle[]> getRollebyRechtIdAsync(int id) {
+            return base.Channel.getRollebyRechtIdAsync(id);
         }
         
-        public Prognosenberechnung.ServiceReference1.Recht[] getRechtfromRolleId(int id) {
-            return base.Channel.getRechtfromRolleId(id);
+        public Prognosenberechnung.ServiceReference1.Recht[] getRechtbyRolleId(int id) {
+            return base.Channel.getRechtbyRolleId(id);
         }
         
-        public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Recht[]> getRechtfromRolleIdAsync(int id) {
-            return base.Channel.getRechtfromRolleIdAsync(id);
+        public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Recht[]> getRechtbyRolleIdAsync(int id) {
+            return base.Channel.getRechtbyRolleIdAsync(id);
         }
         
         public Prognosenberechnung.ServiceReference1.Schicht getSchichtbyId(int id) {
@@ -2488,11 +2522,11 @@ namespace Prognosenberechnung.ServiceReference1 {
             return base.Channel.getSchichtbyIdAsync(id);
         }
         
-        public void setSchicht(Prognosenberechnung.ServiceReference1.Schicht schicht) {
-            base.Channel.setSchicht(schicht);
+        public int setSchicht(Prognosenberechnung.ServiceReference1.Schicht schicht) {
+            return base.Channel.setSchicht(schicht);
         }
         
-        public System.Threading.Tasks.Task setSchichtAsync(Prognosenberechnung.ServiceReference1.Schicht schicht) {
+        public System.Threading.Tasks.Task<int> setSchichtAsync(Prognosenberechnung.ServiceReference1.Schicht schicht) {
             return base.Channel.setSchichtAsync(schicht);
         }
         
@@ -2526,6 +2560,14 @@ namespace Prognosenberechnung.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis) {
             return base.Channel.getSchichtByPersonalIdAndBetweenAsync(id, von, bis);
+        }
+        
+        public void deleteSchichtByWeek(System.DateTime date) {
+            base.Channel.deleteSchichtByWeek(date);
+        }
+        
+        public System.Threading.Tasks.Task deleteSchichtByWeekAsync(System.DateTime date) {
+            return base.Channel.deleteSchichtByWeekAsync(date);
         }
         
         public Prognosenberechnung.ServiceReference1.Lieferant getLieferantbyId(int id) {
@@ -2672,20 +2714,20 @@ namespace Prognosenberechnung.ServiceReference1 {
             return base.Channel.updateArtikelBelegAsync(artikelbeleg);
         }
         
-        public Prognosenberechnung.ServiceReference1.Artikel[] getArtikelfromBelegId(int id) {
-            return base.Channel.getArtikelfromBelegId(id);
+        public Prognosenberechnung.ServiceReference1.Artikel[] getArtikelbyBelegId(int id) {
+            return base.Channel.getArtikelbyBelegId(id);
         }
         
-        public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Artikel[]> getArtikelfromBelegIdAsync(int id) {
-            return base.Channel.getArtikelfromBelegIdAsync(id);
+        public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Artikel[]> getArtikelbyBelegIdAsync(int id) {
+            return base.Channel.getArtikelbyBelegIdAsync(id);
         }
         
-        public Prognosenberechnung.ServiceReference1.Beleg[] getBelegfromArtikelId(int id) {
-            return base.Channel.getBelegfromArtikelId(id);
+        public Prognosenberechnung.ServiceReference1.Beleg[] getBelegbyArtikelId(int id) {
+            return base.Channel.getBelegbyArtikelId(id);
         }
         
-        public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Beleg[]> getBelegfromArtikelIdAsync(int id) {
-            return base.Channel.getBelegfromArtikelIdAsync(id);
+        public System.Threading.Tasks.Task<Prognosenberechnung.ServiceReference1.Beleg[]> getBelegbyArtikelIdAsync(int id) {
+            return base.Channel.getBelegbyArtikelIdAsync(id);
         }
         
         public Prognosenberechnung.ServiceReference1.Warengruppe getWarengruppebyId(int id) {

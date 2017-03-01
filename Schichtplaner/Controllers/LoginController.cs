@@ -1,4 +1,5 @@
-﻿using Schichtplaner.ServiceReference1;
+﻿using Schichtplaner.Security;
+using Schichtplaner.ServiceReference1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,29 +33,23 @@ namespace Schichtplaner.Controllers
             var post = Request.Form;
             String username = post["Username"];
             String password = post["Password"];
-            Personal person = client.getPersonalbyEmail(username);
-
-            FormsAuthentication.RedirectFromLoginPage(post["Username"], true);
-            if (person != null && person.passwort == password)
+            if (new MyMembershipProvider().ValidateUser(username, password))
             {
-                Rolle role = client.getRollebyId(person.RolleId);
-                Boolean isAdmin = false;
-                var rechte = client.getRechtbyRolleId(role.Id);
-                FormsAuthentication.RedirectFromLoginPage(person.email, false);
-                if (rechte.Contains(admin))
-                {
-                    isAdmin = true;
-                    Roles.AddUserToRole(person.email, admin.Name);
-                }
-
-                
-            
+                FormsAuthentication.RedirectFromLoginPage(username, false);
+                var person = client.getPersonalbyEmail(username);
                 Session["Name"] = person.Name;
                 Session["Vorname"] = person.Vorname;
-                Session["Rolle"] = role.Name;
-                Session["isAdmin"] = isAdmin;
+
+                return RedirectToAction("Schichtplan", "Home");
+
             }
-            return RedirectToAction("Index", "Plan");
+            return RedirectToAction("Index", "Home");
+        }
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

@@ -16,13 +16,10 @@ namespace Prognosenberechnung
         static void Main(string[] args)
         {
             client = new Service1Client();
-
-            // Alle 24 Stunden die Prognosen aller Artikel berechnen
-            prognosen_timer = new Timer(callback, null,  0, 24 * 3600000);
-            Console.ReadLine();
+            calc();
         }
 
-        private static void callback(object state)
+        private static void calc()
         {
             // Hole die Abverkaufslieferart aus der Datenbank
             Lieferart lieferart = client.getLieferartByName("Verkauf");
@@ -66,10 +63,6 @@ namespace Prognosenberechnung
                 prognose.Abverkauf_ist = 0;
                 prognose.Datum = Verkaufstag.Date;
                 client.setPrognose(prognose);
-                
-                Console.WriteLine(prognose.Abverkauf_soll);
-                Console.ReadLine();
-
             }
         }
         

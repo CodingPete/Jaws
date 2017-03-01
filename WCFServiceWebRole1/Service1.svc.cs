@@ -14,6 +14,7 @@ namespace WCFServiceWebRole1
     // HINWEIS: Wählen Sie zum Starten des WCF-Testclients zum Testen dieses Diensts Service1.svc oder Service1.svc.cs im Projektmappen-Explorer aus, und starten Sie das Debuggen.
     public class Service1 : IService1
     {
+
         private DataContainer db;
         public Service1()
         {
