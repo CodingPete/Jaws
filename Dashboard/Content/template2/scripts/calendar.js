@@ -85,7 +85,6 @@
     viewRender: function() {
       $('.fc-button-group').addClass('btn-group');
       $('.fc-button').addClass('btn');
-    },
-    events: eventsData
+    }
   });
 })(jQuery);
