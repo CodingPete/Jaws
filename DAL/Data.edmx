@@ -102,6 +102,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Wochenstunden" Type="int" Nullable="false" />
     <Property Name="Stundenlohn" Type="float" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="SchichtSet">
     <Key>
@@ -447,6 +448,7 @@
           <Property Name="Wochenstunden" Type="Int32" Nullable="false" />
           <Property Name="Stundenlohn" Type="Double" Nullable="false" />
           <NavigationProperty Name="Personal" Relationship="Data.PersonalArbeitsvertrag" FromRole="Arbeitsvertrag" ToRole="Personal" />
+          <Property Name="Name" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Schicht">
           <Key>
@@ -754,6 +756,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Wochenstunden" ColumnName="Wochenstunden" />
           <ScalarProperty Name="Stundenlohn" ColumnName="Stundenlohn" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
