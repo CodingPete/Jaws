@@ -39,7 +39,15 @@ namespace WCFServiceWebRole1
 
         public Artikel getArtikelByGTIN(String GTIN)
         {
-            return db.ArtikelSet.Where((a) => a.GTIN == GTIN).First();
+            try
+            {
+                return db.ArtikelSet.First((x) => x.GTIN.Equals(GTIN));
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            
         }
 
         public List<Artikel> getArtikelbyLieferantId(int id)
@@ -115,7 +123,15 @@ namespace WCFServiceWebRole1
         }
         public Lieferart getLieferartByName(String name)
         {
-            return db.LieferartSet.Where((l) => l.Name == name).First();
+            try
+            {
+                return db.LieferartSet.First((x) => x.Name.Equals(name));
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            
         }
 
         public List<Lieferart> getLieferartList()
@@ -149,7 +165,7 @@ namespace WCFServiceWebRole1
             DateTime end = date.AddDays(1).Date;
 
             var prognosen = db.PrognoseSet.Where((p) => p.Id == id && p.Datum >= start && p.Datum <= end);
-            if (prognosen.Count() != 0) return prognosen.First();
+            if (prognosen !=null && prognosen.Count() != 0) return prognosen.First();
             else return null;
         }
 
