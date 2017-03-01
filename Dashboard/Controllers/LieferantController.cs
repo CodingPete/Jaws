@@ -20,62 +20,78 @@ namespace Dashboard.Controllers
             return View(db.LieferantSet.ToList());
         }
 
-        // GET: Liefrant/Bestellung/5
+        // GET: Lieferant/Bestellung/5
         public ActionResult Bestellung(int? id)
         {
-            // Der Lieferant zu dem die Bestellung erstellt werden soll
-            Lieferant lieferant = db.LieferantSet.Find(id);
+            if(id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            // Die Lieferart
-            Lieferart lfa = db.LieferartSet.Where((l) => l.Name == "Einkauf").First();
-
-            // Alle Artikel des Lieferanten
-            List<Artikel> artikels = db.ArtikelSet.Where((a) => a.LieferantId == lieferant.Id).ToList();
-
-            // Artikel-Beleg zuordnung
-            List<ArtikelBeleg> artikelbelegs = new List<ArtikelBeleg>();
-
-            // Der neue Bestellbeleg
-            Beleg bestellung = new Beleg();
-            bestellung.Lieferart = lfa;
-            bestellung.LieferartId = lfa.Id;
-            db.BelegSet.Attach(bestellung);
-            db.SaveChanges();
-
-            // Zu jedem Artikel Bestellmenge anhand des derzeitigen Bestandes und der erwarteten Prognosen der kommenden Woche berechnen
             DateTime heute = DateTime.Today.Date;
             DateTime heuteInEinerWoche = heute.AddDays(7);
 
-            foreach (Artikel artikel in artikels)
+            // Der Lieferant zu dem die Bestellung erstellt werden soll
+            Lieferant lieferant = db.LieferantSet.Find(id);
+
+            if (lieferant != null)
             {
-                Double prognose_summe = (from p in db.PrognoseSet
-                                                where p.Datum >= heute && p.Datum <= heuteInEinerWoche && p.ArtikelId == artikel.Id select p.Abverkauf_soll).DefaultIfEmpty(0).Sum();
+                // Die Lieferart
+                Lieferart lfa = db.LieferartSet.Where((l) => l.Name == "Einkauf").First();
 
-                // Benötigte Menge 
-                int menge = (int)Math.Ceiling(artikel.Bestand - prognose_summe);
+                // Alle Artikel des Lieferanten
+                List<Artikel> artikels = db.ArtikelSet.Where((a) => a.LieferantId == lieferant.Id).ToList();
 
-                // Menge kleiner Null => Bestand reicht nicht aus um den prognostizierten Abverkauf zu decken
-                if (menge < 0)
+                // Artikel-Beleg zuordnung
+                List<ArtikelBeleg> artikelbelegs = new List<ArtikelBeleg>();
+
+                // Der neue Bestellbeleg
+                Beleg bestellung = new Beleg();
+                bestellung.Lieferart = lfa;
+                bestellung.LieferartId = lfa.Id;
+                bestellung.Datum = heute;
+                db.BelegSet.Add(bestellung);
+                db.SaveChanges();
+
+                // Zu jedem Artikel Bestellmenge anhand des derzeitigen Bestandes und der erwarteten Prognosen der kommenden Woche berechnen
+               
+
+                foreach (Artikel artikel in artikels)
                 {
-                    menge = Math.Abs(menge);
+                    Double prognose_summe = (from p in db.PrognoseSet
+                                             where p.Datum >= heute && p.Datum <= heuteInEinerWoche && p.ArtikelId == artikel.Id
+                                             select p.Abverkauf_soll).DefaultIfEmpty(0).Sum();
 
-                    for (int i = 0; i < menge; i++)
+                    // Benötigte Menge 
+                    int menge = (int)Math.Ceiling(artikel.Bestand - prognose_summe);
+
+                    // Menge kleiner Null => Bestand reicht nicht aus um den prognostizierten Abverkauf zu decken
+                    if (menge < 0)
                     {
-                        ArtikelBeleg artikelbeleg = new ArtikelBeleg();
-                        artikelbeleg.Artikel = artikel;
-                        artikelbeleg.ArtikelId = artikel.Id;
-                        artikelbeleg.Beleg = bestellung;
-                        artikelbeleg.BelegId = bestellung.Id;
-                        artikelbeleg.Menge = 0;
-                        db.ArtikelBelegSet.Attach(artikelbeleg);
+                        menge = Math.Abs(menge);
+
+                        for (int i = 0; i < menge; i++)
+                        {
+                            ArtikelBeleg artikelbeleg = new ArtikelBeleg();
+                            artikelbeleg.Artikel = artikel;
+                            artikelbeleg.ArtikelId = artikel.Id;
+                            artikelbeleg.Beleg = bestellung;
+                            artikelbeleg.BelegId = bestellung.Id;
+                            artikelbeleg.Menge = 0;
+                            db.ArtikelBelegSet.Add(artikelbeleg);
+                            artikelbelegs.Add(artikelbeleg);
+                        }
                     }
+
                 }
-                
+
+                // Wenn keine Artikel in der Bestellung vorliegen
+                if (artikelbelegs.Count() == 0)
+                {
+                    // Leeren Bestellbeleg wieder entfernen
+                    db.BelegSet.Remove(bestellung);
+                }
+                db.SaveChanges();
             }
-            db.SaveChanges();
 
-
-            return RedirectToAction("Index");
+            return null;
         }
 
         // GET: Lieferant/Details/5

@@ -65,13 +65,12 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-
                         <tr class="mouseEffects">
                             <th scope="row" data-title="#">
                                 @Html.DisplayFor(modelItem => item.Id)
                             </th>
-                            <th scope="row">
-                                <a href="@Html.Action("Bestellung", new { id = item.Id })">Bestellung</a>
+                            <th scope="row" data-title="">
+                                <a href="/Lieferant/Bestellung/@item.Id">Bestellung</a>
                             </th>
                             <th scope="row" data-title="">
                                 <a href="@Url.Action("Edit", new { id = item.Id })"><i class="material-icons text-primary edit"></i></a>
