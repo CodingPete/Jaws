@@ -27,8 +27,11 @@ namespace Schichtplaner.Controllers
             // Hole alle Angestellten
             var personalliste = client.getPersonalList();
 
+           
             DateTime monday = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
             DateTime sunday = monday.AddDays(6).Date;
+
+           
             foreach (Personal person in personalliste)
             {
                 // Person in ihrer Schichtenliste ablegen

@@ -2,3 +2,7 @@
     min-width: 50px;
     max-width: 50px;
 }
+
+    .schicht_th {
+        background-color: lightgrey !important;
+    }
