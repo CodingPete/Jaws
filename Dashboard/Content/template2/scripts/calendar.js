@@ -3,7 +3,7 @@
  */
 (function($) {
   'use strict';
-
+/*
   var date = new Date();
   var d = date.getDate();
   var m = date.getMonth();
@@ -49,7 +49,7 @@
     listColor: 'warning',
     className: ['bg-warning']
   }];
-
+    */
   $('.fullcalendar').fullCalendar({
     editable: false,
     lang: 'de',
