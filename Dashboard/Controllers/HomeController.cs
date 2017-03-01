@@ -41,6 +41,7 @@ namespace Dashboard.Controllers
                                   where DbFunctions.TruncateTime(b.Datum) == DbFunctions.TruncateTime(heute)  && lfa.Name == "Verkauf"
                                   select a.Nettoverkaufspreis
                                   ).DefaultIfEmpty(0).Sum();
+            tagesUmsatz.Wert = Math.Round(tagesUmsatz.Wert, 2);
 
             Double tagesUmsatzLetzteWoche = (from b in db.BelegSet
                                       join lfa in db.LieferartSet on b.LieferartId equals lfa.Id
@@ -74,6 +75,8 @@ namespace Dashboard.Controllers
                                 where b.Datum >= montag && b.Datum <= heute && lfa.Name == "Verkauf"
                                 select a.Nettoverkaufspreis
                                   ).DefaultIfEmpty(0).Sum();
+            wochenUmsatz.Wert = Math.Round(wochenUmsatz.Wert, 2);
+
             Double wochenUmsatzLetzteWoche = (from b in db.BelegSet
                                        join lfa in db.LieferartSet on b.LieferartId equals lfa.Id
                                        join ab in db.ArtikelBelegSet on b.Id equals ab.BelegId
@@ -105,6 +108,8 @@ namespace Dashboard.Controllers
                                   where DbFunctions.TruncateTime(b.Datum) == DbFunctions.TruncateTime(heute) && lfa.Name == "Verlust"
                                   select a.Nettoeinkaufspreis
                                   ).DefaultIfEmpty(0).Sum();
+            tagesVerlust.Wert = Math.Round(tagesVerlust.Wert, 2);
+
             Double tagesVerlustLetzteWoche = (from b in db.BelegSet
                                              join lfa in db.LieferartSet on b.LieferartId equals lfa.Id
                                              join ab in db.ArtikelBelegSet on b.Id equals ab.BelegId
@@ -152,8 +157,8 @@ namespace Dashboard.Controllers
 
             MiniStatistik tagesStundenLeistung = new MiniStatistik();
             tagesStundenLeistung.Name = "Tagesstundenleistung";
-            tagesStundenLeistung.Wert = stundenleistung;
-            tagesStundenLeistung.Einheit = "€/Personalstunde";
+            tagesStundenLeistung.Wert = Math.Round(stundenleistung, 2);
+            tagesStundenLeistung.Einheit = "€";
             tagesStundenLeistung.Prozent = 0;
             return tagesStundenLeistung;
         }
