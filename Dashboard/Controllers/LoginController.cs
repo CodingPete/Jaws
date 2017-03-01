@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Dashboard.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,10 +35,10 @@ namespace Dashboard.Controllers
                 person = null;
             }
             FormsAuthentication.RedirectFromLoginPage(post["Username"], true);
-            if (person != null && person.passwort==password)
+            if (new MyMembershipProvider().ValidateUser(username,password))
             {
                 FormsAuthentication.RedirectFromLoginPage(person.email, false);
-                //create a cookie
+                //create a Session cookie
                 Session["Name"] = person.Name;
                 Session["Vorname"] = person.Vorname;
                 Session["Rolle"] = person.Rolle.Name;

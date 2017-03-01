@@ -7,7 +7,7 @@ using Schichtplaner.ServiceReference1;
 
 namespace Schichtplaner.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles ="Schichtplaner")]
     public class PlanController : Controller
     {
         private ServiceReference1.Service1Client client;
