@@ -45,6 +45,12 @@ namespace Kasse.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyRolleId", ReplyAction="http://tempuri.org/IService1/getPersonalbyRolleIdResponse")]
         System.Threading.Tasks.Task<DAL.Personal[]> getPersonalbyRolleIdAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyEmail", ReplyAction="http://tempuri.org/IService1/getPersonalbyEmailResponse")]
+        DAL.Personal getPersonalbyEmail(string mail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPersonalbyEmail", ReplyAction="http://tempuri.org/IService1/getPersonalbyEmailResponse")]
+        System.Threading.Tasks.Task<DAL.Personal> getPersonalbyEmailAsync(string mail);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArbeitsvertragbyId", ReplyAction="http://tempuri.org/IService1/getArbeitsvertragbyIdResponse")]
         DAL.Arbeitsvertrag getArbeitsvertragbyId(int id);
         
@@ -111,6 +117,12 @@ namespace Kasse.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRecht", ReplyAction="http://tempuri.org/IService1/updateRechtResponse")]
         System.Threading.Tasks.Task updateRechtAsync(DAL.Recht recht);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyName", ReplyAction="http://tempuri.org/IService1/getRechtbyNameResponse")]
+        DAL.Recht getRechtbyName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyName", ReplyAction="http://tempuri.org/IService1/getRechtbyNameResponse")]
+        System.Threading.Tasks.Task<DAL.Recht> getRechtbyNameAsync(string name);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setRolleRecht", ReplyAction="http://tempuri.org/IService1/setRolleRechtResponse")]
         void setRolleRecht(DAL.Rolle rolle, DAL.Recht recht);
         
@@ -123,17 +135,17 @@ namespace Kasse.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateRolleRecht", ReplyAction="http://tempuri.org/IService1/updateRolleRechtResponse")]
         System.Threading.Tasks.Task updateRolleRechtAsync(DAL.RolleRecht rollerecht);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollefromRechtId", ReplyAction="http://tempuri.org/IService1/getRollefromRechtIdResponse")]
-        DAL.Rolle[] getRollefromRechtId(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollebyRechtId", ReplyAction="http://tempuri.org/IService1/getRollebyRechtIdResponse")]
+        DAL.Rolle[] getRollebyRechtId(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollefromRechtId", ReplyAction="http://tempuri.org/IService1/getRollefromRechtIdResponse")]
-        System.Threading.Tasks.Task<DAL.Rolle[]> getRollefromRechtIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRollebyRechtId", ReplyAction="http://tempuri.org/IService1/getRollebyRechtIdResponse")]
+        System.Threading.Tasks.Task<DAL.Rolle[]> getRollebyRechtIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtfromRolleId", ReplyAction="http://tempuri.org/IService1/getRechtfromRolleIdResponse")]
-        DAL.Recht[] getRechtfromRolleId(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyRolleId", ReplyAction="http://tempuri.org/IService1/getRechtbyRolleIdResponse")]
+        DAL.Recht[] getRechtbyRolleId(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtfromRolleId", ReplyAction="http://tempuri.org/IService1/getRechtfromRolleIdResponse")]
-        System.Threading.Tasks.Task<DAL.Recht[]> getRechtfromRolleIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getRechtbyRolleId", ReplyAction="http://tempuri.org/IService1/getRechtbyRolleIdResponse")]
+        System.Threading.Tasks.Task<DAL.Recht[]> getRechtbyRolleIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtbyId", ReplyAction="http://tempuri.org/IService1/getSchichtbyIdResponse")]
         DAL.Schicht getSchichtbyId(int id);
@@ -142,10 +154,10 @@ namespace Kasse.ServiceReference1 {
         System.Threading.Tasks.Task<DAL.Schicht> getSchichtbyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setSchicht", ReplyAction="http://tempuri.org/IService1/setSchichtResponse")]
-        void setSchicht(DAL.Schicht schicht);
+        int setSchicht(DAL.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setSchicht", ReplyAction="http://tempuri.org/IService1/setSchichtResponse")]
-        System.Threading.Tasks.Task setSchichtAsync(DAL.Schicht schicht);
+        System.Threading.Tasks.Task<int> setSchichtAsync(DAL.Schicht schicht);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateSchicht", ReplyAction="http://tempuri.org/IService1/updateSchichtResponse")]
         void updateSchicht(DAL.Schicht schicht);
@@ -170,6 +182,12 @@ namespace Kasse.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetween", ReplyAction="http://tempuri.org/IService1/getSchichtByPersonalIdAndBetweenResponse")]
         System.Threading.Tasks.Task<DAL.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteSchichtByWeek", ReplyAction="http://tempuri.org/IService1/deleteSchichtByWeekResponse")]
+        void deleteSchichtByWeek(System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteSchichtByWeek", ReplyAction="http://tempuri.org/IService1/deleteSchichtByWeekResponse")]
+        System.Threading.Tasks.Task deleteSchichtByWeekAsync(System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getLieferantbyId", ReplyAction="http://tempuri.org/IService1/getLieferantbyIdResponse")]
         DAL.Lieferant getLieferantbyId(int id);
@@ -281,17 +299,17 @@ namespace Kasse.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateArtikelBeleg", ReplyAction="http://tempuri.org/IService1/updateArtikelBelegResponse")]
         System.Threading.Tasks.Task updateArtikelBelegAsync(DAL.ArtikelBeleg artikelbeleg);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelfromBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelfromBelegIdResponse")]
-        DAL.Artikel[] getArtikelfromBelegId(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelbyBelegIdResponse")]
+        DAL.Artikel[] getArtikelbyBelegId(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelfromBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelfromBelegIdResponse")]
-        System.Threading.Tasks.Task<DAL.Artikel[]> getArtikelfromBelegIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getArtikelbyBelegId", ReplyAction="http://tempuri.org/IService1/getArtikelbyBelegIdResponse")]
+        System.Threading.Tasks.Task<DAL.Artikel[]> getArtikelbyBelegIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegfromArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegfromArtikelIdResponse")]
-        DAL.Beleg[] getBelegfromArtikelId(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegbyArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegbyArtikelIdResponse")]
+        DAL.Beleg[] getBelegbyArtikelId(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegfromArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegfromArtikelIdResponse")]
-        System.Threading.Tasks.Task<DAL.Beleg[]> getBelegfromArtikelIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getBelegbyArtikelId", ReplyAction="http://tempuri.org/IService1/getBelegbyArtikelIdResponse")]
+        System.Threading.Tasks.Task<DAL.Beleg[]> getBelegbyArtikelIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarengruppebyId", ReplyAction="http://tempuri.org/IService1/getWarengruppebyIdResponse")]
         DAL.Warengruppe getWarengruppebyId(int id);
@@ -330,10 +348,10 @@ namespace Kasse.ServiceReference1 {
         System.Threading.Tasks.Task<DAL.Prognose> getPrognosebyIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPrognose", ReplyAction="http://tempuri.org/IService1/setPrognoseResponse")]
-        void setPrognose(DAL.Prognose prognose);
+        int setPrognose(DAL.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setPrognose", ReplyAction="http://tempuri.org/IService1/setPrognoseResponse")]
-        System.Threading.Tasks.Task setPrognoseAsync(DAL.Prognose prognose);
+        System.Threading.Tasks.Task<int> setPrognoseAsync(DAL.Prognose prognose);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updatePrognose", ReplyAction="http://tempuri.org/IService1/updatePrognoseResponse")]
         void updatePrognose(DAL.Prognose prognose);
@@ -352,6 +370,12 @@ namespace Kasse.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyArtikelId", ReplyAction="http://tempuri.org/IService1/getPrognosebyArtikelIdResponse")]
         System.Threading.Tasks.Task<DAL.Prognose> getPrognosebyArtikelIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate", ReplyAction="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDateResponse")]
+        DAL.Prognose getPrognoseByArtikelIdAndDate(int id, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDate", ReplyAction="http://tempuri.org/IService1/getPrognoseByArtikelIdAndDateResponse")]
+        System.Threading.Tasks.Task<DAL.Prognose> getPrognoseByArtikelIdAndDateAsync(int id, System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPrognosebyDate", ReplyAction="http://tempuri.org/IService1/getPrognosebyDateResponse")]
         DAL.Prognose[] getPrognosebyDate(System.DateTime date);
@@ -457,6 +481,14 @@ namespace Kasse.ServiceReference1 {
             return base.Channel.getPersonalbyRolleIdAsync(id);
         }
         
+        public DAL.Personal getPersonalbyEmail(string mail) {
+            return base.Channel.getPersonalbyEmail(mail);
+        }
+        
+        public System.Threading.Tasks.Task<DAL.Personal> getPersonalbyEmailAsync(string mail) {
+            return base.Channel.getPersonalbyEmailAsync(mail);
+        }
+        
         public DAL.Arbeitsvertrag getArbeitsvertragbyId(int id) {
             return base.Channel.getArbeitsvertragbyId(id);
         }
@@ -545,6 +577,14 @@ namespace Kasse.ServiceReference1 {
             return base.Channel.updateRechtAsync(recht);
         }
         
+        public DAL.Recht getRechtbyName(string name) {
+            return base.Channel.getRechtbyName(name);
+        }
+        
+        public System.Threading.Tasks.Task<DAL.Recht> getRechtbyNameAsync(string name) {
+            return base.Channel.getRechtbyNameAsync(name);
+        }
+        
         public void setRolleRecht(DAL.Rolle rolle, DAL.Recht recht) {
             base.Channel.setRolleRecht(rolle, recht);
         }
@@ -561,20 +601,20 @@ namespace Kasse.ServiceReference1 {
             return base.Channel.updateRolleRechtAsync(rollerecht);
         }
         
-        public DAL.Rolle[] getRollefromRechtId(int id) {
-            return base.Channel.getRollefromRechtId(id);
+        public DAL.Rolle[] getRollebyRechtId(int id) {
+            return base.Channel.getRollebyRechtId(id);
         }
         
-        public System.Threading.Tasks.Task<DAL.Rolle[]> getRollefromRechtIdAsync(int id) {
-            return base.Channel.getRollefromRechtIdAsync(id);
+        public System.Threading.Tasks.Task<DAL.Rolle[]> getRollebyRechtIdAsync(int id) {
+            return base.Channel.getRollebyRechtIdAsync(id);
         }
         
-        public DAL.Recht[] getRechtfromRolleId(int id) {
-            return base.Channel.getRechtfromRolleId(id);
+        public DAL.Recht[] getRechtbyRolleId(int id) {
+            return base.Channel.getRechtbyRolleId(id);
         }
         
-        public System.Threading.Tasks.Task<DAL.Recht[]> getRechtfromRolleIdAsync(int id) {
-            return base.Channel.getRechtfromRolleIdAsync(id);
+        public System.Threading.Tasks.Task<DAL.Recht[]> getRechtbyRolleIdAsync(int id) {
+            return base.Channel.getRechtbyRolleIdAsync(id);
         }
         
         public DAL.Schicht getSchichtbyId(int id) {
@@ -585,11 +625,11 @@ namespace Kasse.ServiceReference1 {
             return base.Channel.getSchichtbyIdAsync(id);
         }
         
-        public void setSchicht(DAL.Schicht schicht) {
-            base.Channel.setSchicht(schicht);
+        public int setSchicht(DAL.Schicht schicht) {
+            return base.Channel.setSchicht(schicht);
         }
         
-        public System.Threading.Tasks.Task setSchichtAsync(DAL.Schicht schicht) {
+        public System.Threading.Tasks.Task<int> setSchichtAsync(DAL.Schicht schicht) {
             return base.Channel.setSchichtAsync(schicht);
         }
         
@@ -623,6 +663,14 @@ namespace Kasse.ServiceReference1 {
         
         public System.Threading.Tasks.Task<DAL.Schicht[]> getSchichtByPersonalIdAndBetweenAsync(int id, System.DateTime von, System.DateTime bis) {
             return base.Channel.getSchichtByPersonalIdAndBetweenAsync(id, von, bis);
+        }
+        
+        public void deleteSchichtByWeek(System.DateTime date) {
+            base.Channel.deleteSchichtByWeek(date);
+        }
+        
+        public System.Threading.Tasks.Task deleteSchichtByWeekAsync(System.DateTime date) {
+            return base.Channel.deleteSchichtByWeekAsync(date);
         }
         
         public DAL.Lieferant getLieferantbyId(int id) {
@@ -769,20 +817,20 @@ namespace Kasse.ServiceReference1 {
             return base.Channel.updateArtikelBelegAsync(artikelbeleg);
         }
         
-        public DAL.Artikel[] getArtikelfromBelegId(int id) {
-            return base.Channel.getArtikelfromBelegId(id);
+        public DAL.Artikel[] getArtikelbyBelegId(int id) {
+            return base.Channel.getArtikelbyBelegId(id);
         }
         
-        public System.Threading.Tasks.Task<DAL.Artikel[]> getArtikelfromBelegIdAsync(int id) {
-            return base.Channel.getArtikelfromBelegIdAsync(id);
+        public System.Threading.Tasks.Task<DAL.Artikel[]> getArtikelbyBelegIdAsync(int id) {
+            return base.Channel.getArtikelbyBelegIdAsync(id);
         }
         
-        public DAL.Beleg[] getBelegfromArtikelId(int id) {
-            return base.Channel.getBelegfromArtikelId(id);
+        public DAL.Beleg[] getBelegbyArtikelId(int id) {
+            return base.Channel.getBelegbyArtikelId(id);
         }
         
-        public System.Threading.Tasks.Task<DAL.Beleg[]> getBelegfromArtikelIdAsync(int id) {
-            return base.Channel.getBelegfromArtikelIdAsync(id);
+        public System.Threading.Tasks.Task<DAL.Beleg[]> getBelegbyArtikelIdAsync(int id) {
+            return base.Channel.getBelegbyArtikelIdAsync(id);
         }
         
         public DAL.Warengruppe getWarengruppebyId(int id) {
@@ -833,11 +881,11 @@ namespace Kasse.ServiceReference1 {
             return base.Channel.getPrognosebyIdAsync(id);
         }
         
-        public void setPrognose(DAL.Prognose prognose) {
-            base.Channel.setPrognose(prognose);
+        public int setPrognose(DAL.Prognose prognose) {
+            return base.Channel.setPrognose(prognose);
         }
         
-        public System.Threading.Tasks.Task setPrognoseAsync(DAL.Prognose prognose) {
+        public System.Threading.Tasks.Task<int> setPrognoseAsync(DAL.Prognose prognose) {
             return base.Channel.setPrognoseAsync(prognose);
         }
         
@@ -863,6 +911,14 @@ namespace Kasse.ServiceReference1 {
         
         public System.Threading.Tasks.Task<DAL.Prognose> getPrognosebyArtikelIdAsync(int id) {
             return base.Channel.getPrognosebyArtikelIdAsync(id);
+        }
+        
+        public DAL.Prognose getPrognoseByArtikelIdAndDate(int id, System.DateTime date) {
+            return base.Channel.getPrognoseByArtikelIdAndDate(id, date);
+        }
+        
+        public System.Threading.Tasks.Task<DAL.Prognose> getPrognoseByArtikelIdAndDateAsync(int id, System.DateTime date) {
+            return base.Channel.getPrognoseByArtikelIdAndDateAsync(id, date);
         }
         
         public DAL.Prognose[] getPrognosebyDate(System.DateTime date) {
