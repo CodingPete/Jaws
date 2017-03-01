@@ -111,6 +111,9 @@ namespace Dashboard.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Warengruppe warengruppe = db.WarengruppeSet.Find(id);
+            List < Artikel > artikel = warengruppe.Artikel.ToList();
+            db.ArtikelSet.RemoveRange(artikel);
+            
             if (warengruppe == null)
             {
                 return HttpNotFound();
