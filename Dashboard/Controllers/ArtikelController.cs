@@ -13,11 +13,37 @@ namespace Dashboard.Controllers
     public class ArtikelController : Controller
     {
         private DataContainer db = new DataContainer();
-
+        
         // GET: Artikel
         public ActionResult Index()
         {
             var artikelSet = db.ArtikelSet.Include(a => a.Lieferant).Include(a => a.Warengruppe);
+
+
+            DateTime heuteVor6Wochen = DateTime.Today.AddDays(- (7 * 6)).Date;
+            DateTime heuteIn1Wochen = DateTime.Today.AddDays(7 * 6).Date;
+
+            List<Helper_Artikel> ha = new List<Helper_Artikel>();
+
+            foreach (Artikel artikel in artikelSet)
+            {
+                Helper_Artikel helper = new Helper_Artikel();
+                helper.artikel = artikel;
+                helper.artikelbeleg = (from ab in db.ArtikelBelegSet
+                                       join b in db.BelegSet
+                                       on ab.BelegId equals b.Id
+                                       join lfa in db.LieferartSet 
+                                       on b.LieferartId equals lfa.Id
+                                       where b.Datum >= heuteVor6Wochen && b.Datum <= heuteIn1Wochen
+                                       && lfa.Name == "Verkauf"
+                                       select ab).ToList();
+                helper.prognosen = (from p in db.PrognoseSet
+                                    where p.Datum >= heuteVor6Wochen && p.Datum <= heuteIn1Wochen
+                                    select p).ToList();
+                ha.Add(helper);
+            }
+
+            ViewBag.helper = ha;
             return View(artikelSet.ToList());
         }
 
