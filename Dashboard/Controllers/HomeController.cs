@@ -52,7 +52,7 @@ namespace Dashboard.Controllers
                                   ).DefaultIfEmpty(0).Sum();
 
             if (tagesUmsatzLetzteWoche != 0)
-                tagesUmsatz.Prozent = (int)(tagesUmsatz.Wert / tagesUmsatzLetzteWoche * 100);
+                tagesUmsatz.Prozent = (int)(tagesUmsatzLetzteWoche / tagesUmsatz.Wert * 100);
             else tagesUmsatz.Prozent = 0;
             return tagesUmsatz;
         }
@@ -72,7 +72,7 @@ namespace Dashboard.Controllers
                                 join lfa in db.LieferartSet on b.LieferartId equals lfa.Id
                                 join ab in db.ArtikelBelegSet on b.Id equals ab.BelegId
                                 join a in db.ArtikelSet on ab.ArtikelId equals a.Id
-                                where b.Datum >= montag && b.Datum <= heute && lfa.Name == "Verkauf"
+                                where DbFunctions.TruncateTime(b.Datum) >= DbFunctions.TruncateTime(montag) && b.Datum <= heute && lfa.Name == "Verkauf"
                                 select a.Nettoverkaufspreis
                                   ).DefaultIfEmpty(0).Sum();
             wochenUmsatz.Wert = Math.Round(wochenUmsatz.Wert, 2);
@@ -81,11 +81,13 @@ namespace Dashboard.Controllers
                                        join lfa in db.LieferartSet on b.LieferartId equals lfa.Id
                                        join ab in db.ArtikelBelegSet on b.Id equals ab.BelegId
                                        join a in db.ArtikelSet on ab.ArtikelId equals a.Id
-                                       where b.Datum >= montagLetzteWoche && b.Datum <= heuteLetzteWoche && lfa.Name == "Verkauf"
+                                       where DbFunctions.TruncateTime(b.Datum) >= DbFunctions.TruncateTime(montagLetzteWoche) && b.Datum <= heuteLetzteWoche && lfa.Name == "Verkauf"
                                        select a.Nettoverkaufspreis
                                   ).DefaultIfEmpty(0).Sum();
             if (wochenUmsatzLetzteWoche != 0)
+            {
                 wochenUmsatz.Prozent = (int)(wochenUmsatz.Wert / wochenUmsatzLetzteWoche * 100);
+            }
             else wochenUmsatz.Prozent = 0;
 
             return wochenUmsatz;
@@ -118,7 +120,7 @@ namespace Dashboard.Controllers
                                              select a.Nettoverkaufspreis
                                   ).DefaultIfEmpty(0).Sum();
             if (tagesVerlustLetzteWoche != 0)
-                tagesVerlust.Prozent = (int)(tagesVerlust.Wert / tagesVerlustLetzteWoche * 100);
+                tagesVerlust.Prozent = (int)(tagesVerlustLetzteWoche / tagesVerlust.Wert * 100);
             else tagesVerlust.Prozent = 0;
             return tagesVerlust;
         }
