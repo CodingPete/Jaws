@@ -18,16 +18,15 @@ namespace Dashboard.Controllers
         public ActionResult Index()
         {
             var belegSet = db.BelegSet.Include(b => b.Lieferart);
-            List<Double> summen = new List<double>();
+
             foreach (Beleg beleg in belegSet)
             {
-                summen.Add((from b in db.BelegSet
+               /* summen.Add((from b in db.BelegSet
                               join ab in db.ArtikelBelegSet on b.Id equals ab.BelegId
                               join a in db.ArtikelSet on ab.ArtikelId equals a.Id
-                              select a.Nettoverkaufspreis).DefaultIfEmpty(0).Sum());
+                              select a.Nettoverkaufspreis).DefaultIfEmpty(0).Sum()); */
             }
             
-            ViewBag.summen = summen;
             return View(belegSet.ToList());
         }
 

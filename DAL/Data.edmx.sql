@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/26/2017 21:07:27
--- Generated from EDMX file: C:\Users\peter\Desktop\VWW\Jaws\DAL\Data.edmx
+-- Date Created: 03/01/2017 14:31:12
+-- Generated from EDMX file: C:\Users\peter\Desktop\gitclone\Jaws\DAL\Data.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -136,7 +136,8 @@ GO
 CREATE TABLE [Jaws-DB].[ArbeitsvertragSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Wochenstunden] int  NOT NULL,
-    [Stundenlohn] float  NOT NULL
+    [Stundenlohn] float  NOT NULL,
+    [Name] nvarchar(max)  NOT NULL
 );
 GO
 
