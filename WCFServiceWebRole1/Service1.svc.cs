@@ -270,14 +270,19 @@ namespace WCFServiceWebRole1
 
         public void setArtikelBeleg(Artikel artikel, Beleg beleg)
         {
+            
+            db.ArtikelBelegSet.Add(new ArtikelBeleg() { ArtikelId = artikel.Id, BelegId = beleg.Id });
+            db.SaveChanges();
+
             Lieferart lfa = this.getLieferartbyId(beleg.LieferartId);
             if (lfa.Name.Equals("Verkauf"))
             {
+               
                 artikel.Bestand -= 1;
+                artikel.ArtikelBeleg = null;
                 this.updateArtikel(artikel);
             }
-            db.ArtikelBelegSet.Add(new ArtikelBeleg() { ArtikelId = artikel.Id, BelegId = beleg.Id });
-            db.SaveChanges();
+
         }
 
         public int setBeleg(Beleg beleg)
