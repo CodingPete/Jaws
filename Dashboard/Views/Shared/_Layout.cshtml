@@ -138,6 +138,10 @@
                         <span>Administration</span>
                     </a>
                     <div class="navbar-item nav navbar-nav">
+                        
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
                         <div class="nav-item nav-link dropdown">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                                 <span>Hallo @Session["Vorname"] @Session["Name"]</span>
@@ -149,6 +153,8 @@
                                 <a class="dropdown-item" href="@Url.Action("Logout", "Login")">Logout</a>
                             </div>
                         </div>
+                    }
+                            
                     </div>
                 </div>
             </nav>
