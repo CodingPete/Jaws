@@ -17,7 +17,7 @@ namespace Dashboard.Controllers
         // GET: Beleg
         public ActionResult Index()
         {
-            var belegSet = db.BelegSet.Include(b => b.Lieferart);
+            var belegSet = db.BelegSet.OrderByDescending((b) => b.Id).Include(b => b.Lieferart);
             
                 List< Helper_BelegSumme > helper = new List<Helper_BelegSumme>();
 
@@ -38,6 +38,27 @@ namespace Dashboard.Controllers
             return View(belegSet);
         }
 
+
+        // GET: Beleg/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            List<Artikel> artikels = (from ab in db.ArtikelBelegSet
+                                      join a in db.ArtikelSet
+                                      on ab.ArtikelId equals a.Id
+                                      where ab.BelegId == id
+                                      select a).ToList();
+
+            if (artikels == null)
+            {
+                return HttpNotFound();
+            }
+            return View(artikels);
+        }
 
         // GET: Beleg/Delete/5
         public ActionResult Delete(int? id)
