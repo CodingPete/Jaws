@@ -35,6 +35,13 @@
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(schichten),
+        beforeSend: function () {
+            if (schichten.length == 0) {
+                $("html, body").css("cursor", "");
+                alert("Schichtplan ist leer!");
+                return false;
+            }
+        },
         success: function () {
             $("html, body").css("cursor", "");
             alert("Schichtplan gespeichert!");
