@@ -4,11 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meine ASP.NET-Anwendung</title>
+    <title>@ViewBag.Title - JAWS</title>
 
     @Styles.Render("~/Template/Style")
-    <!-- endbuild -->
-    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Template/Scripts")
 </head>
 <body>
 
@@ -138,23 +137,23 @@
                         <span>Administration</span>
                     </a>
                     <div class="navbar-item nav navbar-nav">
-                        
 
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <div class="nav-item nav-link dropdown">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                                <span>Hallo @Session["Vorname"] @Session["Name"]</span>
-                                <span class="menu-caret">
-                                    <i class="material-icons">arrow_drop_down</i>
-                                </span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="@Url.Action("Logout", "Login")">Logout</a>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="nav-item nav-link dropdown">
+                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span>Hallo @Session["Vorname"] @Session["Name"]</span>
+                                    <span class="menu-caret">
+                                        <i class="material-icons">arrow_drop_down</i>
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="@Url.Action("Logout", "Login")">Logout</a>
+                                </div>
                             </div>
-                        </div>
-                    }
-                            
+                        }
+
                     </div>
                 </div>
             </nav>
@@ -171,7 +170,7 @@
                             <li>
                                 <a href="javascript:;">
                                     <span>Copyright</span>
-                                    &copy; 2016 Your App
+                                    &copy; 2017 JAWS
                                 </a>
                             </li>
                         </ul>
@@ -184,13 +183,7 @@
         <!-- /content panel -->
     </div>
 
-    @Scripts.Render("~/Template/Scripts")
-
-    <script type="text/javascript">
-        $('.datatable').DataTable({
-            order: [[0, 'desc']]
-        });
-    </script>
+    @Scripts.Render("~/Template/Main")
 
     @RenderSection("scripts", required: false)
 </body>
