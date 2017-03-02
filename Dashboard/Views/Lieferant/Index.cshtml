@@ -71,7 +71,7 @@
                                 @Html.DisplayFor(modelItem => item.Id)
                             </th>
                             <th scope="row">
-                                <a href="@Url.Action("Bestellung/"+@item.Id,"Lieferant")">Bestellung</a>
+                                <a class="modalcreate" href="#" data-toggle="modal" id="@item.Id" data-target="#BestellModal">Bestellung</a>
                             </th>
                             <th scope="row" data-title="">
                                 <a href="@Url.Action("Edit", new { id = item.Id })"><i class="material-icons text-primary edit"></i></a>
@@ -117,6 +117,43 @@
                     }
                 </tbody>
             </table>
+            <script>
+                document.addEventListener("DOMContentLoaded", function (event) {
+                    $(".modalcreate").click((e) => {
+                        var lieferantid = e.target.id;
+                        console.log(e.target.id);
+                        console.log(e.t);
+                        var url1 = "Lieferant/Modal/" + lieferantid;
+                        $.ajax({
+                            url: url1,
+                            type: "GET",
+                            success: function (response) {
+                                console.log(response);
+                                $(".modal-body").html(response);
+                                
+                            }
+                        })
+                    });
+                });
+            </script>
+            <!-- Modal -->
+            <div class="modal fade" id="BestellModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Bestellungen</h4>
+                        </div>
+                        <div class="modal-body">
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
