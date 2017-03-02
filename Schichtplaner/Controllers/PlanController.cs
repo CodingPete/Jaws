@@ -22,14 +22,19 @@ namespace Schichtplaner.Controllers
         // GET: Plan
         public ActionResult Index()
         {
+            DateTime monday = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
+
+            if (Request["monday"] != null)
+            {
+                monday = DateTime.Parse(Request["monday"]);
+            }
+            DateTime sunday = monday.AddDays(6).Date;
+
             List<PersonSchichten> personSchichtenListe = new List<PersonSchichten>();
 
             // Hole alle Angestellten
             var personalliste = client.getPersonalList();
-
            
-            DateTime monday = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
-            DateTime sunday = monday.AddDays(6).Date;
 
            
             foreach (Personal person in personalliste)
@@ -44,7 +49,9 @@ namespace Schichtplaner.Controllers
 
                 personSchichtenListe.Add(personSchicht);
             }
-            
+
+            ViewBag.monday = monday;
+            ViewBag.sunday = sunday;
             return View(personSchichtenListe);
         }
 
