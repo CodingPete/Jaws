@@ -18,8 +18,12 @@ namespace Schichtplaner.Controllers
         }
         public ActionResult Index()
         {
-
-            return View(client.getSchichtList());
+            var schichtenliste = client.getSchichtList();
+            foreach(var schicht in schichtenliste)
+            {
+                schicht.Personal = client.getPersonalbyId(schicht.PersonalId);
+            }
+            return View(schichtenliste);
         }
 
         public ActionResult Schichtplan()
