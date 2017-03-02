@@ -71,6 +71,8 @@ namespace Dashboard.Controllers
                                          select p.Abverkauf_soll).DefaultIfEmpty(0).Sum();
                 // Benötigte Menge 
                 int menge = (int)Math.Ceiling(article.Bestand - prognose_summe)*(-1);
+                if (menge < 0)
+                    menge = 0;
                 artikelprognose.Add(new Helper_ArtikelPrognose() { prognosemenge = menge, artikel = article });
             }
             ViewBag.ArtikelPrognose = artikelprognose;

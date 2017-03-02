@@ -70,8 +70,8 @@
                             <th scope="row" data-title="#">
                                 @Html.DisplayFor(modelItem => item.Id)
                             </th>
-                            <th scope="row">
-                                <a class="modalcreate" href="#" data-toggle="modal" id="@item.Id" data-target="#BestellModal">Bestellung</a>
+                            <th scope="row" class="modalcreate"id="@item.Id">
+                                Bestellung
                             </th>
                             <th scope="row" data-title="">
                                 <a href="@Url.Action("Edit", new { id = item.Id })"><i class="material-icons text-primary edit"></i></a>
@@ -117,25 +117,6 @@
                     }
                 </tbody>
             </table>
-            <script>
-                document.addEventListener("DOMContentLoaded", function (event) {
-                    $(".modalcreate").click((e) => {
-                        var lieferantid = e.target.id;
-                        console.log(e.target.id);
-                        console.log(e.t);
-                        var url1 = "Lieferant/Modal/" + lieferantid;
-                        $.ajax({
-                            url: url1,
-                            type: "GET",
-                            success: function (response) {
-                                console.log(response);
-                                $(".modal-body").html(response);
-                                
-                            }
-                        })
-                    });
-                });
-            </script>
             <!-- Modal -->
             <div class="modal fade" id="BestellModal" role="dialog">
                 <div class="modal-dialog">
@@ -156,4 +137,29 @@
         </div>
     </div>
 </div>
+@section scripts {
+<script type="text/javascript">
+   
+    $(".modalcreate").hover((e) => {
+        $(e.target).css('cursor', 'pointer');
+    })
+    $(".modalcreate").click((e) => {
+        var lieferantid = e.target.id;
 
+        var relurl = '@Url.Action("Modal", "Lieferant",new {id="buff" })';
+        console.log(relurl);
+        relurl = relurl.replace("buff", lieferantid);
+        console.log(relurl);
+        $.ajax({
+            url: relurl,
+            type: "GET",
+            success: function (response) {
+                console.log(response);
+                $(".modal-body").html(response);
+                $("#BestellModal").modal("show");
+
+            }
+        })
+    });
+</script>
+}
