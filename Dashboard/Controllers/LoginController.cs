@@ -20,17 +20,16 @@ namespace Dashboard.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "Username")] String temp) //TODO: Bind Ersetzen, keine Ahnung was man da machen kann
+        public ActionResult Index([Bind(Include = "Username")] String temp) 
         {
             var post = Request.Form;
             String username = post["Username"];
             String password = post["Password"];
             
-            FormsAuthentication.RedirectFromLoginPage(post["Username"], true);
-            if (new MyMembershipProvider().ValidateUser(username,password))
+            if (new MyMembershipProvider().ValidateUser(username,password)) //Prüfe ob eingegebene Benutzereingaben gültig sind
             {
                 Personal person = db.PersonalSet.First((x) => x.email == username);
-                FormsAuthentication.RedirectFromLoginPage(person.email, false);
+                FormsAuthentication.RedirectFromLoginPage(person.email, false); 
                 //create a Session cookie
                 Session["Name"] = person.Name;
                 Session["Vorname"] = person.Vorname;

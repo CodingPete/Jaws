@@ -151,7 +151,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper_Artikel.cs" />
-    <Compile Include="Helper_ArtikelPrognose.cs" />
     <Compile Include="Helper_BelegSumme.cs" />
     <Compile Include="MiniStatistik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
