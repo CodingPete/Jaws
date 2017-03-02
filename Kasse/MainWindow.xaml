@@ -29,8 +29,10 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <Label x:Name="artikel_count" Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Anzahl Artikel</Label>
-                <Label x:Name="gesamtbetrag" Grid.Column="1" Grid.Row="1" Grid.IsSharedSizeScope="True" Width="128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">0.00</Label>
+                <Label x:Name="artikel_count_Text" Grid.Column="0" Grid.Row="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Anzahl Artikel: </Label>
+                <Label x:Name="gesamtbetrag_Text" Grid.Column="0" Grid.Row="1" Grid.IsSharedSizeScope="True"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Gesamtpreis Brutto: </Label>
+                <Label x:Name="artikel_count" Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">0</Label>
+                <Label x:Name="gesamtbetrag" Grid.Column="1" Grid.Row="1" Grid.IsSharedSizeScope="True"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center">0.00</Label>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.RowDefinitions>

@@ -58,13 +58,14 @@ namespace Kasse
                 if(artikel != null)
                 {
                     listBox.Items.Add(artikel);
-                    artikel_count.Content = listBox.Items.Count;
+                    artikel_count.Content =  listBox.Items.Count;
                     Double gesamt_betrag = 0;
-                    foreach(Artikel artikels in listBox.Items)
+                    
+                    foreach(Artikel item in listBox.Items)
                     {
-                        gesamt_betrag += artikels.Nettoverkaufspreis;
+                         gesamt_betrag += item.Nettoverkaufspreis+ (item.Nettoverkaufspreis * client.getWarengruppebyId(item.WarengruppeId).Steuersatz / 100);
                     }
-                    gesamtbetrag.Content = Math.Round(gesamt_betrag, 2);
+                    gesamtbetrag.Content =  Math.Round(gesamt_betrag, 2);
                 }
                 else
                 {
@@ -130,7 +131,7 @@ namespace Kasse
 
             listBox.Items.Clear();
             artikel_count.Content = listBox.Items.Count;
-            gesamtbetrag.Content = 0;
+            gesamtbetrag.Content = 0.00;
         }
     }
     
