@@ -80,19 +80,7 @@ namespace Dashboard.Controllers
             
             return View();
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Bestellung()
-        {
-            var post = Request.Form;
-            var artikelid = post["selarticle"]; //get selected article
-
-            if (artikelid != null)
-            {
-                this.Bestellung(Int32.Parse(artikelid));
-            }
-            return RedirectToAction("Index", "Lieferant");
-        }
+        /*
         // GET: Lieferant/Bestellung/5
         public ActionResult Bestellung(int? id)
         {
@@ -173,9 +161,9 @@ namespace Dashboard.Controllers
                 return RedirectToAction("Details", "Beleg", new { id = bestellung.Id });
             }
             return RedirectToAction("Index", "Lieferant");
-        }
+        }*/
         // GET: Lieferant/Bestellung/5
-        /*public ActionResult Bestellung(int? id)
+        public ActionResult Bestellung(int? id)
         {
             if(id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
@@ -256,7 +244,7 @@ namespace Dashboard.Controllers
                 return RedirectToAction("Details", "Beleg", new { id = bestellung.Id });
             }
             return RedirectToAction("Index", "Lieferant");
-        }*/
+        }
 
         // GET: Lieferant/Details/5
         public ActionResult Details(int? id)

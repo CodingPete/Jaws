@@ -5,12 +5,17 @@
     @Html.AntiForgeryToken();
     <div class="form-group">
         <label for="selarticle">Wähle deinen Artikel:</label>
-        <select class="form-control" id="selarticle" name="selarticle">
+        <select multiple class="form-control" id="selarticle" name="selarticle">
             @foreach(var artikelprognose in ViewBag.ArtikelPrognose)
             {
                 <option value="@artikelprognose.artikel.Id">@artikelprognose.artikel.Name | zu bestellende Menge anhand der Prognose: @artikelprognose.prognosemenge </option>
             }
         </select>
+        @foreach (var artikelprognose in ViewBag.ArtikelPrognose)
+        {
+            <label for="article_@artikelprognose.artikel.Id">Menge @artikelprognose.artikel.Name</label>
+            <input type="number" value="@artikelprognose.prognosemenge" name="article_@artikelprognose.artikel.Id" />
+        }
         <input id="selItem" type="hidden" name="itemid" />
     </div>
     <div class=" form-group">
