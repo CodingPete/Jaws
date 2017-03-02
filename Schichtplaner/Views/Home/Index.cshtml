@@ -9,7 +9,7 @@
         </h5>
         <div class="fullcalendar"></div>
     </div>
-    <table class="table hidden">
+    <table class="table" style="display:none">
         <tr>
             <th>
                 Startzeit_soll
@@ -51,7 +51,7 @@
                     @item.Pause
                 </td>
                 <td>
-                    @item.PersonalId
+                    @item.Personal.Name
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
