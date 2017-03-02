@@ -110,6 +110,9 @@ namespace WCFServiceWebRole1
         List<Schicht> getSchichtbyPersonalId(int id);
 
         [OperationContract]
+        List<Schicht> getSchichtList();
+
+        [OperationContract]
         List<Schicht> getSchichtBetween(DateTime von, DateTime bis);
 
         [OperationContract]
