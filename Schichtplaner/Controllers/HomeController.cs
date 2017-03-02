@@ -18,7 +18,8 @@ namespace Schichtplaner.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+
+            return View(client.getSchichtList());
         }
 
         public ActionResult Schichtplan()
@@ -30,20 +31,6 @@ namespace Schichtplaner.Controllers
                 personschichten.Add(new PersonSchichten(item, client.getArbeitsvertragbyId(item.ArbeitsvertragId), client.getSchichtbyPersonalId(item.Id).ToArray()));
             }
             return View(personschichten);
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
         }
     }
 }

@@ -45,6 +45,7 @@
                         }
                     },
                     defaultDate: moment().format('YYYY-MM-DD'),
+                    defaultView: 'agendaWeek',
                     viewRender: function () {
                         $('.fc-button-group').addClass('btn-group');
                         $('.fc-button').addClass('btn');

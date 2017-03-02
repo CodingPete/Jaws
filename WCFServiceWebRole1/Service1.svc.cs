@@ -507,6 +507,10 @@ namespace WCFServiceWebRole1
             db.SaveChanges();
 
         }
-        
+
+        public List<Schicht> getSchichtList()
+        {
+            return db.SchichtSet.ToList();
+        }
     }
 }

@@ -12,13 +12,13 @@
         </div>
         <div class="card-block">
             
-            <table class="table table-responsive table-hover datatable">
+            <table class="table table-hover dt-responsive nowrap datatable" cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th>
                             #
                         </th>
-                        
+
                         <th>
                             <a style="opacity: 0;"><i class="material-icons text-primary">delete</i></a>
                         </th>
@@ -64,7 +64,7 @@
                         </tr>
                         <tr id="artikel_@item.Id" class="collapse">
                             <td colspan="3">
-                                
+
                                 @foreach (Helper_BelegSumme helpe in ViewBag.helper)
                                 {
                                     if (item.Id == helpe.beleg.Id)
@@ -78,14 +78,15 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach (var a in helpe.artikels) {
-                                                <tr>
-                                                    <td>@a.Name</td>
-                                                    <td>@a.GTIN</td>
-                                                    <td>@a.Nettoverkaufspreis €</td>
-                                                </tr>
-                                            }
-                                                </tbody>
+                                                @foreach (var a in helpe.artikels)
+                                                {
+                                                    <tr>
+                                                        <td>@a.Name</td>
+                                                        <td>@a.GTIN</td>
+                                                        <td>@a.Nettoverkaufspreis €</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
                                         </table>
                                     }
                                 }
