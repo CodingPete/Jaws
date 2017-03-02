@@ -28,7 +28,7 @@ namespace Schichtplaner.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "Username")] String temp) //TODO: Bind Ersetzen, keine Ahnung was man da machen kann
+        public ActionResult Index([Bind(Include = "Username")] String temp) 
         {
             var post = Request.Form;
             String username = post["Username"];
@@ -40,7 +40,7 @@ namespace Schichtplaner.Controllers
                 Session["Name"] = person.Name;
                 Session["Vorname"] = person.Vorname;
 
-                return RedirectToAction("Schichtplan", "Home");
+                return RedirectToAction("Index", "Home");
 
             }
             return RedirectToAction("Index", "Home");
