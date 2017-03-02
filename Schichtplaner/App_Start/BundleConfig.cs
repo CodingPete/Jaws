@@ -28,15 +28,16 @@ namespace Schichtplaner
                       "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Template/Style").Include(
-                        "~/Content/template2/styles/datatables/dataTables.bootstrap4.css",
-                        "~/Content/template2/styles/sweetalert/sweetalert.css",
-                        "~/Content/template2/styles/fullcalendar/fullcalendar.min.css",
-                        "~/Content/template2/styles/bootstrap/bootstrap.css",
-                        "~/Content/template2/styles/font-awesome/font-awesome.css",
-                        "~/Content/template2/styles/animate.css/animate.css",
-                        "~/Content/template2/styles/app.css",
-                        "~/Content/template2/styles/app.skins.css"
-                ));
+            "~/Content/template2/styles/datatables/dataTables.bootstrap4.min.css",
+            "~/Content/template2/styles/datatables/responsive.bootstrap4.min.css",
+            "~/Content/template2/styles/sweetalert/sweetalert.css",
+            "~/Content/template2/styles/fullcalendar/fullcalendar.min.css",
+            "~/Content/template2/styles/bootstrap/bootstrap.css",
+            "~/Content/template2/styles/font-awesome/font-awesome.css",
+            "~/Content/template2/styles/animate.css/animate.css",
+            "~/Content/template2/styles/app.css",
+            "~/Content/template2/styles/app.skins.css"
+    ));
 
             bundles.Add(new ScriptBundle("~/Template/Scripts").Include(
                 "~/Content/template2/scripts/jquery/jquery.js",
@@ -47,8 +48,12 @@ namespace Schichtplaner
                 "~/Content/template2/scripts/main.js",
 
                 "~/Content/template2/scripts/dashboard.js",
-                "~/Content/template2/scripts/datatables/jquery.dataTables.js",
-                "~/Content/template2/scripts/datatables/dataTables.bootstrap4.js",
+
+                "~/Content/template2/scripts/datatables/jquery.dataTables.min.js",
+                "~/Content/template2/scripts/datatables/dataTables.bootstrap4.min.js",
+                "~/Content/template2/scripts/datatables/dataTables.responsive.min.js",
+                "~/Content/template2/scripts/datatables/responsive.bootstrap4.min.js",
+
                 "~/Content/template2/scripts/sweetalert/sweetalert.min.js",
 
                 "~/Content/template2/scripts/moment/moment.min.js",
