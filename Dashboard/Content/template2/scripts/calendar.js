@@ -128,13 +128,17 @@
                 if ($(this).text().indexOf("Edit |") > -1) {
                     itArr.push('""');
                 } else {
-                    itArr.push('"' + $(this).text().substr(13, $(this).text().length - 22) + '"');
+                    itArr.push('"' + trim1($(this).text()) + '"');
                 }
             });
             otArr.push('[' + itArr.join(',') + ']');
         })
-        json += otArr.join(",") + ']'
-
+        json += otArr.join(",") + ']';
+        console.log(json);
         return json;
     }   
+
+    function trim1(str) {
+        return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+    }
 })(jQuery);
