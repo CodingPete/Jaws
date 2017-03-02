@@ -26,7 +26,6 @@ namespace Dashboard.Controllers
             String username = post["Username"];
             String password = post["Password"];
             
-            FormsAuthentication.RedirectFromLoginPage(post["Username"], true);
             if (new MyMembershipProvider().ValidateUser(username,password))
             {
                 Personal person = db.PersonalSet.First((x) => x.email == username);
