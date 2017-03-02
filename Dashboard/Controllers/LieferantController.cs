@@ -64,6 +64,8 @@ namespace Dashboard.Controllers
             DateTime heute = DateTime.Today.Date;
             DateTime heuteInEinerWoche = heute.AddDays(7);
 
+            Beleg bestellung = new Beleg();
+
             // Der Lieferant zu dem die Bestellung erstellt werden soll
             Lieferant lieferant = db.LieferantSet.Find(id);
 
@@ -79,7 +81,7 @@ namespace Dashboard.Controllers
                 List<ArtikelBeleg> artikelbelegs = new List<ArtikelBeleg>();
 
                 // Der neue Bestellbeleg
-                Beleg bestellung = new Beleg();
+                
                 bestellung.Lieferart = lfa;
                 bestellung.LieferartId = lfa.Id;
                 bestellung.Datum = heute;
@@ -129,11 +131,13 @@ namespace Dashboard.Controllers
                 {
                     // Leeren Bestellbeleg wieder entfernen
                     db.BelegSet.Remove(bestellung);
+                    db.SaveChanges();
+                    return RedirectToAction("Index", "Lieferant");
                 }
                 db.SaveChanges();
+                return RedirectToAction("Details", "Beleg", new { id = bestellung.Id });
             }
-
-            return null;
+            return RedirectToAction("Index", "Lieferant");
         }
 
         // GET: Lieferant/Details/5
