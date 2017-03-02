@@ -116,7 +116,7 @@ namespace Dashboard.Controllers
                                              join lfa in db.LieferartSet on b.LieferartId equals lfa.Id
                                              join ab in db.ArtikelBelegSet on b.Id equals ab.BelegId
                                              join a in db.ArtikelSet on ab.ArtikelId equals a.Id
-                                             where DbFunctions.TruncateTime(b.Datum) == DbFunctions.TruncateTime(letzteWoche) && b.Datum <= letzteWoche && lfa.Name == "Verkauf"
+                                             where DbFunctions.TruncateTime(b.Datum) == DbFunctions.TruncateTime(letzteWoche) && b.Datum <= letzteWoche && lfa.Name == "Verlust"
                                              select a.Nettoverkaufspreis
                                   ).DefaultIfEmpty(0).Sum();
             if (tagesVerlustLetzteWoche != 0)
@@ -129,26 +129,19 @@ namespace Dashboard.Controllers
 
         private MiniStatistik tagesStundenLeistung()
         {
-            DateTime heute = DateTime.Now;
+            DateTime heute = DateTime.Now.AddDays(-1);
             DateTime montag = heute.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
             DateTime heuteLetzteWoche = heute.AddDays(-7);
             DateTime montagLetzteWoche = heuteLetzteWoche.AddDays(-(int)heuteLetzteWoche.DayOfWeek + (int)DayOfWeek.Monday);
+           
 
-            List<Schicht> abgelaufen = (from s in db.SchichtSet
-                          where DbFunctions.TruncateTime(s.Startzeit_soll) >= DbFunctions.TruncateTime(heute) && s.Endzeit_soll <= heute
-                          select s).ToList();
-            List<Schicht> laufend = (from s in db.SchichtSet
-                                     where DbFunctions.TruncateTime(s.Startzeit_soll) >= DbFunctions.TruncateTime(heute) && s.Endzeit_soll > heute
-                                     select s).ToList();
+            List<Schicht> TagesSchicht = (from s in db.SchichtSet where DbFunctions.TruncateTime(s.Startzeit_soll) == DbFunctions.TruncateTime(heute) select s).ToList();
 
+            // todo: Duration funktioniert nicht.
             TimeSpan dauer = new TimeSpan();
-            foreach (Schicht schicht in abgelaufen)
+            foreach (Schicht schicht in TagesSchicht)
             {
-                dauer.Add(schicht.Endzeit_soll.Subtract(schicht.Startzeit_soll));
-            }
-            foreach (Schicht schicht in laufend)
-            {
-                dauer.Add(heute.Subtract(schicht.Startzeit_soll));
+                dauer.Add(schicht.Endzeit_soll.Subtract(schicht.Startzeit_soll).Duration());
             }
 
             Double stundenleistung = 0;

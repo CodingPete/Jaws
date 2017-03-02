@@ -8,8 +8,10 @@
             <div class="card card-block">
                 <h5 class="m-b-0 v-align-middle text-overflow">
                     <span class="small pull-xs-right">
-                        <i class="material-icons text-success" style="width: 16px;">arrow_drop_up</i>
-                        <span style="line-height: 24px;">@miniStatistik.Prozent%</span>
+                        @if(miniStatistik.Prozent != 0) {
+                            <i class="material-icons text-success" style="width: 16px;">arrow_drop_up</i>
+                            <span style="line-height: 24px;">@miniStatistik.Prozent%</span>
+                        }
                     </span>
                     <span>@miniStatistik.Wert @miniStatistik.Einheit</span>
                 </h5>
