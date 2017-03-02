@@ -3,6 +3,142 @@
  */
 (function ($) {
     'use strict';
+    /* Define Calendar Data */
+    ajaxGetData();
+
+    function ajaxGetData() {
+        $.ajax({
+            url: "/Schicht",
+            type: "GET",
+            success: function (response) {
+                var eventsData = getData(response);
+                $('.fullcalendar').fullCalendar({
+                    editable: false,
+                    lang: 'de',
+                    contentHeight: 520,
+                    header: {
+                        left: 'title',
+                        center: 'month,agendaWeek,agendaDay',
+                        right: 'today prev,next'
+                    },
+                    buttonIcons: {
+                        prev: ' fa fa-caret-left',
+                        next: ' fa fa-caret-right'
+                    },
+                    droppable: true,
+                    axisFormat: 'h:mm',
+                    columnFormat: {
+                        month: 'dddd',
+                        week: 'ddd M/D',
+                        day: 'dddd M/d',
+                        agendaDay: 'dddd D'
+                    },
+                    allDaySlot: false,
+                    drop: function () {
+                        var originalEventObject = $(this).data('eventObject');
+                        var copiedEventObject = $.extend({}, originalEventObject);
+                        copiedEventObject.start = date;
+                        $('.fullcalendar').fullCalendar('renderEvent', copiedEventObject, true);
+                        if ($('#drop-remove').is(':checked')) {
+                            $(this).remove();
+                        }
+                    },
+                    defaultDate: moment().format('YYYY-MM-DD'),
+                    defaultView: 'agendaWeek',
+                    viewRender: function () {
+                        $('.fc-button-group').addClass('btn-group');
+                        $('.fc-button').addClass('btn');
+                    },
+                    events: eventsData
+                });
+            }
+        });
+    }
+
+    function getData(res) {
+        var html = $.parseHTML(res);
+        var json = html2json(html);
+        var jsonObj = JSON.parse(json);
+
+        //get properties and values
+        var datas = new Array();
+        if (jsonObj.length > 1) {
+            for (var i = 1; i < jsonObj.length; i++) {
+                var dataObj = new Object();
+                for (var j = 0; j < jsonObj[0].length; j++) {
+                    if (jsonObj[0][j] != "") {
+                        Object.defineProperty(dataObj, jsonObj[0][j], {
+                            value: jsonObj[i][j],
+                            writable: true,
+                            enumerable: true,
+                            configurable: true
+                        });
+                    }
+                }
+
+                datas.push(dataObj);
+            }
+        }
+
+        //format data
+        var eventData = new Array();
+        for (var i = 0; i < datas.length; i++) {
+            var startDateIst;
+            var startDateSoll;
+            var endDateIst;
+            var endDateSoll;
+            var name;
+
+            if (datas[i].Startzeit_ist)
+                startDateIst = new Date(datas[i].Startzeit_ist);
+            if (datas[i].Startzeit_soll)
+                startDateSoll = new Date(datas[i].Startzeit_soll);
+            if (datas[i].Endzeit_ist)
+                endDateIst = new Date(datas[i].Endzeit_ist);
+            if (datas[i].Endzeit_soll)
+                endDateSoll = new Date(datas[i].Endzeit_soll);
+            if (datas[i].Name)
+                name = datas[i].Name;
+
+
+            var event = {
+                title: name,
+                start: startDateIst,
+                end: endDateIst,
+                allDay: false,
+                listColor: 'default',
+                className: ['bg-danger']
+            }
+
+            eventData.push(event);
+        }
+
+
+        return eventData;
+    }
+
+    function html2json(html) {
+        var json = '[';
+        var otArr = [];
+        var tbl2 = $(html).find('.table tr').each(function (i) {
+            var x = $(this).children();
+            var itArr = [];
+            x.each(function () {
+                if ($(this).text().indexOf("Edit |") > -1) {
+                    itArr.push('""');
+                } else {
+                    itArr.push('"' + trim1($(this).text()) + '"');
+                }
+            });
+            otArr.push('[' + itArr.join(',') + ']');
+        })
+        json += otArr.join(",") + ']';
+        return json;
+    }
+
+    function trim1(str) {
+        return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+    }
     /* Define some variables */
     var app = $('.app'),
         searchState = false,
@@ -79,7 +215,7 @@
     });
 
     /******** Search form ********/
-    
+
 
     /******** Sidebar toggle menu ********/
     $('[data-toggle=sidebar]').on('click', function (e) {
@@ -252,7 +388,6 @@
                             text: 'erstellt.',
                             type: 'success',
                         }, function (response) {
-                            console.log(response);
                             window.location = form.attr('action').substr(0, form.attr('action').lastIndexOf('/Create'));
                         });
                     },
@@ -274,66 +409,70 @@
         return true;
     }
 
-})(jQuery);
-
-function currentDateFormatToObj(str) {
-    var obj = new Object();
-    var strLocal = currentFormatToDateTimeLocal(str);
-    var strLocalArr = currentFormatToDateTimeLocal(strLocal).split('T')
-    if (strLocal.indexOf('T') > -1) {
-        obj = {
-            "day": strLocal.split('T')[0].split('-')[2],
-            "month": strLocal.split('T')[0].split('-')[1],
-            "year": strLocal.split('T')[0].split('-')[0],
-            "hour": strLocal.split('T')[1].split(':')[0],
-            "minute": strLocal.split('T')[1].split(':')[1],
-            "second": str.split(' ')[1].split(':')[2],
-            "str": strLocalArr[0] + " " + strLocalArr[1]
-        }
-    }
-
-    return obj;
-}
-
-function currentFormatToDateTimeLocal(str) {
-    if (str.indexOf('/') > -1) {
-        var data = str.split('/');
-
-        var day = data[1];
-        if (day.length == 1) {
-            day = "0" + day;
-        }
-
-        var month = data[0];
-        if (month.length == 1) {
-            month = "0" + month;
-        }
-
-        var time = data[2].split(' ');
-
-        var year = time[0];
-        var timeSplit = time[1].split(':');
-        var hour = timeSplit[0];
-        var minute = timeSplit[1];
-        var second = timeSplit[2];
-
-        if (time[2] == "PM") {
-            if (parseInt(hour) != 12) {
-                var hourInt = parseInt(hour) + 12;
-                if (hourInt == 0)
-                    hour = "00";
-                else
-                    hour = "" + hourInt;
+    function currentDateFormatToObj(str) {
+        var obj = new Object();
+        var strLocal = currentFormatToDateTimeLocal(str);
+        var strLocalArr = currentFormatToDateTimeLocal(strLocal).split('T')
+        if (strLocal.indexOf('T') > -1) {
+            obj = {
+                "day": strLocal.split('T')[0].split('-')[2],
+                "month": strLocal.split('T')[0].split('-')[1],
+                "year": strLocal.split('T')[0].split('-')[0],
+                "hour": strLocal.split('T')[1].split(':')[0],
+                "minute": strLocal.split('T')[1].split(':')[1],
+                "second": str.split(' ')[1].split(':')[2],
+                "str": strLocalArr[0] + " " + strLocalArr[1]
             }
-        } else {
-            if (parseInt(hour) == 12)
-                hour = "00";
-            if (hour.length == 1)
-                hour = "0" + hour;
         }
 
-        return year + "-" + month + "-" + day + "T" + hour + ":" + minute;
+        return obj;
     }
 
-    return str;
-}
+    function currentFormatToDateTimeLocal(str) {
+        if (str.indexOf('/') > -1) {
+            var data = str.split('/');
+
+            var day = data[1];
+            if (day.length == 1) {
+                day = "0" + day;
+            }
+
+            var month = data[0];
+            if (month.length == 1) {
+                month = "0" + month;
+            }
+
+            var time = data[2].split(' ');
+
+            var year = time[0];
+            var timeSplit = time[1].split(':');
+            var hour = timeSplit[0];
+            var minute = timeSplit[1];
+            var second = timeSplit[2];
+
+            if (time[2] == "PM") {
+                if (parseInt(hour) != 12) {
+                    var hourInt = parseInt(hour) + 12;
+                    if (hourInt == 0)
+                        hour = "00";
+                    else
+                        hour = "" + hourInt;
+                }
+            } else {
+                if (parseInt(hour) == 12)
+                    hour = "00";
+                if (hour.length == 1)
+                    hour = "0" + hour;
+            }
+
+            return year + "-" + month + "-" + day + "T" + hour + ":" + minute;
+        }
+
+        return str;
+    }
+
+    $('.datatable').DataTable({
+        order: [[0, 'desc']]
+    });
+
+})(jQuery);

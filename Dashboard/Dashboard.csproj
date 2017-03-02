@@ -159,39 +159,15 @@
     <Compile Include="Security\MyRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\template2\images\avatar.jpg" />
-    <Content Include="Content\template2\images\face1.jpg" />
-    <Content Include="Content\template2\images\face2.jpg" />
-    <Content Include="Content\template2\images\face3.jpg" />
-    <Content Include="Content\template2\images\face4.jpg" />
-    <Content Include="Content\template2\images\face5.jpg" />
-    <Content Include="Content\template2\images\layouts\boxed.png" />
-    <Content Include="Content\template2\images\layouts\default.png" />
-    <Content Include="Content\template2\images\layouts\expanding.png" />
-    <Content Include="Content\template2\images\layouts\frontend.png" />
-    <Content Include="Content\template2\images\layouts\full.png" />
-    <Content Include="Content\template2\images\layouts\horizontal.png" />
-    <Content Include="Content\template2\images\layouts\offcanvas.png" />
-    <Content Include="Content\template2\images\layouts\static.png" />
-    <Content Include="Content\template2\images\logo-icon.png" />
-    <Content Include="Content\template2\images\logo.png" />
-    <Content Include="Content\template2\images\logo_white.png" />
-    <Content Include="Content\template2\images\man.png" />
-    <Content Include="Content\template2\images\mdesign.png" />
     <Content Include="Content\template2\images\onlinelogomaker-022817-1735-2110.png" />
     <Content Include="Content\template2\images\onlinelogomaker-022817-1747-1697.png" />
     <Content Include="Content\template2\images\onlinelogomaker-022817-1749-7556.png" />
     <Content Include="Content\template2\scripts\bootstrap\bootstrap.js" />
     <Content Include="Content\template2\scripts\bootstrap\bootstrap.min.js" />
-    <Content Include="Content\template2\scripts\calendar.js" />
-    <Content Include="Content\template2\scripts\constants.js" />
-    <Content Include="Content\template2\scripts\dashboard.js" />
-    <Content Include="Content\template2\scripts\datatables\dataTables.bootstrap4.js" />
+    <Content Include="Content\template2\scripts\bootstrap\respond.js" />
+    <Content Include="Content\template2\scripts\bootstrap\respond.min.js" />
     <Content Include="Content\template2\scripts\datatables\dataTables.bootstrap4.min.js" />
     <Content Include="Content\template2\scripts\datatables\dataTables.responsive.min.js" />
-    <Content Include="Content\template2\scripts\datatables\jquery.dataTables.js" />
     <Content Include="Content\template2\scripts\datatables\jquery.dataTables.min.js" />
     <Content Include="Content\template2\scripts\datatables\responsive.bootstrap4.min.js" />
     <Content Include="Content\template2\scripts\fastclick\fastclick.js" />
@@ -258,7 +234,13 @@
     <Content Include="Content\template2\scripts\jqueryui-touch-punch\jquery.ui.touch-punch.min.js" />
     <Content Include="Content\template2\scripts\jquery\jquery.js" />
     <Content Include="Content\template2\scripts\jquery\jquery.min.js" />
+    <None Include="Content\template2\scripts\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Content\template2\scripts\jquery\jquery.validate.js" />
+    <Content Include="Content\template2\scripts\jquery\jquery.validate.min.js" />
+    <Content Include="Content\template2\scripts\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\template2\scripts\jquery\jquery.validate.unobtrusive.min.js" />
     <Content Include="Content\template2\scripts\main.js" />
+    <Content Include="Content\template2\scripts\modernizr\modernizr-2.6.2.js" />
     <Content Include="Content\template2\scripts\moment\moment.min.js" />
     <Content Include="Content\template2\scripts\sweetalert\sweetalert.min.js" />
     <Content Include="Content\template2\scripts\tether\tether.js" />
@@ -281,9 +263,6 @@
     <Content Include="Content\template2\styles\sweetalert\sweetalert.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\template2\fonts\material\MaterialIcons-Regular.ttf" />
     <Content Include="Content\template2\fonts\material\MaterialIcons-Regular.woff" />
     <Content Include="Content\template2\fonts\material\MaterialIcons-Regular.woff2" />
@@ -297,18 +276,6 @@
     <Content Include="Content\template2\styles\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\template2\styles\fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\Dashboard20170225091505 - Web Deploy.pubxml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -373,13 +340,8 @@
     <Folder Include="Views\Statistics\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

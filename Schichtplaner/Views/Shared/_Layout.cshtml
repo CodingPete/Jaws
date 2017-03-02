@@ -7,10 +7,6 @@
     <title>@ViewBag.Title - Jaws</title>
 
     @Styles.Render("~/Template/Style")
-    <!-- endbuild -->
-    @Styles.Render("~/Content/schichtplaner.css")
-    @Styles.Render("~/Content/jquery.timepicker.min.css")
-    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
 
@@ -153,16 +149,7 @@
     </div>
 
     @Scripts.Render("~/Template/Scripts")
-    @Scripts.Render("~/Scripts/schichtplaner_fields.js");
-    @Scripts.Render("~/Scripts/schichtplaner_send.js");
-
-    <!-- end page scripts -->
-    <!-- initialize page scripts -->
-    <script type="text/javascript">
-        $('.datatable').DataTable({
-
-        });
-    </script>
+    @Scripts.Render("~/Template/Main")
 
     @RenderSection("scripts", required: false)
 </body>
