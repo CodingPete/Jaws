@@ -36,7 +36,13 @@
                 <nav>
                     <p class="nav-title">NAVIGATION</p>
                     <ul class="nav">
-                        <!-- dashboard -->
+                        <!-- Schichtenplan -->
+                        <li>
+                            <a href="@Url.Action("Schichtplan", "Home")">
+                                <i class="material-icons text-primary">perm_contact_calendar</i>
+                                <span>Schichtplan Kalendar</span>
+                            </a>
+                        </li>
                         @if (User.IsInRole("Schichtplaner"))
                         {
                             <li>
@@ -55,18 +61,12 @@
                             <li>
                                 <a href="@Url.Action("Schichtplan", "Home")">
                                     <i class="material-icons text-primary">perm_contact_calendar</i>
-                                    <span>Schichtplan Kalendar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="@Url.Action("Schichtplan", "Home")">
-                                    <i class="material-icons text-primary">perm_contact_calendar</i>
                                     <span>Schichtplan Liste</span>
                                 </a>
                             </li>
                         }
 
-                        <!-- /dashboard -->
+                        <!-- /Schichtenplan -->
                     </ul>
                 </nav>
                 <!-- /main navigation -->
