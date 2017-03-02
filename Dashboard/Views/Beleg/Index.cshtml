@@ -18,7 +18,9 @@
                         <th>
                             #
                         </th>
-
+                        <th>
+                            <a style="opacity: 0;"><i class="material-icons text-primary">detail</i></a>
+                        </th>
                         <th>
                             <a style="opacity: 0;"><i class="material-icons text-primary">delete</i></a>
                         </th>
@@ -38,6 +40,11 @@
                             <th scope="row" data-title="#">
                                 @Html.DisplayFor(modelItem => item.Id)
                             </th>
+                            <th scope="row" data-title="#">
+                                <a href="@Url.Action("Details", new { id = item.Id })"><i class="material-icons text-primary">list</i></a>
+
+                            </th>
+
                             <th scope="row" data-title="">
                                 <a class="delete-confirmation" id="@Url.Action("Delete", new { id = item.Id })"><i class="material-icons text-primary delete"></i></a>
                             </th>
