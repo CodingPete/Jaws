@@ -1,4 +1,5 @@
 ﻿function save_plan() {
+    $("html, body").css("cursor", "wait");
     var schichten = [];
     $(".person").each(function () {
         var personal_id = $(this).attr("person-id");
@@ -34,11 +35,19 @@
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(schichten),
+        success: function () {
+            $("html, body").css("cursor", "");
+            alert("Schichtplan gespeichert!");
+        }
     })
 }
 
 $(document).on("click", ".speicher_button", function () {
     save_plan();
+});
+
+$(document).on("click", ".reset_button", function () {
+    window.location.reload();
 });
 
 

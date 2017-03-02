@@ -1,99 +1,98 @@
 ﻿
 @{
     ViewBag.Title = "Schichtplaner";
-    DateTime montag = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
+    DateTime montag = ViewBag.monday;
+    DateTime sonntag = ViewBag.sunday;
+    //DateTime montag = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
 }
-<button class="speicher_button">Speichern</button>
-@Html.AntiForgeryToken()
-<table>
-    <thead>
-        <tr>
-            <th>Mitarbeiter</th>
-            <th class="">MoV</th>
-            <th class="">MoB</th>
-            <th class="">MoP</th>
-            <th class="schicht_th">DiV</th>
-            <th class="schicht_th">DiB</th>
-            <th class="schicht_th">DiP</th>
-            <th class="">MiV</th>
-            <th class="">MiB</th>
-            <th class="">MiP</th>
-            <th class="schicht_th">DoV</th>
-            <th class="schicht_th">DoB</th>
-            <th class="schicht_th">DoP</th>
-            <th class="">FrV</th>
-            <th class="">FrB</th>
-            <th class="">FrP</th>
-            <th class="schicht_th">SaV</th>
-            <th class="schicht_th">SaB</th>
-            <th class="schicht_th">SaP</th>
-            <th class="">SoV</th>
-            <th class="">SoB</th>
-            <th class="">SoP</th>
-            <th>ArbWo</th>
-            <th>MaWo</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (PersonSchichten personSchichten in Model)
-        {
-           <tr>
-               <td>
-                   <div class="person" person-id="@personSchichten.person.Id">
-                       <span>@personSchichten.person.Name</span>
-                       <span>@personSchichten.person.Vorname</span>
-                   </div>
-               </td>
-               @for (int i = 0; i < 7; i++)
-                       {
+<div style="width: 100%; display: flex; justify-content: space-between">
+    <a href="/Plan/Index?monday=@montag.AddDays(-7).ToShortDateString()" id="previous_week"class="btn btn-default">Woche ab @montag.AddDays(-7).ToShortDateString()</a>
+    <p>@montag.ToShortDateString()  -  @sonntag.ToShortDateString()</p>
+    <a href="/Plan/Index?monday=@montag.AddDays(7).ToShortDateString()" class="btn btn-default">Woche ab @montag.AddDays(7).ToShortDateString()</a>
+</div>
+<div style="width: 100%; display: flex; justify-content: space-between">
+    <div class="reset_button btn btn-danger">Änderungen Verwerfen</div>
+    <div class="speicher_button btn btn-success">Speichern</div>
+</div>
+    @Html.AntiForgeryToken()
+    <table>
+        <thead>
+            <tr>
+                <th>Mitarbeiter</th>
+                <th class="">MoV</th>
+                <th class="">MoB</th>
+                <th class="">MoP</th>
+                <th class="schicht_th">DiV</th>
+                <th class="schicht_th">DiB</th>
+                <th class="schicht_th">DiP</th>
+                <th class="">MiV</th>
+                <th class="">MiB</th>
+                <th class="">MiP</th>
+                <th class="schicht_th">DoV</th>
+                <th class="schicht_th">DoB</th>
+                <th class="schicht_th">DoP</th>
+                <th class="">FrV</th>
+                <th class="">FrB</th>
+                <th class="">FrP</th>
+                <th class="schicht_th">SaV</th>
+                <th class="schicht_th">SaB</th>
+                <th class="schicht_th">SaP</th>
+                <th class="">SoV</th>
+                <th class="">SoB</th>
+                <th class="">SoP</th>
+                <th>ArbWo</th>
+                <th>Kontingent</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (PersonSchichten personSchichten in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="person" person-id="@personSchichten.person.Id">
+                            <span>@personSchichten.person.Name</span>
+                            <span>@personSchichten.person.Vorname</span>
+                        </div>
+                    </td>
+                    @for (int i = 0; i < 7; i++)
+                    {
 
-                           DateTime start = montag.AddDays(i).Date;
-                           DateTime end = montag.AddDays(i + 1).Date;
-                           var schichten = personSchichten.schichten.Where((s) => s.Startzeit_soll >= start && s.Startzeit_soll <= end);
-                           if (schichten.Count() > 0)
-                           {
-                               var schicht = schichten.First();
-                               var startzeit = schicht.Startzeit_soll.ToString("HHmm");
-                               var endzeit = schicht.Endzeit_soll.ToString("HHmm");
-                        <td>
-                            <input wochentag="@i" date="@start.Date" class="schicht_input"  type="number" value="@startzeit"/>
-                        </td>
-                        <td>
-                            <input wochentag="@i" date="@start.Date" class="schicht_input"  type="number" value="@endzeit" />
-                        </td>
-                        <td>
-                            <input wochentag="@i" date="@start.Date" class="schicht_input"  type="number" value="@schicht.Pause" />
-                        </td>
-                   }
-                   else
-                   {
-                       <td>
-                           <input wochentag="@i"  date="@start.Date" class="schicht_input"  type="number" />
-                       </td>
-                       <td>
-                            <input wochentag="@i"  date="@start.Date" class="schicht_input" type="number" />
-                       </td>
-                       <td>
-                            <input wochentag="@i"  date="@start.Date" class="schicht_input" type="number" />
-                       </td>
-                   }
-               }
-               <td class="arbwo">00:00</td>
-               <td class="mawo" max="@personSchichten.vertrag.Wochenstunden">00:00</td>
+                        DateTime start = montag.AddDays(i).Date;
+                        DateTime end = montag.AddDays(i + 1).Date;
+                        var schichten = personSchichten.schichten.Where((s) => s.Startzeit_soll >= start && s.Startzeit_soll <= end);
+                        if (schichten.Count() > 0)
+                        {
+                            var schicht = schichten.First();
+                            var startzeit = schicht.Startzeit_soll.ToString("HHmm");
+                            var endzeit = schicht.Endzeit_soll.ToString("HHmm");
+                            <td>
+                                <input wochentag="@i" date="@start.Date" class="schicht_input" type="number" value="@startzeit" />
+                            </td>
+                            <td>
+                                <input wochentag="@i" date="@start.Date" class="schicht_input" type="number" value="@endzeit" />
+                            </td>
+                            <td>
+                                <input wochentag="@i" date="@start.Date" class="schicht_input" type="number" value="@schicht.Pause" />
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <input wochentag="@i" date="@start.Date" class="schicht_input" type="number" />
+                            </td>
+                            <td>
+                                <input wochentag="@i" date="@start.Date" class="schicht_input" type="number" />
+                            </td>
+                            <td>
+                                <input wochentag="@i" date="@start.Date" class="schicht_input" type="number" />
+                            </td>
+                        }
+                    }
+                    <td class="arbwo">00:00</td>
+                    <td class="mawo" max="@personSchichten.vertrag.Wochenstunden">00:00</td>
 
-           </tr>
-        }
-    </tbody>
-</table>
-<script>
-    document.addEventListener("DOMContentLoaded", function (event) {
-        $(".editPerson").mouseover(() => {
-            $(this).css('cursor', 'pointer');
-        })
-        $(".editPerson").click((e) => {
-            e.preventDefault();
-            window.location = window.location = "../Plan/Edit/" + $(e.target).parent().attr('id')
-
-        });
-    });
-</script>
+                </tr>
+            }
+        </tbody>
+    </table>
+   

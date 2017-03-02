@@ -22,14 +22,19 @@ namespace Schichtplaner.Controllers
         // GET: Plan
         public ActionResult Index()
         {
+            DateTime monday = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
+
+            if (Request["monday"] != null)
+            {
+                monday = DateTime.Parse(Request["monday"]);
+            }
+            DateTime sunday = monday.AddDays(6).Date;
+
             List<PersonSchichten> personSchichtenListe = new List<PersonSchichten>();
 
             // Hole alle Angestellten
             var personalliste = client.getPersonalList();
-
            
-            DateTime monday = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
-            DateTime sunday = monday.AddDays(6).Date;
 
            
             foreach (Personal person in personalliste)
@@ -44,14 +49,10 @@ namespace Schichtplaner.Controllers
 
                 personSchichtenListe.Add(personSchicht);
             }
-            
-            return View(personSchichtenListe);
-        }
 
-        // GET: Plan/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
+            ViewBag.monday = monday;
+            ViewBag.sunday = sunday;
+            return View(personSchichtenListe);
         }
 
         // GET: Plan/Create
@@ -85,50 +86,6 @@ namespace Schichtplaner.Controllers
             }
         }
 
-        // GET: Plan/Edit/5
-        public ActionResult Edit(int id)
-        {
-            //var person = client.getPersonalbyId(id);
-            var schicht = client.getSchichtbyPersonalId(id);
-            return View(schicht);
-        }
-
-        // POST: Plan/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Plan/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Plan/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
     }
 }

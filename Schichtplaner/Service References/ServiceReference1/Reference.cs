@@ -375,6 +375,9 @@ namespace Schichtplaner.ServiceReference1 {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Schichtplaner.ServiceReference1.Personal[] PersonalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -402,6 +405,19 @@ namespace Schichtplaner.ServiceReference1 {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
                 }
             }
         }
@@ -2068,6 +2084,12 @@ namespace Schichtplaner.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtbyPersonalId", ReplyAction="http://tempuri.org/IService1/getSchichtbyPersonalIdResponse")]
         System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht[]> getSchichtbyPersonalIdAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtList", ReplyAction="http://tempuri.org/IService1/getSchichtListResponse")]
+        Schichtplaner.ServiceReference1.Schicht[] getSchichtList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtList", ReplyAction="http://tempuri.org/IService1/getSchichtListResponse")]
+        System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht[]> getSchichtListAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getSchichtBetween", ReplyAction="http://tempuri.org/IService1/getSchichtBetweenResponse")]
         Schichtplaner.ServiceReference1.Schicht[] getSchichtBetween(System.DateTime von, System.DateTime bis);
         
@@ -2544,6 +2566,14 @@ namespace Schichtplaner.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht[]> getSchichtbyPersonalIdAsync(int id) {
             return base.Channel.getSchichtbyPersonalIdAsync(id);
+        }
+        
+        public Schichtplaner.ServiceReference1.Schicht[] getSchichtList() {
+            return base.Channel.getSchichtList();
+        }
+        
+        public System.Threading.Tasks.Task<Schichtplaner.ServiceReference1.Schicht[]> getSchichtListAsync() {
+            return base.Channel.getSchichtListAsync();
         }
         
         public Schichtplaner.ServiceReference1.Schicht[] getSchichtBetween(System.DateTime von, System.DateTime bis) {
