@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "";
+}
+<form role="form" action="@Url.Action("Bestellung","Lieferant")" method="post">
+    @Html.AntiForgeryToken();
+    <div class="form-group">
+        <label for="selarticle">Wähle deinen Artikel:</label>
+        <select class="form-control" id="selarticle" name="selarticle">
+            @foreach(var artikelprognose in ViewBag.ArtikelPrognose)
+            {
+                <option value="@artikelprognose.artikel.Id">@artikelprognose.artikel.Name | zu bestellende Menge anhand der Prognose: @artikelprognose.prognosemenge </option>
+            }
+        </select>
+        <input id="selItem" type="hidden" name="itemid" />
+    </div>
+    <div class=" form-group">
+        <button type="submit" class="btn btn-success">Bestellen</button>
+    </div>
+</form>
+                           
