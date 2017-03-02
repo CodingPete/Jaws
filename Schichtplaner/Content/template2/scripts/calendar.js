@@ -12,6 +12,7 @@
             url: "/Home/Index",
             type: "GET",
             success: function (response) {
+                console.log(response);
                 var eventsData = getData(response);
                 $('.fullcalendar').fullCalendar({
                     editable: false,
@@ -90,14 +91,18 @@
             var endDateSoll;
             var name;
 
+            if (datas[i].Startzeit_ist.indexOf('.') > -1) {
+
+            }
+
             if (datas[i].Startzeit_ist)
-                startDateIst = new Date(datas[i].Startzeit_ist);
+                startDateIst = new Date(formatSpecialDate(datas[i].Startzeit_ist));
             if (datas[i].Startzeit_soll)
-                startDateSoll = new Date(datas[i].Startzeit_soll);
+                startDateSoll = new Date(formatSpecialDate(datas[i].Startzeit_soll));
             if (datas[i].Endzeit_ist)
-                endDateIst = new Date(datas[i].Endzeit_ist);
+                endDateIst = new Date(formatSpecialDate(datas[i].Endzeit_ist));
             if (datas[i].Endzeit_soll)
-                endDateSoll = new Date(datas[i].Endzeit_soll);
+                endDateSoll = new Date(formatSpecialDate(datas[i].Endzeit_soll));
             if (datas[i].Name)
                 name = datas[i].Name;
 
@@ -118,6 +123,27 @@
         return eventData;
     }
 
+    function formatSpecialDate(str) {
+        //27.02.2017 06:00:00 -> 2 / 27 / 2017 6:00:00 AM
+        var newDate = str;
+        if (str.indexOf('.') > -1) {
+            var splitStr = str.split(' ');
+            newDate = removeZero(splitStr[0].split('.')[1]) + '/' + removeZero(splitStr[0].split('.')[0]) + '/' + splitStr[0].split('.')[2] + " " + splitStr[1];
+        }
+
+        return newDate;
+
+        
+    }
+
+    function removeZero(strWZero) {
+        if (strWZero[0] == "0") {
+            return strWZero.substr(1, strWZero.length);
+        } else {
+            return strWZero;
+        }
+    }
+
     function html2json(html) {
         var json = '[';
         var otArr = [];
@@ -128,13 +154,17 @@
                 if ($(this).text().indexOf("Edit |") > -1) {
                     itArr.push('""');
                 } else {
-                    itArr.push('"' + $(this).text().substr(13, $(this).text().length - 22) + '"');
+                    itArr.push('"' + trim1($(this).text()) + '"');
                 }
             });
             otArr.push('[' + itArr.join(',') + ']');
         })
-        json += otArr.join(",") + ']'
-
+        json += otArr.join(",") + ']';
+        
         return json;
     }   
+
+    function trim1(str) {
+        return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+    }
 })(jQuery);
