@@ -29,8 +29,17 @@ namespace Kasse
         {
             InitializeComponent();
             client = new Service1Client();
+            textBox.PreviewKeyDown += EnterClicked;
+            textBox.Focus();
         }
-
+        void EnterClicked(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                button_Submit_Click(sender,e);
+                e.Handled = true;
+            }
+        }
         private void button_num_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
