@@ -9,7 +9,7 @@
 
     function ajaxGetData() {
         $.ajax({
-            url: "/Schicht",
+            url: "/Home/Index",
             type: "GET",
             success: function (response) {
                 var eventsData = getData(response);
