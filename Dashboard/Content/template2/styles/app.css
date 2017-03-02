@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*
 *   Template name: Milestone Bootstrap 4 Dashboard Template
 *   Demo URL: htp://milestone.nyasha.me
@@ -3204,7 +3204,8 @@ button.list-group-item-danger {
   overflow-x: visible; }
 
 table.dataTable {
-  border-collapse: collapse !important; }
+  border-collapse: collapse !important;
+}
 
 @media (max-width: 991px) {
   .table-responsive {
